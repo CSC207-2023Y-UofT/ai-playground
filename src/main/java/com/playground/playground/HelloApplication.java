@@ -16,8 +16,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Tensorflow Playground");
         stage.setScene(scene);
         stage.show();
-        int a;
-        a = 5;
     }
 
     public static void main(String[] args) {
