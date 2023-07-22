@@ -62,7 +62,7 @@ public class HelloController implements Initializable {
     private Label slider3Percent;
 
 
-    public void initialize() {
+    public void initialize(URL location, ResourceBundle resources) {
         setButtonWithCircleAndText(stepButton, Color.BLUE, "Step");
         setButtonWithCircleAndText(playButton, Color.BLUE, "Play");
         setButtonWithCircleAndText(rewindButton, Color.BLUE, "Rewind");
@@ -81,7 +81,19 @@ public class HelloController implements Initializable {
         slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
             updateSlider3Percent(slider3, slider3Percent);
         });
+        XYChart.Series<String, Double> seriesHigh = new XYChart.Series<>();
+        seriesHigh.setName("Label1");
+        seriesHigh.getData().add(new XYChart.Data<>("SubLabel1", 20.9));
+        seriesHigh.getData().add(new XYChart.Data<>("SubLabel2", 30.9));
+        seriesHigh.getData().add(new XYChart.Data<>("SubLabel3", 40.9));
 
+        XYChart.Series<String, Double> seriesLow = new XYChart.Series<>();
+        seriesLow.setName("Label2");
+        seriesLow.getData().add(new XYChart.Data<>("SubSubLabel1", 10.9));
+        seriesLow.getData().add(new XYChart.Data<>("SubSubLabel2", 25.9));
+        seriesLow.getData().add(new XYChart.Data<>("SubSubLabel3", 32.9));
+
+        neuralNetwork.getData().addAll(seriesHigh, seriesLow);
     }
 
     private void setButtonWithCircleAndText(Button button, Color color, String text) {
@@ -111,23 +123,6 @@ public class HelloController implements Initializable {
     private void updateSlider3Percent(Slider slider, Label numberLabel) {
         int value = (int) slider.getValue();
         numberLabel.setText(String.format("%d", value));
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        XYChart.Series<String, Double> seriesHigh = new XYChart.Series<>();
-        seriesHigh.setName("Label1");
-        seriesHigh.getData().add(new XYChart.Data<>("SubLabel1", 20.9));
-        seriesHigh.getData().add(new XYChart.Data<>("SubLabel2", 30.9));
-        seriesHigh.getData().add(new XYChart.Data<>("SubLabel3", 40.9));
-
-        XYChart.Series<String, Double> seriesLow = new XYChart.Series<>();
-        seriesLow.setName("Label2");
-        seriesLow.getData().add(new XYChart.Data<>("SubSubLabel1", 10.9));
-        seriesLow.getData().add(new XYChart.Data<>("SubSubLabel2", 25.9));
-        seriesLow.getData().add(new XYChart.Data<>("SubSubLabel3", 32.9));
-
-        neuralNetwork.getData().addAll(seriesHigh, seriesLow);
     }
 
     // Place other controller logic here pls
