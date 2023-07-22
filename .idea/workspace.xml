@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

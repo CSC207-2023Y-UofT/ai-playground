@@ -65,7 +65,7 @@
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
        <VBox spacing="10">
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data" textAlignment="CENTER" wrappingWidth="173.79052734375" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass ="data-text" text="Data" textAlignment="LEFT" wrappingWidth="173.79052734375" />
           <Label styleClass="gray-text" text="Choose a dataset" />
           <GridPane alignment="CENTER_LEFT" hgap="10" vgap="10">
             <Button fx:id="clusterButton" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -101,7 +101,7 @@
        </VBox>
          <VBox prefHeight="298.0" prefWidth="159.0">
             <children>
-               <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Features" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375" />
+               <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="features-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375" />
                <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#686868" strokeType="OUTSIDE" strokeWidth="0.0" text="Which properties would you like to add?">
                   <font>
                      <Font size="10.0" />
