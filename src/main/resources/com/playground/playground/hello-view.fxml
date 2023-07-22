@@ -11,6 +11,14 @@
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+  <Label fx:id="playButton"/>
+  <Button text="Play"/>
+
+  <Label fx:id="stepButton"/>
+  <Button text="Increase Epoch"/>
+
+  <Label fx:id="rewindButton"/>
+  <Button text="Rewind"/>
+
+
 </VBox>
