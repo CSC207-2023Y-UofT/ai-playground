@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="added more &quot;dropdown menus&quot;">
+    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689996300283</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
+      <created>1689999286866</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689999286866</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +212,7 @@
     <MESSAGE value="deleted .circle-button" />
     <MESSAGE value="added &quot;dropdown menus&quot;" />
     <MESSAGE value="added more &quot;dropdown menus&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more &quot;dropdown menus&quot;" />
+    <MESSAGE value="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
   </component>
 </project>

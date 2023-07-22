@@ -89,7 +89,6 @@ public class HelloController {
         percentLabel.setText(String.format("%.2f%%", percentage));
     }
 
-
     // Place other controller logic here pls
 }
 
