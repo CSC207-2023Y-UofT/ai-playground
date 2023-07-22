@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="idek at this point">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" afterDir="false" />
+    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="deleted .circle-button">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689994531222</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deleted .circle-button">
+      <created>1689994948050</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689994948050</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +190,7 @@
     <MESSAGE value="Made buttons circles." />
     <MESSAGE value="Labelled buttons" />
     <MESSAGE value="idek at this point" />
-    <option name="LAST_COMMIT_MESSAGE" value="idek at this point" />
+    <MESSAGE value="deleted .circle-button" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted .circle-button" />
   </component>
 </project>
