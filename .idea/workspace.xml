@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="deleted .circle-button">
+    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="added more &quot;dropdown menus&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +179,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689994948050</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added &quot;dropdown menus&quot;">
+      <created>1689996165358</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689996165358</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added more &quot;dropdown menus&quot;">
+      <created>1689996300283</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689996300283</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +206,8 @@
     <MESSAGE value="Labelled buttons" />
     <MESSAGE value="idek at this point" />
     <MESSAGE value="deleted .circle-button" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted .circle-button" />
+    <MESSAGE value="added &quot;dropdown menus&quot;" />
+    <MESSAGE value="added more &quot;dropdown menus&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more &quot;dropdown menus&quot;" />
   </component>
 </project>

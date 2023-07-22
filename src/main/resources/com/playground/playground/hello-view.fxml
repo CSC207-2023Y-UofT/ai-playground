@@ -11,50 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Slider?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.HelloController">
-  <MenuBar>
-    <Menu text="Learning Rate">
-      <MenuItem text="0.00001"/>
-      <MenuItem text="0.00001"/>
-      <MenuItem text="0.0001"/>
-      <MenuItem text="0.001"/>
-      <MenuItem text="0.003"/>
-      <MenuItem text="0.01"/>
-      <MenuItem text="0.03"/>
-      <MenuItem text="0.1"/>
-      <MenuItem text="0.3"/>
-      <MenuItem text="1"/>
-      <MenuItem text="3"/>
-      <MenuItem text="10"/>
-    </Menu>
-    <Menu text="Activation">
-      <MenuItem text="ReLU"/>
-      <MenuItem text="Tanh"/>
-      <MenuItem text="Sigmoid"/>
-      <MenuItem text="Linear"/>
-    </Menu>
-    <Menu text="Regularization">
-      <MenuItem text="None"/>
-      <MenuItem text="L1"/>
-      <MenuItem text="L2"/>
-    </Menu>
-    <Menu text="Regularization Rate">
-      <MenuItem text="0"/>
-      <MenuItem text="0.001"/>
-      <MenuItem text="0.003"/>
-      <MenuItem text="0.01"/>
-      <MenuItem text="0.03"/>
-      <MenuItem text="0.1"/>
-      <MenuItem text="0.3"/>
-      <MenuItem text="1"/>
-      <MenuItem text="3"/>
-      <MenuItem text="10"/>
-    </Menu>
-    <Menu text="Problem Type">
-      <MenuItem text="Classification"/>
-      <MenuItem text="Regression"/>
-    </Menu>
-  </MenuBar>
 
   <HBox alignment="TOP_LEFT" spacing="10.0">
     <padding>
@@ -65,5 +24,83 @@
     <Button fx:id="playButton" styleClass="circle-button" text="Play"/>
     <Button fx:id="rewindButton" styleClass="circle-button" text="Rewind"/>
 
+    <MenuBar>
+      <Menu text="Learning Rate">
+        <MenuItem text="0.00001"/>
+        <MenuItem text="0.00001"/>
+        <MenuItem text="0.0001"/>
+        <MenuItem text="0.001"/>
+        <MenuItem text="0.003"/>
+        <MenuItem text="0.01"/>
+        <MenuItem text="0.03"/>
+        <MenuItem text="0.1"/>
+        <MenuItem text="0.3"/>
+        <MenuItem text="1"/>
+        <MenuItem text="3"/>
+        <MenuItem text="10"/>
+      </Menu>
+      <Menu text="Activation">
+        <MenuItem text="ReLU"/>
+        <MenuItem text="Tanh"/>
+        <MenuItem text="Sigmoid"/>
+        <MenuItem text="Linear"/>
+      </Menu>
+      <Menu text="Regularization">
+        <MenuItem text="None"/>
+        <MenuItem text="L1"/>
+        <MenuItem text="L2"/>
+      </Menu>
+      <Menu text="Regularization Rate">
+        <MenuItem text="0"/>
+        <MenuItem text="0.001"/>
+        <MenuItem text="0.003"/>
+        <MenuItem text="0.01"/>
+        <MenuItem text="0.03"/>
+        <MenuItem text="0.1"/>
+        <MenuItem text="0.3"/>
+        <MenuItem text="1"/>
+        <MenuItem text="3"/>
+        <MenuItem text="10"/>
+      </Menu>
+      <Menu text="Problem Type">
+        <MenuItem text="Classification"/>
+        <MenuItem text="Regression"/>
+      </Menu>
+    </MenuBar>
+
   </HBox>
+
+  <VBox alignment="TOP_LEFT">
+    <Label styleClass="title-text" text="DATA" />
+    <Label styleClass="gray-text" text="Choose a dataset" />
+    <GridPane vgap="10" hgap="10" alignment="CENTER_LEFT">
+      <Button fx:id="clusterButton" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <Button fx:id="radialButton" text="Radial" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <Button fx:id="spiralButton" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <Button fx:id="rectangularButton" text="Rectangular" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
+    <VBox spacing="10">
+      <VBox spacing="5" alignment="CENTER_LEFT" prefWidth="150">
+        <Label text="Ratio of training to test data:" />
+        <Slider fx:id="slider1" />
+        <Label fx:id="slider1Percent" />
+      </VBox>
+
+      <VBox spacing="5" alignment="CENTER_LEFT" prefWidth="150">
+        <Label text="Noise:" />
+        <Slider fx:id="slider2" />
+        <Label fx:id="slider2Percent" />
+      </VBox>
+
+      <VBox spacing="5" alignment="CENTER_LEFT" prefWidth="150">
+        <Label text="Batch size:" />
+        <Slider fx:id="slider3"  />
+        <Label fx:id="slider3Percent" />
+      </VBox>
+    </VBox>
+  </VBox>
+
 </VBox>
+
+
+

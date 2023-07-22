@@ -8,3 +8,19 @@
 }
 
 
+.title-text {
+    -fx-font-size: 20px;
+}
+
+.gray-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: gray;
+
+}
+
+
+.menu-bar {
+    -fx-font-size: 14;
+}
+
+
