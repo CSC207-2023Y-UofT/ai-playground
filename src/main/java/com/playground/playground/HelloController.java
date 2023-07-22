@@ -90,13 +90,13 @@ public class HelloController {
     }
 
     private void updateSlider2Percent(Slider slider, Label numberLabel) {
-        double value = slider.getValue();
-        numberLabel.setText(String.format("%.2f", value));
+        int value = (int) slider.getValue();
+        numberLabel.setText(String.format("%d", value));
     }
 
     private void updateSlider3Percent(Slider slider, Label numberLabel) {
-        double value = slider.getValue();
-        numberLabel.setText(String.format("%.2f", value));
+        int value = (int) slider.getValue();
+        numberLabel.setText(String.format("%d", value));
     }
 
     // Place other controller logic here pls
