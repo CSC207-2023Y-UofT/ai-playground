@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.playground.playground.HelloController">
+<VBox prefWidth="710.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.playground.playground.HelloController">
 
   <HBox alignment="TOP_LEFT" spacing="10.0">
     <padding>
@@ -96,13 +96,13 @@
 
       <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150" spacing="5">
         <Label text="Noise:" />
-        <Slider fx:id="slider2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
+        <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
         <Label fx:id="slider2Percent" />
       </VBox>
 
       <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" spacing="5">
         <Label text="Batch size:" />
-        <Slider fx:id="slider3" />
+        <Slider fx:id="slider3" max="30.0" />
         <Label fx:id="slider3Percent" />
       </VBox>
     </VBox>

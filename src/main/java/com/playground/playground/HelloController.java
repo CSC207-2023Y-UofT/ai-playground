@@ -57,15 +57,15 @@ public class HelloController {
         setButtonFixedSize(spiralButton);
         setButtonFixedSize(rectangularButton);
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSliderPercent(slider1, slider1Percent);
+            updateSlider1Percent(slider1, slider1Percent);
         });
 
         slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSliderPercent(slider2, slider2Percent);
+            updateSlider2Percent(slider2, slider2Percent);
         });
 
         slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSliderPercent(slider3, slider3Percent);
+            updateSlider3Percent(slider3, slider3Percent);
         });
 
     }
@@ -82,11 +82,21 @@ public class HelloController {
         button.setPrefSize(70, 50);
     }
 
-    private void updateSliderPercent(Slider slider, Label percentLabel) {
+    private void updateSlider1Percent(Slider slider, Label percentLabel) {
         double value = slider.getValue();
         double max = slider.getMax();
         double percentage = (value / max) * 100;
         percentLabel.setText(String.format("%.2f%%", percentage));
+    }
+
+    private void updateSlider2Percent(Slider slider, Label numberLabel) {
+        double value = slider.getValue();
+        numberLabel.setText(String.format("%.2f", value));
+    }
+
+    private void updateSlider3Percent(Slider slider, Label numberLabel) {
+        double value = slider.getValue();
+        numberLabel.setText(String.format("%.2f", value));
     }
 
     // Place other controller logic here pls
