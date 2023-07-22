@@ -15,17 +15,45 @@
   <MenuBar>
     <Menu text="Learning Rate">
       <MenuItem text="0.00001"/>
-      <!-- Add more menu items as needed -->
+      <MenuItem text="0.00001"/>
+      <MenuItem text="0.0001"/>
+      <MenuItem text="0.001"/>
+      <MenuItem text="0.003"/>
+      <MenuItem text="0.01"/>
+      <MenuItem text="0.03"/>
+      <MenuItem text="0.1"/>
+      <MenuItem text="0.3"/>
+      <MenuItem text="1"/>
+      <MenuItem text="3"/>
+      <MenuItem text="10"/>
     </Menu>
     <Menu text="Activation">
       <MenuItem text="ReLU"/>
-      <!-- Add more menu items as needed -->
+      <MenuItem text="Tanh"/>
+      <MenuItem text="Sigmoid"/>
+      <MenuItem text="Linear"/>
     </Menu>
     <Menu text="Regularization">
       <MenuItem text="None"/>
-      <!-- Add more menu items as needed -->
+      <MenuItem text="L1"/>
+      <MenuItem text="L2"/>
     </Menu>
-    <!-- Add more menus as needed -->
+    <Menu text="Regularization Rate">
+      <MenuItem text="0"/>
+      <MenuItem text="0.001"/>
+      <MenuItem text="0.003"/>
+      <MenuItem text="0.01"/>
+      <MenuItem text="0.03"/>
+      <MenuItem text="0.1"/>
+      <MenuItem text="0.3"/>
+      <MenuItem text="1"/>
+      <MenuItem text="3"/>
+      <MenuItem text="10"/>
+    </Menu>
+    <Menu text="Problem Type">
+      <MenuItem text="Classification"/>
+      <MenuItem text="Regression"/>
+    </Menu>
   </MenuBar>
 
   <HBox alignment="TOP_LEFT" spacing="10.0">
