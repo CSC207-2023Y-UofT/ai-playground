@@ -96,7 +96,7 @@
          <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" spacing="5">
            <Label text="Batch size:" />
            <Slider fx:id="slider3" max="30.0" />
-           <Label fx:id="slider3Percent" />
+           <Label fx:id="slider3Percent"/>
          </VBox>
        </VBox>
          <VBox prefHeight="298.0" prefWidth="159.0">
