@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="comic sans!">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/hello-view.fxml" afterDir="false" />
+    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="Graph got added.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,11 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -138,6 +143,8 @@
       <workItem from="1689983577943" duration="629000" />
       <workItem from="1689990699897" duration="116000" />
       <workItem from="1690042337338" duration="740000" />
+      <workItem from="1690055051465" duration="87000" />
+      <workItem from="1690055163856" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="Added non-working buttons (ugly) such as start, step, and rewind">
       <created>1689991244946</created>
@@ -209,32 +216,22 @@
       <option name="project" value="LOCAL" />
       <updated>1690042053754</updated>
     </task>
-    <task id="LOCAL-00011" summary="comic sans!">
-      <created>1690047878747</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1690047878747</updated>
-    </task>
-    <task id="LOCAL-00012" summary="comic sans!">
-      <created>1690048056961</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1690048056961</updated>
-    </task>
-    <task id="LOCAL-00013" summary="comic sans!">
-      <created>1690048092798</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1690048092798</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added non-working buttons (ugly) such as start, step, and rewind" />
@@ -246,8 +243,7 @@
     <MESSAGE value="added &quot;dropdown menus&quot;" />
     <MESSAGE value="added more &quot;dropdown menus&quot;" />
     <MESSAGE value="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
-    <MESSAGE value="comic sans!" />
-    <option name="LAST_COMMIT_MESSAGE" value="comic sans!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
