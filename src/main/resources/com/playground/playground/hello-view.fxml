@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -13,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefWidth="710.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.playground.playground.HelloController">
+<VBox prefWidth="710.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.HelloController">
 
   <HBox alignment="TOP_LEFT" spacing="10.0">
     <padding>
@@ -71,7 +74,15 @@
   </HBox>
 
   <VBox alignment="TOP_LEFT">
-    <Label styleClass="title-text" text="DATA" />
+    <Label styleClass="title-text" />
+      <ScatterChart fx:id="neuralNetwork" title="Neural Network ">
+        <xAxis>
+          <CategoryAxis fx:id="yAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" fx:id="xAxis" />
+        </yAxis>
+      </ScatterChart>
     <Label styleClass="gray-text" text="Choose a dataset" />
     <GridPane alignment="CENTER_LEFT" hgap="10" vgap="10">
       <Button fx:id="clusterButton" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
