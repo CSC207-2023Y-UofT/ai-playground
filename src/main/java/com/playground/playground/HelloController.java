@@ -11,9 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.image.ImageView;
+
 
 public class HelloController implements Initializable {
     @FXML
@@ -63,13 +64,15 @@ public class HelloController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        setButtonWithCircleAndText(stepButton, Color.BLUE, "Step");
-        setButtonWithCircleAndText(playButton, Color.BLUE, "Play");
-        setButtonWithCircleAndText(rewindButton, Color.BLUE, "Rewind");
+        // setting buttons
+        setButtonWithImage(rewindButton, "playground-images/rewind-button.png");
+        setButtonWithImage(playButton, "playground-images/play-button.png");
+        setButtonWithImage(stepButton, "playground-images/fast-forward-button.png");
         setButtonFixedSize(clusterButton);
         setButtonFixedSize(radialButton);
         setButtonFixedSize(spiralButton);
         setButtonFixedSize(rectangularButton);
+
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
             updateSlider1Percent(slider1, slider1Percent);
         });
@@ -94,15 +97,18 @@ public class HelloController implements Initializable {
         seriesLow.getData().add(new XYChart.Data<>("SubSubLabel3", 32.9));
 
         neuralNetwork.getData().addAll(seriesHigh, seriesLow);
+
+
     }
 
-    private void setButtonWithCircleAndText(Button button, Color color, String text) {
-        Circle circle = new Circle(20); // Adjust the radius as needed
-        circle.setFill(color);
-        button.setGraphic(circle);
-        button.setText(text);
-        button.getStyleClass().add("circle-button");
+    private void setButtonWithImage(Button button, String imagePath) {
+        ImageView imageView = new ImageView(getClass().getResource(imagePath).toExternalForm());
+        imageView.setFitWidth(40); // Adjust the width as needed
+        imageView.setFitHeight(40); // Adjust the height as needed
+        button.setGraphic(imageView);
+        button.getStyleClass().add("image-button");
     }
+
 
     private void setButtonFixedSize(Button button) {
         button.setPrefSize(70, 50);
@@ -112,7 +118,8 @@ public class HelloController implements Initializable {
         double value = slider.getValue();
         double max = slider.getMax();
         double percentage = (value / max) * 100;
-        percentLabel.setText(String.format("%.2f%%", percentage));
+        long roundedPercentage = Math.round(percentage);
+        percentLabel.setText(String.format("%d%%", roundedPercentage));
     }
 
     private void updateSlider2Percent(Slider slider, Label numberLabel) {
