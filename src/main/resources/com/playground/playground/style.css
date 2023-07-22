@@ -1,8 +1,20 @@
-.circle-label {
+.circle-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 40px; /* Set the preferred width */
+    -fx-pref-height: 40px; /* Set the preferred height */
     -fx-background-radius: 50%;
-    -fx-padding: 5px;
+    -fx-padding: 5px; /* Add some padding to make the circles more visible */
 }
 
-.circle-label Label {
-    -fx-font-size: 12px;
+.circle-button:hover {
+    -fx-scale-x: 1.2; /* Increase the X-axis scale by 20% */
+    -fx-scale-y: 1.2; /* Increase the Y-axis scale by 20% */
 }
+
+.circle-button .graphic .label {
+    -fx-text-fill: transparent;
+}
+
+

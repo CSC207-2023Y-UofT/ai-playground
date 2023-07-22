@@ -1,45 +1,34 @@
 package com.playground.playground;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class HelloController {
     @FXML
-    private StackPane stepCircle;
+    private Button stepButton;
 
     @FXML
-    private StackPane playCircle;
+    private Button playButton;
 
     @FXML
-    private StackPane rewindCircle;
+    private Button rewindButton;
 
     public void initialize() {
-        Circle stepCircleShape = createCircle(Color.BLUE);
-        Circle playCircleShape = createCircle(Color.BLUE);
-        Circle rewindCircleShape = createCircle(Color.BLUE);
-
-        setCircleWithText(stepCircle, stepCircleShape, "Step");
-        setCircleWithText(playCircle, playCircleShape, "Play");
-        setCircleWithText(rewindCircle, rewindCircleShape, "Rewind");
+        setButtonWithCircleAndText(stepButton, Color.BLUE, "Step");
+        setButtonWithCircleAndText(playButton, Color.BLUE, "Play");
+        setButtonWithCircleAndText(rewindButton, Color.BLUE, "Rewind");
     }
 
-    private Circle createCircle(Color color) {
-        Circle circle = new Circle(20);
+    private void setButtonWithCircleAndText(Button button, Color color, String text) {
+        Circle circle = new Circle(20); // Adjust the radius as needed
         circle.setFill(color);
-        return circle;
+        button.setGraphic(circle);
+        button.setText(text);
+        button.getStyleClass().add("circle-button");
     }
 
-    private void setCircleWithText(StackPane stackPane, Circle circle, String text) {
-        Label label = new Label(text);
-        label.setTextFill(Color.WHITE);
-        stackPane.getChildren().addAll(circle, label);
-
-    }
-
-    // Place controller logic here
+    // Your controller logic goes here...
 }
+
