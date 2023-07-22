@@ -11,9 +11,9 @@
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
-  <Label fx:id="stepCircle" styleClass="circle-label"/>
-  <Label fx:id="playCircle" styleClass="circle-label"/>
-  <Label fx:id="rewindCircle" styleClass="circle-label"/>
+  <StackPane fx:id="stepCircle" styleClass="circle-label"/>
+  <StackPane fx:id="playCircle" styleClass="circle-label"/>
+  <StackPane fx:id="rewindCircle" styleClass="circle-label"/>
 
 
 </HBox>

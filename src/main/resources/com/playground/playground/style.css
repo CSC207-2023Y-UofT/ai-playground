@@ -1,4 +1,8 @@
 .circle-label {
     -fx-background-radius: 50%;
+    -fx-padding: 5px;
 }
 
+.circle-label Label {
+    -fx-font-size: 12px;
+}
