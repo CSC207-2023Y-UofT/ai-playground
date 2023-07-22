@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="Added non-working buttons (ugly) such as start, step, and rewind" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,9 +132,21 @@
       <workItem from="1689983577943" duration="629000" />
       <workItem from="1689990699897" duration="116000" />
     </task>
+    <task id="LOCAL-00001" summary="Added non-working buttons (ugly) such as start, step, and rewind">
+      <created>1689991244946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1689991244947</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added non-working buttons (ugly) such as start, step, and rewind" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added non-working buttons (ugly) such as start, step, and rewind" />
   </component>
 </project>
