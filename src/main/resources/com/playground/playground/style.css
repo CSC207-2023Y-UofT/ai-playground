@@ -33,4 +33,8 @@
     -fx-font-size: 14;
 }
 
+.neural-network-text {
+    -fx-font-family: "Comic Sans MS";
+}
+
 

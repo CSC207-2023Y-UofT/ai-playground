@@ -109,7 +109,7 @@
                </Text>
             </children>
          </VBox>
-         <ScatterChart fx:id="neuralNetwork" title="Neural Network ">
+         <ScatterChart fx:id="neuralNetwork" title="Neural Network" styleClass="neural-network-text">
            <xAxis>
              <CategoryAxis fx:id="yAxis" side="BOTTOM" />
            </xAxis>
