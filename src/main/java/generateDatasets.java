@@ -5,10 +5,6 @@ import java.util.Random;
 
 public class generateDatasets {
 
-    
-    
-
-
     public static ArrayList<ArrayList<ArrayList<Double>>> generateCircular() {
         ArrayList<ArrayList<ArrayList<Double>>> dataset = new ArrayList<ArrayList<ArrayList<Double>>>();
         ArrayList<ArrayList<Double>> dataset0 = new ArrayList<ArrayList<Double>>();
