@@ -44,23 +44,25 @@ public class HelloController implements Initializable {
     @FXML
     private Button rectangularButton;
 
-    @FXML
-    private Slider slider1;
+    private DataAttributesController dataAttributesController;
 
-    @FXML
-    private Slider slider2;
-
-    @FXML
-    private Slider slider3;
-
-    @FXML
-    private Label slider1Percent;
-
-    @FXML
-    private Label slider2Percent;
-
-    @FXML
-    private Label slider3Percent;
+//    @FXML
+//    private Slider slider1;
+//
+//    @FXML
+//    private Slider slider2;
+//
+//    @FXML
+//    private Slider slider3;
+//
+//    @FXML
+//    private Label slider1Percent;
+//
+//    @FXML
+//    private Label slider2Percent;
+//
+//    @FXML
+//    private Label slider3Percent;
 
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -73,17 +75,17 @@ public class HelloController implements Initializable {
         setButtonFixedSize(spiralButton);
         setButtonFixedSize(rectangularButton);
 
-        slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSlider1Percent(slider1, slider1Percent);
-        });
-
-        slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSlider2Percent(slider2, slider2Percent);
-        });
-
-        slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSlider3Percent(slider3, slider3Percent);
-        });
+//        slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
+//            updateSlider1Percent(slider1, slider1Percent);
+//        });
+//
+//        slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
+//            updateSlider2Percent(slider2, slider2Percent);
+//        });
+//
+//        slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
+//            updateSlider3Percent(slider3, slider3Percent);
+//        });
         XYChart.Series<String, Double> seriesHigh = new XYChart.Series<>();
         seriesHigh.setName("Label1");
         seriesHigh.getData().add(new XYChart.Data<>("SubLabel1", 20.9));
@@ -98,6 +100,7 @@ public class HelloController implements Initializable {
 
         neuralNetwork.getData().addAll(seriesHigh, seriesLow);
 
+        dataAttributesController.initialize(location, resources);
 
     }
 
@@ -114,23 +117,23 @@ public class HelloController implements Initializable {
         button.setPrefSize(70, 50);
     }
 
-    private void updateSlider1Percent(Slider slider, Label percentLabel) {
-        double value = slider.getValue();
-        double max = slider.getMax();
-        double percentage = (value / max) * 100;
-        long roundedPercentage = Math.round(percentage);
-        percentLabel.setText(String.format("%d%%", roundedPercentage));
-    }
-
-    private void updateSlider2Percent(Slider slider, Label numberLabel) {
-        int value = (int) slider.getValue();
-        numberLabel.setText(String.format("%d", value));
-    }
-
-    private void updateSlider3Percent(Slider slider, Label numberLabel) {
-        int value = (int) slider.getValue();
-        numberLabel.setText(String.format("%d", value));
-    }
+//    private void updateSlider1Percent(Slider slider, Label percentLabel) {
+//        double value = slider.getValue();
+//        double max = slider.getMax();
+//        double percentage = (value / max) * 100;
+//        long roundedPercentage = Math.round(percentage);
+//        percentLabel.setText(String.format("%d%%", roundedPercentage));
+//    }
+//
+//    private void updateSlider2Percent(Slider slider, Label numberLabel) {
+//        int value = (int) slider.getValue();
+//        numberLabel.setText(String.format("%d", value));
+//    }
+//
+//    private void updateSlider3Percent(Slider slider, Label numberLabel) {
+//        int value = (int) slider.getValue();
+//        numberLabel.setText(String.format("%d", value));
+//    }
 
     // Place other controller logic here pls
 }
