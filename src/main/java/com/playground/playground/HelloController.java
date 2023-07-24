@@ -1,6 +1,7 @@
 package com.playground.playground;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -9,8 +10,11 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.image.ImageView;
@@ -45,6 +49,7 @@ public class HelloController implements Initializable {
     private Button rectangularButton;
 
     private DataAttributesController dataAttributesController;
+    private VBox dataAttributesBox;
 
 //    @FXML
 //    private Slider slider1;
@@ -100,7 +105,15 @@ public class HelloController implements Initializable {
 
         neuralNetwork.getData().addAll(seriesHigh, seriesLow);
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dataAttributesView.fxml"));
+        try {
+            dataAttributesBox = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dataAttributesController = loader.getController();
         dataAttributesController.initialize(location, resources);
+
 
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.DataAttributesController">
+    <Label text="Ratio of training to test data:" />
+    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
+    <Label fx:id="slider1Percent" />
+
+    <Label text="Noise:" />
+    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
+    <Label fx:id="slider2Percent" />
+
+    <Label text="Batch size:" />
+    <Slider fx:id="slider3" max="30.0" />
+    <Label fx:id="slider3Percent" />
+</VBox>
+

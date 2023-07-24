@@ -92,7 +92,7 @@
   </HBox>
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
-       <VBox spacing="10">
+       <VBox spacing="10" >
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="data-text" text="Data" textAlignment="LEFT" wrappingWidth="173.79052734375" />
           <Label styleClass="gray-text" text="Choose a dataset" />
           <GridPane alignment="CENTER_LEFT" hgap="10" vgap="10">
@@ -109,23 +109,9 @@
                   <RowConstraints />
                </rowConstraints>
           </GridPane>
-         <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="150.0" spacing="5">
-           <Label maxWidth="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="180.0" text="Ratio of training to test data:" />
-           <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
-           <Label fx:id="slider1Percent" />
-         </VBox>
-      
-         <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150" spacing="5">
-           <Label text="Noise:" />
-           <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
-           <Label fx:id="slider2Percent" />
-         </VBox>
-      
-         <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" spacing="5">
-           <Label text="Batch size:" />
-           <Slider fx:id="slider3" max="30.0" />
-           <Label fx:id="slider3Percent" />
-         </VBox>
+           <VBox fx:id="dataAttributesBox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="150.0" spacing="5">
+               <fx:include source="dataAttributesView.fxml"/>
+           </VBox>
        </VBox>
          <VBox prefHeight="298.0" prefWidth="159.0">
             <children>
