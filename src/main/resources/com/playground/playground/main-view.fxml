@@ -29,15 +29,8 @@
            <VBox fx:id="dataAttributesBox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="150.0" spacing="5">
                <fx:include source="data-attributes-view.fxml"/>
            </VBox>
-         <VBox prefHeight="298.0" prefWidth="159.0">
-            <children>
-               <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="features-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375" />
-               <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#686868" strokeType="OUTSIDE" strokeWidth="0.0" text="Which properties would you like to add?">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Text>
-            </children>
+         <VBox fx:id="featuresHiddenLayersBox"  alignment="TOP_CENTER" prefHeight="298.0" prefWidth="159.0">
+             <fx:include source="features-hidden-layers-view.fxml"/>
          </VBox>
           <VBox fx:id="graphSystemBox" alignment="CENTER">
               <fx:include source="graph-system-view.fxml"/>

@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 public class MainController implements Initializable {
     private DataAttributesController dataAttributesController;
     @FXML
@@ -26,6 +25,10 @@ public class MainController implements Initializable {
     private GraphSystemController graphSystemController;
     @FXML
     private VBox graphSystemBox;
+
+    private FeaturesHiddenLayersController featuresHiddenLayersController;
+    @FXML
+    private VBox featuresHiddenLayersBox;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -58,8 +61,16 @@ public class MainController implements Initializable {
         graphSystemController = graphSystemLoader.getController();
         graphSystemController.initialize(location, resources);
 
-    }
+        FXMLLoader featuresHiddenLayersLoader = new FXMLLoader(getClass().getResource("features-hidden-layers-view.fxml"));
+        try {
+            featuresHiddenLayersBox = featuresHiddenLayersLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        featuresHiddenLayersController = featuresHiddenLayersLoader.getController();
+        featuresHiddenLayersController.initialize(location, resources);
 
+    }
 
 }
 
