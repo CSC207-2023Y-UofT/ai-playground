@@ -4,26 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="Trial">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Separated features/hidden layers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -49,213 +42,54 @@
       </state>
     </system>
   </component>
-  <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2Sr7FYunxCZyZ1cxCN3YJ9O61E2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dagli/coding/ai-playground&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dagli\coding\ai-playground\src\main\java" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="ai-playground [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
       <list>
-        <item itemvalue="Gradle.ai-playground [run]" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
-    </recent_temporary>
+    </option>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="" />
-      <created>1689892742837</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1689892742837</updated>
-      <workItem from="1689892743951" duration="1483000" />
-      <workItem from="1689897213145" duration="1531000" />
-      <workItem from="1689983577943" duration="629000" />
-      <workItem from="1689990699897" duration="116000" />
-      <workItem from="1690042337338" duration="740000" />
-      <workItem from="1690055051465" duration="87000" />
-      <workItem from="1690055163856" duration="1283000" />
-      <workItem from="1690057081539" duration="39000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added non-working buttons (ugly) such as start, step, and rewind">
-      <created>1689991244946</created>
+    <task id="LOCAL-00001" summary="Separated ml parameters">
+      <created>1690308754085</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1689991244947</updated>
+      <updated>1690308754086</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added labels to the controller.">
-      <created>1689991397975</created>
+    <task id="LOCAL-00002" summary="Separated graph system">
+      <created>1690309858316</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1689991397976</updated>
+      <updated>1690309858317</updated>
     </task>
-    <task id="LOCAL-00003" summary="Made buttons circles.">
-      <created>1689992952962</created>
+    <task id="LOCAL-00003" summary="Separated features/hidden layers">
+      <created>1690310374538</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1689992952962</updated>
+      <updated>1690310374538</updated>
     </task>
-    <task id="LOCAL-00004" summary="Labelled buttons">
-      <created>1689994016962</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1689994016962</updated>
-    </task>
-    <task id="LOCAL-00005" summary="idek at this point">
-      <created>1689994531220</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1689994531222</updated>
-    </task>
-    <task id="LOCAL-00006" summary="deleted .circle-button">
-      <created>1689994948050</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1689994948050</updated>
-    </task>
-    <task id="LOCAL-00007" summary="added &quot;dropdown menus&quot;">
-      <created>1689996165358</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1689996165358</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added more &quot;dropdown menus&quot;">
-      <created>1689996300283</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1689996300283</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
-      <created>1689999286866</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1689999286866</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
-      <created>1690042053753</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1690042053754</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Trial">
-      <created>1690055236136</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1690055236136</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added non-working buttons (ugly) such as start, step, and rewind" />
-    <MESSAGE value="Added labels to the controller." />
-    <MESSAGE value="Made buttons circles." />
-    <MESSAGE value="Labelled buttons" />
-    <MESSAGE value="idek at this point" />
-    <MESSAGE value="deleted .circle-button" />
-    <MESSAGE value="added &quot;dropdown menus&quot;" />
-    <MESSAGE value="added more &quot;dropdown menus&quot;" />
-    <MESSAGE value="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
-    <MESSAGE value="Trial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trial" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Separated ml parameters" />
+    <MESSAGE value="Separated graph system" />
+    <MESSAGE value="Separated features/hidden layers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separated features/hidden layers" />
   </component>
 </project>
