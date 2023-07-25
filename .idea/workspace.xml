@@ -4,31 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="comic sans!">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/gradle-build.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/lint.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Separated features/hidden layers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -54,200 +42,54 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2Sr7FYunxCZyZ1cxCN3YJ9O61E2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/omari/Downloads/ai-playground",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dagli\coding\ai-playground\src\main\java" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="ai-playground [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.ai-playground [run]" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="243afb4c-938a-462c-adb2-9d3f4bb6b741" name="Changes" comment="" />
-      <created>1689892742837</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1689892742837</updated>
-      <workItem from="1689892743951" duration="1483000" />
-      <workItem from="1689897213145" duration="1531000" />
-      <workItem from="1689983577943" duration="629000" />
-      <workItem from="1689990699897" duration="116000" />
-      <workItem from="1690042337338" duration="740000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added non-working buttons (ugly) such as start, step, and rewind">
-      <created>1689991244946</created>
+    <task id="LOCAL-00001" summary="Separated ml parameters">
+      <created>1690308754085</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1689991244947</updated>
+      <updated>1690308754086</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added labels to the controller.">
-      <created>1689991397975</created>
+    <task id="LOCAL-00002" summary="Separated graph system">
+      <created>1690309858316</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1689991397976</updated>
+      <updated>1690309858317</updated>
     </task>
-    <task id="LOCAL-00003" summary="Made buttons circles.">
-      <created>1689992952962</created>
+    <task id="LOCAL-00003" summary="Separated features/hidden layers">
+      <created>1690310374538</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1689992952962</updated>
+      <updated>1690310374538</updated>
     </task>
-    <task id="LOCAL-00004" summary="Labelled buttons">
-      <created>1689994016962</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1689994016962</updated>
-    </task>
-    <task id="LOCAL-00005" summary="idek at this point">
-      <created>1689994531220</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1689994531222</updated>
-    </task>
-    <task id="LOCAL-00006" summary="deleted .circle-button">
-      <created>1689994948050</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1689994948050</updated>
-    </task>
-    <task id="LOCAL-00007" summary="added &quot;dropdown menus&quot;">
-      <created>1689996165358</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1689996165358</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added more &quot;dropdown menus&quot;">
-      <created>1689996300283</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1689996300283</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
-      <created>1689999286866</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1689999286866</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)">
-      <created>1690042053753</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1690042053754</updated>
-    </task>
-    <task id="LOCAL-00011" summary="comic sans!">
-      <created>1690047878747</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1690047878747</updated>
-    </task>
-    <task id="LOCAL-00012" summary="comic sans!">
-      <created>1690048056961</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1690048056961</updated>
-    </task>
-    <task id="LOCAL-00013" summary="comic sans!">
-      <created>1690048092798</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1690048092798</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added non-working buttons (ugly) such as start, step, and rewind" />
-    <MESSAGE value="Added labels to the controller." />
-    <MESSAGE value="Made buttons circles." />
-    <MESSAGE value="Labelled buttons" />
-    <MESSAGE value="idek at this point" />
-    <MESSAGE value="deleted .circle-button" />
-    <MESSAGE value="added &quot;dropdown menus&quot;" />
-    <MESSAGE value="added more &quot;dropdown menus&quot;" />
-    <MESSAGE value="Added more buttons and sliders (i am sorry the sliders are extremely long pls fix it some1)" />
-    <MESSAGE value="comic sans!" />
-    <option name="LAST_COMMIT_MESSAGE" value="comic sans!" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Separated ml parameters" />
+    <MESSAGE value="Separated graph system" />
+    <MESSAGE value="Separated features/hidden layers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separated features/hidden layers" />
   </component>
 </project>
