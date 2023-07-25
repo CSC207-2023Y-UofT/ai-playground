@@ -2,6 +2,7 @@ package com.playground.playground;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 
@@ -26,6 +27,17 @@ public class DataAttributesController implements Initializable {
 
     @FXML
     private Label slider3Percent;
+    @FXML
+    private Button clusterButton;
+
+    @FXML
+    private Button radialButton;
+
+    @FXML
+    private Button spiralButton;
+
+    @FXML
+    private Button rectangularButton;
 
     public void initialize(URL location, ResourceBundle resources){
 
@@ -40,6 +52,11 @@ public class DataAttributesController implements Initializable {
         slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
             updateSlider3Percent(slider3, slider3Percent);
         });
+
+        setButtonFixedSize(clusterButton);
+        setButtonFixedSize(radialButton);
+        setButtonFixedSize(spiralButton);
+        setButtonFixedSize(rectangularButton);
 
     }
 
@@ -59,5 +76,9 @@ public class DataAttributesController implements Initializable {
     private void updateSlider3Percent(Slider slider, Label numberLabel) {
         int value = (int) slider.getValue();
         numberLabel.setText(String.format("%d", value));
+    }
+
+    private void setButtonFixedSize(Button button) {
+        button.setPrefSize(70, 50);
     }
 }

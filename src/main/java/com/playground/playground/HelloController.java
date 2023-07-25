@@ -10,6 +10,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -27,70 +28,27 @@ public class HelloController implements Initializable {
     private NumberAxis xAxis;
     @FXML
     private ScatterChart neuralNetwork;
-    @FXML
-    private Button stepButton;
-
-    @FXML
-    private Button playButton;
-
-    @FXML
-    private Button rewindButton;
-
-    @FXML
-    private Button clusterButton;
-
-    @FXML
-    private Button radialButton;
-
-    @FXML
-    private Button spiralButton;
-
-    @FXML
-    private Button rectangularButton;
 
     private DataAttributesController dataAttributesController;
+    @FXML
     private VBox dataAttributesBox;
+    private MlParametersController mlParametersController;
+    @FXML
+    private HBox mlParametersBox;
 
-//    @FXML
-//    private Slider slider1;
-//
-//    @FXML
-//    private Slider slider2;
-//
-//    @FXML
-//    private Slider slider3;
-//
-//    @FXML
-//    private Label slider1Percent;
-//
-//    @FXML
-//    private Label slider2Percent;
-//
-//    @FXML
-//    private Label slider3Percent;
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        // setting buttons
-        setButtonWithImage(rewindButton, "playground-images/rewind-button.png");
-        setButtonWithImage(playButton, "playground-images/play-button.png");
-        setButtonWithImage(stepButton, "playground-images/fast-forward-button.png");
-        setButtonFixedSize(clusterButton);
-        setButtonFixedSize(radialButton);
-        setButtonFixedSize(spiralButton);
-        setButtonFixedSize(rectangularButton);
+//        // setting buttons
+//        setButtonWithImage(rewindButton, "playground-images/rewind-button.png");
+//        setButtonWithImage(playButton, "playground-images/play-button.png");
+//        setButtonWithImage(stepButton, "playground-images/fast-forward-button.png");
+//        setButtonFixedSize(clusterButton);
+//        setButtonFixedSize(radialButton);
+//        setButtonFixedSize(spiralButton);
+//        setButtonFixedSize(rectangularButton);
 
-//        slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
-//            updateSlider1Percent(slider1, slider1Percent);
-//        });
-//
-//        slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
-//            updateSlider2Percent(slider2, slider2Percent);
-//        });
-//
-//        slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
-//            updateSlider3Percent(slider3, slider3Percent);
-//        });
+
         XYChart.Series<String, Double> seriesHigh = new XYChart.Series<>();
         seriesHigh.setName("Label1");
         seriesHigh.getData().add(new XYChart.Data<>("SubLabel1", 20.9));
@@ -105,50 +63,29 @@ public class HelloController implements Initializable {
 
         neuralNetwork.getData().addAll(seriesHigh, seriesLow);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dataAttributesView.fxml"));
+        FXMLLoader dataattloader = new FXMLLoader(getClass().getResource("data-attributes-view.fxml"));
         try {
-            dataAttributesBox = loader.load();
+            dataAttributesBox = dataattloader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        dataAttributesController = loader.getController();
+        dataAttributesController = dataattloader.getController();
         dataAttributesController.initialize(location, resources);
 
+        FXMLLoader mlparamloader = new FXMLLoader(getClass().getResource("ml-parameters-view.fxml"));
+        try {
+            mlParametersBox = mlparamloader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        mlParametersController = mlparamloader.getController();
+        mlParametersController.initialize(location, resources);
+
 
     }
 
-    private void setButtonWithImage(Button button, String imagePath) {
-        ImageView imageView = new ImageView(getClass().getResource(imagePath).toExternalForm());
-        imageView.setFitWidth(40); // Adjust the width as needed
-        imageView.setFitHeight(40); // Adjust the height as needed
-        button.setGraphic(imageView);
-        button.getStyleClass().add("image-button");
-    }
 
-
-    private void setButtonFixedSize(Button button) {
-        button.setPrefSize(70, 50);
-    }
-
-//    private void updateSlider1Percent(Slider slider, Label percentLabel) {
-//        double value = slider.getValue();
-//        double max = slider.getMax();
-//        double percentage = (value / max) * 100;
-//        long roundedPercentage = Math.round(percentage);
-//        percentLabel.setText(String.format("%d%%", roundedPercentage));
-//    }
-//
-//    private void updateSlider2Percent(Slider slider, Label numberLabel) {
-//        int value = (int) slider.getValue();
-//        numberLabel.setText(String.format("%d", value));
-//    }
-//
-//    private void updateSlider3Percent(Slider slider, Label numberLabel) {
-//        int value = (int) slider.getValue();
-//        numberLabel.setText(String.format("%d", value));
-//    }
-
-    // Place other controller logic here pls
 }
 
 

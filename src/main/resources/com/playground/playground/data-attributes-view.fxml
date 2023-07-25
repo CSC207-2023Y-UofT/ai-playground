@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.DataAttributesController">
+    <VBox spacing="10">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="data-text" text="Data" textAlignment="LEFT" wrappingWidth="173.79052734375" />
+        <Label styleClass="gray-text" text="Choose a dataset" />
+        <GridPane alignment="CENTER_LEFT" hgap="10" vgap="10">
+            <Button fx:id="clusterButton" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button fx:id="radialButton" prefHeight="26.0" prefWidth="83.0" text="Radial" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button fx:id="spiralButton" prefHeight="26.0" prefWidth="83.0" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button fx:id="rectangularButton" prefHeight="26.0" prefWidth="84.0" text="Rectangular" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </VBox>
+    <Label text="Ratio of training to test data:" />
+    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
+    <Label fx:id="slider1Percent" />
+
+    <Label text="Noise:" />
+    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" />
+    <Label fx:id="slider2Percent" />
+
+    <Label text="Batch size:" />
+    <Slider fx:id="slider3" max="30.0" />
+    <Label fx:id="slider3Percent" />
+</VBox>
+
