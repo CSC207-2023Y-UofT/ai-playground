@@ -13,11 +13,8 @@
     <children>
         <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="features-text"
               text="Features" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375" />
-        <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#686868" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Which properties would you like to add?">
-            <font>
-                <Font size="10.0" />
-            </font>
+        <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="gray" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Which properties would you like to add?" styleClass="gray-text">
         </Text>
     </children>
 </VBox>
