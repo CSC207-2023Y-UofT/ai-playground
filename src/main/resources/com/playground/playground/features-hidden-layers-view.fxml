@@ -11,11 +11,27 @@
     <children>
       <HBox prefHeight="35.0" prefWidth="478.0">
          <children>
-              <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="features-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" translateX="70.0" translateY="10.0" wrappingWidth="90.52490234375" />
-            <Button fx:id="addLayer" mnemonicParsing="false" onAction="#increment" text="+" translateX="160.0" translateY="5.0" />
-            <Button fx:id="removeLayer" mnemonicParsing="false" onAction="#decrement" text="-" translateX="170.0" translateY="5.0" />
-            <Label fx:id="countLayers" text="0" translateX="180.0" translateY="9.0" />
-            <Text fx:id="hiddenLayer" strokeType="OUTSIDE" strokeWidth="0.0" text="Hidden Layer(s)" translateX="185.0" translateY="10.0" />
+              <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" translateX="70.0" translateY="10.0" wrappingWidth="90.52490234375" />
+            <Button fx:id="addLayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddLayerClicked" prefHeight="30.0" prefWidth="30.0" text="+">
+               <HBox.margin>
+                  <Insets left="150.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="removeLayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveLayerClicked" prefHeight="30.0" prefWidth="30.0" text="-">
+               <HBox.margin>
+                  <Insets left="20.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Text fx:id="numHiddenLayers" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="14.52490234375">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Hidden Layer(s)" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Text>
          </children>
       </HBox>
         <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="gray" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gray-text" text="Which properties would you like to add?">

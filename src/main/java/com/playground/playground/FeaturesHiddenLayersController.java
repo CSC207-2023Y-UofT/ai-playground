@@ -14,7 +14,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FeaturesHiddenLayersController implements Initializable{
-    public Text hiddenLayer;
+    @FXML
+    private Text numHiddenLayers;
+    @FXML
+    private Button addLayer;
+    @FXML
+    private Button removeLayer;
     @FXML
     private Button x1button;
     @FXML
@@ -29,12 +34,6 @@ public class FeaturesHiddenLayersController implements Initializable{
     private Button sinx1button;
     @FXML
     private Button sinx2button;
-    @FXML
-    private Label countLayers;
-    @FXML
-    private Button addLayer;
-    @FXML
-    private Button removeLayer;
 
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1button, "playground-images/x1button.jpg");
@@ -45,8 +44,8 @@ public class FeaturesHiddenLayersController implements Initializable{
         setButtonWithImage(sinx1button, "playground-images/sinx1button.jpg");
         setButtonWithImage(sinx2button, "playground-images/sinx2button.jpg");
 
-        addLayer.setOnAction(this::increment);
-        removeLayer.setOnAction(this::decrement);
+//        addLayer.setOnAction(this::increment);
+//        removeLayer.setOnAction(this::decrement);
     }
 
     // method which takes two parameters, button and string (the image path), and sets the button with the
@@ -58,13 +57,21 @@ public class FeaturesHiddenLayersController implements Initializable{
         button.setGraphic(imageView);
         button.getStyleClass().add("image-button");
     }
-    public void increment(ActionEvent event){
-        int currCount = Integer.parseInt(countLayers.getText());
-        countLayers.setText(Integer.toString(currCount + 1));
+
+    @FXML
+    private void onAddLayerClicked(ActionEvent event) {
+        int currentCount = Integer.parseInt(numHiddenLayers.getText());
+        currentCount++;
+        numHiddenLayers.setText(String.valueOf(currentCount));
     }
-    public void decrement(ActionEvent event){
-        int currCount = Integer.parseInt(countLayers.getText());
-        countLayers.setText(Integer.toString(currCount - 1));
+
+    @FXML
+    private void onRemoveLayerClicked(ActionEvent event) {
+        int currentCount = Integer.parseInt(numHiddenLayers.getText());
+        if (currentCount > 0) {
+            currentCount--;
+            numHiddenLayers.setText(String.valueOf(currentCount));
+        }
     }
 
 }
