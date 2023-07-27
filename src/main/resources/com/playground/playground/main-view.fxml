@@ -3,12 +3,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="506.0" prefWidth="1104.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MainController">
+<VBox prefHeight="400.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MainController">
 
-    <HBox fx:id="mlParametersBox" alignment="TOP_LEFT" prefWidth="792.0" spacing="10.0">
+    <HBox fx:id="mlParametersBox" alignment="TOP_LEFT" prefWidth="881.0" spacing="10.0">
         <fx:include source="ml-parameters-view.fxml" />
     </HBox>
-   <HBox prefHeight="438.0" prefWidth="1176.0">
+   <HBox prefHeight="250.0" prefWidth="1300.0">
       <children>
            <VBox fx:id="dataAttributesBox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="150.0" spacing="5">
                <fx:include source="data-attributes-view.fxml" />
@@ -17,7 +17,7 @@
              <fx:include source="features-hidden-layers-view.fxml" />
          </VBox>
           <VBox fx:id="graphSystemBox" alignment="CENTER">
-              <fx:include source="graph-system-view.fxml" translateX="200.0" />
+              <fx:include source="graph-system-view.fxml" translateX="75.0" />
           </VBox>
       </children>
    </HBox>

@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="468.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
+<VBox prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
     <children>
       <HBox prefHeight="35.0" prefWidth="478.0">
          <children>
               <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" translateX="70.0" translateY="10.0" wrappingWidth="90.52490234375" />
-            <Button fx:id="addLayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddLayerClicked" prefHeight="30.0" prefWidth="30.0" text="+">
+            <Button fx:id="addLayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddLayerClicked" prefHeight="30.0" prefWidth="30.0" text="+" translateX="15.0">
                <HBox.margin>
                   <Insets left="150.0" top="5.0" />
                </HBox.margin>
@@ -27,7 +27,7 @@
                   <Insets left="10.0" top="10.0" />
                </HBox.margin>
             </Text>
-            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Hidden Layer(s)" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375">
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Hidden Layer(s)" textAlignment="CENTER" textOrigin="CENTER" translateY="10.0" wrappingWidth="117.52490234375">
                <HBox.margin>
                   <Insets left="15.0" />
                </HBox.margin>
@@ -36,7 +36,8 @@
       </HBox>
         <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="gray" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gray-text" text="Which properties would you like to add?">
         </Text>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <VBox fx:id="nueralConnections" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="483.0" translateX="225.0" />
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1" textAlignment="JUSTIFY" fx:id="x1label">
                <HBox.margin>
@@ -49,7 +50,7 @@
             <Insets bottom="15.0" top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x2" fx:id="x2label">
                <HBox.margin>
@@ -62,7 +63,7 @@
                </HBox.margin></Button>
          </children>
       </HBox>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1^2" fx:id="x1pow2label">
                <HBox.margin>
@@ -75,7 +76,7 @@
                </HBox.margin></Button>
          </children>
       </HBox>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x2^2" fx:id="x2pow2label">
                <HBox.margin>
@@ -88,7 +89,7 @@
                </HBox.margin></Button>
          </children>
       </HBox>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1x2" fx:id="x1x2label">
                <HBox.margin>
@@ -101,7 +102,7 @@
                </HBox.margin></Button>
          </children>
       </HBox>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label fx:id="sinx1label" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="sin(x1)">
                <HBox.margin>
@@ -114,7 +115,7 @@
                </HBox.margin></Button>
          </children>
       </HBox>
-      <HBox prefHeight="43.5" prefWidth="200.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
          <children>
             <Label fx:id="sinx2label" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="sin(x2)">
                <HBox.margin>

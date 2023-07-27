@@ -20,7 +20,6 @@ public class GraphSystemController implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         XYChart.Series<String, Double> seriesHigh = new XYChart.Series<>();
-        seriesHigh.setName("Label1");
         seriesHigh.getData().add(new XYChart.Data<>("SubLabel1", 20.9));
         seriesHigh.getData().add(new XYChart.Data<>("SubLabel2", 30.9));
         seriesHigh.getData().add(new XYChart.Data<>("SubLabel3", 40.9));

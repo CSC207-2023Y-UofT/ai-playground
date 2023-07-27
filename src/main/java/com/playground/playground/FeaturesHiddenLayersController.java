@@ -5,10 +5,15 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +39,8 @@ public class FeaturesHiddenLayersController implements Initializable{
     private Button sinx1button;
     @FXML
     private Button sinx2button;
+    @FXML
+    public VBox neuralConnections;
 
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1button, "playground-images/x1button.jpg");
@@ -44,8 +51,6 @@ public class FeaturesHiddenLayersController implements Initializable{
         setButtonWithImage(sinx1button, "playground-images/sinx1button.jpg");
         setButtonWithImage(sinx2button, "playground-images/sinx2button.jpg");
 
-//        addLayer.setOnAction(this::increment);
-//        removeLayer.setOnAction(this::decrement);
     }
 
     // method which takes two parameters, button and string (the image path), and sets the button with the
@@ -61,8 +66,11 @@ public class FeaturesHiddenLayersController implements Initializable{
     @FXML
     private void onAddLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
-        currentCount++;
-        numHiddenLayers.setText(String.valueOf(currentCount));
+        if (currentCount < 8) {
+            currentCount++;
+            numHiddenLayers.setText(String.valueOf(currentCount));
+        }
+
     }
 
     @FXML
@@ -73,5 +81,6 @@ public class FeaturesHiddenLayersController implements Initializable{
             numHiddenLayers.setText(String.valueOf(currentCount));
         }
     }
+
 
 }

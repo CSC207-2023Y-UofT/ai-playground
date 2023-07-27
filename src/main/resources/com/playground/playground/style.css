@@ -15,7 +15,7 @@
 .gray-text {
     -fx-font-size: 10px;
     -fx-text-fill: gray;
-    -fx-font-family: Verdana;
+    -fx-font-family: "Comic Sans MS";
 }
 
 .data-text {
