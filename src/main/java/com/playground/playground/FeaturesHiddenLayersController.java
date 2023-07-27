@@ -71,7 +71,6 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
-            addButton(currentCount);
         }
 
     }
@@ -83,14 +82,6 @@ public class FeaturesHiddenLayersController implements Initializable{
             currentCount--;
             numHiddenLayers.setText(String.valueOf(currentCount));
         }
-    }
-    public void addButton(int currentCount){
-        // Formula for determining in the x and y position should be f(x, y) = (baseValue + currentCount * usualSpace, y)
-        Button addLayer = new Button();
-        neuralConnections.add(addLayer, 1, 1, 1, 1);
-    }
-    public void removeButton(int currentCount){
-
     }
 
 

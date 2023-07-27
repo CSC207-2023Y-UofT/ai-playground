@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="neuralConnections" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
+<VBox prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
     <children>
       <HBox prefHeight="35.0" prefWidth="478.0">
          <children>
@@ -39,7 +39,7 @@
       </HBox>
         <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="gray" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gray-text" text="Which properties would you like to add?">
         </Text>
-      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="475.0" translateX="225.0" translateY="100.0">
+      <GridPane fx:id="neuralConnections" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="475.0" translateX="225.0" translateY="100.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
