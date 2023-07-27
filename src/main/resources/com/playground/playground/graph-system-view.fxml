@@ -8,7 +8,7 @@
 <VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
     <ScatterChart fx:id="neuralNetwork" styleClass="neural-network-text">
         <xAxis>
-            <CategoryAxis fx:id="yAxis" side="BOTTOM" />
+            <NumberAxis lowerBound="-5.5" side="BOTTOM" upperBound="5.5" fx:id="yAxis" />
         </xAxis>
         <yAxis>
             <NumberAxis lowerBound="-5.5" side="RIGHT" upperBound="5.5" fx:id="xAxis" />

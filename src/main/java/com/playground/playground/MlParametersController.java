@@ -71,7 +71,7 @@ public class MlParametersController implements Initializable {
     public void resetCode(ActionEvent e){
         epochTimer.stop();
         mil = 0;
-        epochNumber.setText("000,000");
+        epochNumber.setText("0");
     }
 
     void update (Text epochNumber){
