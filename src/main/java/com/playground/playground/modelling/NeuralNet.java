@@ -62,7 +62,8 @@ public class NeuralNetBuilder {
     layers.add(2);
     layers.add(4);
     layers.add(2);
-    private IUpdater optimizer = new Adam();
+    private double learningRate = 0.001;
+    private IUpdater optimizer = new Adam(learningRate);
     private int seed = 123;
     private int inputs = 2;
 
@@ -77,6 +78,11 @@ public class NeuralNetBuilder {
 
     public NeuralNetBuilder layers(ArrayList<Integer> layers) {
         this.layers = layers;
+        return this;
+    }
+
+    public NeuralNetBuilder learningRate(double learningRate) {
+        this.learningRate = learningRate;
         return this;
     }
 
