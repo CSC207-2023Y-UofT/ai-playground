@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -41,7 +42,7 @@ public class FeaturesHiddenLayersController implements Initializable{
     @FXML
     private Button sinx2button;
     @FXML
-    public StackPane neuralConnections;
+    public GridPane neuralConnections;
 
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1button, "playground-images/x1button.jpg");
@@ -70,6 +71,7 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
+            addButton(currentCount);
         }
 
     }
@@ -84,6 +86,10 @@ public class FeaturesHiddenLayersController implements Initializable{
     }
     public void addButton(int currentCount){
         // Formula for determining in the x and y position should be f(x, y) = (baseValue + currentCount * usualSpace, y)
+        Button addLayer = new Button();
+        neuralConnections.add(addLayer, 1, 1, 1, 1);
+    }
+    public void removeButton(int currentCount){
 
     }
 
