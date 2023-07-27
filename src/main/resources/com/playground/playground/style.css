@@ -1,0 +1,39 @@
+.circle-button:hover {
+    -fx-scale-x: 1.2; /* Increase the X-axis scale by 20% */
+    -fx-scale-y: 1.2; /* Increase the Y-axis scale by 20% */
+}
+
+.circle-button .graphic .label {
+    -fx-text-fill: transparent;
+}
+
+
+.title-text {
+    -fx-font-size: 20px;
+}
+
+.gray-text {
+    -fx-font-size: 10px;
+    -fx-text-fill: gray;
+    -fx-font-family: Verdana;
+}
+
+.data-text {
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+}
+
+.features-text {
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+}
+
+.menu-bar {
+    -fx-font-size: 14;
+}
+
+.neural-network-text {
+    -fx-font-family: "Comic Sans MS";
+}
+
+
