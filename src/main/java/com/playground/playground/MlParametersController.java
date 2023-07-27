@@ -27,9 +27,6 @@ public class MlParametersController implements Initializable {
     private Text epochNumber;
     Timeline epochTimer;
     int mil;
-    int sec;
-    int min;
-    int hr;
 
     public void initialize(URL location, ResourceBundle resources) {
         // setting buttons
@@ -72,6 +69,12 @@ public class MlParametersController implements Initializable {
         epochTimer.stop();
         mil = 0;
         epochNumber.setText("0");
+    }
+    @FXML
+    private void stepUp(ActionEvent e) {
+        int epoch = Integer.parseInt(epochNumber.getText());
+        epoch++;
+        epochNumber.setText(String.valueOf(epoch));
     }
 
     void update (Text epochNumber){
