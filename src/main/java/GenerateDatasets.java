@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class generateDatasets {
+public class GenerateDatasets {
 
     public static ArrayList<ArrayList<ArrayList<Double>>> generateCircular() {
         ArrayList<ArrayList<ArrayList<Double>>> dataset = new ArrayList<ArrayList<ArrayList<Double>>>();
