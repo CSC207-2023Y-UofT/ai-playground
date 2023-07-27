@@ -12,6 +12,7 @@ import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.learning.config.Adam;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
+
 public class NeuralNet {
     private ArrayList<Integer> layers;
     private GradientUpdater optimizer;
