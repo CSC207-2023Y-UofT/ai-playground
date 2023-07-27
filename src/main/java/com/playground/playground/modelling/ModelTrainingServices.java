@@ -30,7 +30,6 @@ public class ModelTrainingServices {
     public void trainModel(int epochs, int batchSize, boolean verbose) {
         this.epochs = epochs;
         this.batchSize = batchSize;
-        this.learningRate = learningRate;
         if (verbose) {
             log.info(model.summary());
             model.setListeners(new ScoreIterationListener(100));
