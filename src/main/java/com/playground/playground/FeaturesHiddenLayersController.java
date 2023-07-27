@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -40,7 +41,7 @@ public class FeaturesHiddenLayersController implements Initializable{
     @FXML
     private Button sinx2button;
     @FXML
-    public VBox neuralConnections;
+    public StackPane neuralConnections;
 
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1button, "playground-images/x1button.jpg");
@@ -53,7 +54,7 @@ public class FeaturesHiddenLayersController implements Initializable{
 
     }
 
-    // method which takes two parameters, button and string (the image path), and sets the button with the
+    // Method which takes two parameters, button and string (the image path), and sets the button with the
     // corresponding image
     private void setButtonWithImage(Button button, String imagePath) {
         ImageView imageView = new ImageView(getClass().getResource(imagePath).toExternalForm());
@@ -66,7 +67,7 @@ public class FeaturesHiddenLayersController implements Initializable{
     @FXML
     private void onAddLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
-        if (currentCount < 8) {
+        if (currentCount < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
         }
@@ -80,6 +81,10 @@ public class FeaturesHiddenLayersController implements Initializable{
             currentCount--;
             numHiddenLayers.setText(String.valueOf(currentCount));
         }
+    }
+    public void addButton(int currentCount){
+        // Formula for determining in the x and y position should be f(x, y) = (baseValue + currentCount * usualSpace, y)
+
     }
 
 
