@@ -10,16 +10,17 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.learning.config.Adam;
+import otg.nd4j.linalg.learning.config.IUpdater;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 
 public class NeuralNet {
     private ArrayList<Integer> layers;
-    private GradientUpdater optimizer;
+    private IUpdater optimizer;
     private int seed;
     private int inputs;
 
-    public NeuralNet(ArrayList<Integer> layers, GradientUpdater optimizer, int seed, int inputs) {
+    public NeuralNet(ArrayList<Integer> layers, IUpdater optimizer, int seed, int inputs) {
         this.layers = layers;
         this.optimizer = optimizer;
         this.seed = seed;
@@ -61,7 +62,7 @@ public class NeuralNetBuilder {
     layers.add(2);
     layers.add(4);
     layers.add(2);
-    private GradientUpdater optimizer = new Adam();
+    private IUpdater optimizer = new Adam();
     private int seed = 123;
     private int inputs = 2;
 
@@ -79,7 +80,7 @@ public class NeuralNetBuilder {
         return this;
     }
 
-    public NeuralNetBuilder optimizer(GradientUpdater optimizer) {
+    public NeuralNetBuilder optimizer(IUpdater optimizer) {
         this.optimizer = optimizer;
         return this;
     }
