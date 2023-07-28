@@ -19,6 +19,9 @@ jobs:
       
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+
+      - name: Install
+        run: ./gradlew install
       
       - name: Setup and execute Gradle 'build' task
         uses: gradle/gradle-build-action@v2
