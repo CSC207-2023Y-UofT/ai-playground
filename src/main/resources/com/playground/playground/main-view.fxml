@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MainController">
+<VBox prefHeight="565.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MainController">
 
     <HBox fx:id="mlParametersBox" alignment="TOP_LEFT" prefWidth="881.0" spacing="10.0">
         <fx:include source="ml-parameters-view.fxml" />
@@ -16,7 +16,7 @@
          <VBox fx:id="featuresHiddenLayersBox" alignment="TOP_CENTER" prefHeight="298.0" prefWidth="159.0">
              <fx:include source="features-hidden-layers-view.fxml" />
          </VBox>
-          <VBox fx:id="graphSystemBox" alignment="CENTER">
+          <VBox fx:id="graphSystemBox" alignment="CENTER" translateX="75.0">
               <fx:include source="graph-system-view.fxml" translateX="75.0" />
           </VBox>
       </children>

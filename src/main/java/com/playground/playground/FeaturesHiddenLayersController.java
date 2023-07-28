@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,6 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Box;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -43,6 +45,30 @@ public class FeaturesHiddenLayersController implements Initializable{
     private Button sinx2button;
     @FXML
     public GridPane neuralConnections;
+    @FXML
+    private Button add1;
+    @FXML
+    private Button remove1;
+    @FXML
+    private Button add2;
+    @FXML
+    private Button remove2;
+    @FXML
+    private Button add3;
+    @FXML
+    private Button remove3;
+    @FXML
+    private Button add4;
+    @FXML
+    private Button remove4;
+    @FXML
+    private Button add5;
+    @FXML
+    private Button remove5;
+    @FXML
+    private Button add6;
+    @FXML
+    private Button remove6;
 
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1button, "playground-images/x1button.jpg");
@@ -64,34 +90,44 @@ public class FeaturesHiddenLayersController implements Initializable{
         button.setGraphic(imageView);
         button.getStyleClass().add("image-button");
     }
-    int i = 1;
+    int i = 0;
 
     @FXML
     private void onAddLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
-        if (currentCount < 6) {
+        if (currentCount < 6 && i < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
             addButton(i);
             i++;
         }
-
     }
+
+
+
 
     @FXML
     private void onRemoveLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
-        if (currentCount > 0) {
+        if (currentCount > 0 && i > 0) {
             currentCount--;
             numHiddenLayers.setText(String.valueOf(currentCount));
+            removeButton(i);
+            i--;
         }
     }
 
     @FXML
     public void addButton(int i){
         int j = 1;
-        Button newLayer = new Button("APPLE");
-        neuralConnections.add(newLayer, i, j, j, j);
+        Button newLayer = new Button("a");
+        neuralConnections.add(newLayer, i, j, 1, 1);
+    }
+
+    @FXML
+    public void removeButton(int i){
+        int j = 1;
+        neuralConnections.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == i && GridPane.getRowIndex(node) == j);
     }
 
 

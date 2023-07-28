@@ -2,11 +2,12 @@
 
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="471.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
-    <ScatterChart fx:id="neuralNetwork" prefWidth="500.0" styleClass="neural-network-text">
+    <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="neural-network-text" translateX="60.0">
         <xAxis>
             <NumberAxis fx:id="yAxis" lowerBound="-5.5" side="BOTTOM" upperBound="5.5" />
         </xAxis>
@@ -14,5 +15,9 @@
             <NumberAxis lowerBound="-5.5" side="RIGHT" upperBound="5.5" fx:id="xAxis" />
         </yAxis>
     </ScatterChart>
-   <HBox prefHeight="100.0" prefWidth="200.0" />
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <CheckBox fx:id="showTestData" mnemonicParsing="false" text="Show test data" translateX="90.0" />
+         <CheckBox fx:id="discreteOutput" mnemonicParsing="false" text="Discretize output" translateX="180.0" />
+      </children></HBox>
 </VBox>
