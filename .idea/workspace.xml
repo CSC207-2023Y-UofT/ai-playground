@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files.">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Fixed format issue for ml-parameters-view.fxml.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MlParametersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MlParametersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/ml-parameters-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/ml-parameters-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,9 +173,19 @@
       <option name="presentableId" value="Default" />
       <updated>1690557151668</updated>
       <workItem from="1690557153232" duration="739000" />
-      <workItem from="1690562678096" duration="978000" />
+      <workItem from="1690562678096" duration="1012000" />
+      <workItem from="1690566215667" duration="25000" />
+      <workItem from="1690566242756" duration="1312000" />
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
+      <option name="closed" value="true" />
+      <created>1690563688750</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690563688750</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +223,7 @@
     <MESSAGE value="Layers added." />
     <MESSAGE value="Basic layout of Hidden Layers is complete, however the removeButton needs to be fixed. Also the + and - buttons in the GUI should be set to invisible until the layer is reached." />
     <MESSAGE value="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
-    <option name="LAST_COMMIT_MESSAGE" value="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
+    <MESSAGE value="Fixed format issue for ml-parameters-view.fxml." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed format issue for ml-parameters-view.fxml." />
   </component>
 </project>

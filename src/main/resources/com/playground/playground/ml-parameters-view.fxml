@@ -15,15 +15,15 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Button fx:id="rewindButton" onAction="#resetCode" styleClass="circle-button">
+    <Button fx:id="rewindButton" styleClass="circle-button">
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
-    <Button fx:id="playButton" onAction="#startCode" styleClass="circle-button">
+    <Button fx:id="playButton" styleClass="circle-button">
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
-    <Button fx:id="stepButton" onAction="#stepUp" styleClass="circle-button">
+    <Button fx:id="stepButton" styleClass="circle-button">
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>

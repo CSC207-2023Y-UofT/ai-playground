@@ -62,46 +62,20 @@
             <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="remove1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" />
-            <Button fx:id="add1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" />
-            <Button fx:id="remove2" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" GridPane.columnIndex="1" />
-            <Button fx:id="add2" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" GridPane.columnIndex="1" />
-            <Button fx:id="add3" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" GridPane.columnIndex="2" />
-            <Button fx:id="remove3" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" GridPane.columnIndex="2" />
-            <Button fx:id="add4" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" GridPane.columnIndex="3" />
-            <Button fx:id="remove4" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" GridPane.columnIndex="3" />
-            <Button fx:id="add5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" GridPane.columnIndex="4" />
-            <Button fx:id="remove5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" GridPane.columnIndex="4" />
-            <Button fx:id="add6" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" GridPane.columnIndex="5" />
-            <Button fx:id="remove6" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" GridPane.columnIndex="5" />
+            <Button fx:id="remove1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" />
+            <Button fx:id="add1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" />
+            <Button fx:id="remove2" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="1" />
+            <Button fx:id="add2" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="1" />
+            <Button fx:id="add3" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="2" />
+            <Button fx:id="remove3" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="2" />
+            <Button fx:id="add4" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="3" />
+            <Button fx:id="remove4" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="3" />
+            <Button fx:id="add5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="4" />
+            <Button fx:id="remove5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="4" />
+            <Button fx:id="add6" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="5" />
+            <Button fx:id="remove6" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="5" />
          </children>
       </GridPane>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="-20.0">
-         <children>
-            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1" textAlignment="JUSTIFY" fx:id="x1label">
-               <HBox.margin>
-                  <Insets left="10.0" right="40.0" />
-               </HBox.margin>
-            </Label>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" fx:id="x1button" />
-         </children>
-         <VBox.margin>
-            <Insets bottom="15.0" top="10.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="-20.0">
-         <children>
-            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x2" fx:id="x2label">
-               <HBox.margin>
-                  <Insets left="10.0" right="40.0" />
-               </HBox.margin>
-            </Label>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" fx:id="x2button">
-               <HBox.margin>
-                  <Insets bottom="15.0" />
-               </HBox.margin></Button>
-         </children>
-      </HBox>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="-20.0">
          <children>
             <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1^2" fx:id="x1pow2label">

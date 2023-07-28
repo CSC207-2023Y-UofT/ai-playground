@@ -30,10 +30,6 @@ public class FeaturesHiddenLayersController implements Initializable{
     @FXML
     private Button removeLayer;
     @FXML
-    private Button x1button;
-    @FXML
-    private Button x2button;
-    @FXML
     private Button x1pow2button;
     @FXML
     private Button x2pow2button;
@@ -71,8 +67,6 @@ public class FeaturesHiddenLayersController implements Initializable{
     private Button remove6;
 
     public void initialize(URL location, ResourceBundle resources) {
-        setButtonWithImage(x1button, "playground-images/x1button.jpg");
-        setButtonWithImage(x2button, "playground-images/x2button.jpg");
         setButtonWithImage(x1pow2button, "playground-images/x1pow2button.jpg");
         setButtonWithImage(x2pow2button, "playground-images/x2pow2button.jpg");
         setButtonWithImage(x1x2button, "playground-images/x1x2button.jpg");
@@ -98,6 +92,30 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount < 6 && i < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
+            if (i >= 0){
+                add1.setVisible(true);
+                remove1.setVisible(true);
+            }
+            if (i >= 1) {
+                add2.setVisible(true);
+                remove2.setVisible(true);
+            }
+            if (i >= 2) {
+                add3.setVisible(true);
+                remove3.setVisible(true);
+            }
+            if (i >= 3) {
+                add4.setVisible(true);
+                remove4.setVisible(true);
+            }
+            if (i >= 4) {
+                add5.setVisible(true);
+                remove5.setVisible(true);
+            }
+            if (i >= 5) {
+                add6.setVisible(true);
+                remove6.setVisible(true);
+            }
             addButton(i);
             i++;
         }
@@ -109,6 +127,30 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount > 0 && i > 0) {
             currentCount--;
             numHiddenLayers.setText(String.valueOf(currentCount));
+            if (i > 0){
+                add1.setVisible(false);
+                remove1.setVisible(false);
+            }
+            if (i > 1) {
+                add2.setVisible(false);
+                remove2.setVisible(false);
+            }
+            if (i > 2) {
+                add3.setVisible(false);
+                remove3.setVisible(false);
+            }
+            if (i > 3) {
+                add4.setVisible(false);
+                remove4.setVisible(false);
+            }
+            if (i > 4) {
+                add5.setVisible(false);
+                remove5.setVisible(false);
+            }
+            if (i > 5) {
+                add6.setVisible(false);
+                remove6.setVisible(false);
+            }
             removeButton(i);
             i--;
         }
