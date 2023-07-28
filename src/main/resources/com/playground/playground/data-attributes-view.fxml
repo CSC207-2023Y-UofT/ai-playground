@@ -8,16 +8,20 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="316.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.DataAttributesController">
+<VBox prefHeight="426.0" prefWidth="198.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.DataAttributesController">
     <VBox spacing="10">
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="data-text" text="Data" textAlignment="LEFT" wrappingWidth="173.79052734375">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="data-text" text="Data" textAlignment="LEFT" translateX="75.0" wrappingWidth="45.79052734375">
          <VBox.margin>
-            <Insets bottom="13.0" />
-         </VBox.margin></Text>
-        <Label styleClass="gray-text" text="Choose a dataset" />
-        <GridPane alignment="CENTER_LEFT" hgap="10" vgap="10">
+            <Insets bottom="10.0" top="5.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+        <Label styleClass="gray-text" text="Choose a dataset" translateX="50.0" translateY="-10.0" />
+        <GridPane alignment="CENTER_LEFT" hgap="10" translateX="5.0" translateY="-10.0" vgap="10">
             <Button fx:id="clusterButton" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Button fx:id="radialButton" prefHeight="26.0" prefWidth="83.0" text="Radial" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Button fx:id="spiralButton" prefHeight="26.0" prefWidth="83.0" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -31,40 +35,40 @@
                 <RowConstraints />
             </rowConstraints>
          <VBox.margin>
-            <Insets bottom="15.0" />
+            <Insets bottom="15.0" left="5.0" />
          </VBox.margin>
         </GridPane>
     </VBox>
-    <Label prefHeight="17.0" prefWidth="169.0" text="Ratio of training to test data:">
+    <Label prefHeight="17.0" prefWidth="169.0" text="Ratio of training to test data:" translateX="10.0" translateY="-10.0">
       <padding>
-         <Insets bottom="15.0" />
+         <Insets bottom="5.0" />
       </padding></Label>
-    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0">
+    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" translateX="5.0" translateY="-5.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
     <Label fx:id="slider1Percent" />
 
-    <Label text="Noise:">
+    <Label text="Noise:" translateX="10.0" translateY="-20.0">
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
-    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0">
+    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" translateX="5.0" translateY="-25.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
     <Label fx:id="slider2Percent" />
 
-    <Label text="Batch size:">
+    <Label text="Batch size:" translateX="10.0" translateY="-40.0">
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
-    <Slider fx:id="slider3" max="30.0">
+    <Slider fx:id="slider3" max="30.0" translateX="5.0" translateY="-40.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
     <Label fx:id="slider3Percent" />
-   <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Regenerate">
+   <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Regenerate" translateY="-50.0">
       <VBox.margin>
          <Insets left="15.0" />
       </VBox.margin>

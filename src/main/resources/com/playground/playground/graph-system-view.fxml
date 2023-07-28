@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.chart.ScatterChart?>
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
-    <ScatterChart fx:id="neuralNetwork" styleClass="neural-network-text" title="Neural Network" >
+<VBox prefHeight="471.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
+    <ScatterChart fx:id="neuralNetwork" prefWidth="500.0" styleClass="neural-network-text">
         <xAxis>
-            <NumberAxis fx:id="yAxis" side="BOTTOM" />
+            <NumberAxis fx:id="yAxis" lowerBound="-5.5" side="BOTTOM" upperBound="5.5" />
         </xAxis>
         <yAxis>
-            <NumberAxis side="LEFT" fx:id="xAxis" />
+            <NumberAxis lowerBound="-5.5" side="RIGHT" upperBound="5.5" fx:id="xAxis" />
         </yAxis>
     </ScatterChart>
+   <HBox prefHeight="100.0" prefWidth="200.0" />
 </VBox>
-
-
-
