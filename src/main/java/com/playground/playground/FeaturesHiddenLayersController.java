@@ -103,9 +103,6 @@ public class FeaturesHiddenLayersController implements Initializable{
         }
     }
 
-
-
-
     @FXML
     private void onRemoveLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
@@ -126,7 +123,7 @@ public class FeaturesHiddenLayersController implements Initializable{
     @FXML
     public void removeButton(int i){
         int j = 1;
-        neuralConnections.getChildren().removeIf(node -> GridPane.getColumnIndex(node) == i && GridPane.getRowIndex(node) == j);
+        neuralConnections.getChildren().removeIf(Button -> GridPane.getColumnIndex(Button) == i && GridPane.getRowIndex(Button) == j);
     }
 
 

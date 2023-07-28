@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="68.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MlParametersController">
+<HBox prefHeight="68.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MlParametersController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -34,7 +34,7 @@
    </Text>
    <Text fx:id="epochNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" translateX="50.0" translateY="8.0" wrappingWidth="73.095703125" />
 
-    <MenuBar prefHeight="28.0" prefWidth="615.0" translateX="-10.0">
+    <MenuBar prefHeight="28.0" prefWidth="651.0" translateX="-10.0">
         <Menu text="Learning Rate">
             <MenuItem text="0.00001" />
             <MenuItem text="0.00001" />

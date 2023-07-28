@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Basic layout of Hidden Layers is complete, however the removeButton needs to be fixed. Also the + and - buttons in the GUI should be set to invisible until the layer is reached.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/GenerateDatasets.java" beforeDir="false" />
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/ml-parameters-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/ml-parameters-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +53,32 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="1-3-4-5-user-interface" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2TCpvmprTULIOlmXlah66C7AhX9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
@@ -86,6 +101,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Separated ml parameters">
       <created>1690308754085</created>
@@ -140,7 +156,24 @@
       <option name="project" value="LOCAL" />
       <updated>1690520185621</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files.">
+      <option name="closed" value="true" />
+      <created>1690520324598</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690520324598</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
+      <created>1690557151668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690557151668</updated>
+      <workItem from="1690557153232" duration="739000" />
+      <workItem from="1690562678096" duration="978000" />
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +184,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="1-3-4-5-user-interface" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -165,6 +210,7 @@
     <MESSAGE value="Guess who fixed it!" />
     <MESSAGE value="Layers added." />
     <MESSAGE value="Basic layout of Hidden Layers is complete, however the removeButton needs to be fixed. Also the + and - buttons in the GUI should be set to invisible until the layer is reached." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic layout of Hidden Layers is complete, however the removeButton needs to be fixed. Also the + and - buttons in the GUI should be set to invisible until the layer is reached." />
+    <MESSAGE value="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
+    <option name="LAST_COMMIT_MESSAGE" value="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
   </component>
 </project>
