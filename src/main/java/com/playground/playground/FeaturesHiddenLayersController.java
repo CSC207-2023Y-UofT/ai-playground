@@ -123,7 +123,6 @@ public class FeaturesHiddenLayersController implements Initializable{
         Button newLayer = new Button("a");
         neuralConnections.add(newLayer, i, j, 1, 1);
     }
-
     @FXML
     public void removeButton(int i){
         int j = 1;
