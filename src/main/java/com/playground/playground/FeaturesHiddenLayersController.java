@@ -64,6 +64,7 @@ public class FeaturesHiddenLayersController implements Initializable{
         button.setGraphic(imageView);
         button.getStyleClass().add("image-button");
     }
+    int i = 1;
 
     @FXML
     private void onAddLayerClicked(ActionEvent event) {
@@ -71,6 +72,8 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
+            addButton(i);
+            i++;
         }
 
     }
@@ -82,6 +85,13 @@ public class FeaturesHiddenLayersController implements Initializable{
             currentCount--;
             numHiddenLayers.setText(String.valueOf(currentCount));
         }
+    }
+
+    @FXML
+    public void addButton(int i){
+        int j = 1;
+        Button newLayer = new Button("APPLE");
+        neuralConnections.add(newLayer, i, j, j, j);
     }
 
 
