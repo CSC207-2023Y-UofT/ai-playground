@@ -26,9 +26,18 @@ public class MainController implements Initializable {
     @FXML
     private VBox featuresHiddenLayersBox;
 
+
+    /**
+     * Initializer for MainController.java
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     public void initialize(URL location, ResourceBundle resources) {
-
-
         FXMLLoader dataattloader = new FXMLLoader(getClass().getResource("data-attributes-view.fxml"));
         try {
             dataAttributesBox = dataattloader.load();

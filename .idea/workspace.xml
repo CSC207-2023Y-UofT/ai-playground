@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Javadoc created for GraphSystemController.java.">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Javadoc created for DataAttributesController.java.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MlParametersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MlParametersController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +179,7 @@
       <workItem from="1690566242756" duration="1371000" />
       <workItem from="1690598197063" duration="91000" />
       <workItem from="1690599539954" duration="1017000" />
-      <workItem from="1690608730379" duration="3781000" />
+      <workItem from="1690608730379" duration="3926000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
       <option name="closed" value="true" />
@@ -228,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690612001325</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Javadoc created for DataAttributesController.java.">
+      <option name="closed" value="true" />
+      <created>1690612546169</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1690612546169</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +281,7 @@
     <MESSAGE value="Updated formatting and added image files for dataset types." />
     <MESSAGE value="Javadoc created for MainApplication.java." />
     <MESSAGE value="Javadoc created for GraphSystemController.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc created for GraphSystemController.java." />
+    <MESSAGE value="Javadoc created for DataAttributesController.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc created for DataAttributesController.java." />
   </component>
 </project>
