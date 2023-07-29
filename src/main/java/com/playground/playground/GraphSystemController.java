@@ -18,7 +18,7 @@ public class GraphSystemController implements Initializable {
     private ScatterChart neuralNetwork;
 
     /**
-     * Construct the graph using the neural network.
+     * Initializer for GraphSystemController.java
      * @param location
      * The location used to resolve relative paths for the root object, or
      * {@code null} if the location is not known.
