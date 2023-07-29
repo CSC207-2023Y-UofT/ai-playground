@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Updated formatting and added image files for dataset types.">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Javadoc created for MainApplication.java.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/GraphSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/GraphSystemController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +179,7 @@
       <workItem from="1690566242756" duration="1371000" />
       <workItem from="1690598197063" duration="91000" />
       <workItem from="1690599539954" duration="1017000" />
-      <workItem from="1690608730379" duration="2928000" />
+      <workItem from="1690608730379" duration="3138000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
       <option name="closed" value="true" />
@@ -205,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690611262961</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Javadoc created for MainApplication.java.">
+      <option name="closed" value="true" />
+      <created>1690611705152</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690611705152</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +255,7 @@
     <MESSAGE value="Fixed format issue for ml-parameters-view.fxml." />
     <MESSAGE value="Made +, - visible with add layer but invisible not working." />
     <MESSAGE value="Updated formatting and added image files for dataset types." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated formatting and added image files for dataset types." />
+    <MESSAGE value="Javadoc created for MainApplication.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc created for MainApplication.java." />
   </component>
 </project>

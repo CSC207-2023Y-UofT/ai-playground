@@ -2,7 +2,6 @@ package com.playground.playground;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
@@ -18,6 +17,16 @@ public class GraphSystemController implements Initializable {
     @FXML
     private ScatterChart neuralNetwork;
 
+    /**
+     * Construct the graph using the neural network.
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     public void initialize(URL location, ResourceBundle resources) {
 //        XYChart.Series<String, Double> seriesHigh = new XYChart.Series<>();
 //        seriesHigh.getData().add(new XYChart.Data<>("SubLabel1", 20.9));
