@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Javadoc created for MIParametersController.java.">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Javadoc created for FeaturesHiddenLayersController.java.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +67,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.playground.playground.MainApplication" />
@@ -179,7 +178,9 @@
       <workItem from="1690566242756" duration="1371000" />
       <workItem from="1690598197063" duration="91000" />
       <workItem from="1690599539954" duration="1017000" />
-      <workItem from="1690608730379" duration="4847000" />
+      <workItem from="1690608730379" duration="4880000" />
+      <workItem from="1690654732007" duration="36000" />
+      <workItem from="1690663561304" duration="39000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
       <option name="closed" value="true" />
@@ -253,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690612744566</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Javadoc created for FeaturesHiddenLayersController.java.">
+      <option name="closed" value="true" />
+      <created>1690613616830</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690613616830</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +309,7 @@
     <MESSAGE value="Javadoc created for DataAttributesController.java." />
     <MESSAGE value="Javadoc created for MainController.java." />
     <MESSAGE value="Javadoc created for MIParametersController.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc created for MIParametersController.java." />
+    <MESSAGE value="Javadoc created for FeaturesHiddenLayersController.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc created for FeaturesHiddenLayersController.java." />
   </component>
 </project>
