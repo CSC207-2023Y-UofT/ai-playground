@@ -67,6 +67,16 @@ public class FeaturesHiddenLayersController implements Initializable {
 
     private Label[] neuronLabels;
 
+    /**
+     * Initializer for FeaturesHiddenLayersController.java
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1pow2button, "playground-images/x1pow2button.jpg");
         setButtonWithImage(x2pow2button, "playground-images/x2pow2button.jpg");
@@ -89,6 +99,10 @@ public class FeaturesHiddenLayersController implements Initializable {
         button.getStyleClass().add("image-button");
     }
 
+    /**
+     * Adds a layer to the hidden layer graph and increases the value of the layer counter by 1.
+     * @param event is triggered by user interaction with the add layer button.
+     */
     @FXML
     private void onAddLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
@@ -100,6 +114,10 @@ public class FeaturesHiddenLayersController implements Initializable {
         }
     }
 
+    /**
+     * Removes a layer to the hidden layer graph and decreases the value of the layer counter by 1.
+     * @param event is triggered by user interaction with the remove layer button.
+     */
     @FXML
     private void onRemoveLayerClicked(ActionEvent event) {
         int currentCount = Integer.parseInt(numHiddenLayers.getText());
@@ -109,17 +127,25 @@ public class FeaturesHiddenLayersController implements Initializable {
             setButtonsVisibility(i-1, false);
             removeColumn(i-1);
             i--;
-
             neuronLabels[i].setVisible(false);
             aButtonCounts[i] = 0;
         }
     }
 
+    /**
+     * Helper function for onAddLayerClicked and onRemovedLayerClicked used to make the addButtons and removeButtons visible.
+     * @param index of the button to be set visible or invisible.
+     * @param isVisible dictates whether button is set to be visible or invisible.
+     */
     private void setButtonsVisibility(int index, boolean isVisible) {
         addButtons[index].setVisible(isVisible);
         removeButtons[index].setVisible(isVisible);
     }
 
+    /**
+     * Helper function for onRemovedLayerClicked used to remove a column as decided by the user.
+     * @param index of the column to be removed.
+     */
     private void removeColumn(int index) {
         for (int j = 0; j < aButtonCounts[index]; j++) {
             neuralConnections.getChildren().remove(aButtons[index][j]);
@@ -128,6 +154,10 @@ public class FeaturesHiddenLayersController implements Initializable {
         aButtonCounts[index] = 0;
     }
 
+    /**
+     * Helper function for onAddButtonClicked used to add a neuron to the hidden layer graph.
+     * @param event is triggered by onAddLayerClicked to add a neuron at a specific index position.
+     */
     @FXML
     public void onAddButtonClicked(ActionEvent event) {
         int index = Integer.parseInt(((Button) event.getSource()).getId().substring(3)) - 1;
@@ -142,6 +172,10 @@ public class FeaturesHiddenLayersController implements Initializable {
         neuronLabels[index].setVisible(true);
     }
 
+    /**
+     * Helper function for onRemovedLayerClicked used to remove a neuron from the hidden layer graph.
+     * @param event is triggered by onRemoveLayerClicked to remove a neuron at a specific index position.
+     */
     @FXML
     public void onRemoveButtonClicked(ActionEvent event) {
         int index = Integer.parseInt(((Button) event.getSource()).getId().substring(6)) - 1;
