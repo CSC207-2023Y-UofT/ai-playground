@@ -10,18 +10,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
     <children>
       <HBox prefHeight="60.0" prefWidth="700.0">
          <children>
-            <VBox prefHeight="57.0" prefWidth="200.0">
+            <VBox prefHeight="57.0" prefWidth="200.0" translateX="20.0">
                <children>
-                    <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="90.52490234375">
+                    <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Features" textAlignment="CENTER" textOrigin="CENTER" translateX="50.0" wrappingWidth="90.52490234375">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Text>
-                    <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="gray" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gray-text" text="Which properties would you like to add?">
+                    <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gray-text" text="Which properties would you like to add?" translateY="-1.0">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
@@ -30,7 +30,7 @@
             </VBox>
             <VBox prefHeight="60.0" prefWidth="274.0">
                <children>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="234.0">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="234.0" translateX="50.0">
                      <children>
                         <Button fx:id="addLayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddLayerClicked" prefHeight="30.0" prefWidth="30.0" text="+">
                            <HBox.margin>
@@ -42,19 +42,19 @@
                               <Insets left="20.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Text fx:id="numHiddenLayers" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="14.52490234375">
+                        <Text fx:id="numHiddenLayers" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" textOrigin="CENTER" translateY="2.0" wrappingWidth="14.52490234375">
                            <HBox.margin>
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
                         </Text>
-                        <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Hidden Layer(s)" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="117.52490234375">
+                        <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-text" text="Hidden Layer(s)" textAlignment="CENTER" textOrigin="CENTER" translateY="3.0" wrappingWidth="117.52490234375">
                            <HBox.margin>
                               <Insets left="15.0" top="10.0" />
                            </HBox.margin>
                         </Text>
                      </children>
                   </HBox>
-                  <Label prefWidth="300.0" text="How many hidden layers would you like to add?" />
+                  <Label prefWidth="300.0" text="How many hidden layers would you like to add?" translateX="45.0" translateY="1.0" />
                </children>
                <padding>
                   <Insets left="10.0" />
@@ -66,7 +66,7 @@
          <children>
             <VBox prefHeight="91.0" prefWidth="147.0">
                <children>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="25.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1^2" fx:id="x1pow2label">
                            <HBox.margin>
@@ -80,7 +80,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="206.0">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="206.0" translateY="25.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x2^2" fx:id="x2pow2label">
                            <HBox.margin>
@@ -94,7 +94,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="25.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="x1x2" fx:id="x1x2label">
                            <HBox.margin>
@@ -108,7 +108,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="25.0">
                      <children>
                         <Label fx:id="sinx1label" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="sin(x1)">
                            <HBox.margin>
@@ -122,7 +122,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" translateY="25.0">
                      <children>
                         <Label fx:id="sinx2label" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" text="sin(x2)">
                            <HBox.margin>
@@ -138,7 +138,7 @@
                   </HBox>
                </children>
             </VBox>
-            <GridPane fx:id="neuralConnections" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="346.0" prefWidth="457.0" vgap="10">
+            <GridPane fx:id="neuralConnections" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="346.0" prefWidth="457.0" translateX="50.0" translateY="25.0" vgap="10">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="-Infinity" prefWidth="73.0" />
@@ -174,12 +174,12 @@
                    <Button fx:id="remove5" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="4" />
                    <Button fx:id="add6" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="5" />
                    <Button fx:id="remove6" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="5" />
-                   <Label fx:id="neurons1" text="0 Neurons" GridPane.rowIndex="11" visible="false" />
-                   <Label fx:id="neurons2" text="0 Neurons" GridPane.columnIndex="1" GridPane.rowIndex="11" visible="false" />
-                   <Label fx:id="neurons3" text="0 Neurons" GridPane.columnIndex="2" GridPane.rowIndex="11" visible="false" />
-                   <Label fx:id="neurons4" text="0 Neurons" GridPane.columnIndex="3" GridPane.rowIndex="11" visible="false" />
-                   <Label fx:id="neurons5" text="0 Neurons" GridPane.columnIndex="4" GridPane.rowIndex="11" visible="false" />
-                   <Label fx:id="neurons6" text="0 Neurons" GridPane.columnIndex="5" GridPane.rowIndex="11" visible="false" />
+                   <Label fx:id="neurons1" text="0 Neurons" visible="false" GridPane.rowIndex="11" />
+                   <Label fx:id="neurons2" text="0 Neurons" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                   <Label fx:id="neurons3" text="0 Neurons" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                   <Label fx:id="neurons4" text="0 Neurons" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                   <Label fx:id="neurons5" text="0 Neurons" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+                   <Label fx:id="neurons6" text="0 Neurons" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="11" />
 
                </children>
             </GridPane>

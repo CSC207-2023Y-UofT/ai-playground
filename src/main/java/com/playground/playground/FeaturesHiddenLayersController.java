@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -55,13 +56,10 @@ public class FeaturesHiddenLayersController implements Initializable {
     private Button remove6;
     @FXML
     public GridPane neuralConnections;
-
     private Button[] addButtons;
     private Button[] removeButtons;
     private Button[][] aButtons;
-
     private int[] aButtonCounts;
-
     private int i = 0;
 
     @FXML
@@ -134,7 +132,7 @@ public class FeaturesHiddenLayersController implements Initializable {
     public void onAddButtonClicked(ActionEvent event) {
         int index = Integer.parseInt(((Button) event.getSource()).getId().substring(3)) - 1;
         if (aButtonCounts[index] < 8) {
-            Button newButton = new Button("neuron");
+            Button newButton = new Button("Node");
             aButtons[index][aButtonCounts[index]] = newButton;
             neuralConnections.add(newButton, index, aButtonCounts[index] + 2);
             aButtonCounts[index]++;

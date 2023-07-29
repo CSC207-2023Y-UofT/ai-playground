@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Fixed format issue for ml-parameters-view.fxml.">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Made +, - visible with add layer but invisible not working.">
+      <change afterPath="$PROJECT_DIR$/images/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gauss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spiral.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/xor.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MlParametersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MlParametersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/ml-parameters-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/ml-parameters-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,25 +68,28 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2TCpvmprTULIOlmXlah66C7AhX9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.playground.playground.MainApplication" />
@@ -175,7 +182,10 @@
       <workItem from="1690557153232" duration="739000" />
       <workItem from="1690562678096" duration="1012000" />
       <workItem from="1690566215667" duration="25000" />
-      <workItem from="1690566242756" duration="1312000" />
+      <workItem from="1690566242756" duration="1371000" />
+      <workItem from="1690598197063" duration="91000" />
+      <workItem from="1690599539954" duration="1017000" />
+      <workItem from="1690608730379" duration="2469000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
       <option name="closed" value="true" />
@@ -185,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690563688750</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Made +, - visible with add layer but invisible not working.">
+      <option name="closed" value="true" />
+      <created>1690567613678</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690567613678</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +233,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Separated ml parameters" />
     <MESSAGE value="Separated graph system" />
     <MESSAGE value="Separated features/hidden layers" />
@@ -224,6 +243,7 @@
     <MESSAGE value="Basic layout of Hidden Layers is complete, however the removeButton needs to be fixed. Also the + and - buttons in the GUI should be set to invisible until the layer is reached." />
     <MESSAGE value="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
     <MESSAGE value="Fixed format issue for ml-parameters-view.fxml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed format issue for ml-parameters-view.fxml." />
+    <MESSAGE value="Made +, - visible with add layer but invisible not working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made +, - visible with add layer but invisible not working." />
   </component>
 </project>
