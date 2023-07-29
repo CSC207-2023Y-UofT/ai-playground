@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="471.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
-    <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="neural-network-text" translateX="60.0">
-        <xAxis>
-            <NumberAxis fx:id="yAxis" lowerBound="-5.5" side="BOTTOM" upperBound="5.5" />
-        </xAxis>
-        <yAxis>
-            <NumberAxis lowerBound="-5.5" side="RIGHT" upperBound="5.5" fx:id="xAxis" />
-        </yAxis>
-    </ScatterChart>
-   <HBox prefHeight="100.0" prefWidth="200.0">
+<VBox prefHeight="457.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
+   <VBox prefHeight="462.0" prefWidth="485.0">
       <children>
-         <CheckBox fx:id="showTestData" mnemonicParsing="false" text="Show test data" translateX="90.0" />
-         <CheckBox fx:id="discreteOutput" mnemonicParsing="false" text="Discretize output" translateX="180.0" />
-      </children></HBox>
+          <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="neural-network-text">
+              <xAxis>
+                  <NumberAxis fx:id="yAxis" lowerBound="-5.5" side="BOTTOM" upperBound="5.5" />
+              </xAxis>
+              <yAxis>
+                  <NumberAxis lowerBound="-5.5" side="RIGHT" upperBound="5.5" fx:id="xAxis" />
+              </yAxis>
+          </ScatterChart>
+         <HBox prefHeight="58.0" prefWidth="440.0">
+            <children>
+               <VBox prefHeight="58.0" prefWidth="144.0">
+                  <children>
+                     <CheckBox fx:id="showTestData" mnemonicParsing="false" prefHeight="18.0" prefWidth="111.0" text="Show test data" />
+                  </children>
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+               </VBox>
+               <VBox prefHeight="58.0" prefWidth="192.0">
+                  <children>
+                     <CheckBox fx:id="discreteOutput" mnemonicParsing="false" prefHeight="18.0" prefWidth="123.0" text="Discretize output" />
+                  </children>
+                  <padding>
+                     <Insets left="70.0" />
+                  </padding>
+               </VBox>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
 </VBox>
