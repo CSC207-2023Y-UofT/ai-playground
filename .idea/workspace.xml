@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Made +, - visible with add layer but invisible not working.">
-      <change afterPath="$PROJECT_DIR$/images/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/gauss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/spiral.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/xor.png" afterDir="false" />
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Updated formatting and added image files for dataset types.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/FeaturesHiddenLayersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/features-hidden-layers-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/playground/playground/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/playground/playground/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +179,7 @@
       <workItem from="1690566242756" duration="1371000" />
       <workItem from="1690598197063" duration="91000" />
       <workItem from="1690599539954" duration="1017000" />
-      <workItem from="1690608730379" duration="2469000" />
+      <workItem from="1690608730379" duration="2928000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
       <option name="closed" value="true" />
@@ -203,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690567613678</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated formatting and added image files for dataset types.">
+      <option name="closed" value="true" />
+      <created>1690611262961</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690611262961</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +246,7 @@
     <MESSAGE value="GenerateDatasets.java was removed from file. For future edits, remove irrelevant files." />
     <MESSAGE value="Fixed format issue for ml-parameters-view.fxml." />
     <MESSAGE value="Made +, - visible with add layer but invisible not working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made +, - visible with add layer but invisible not working." />
+    <MESSAGE value="Updated formatting and added image files for dataset types." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated formatting and added image files for dataset types." />
   </component>
 </project>
