@@ -70,9 +70,4 @@
          <Insets left="15.0" />
       </VBox.margin>
    </Button>
-   <Label fx:id="slider1label1" layoutX="10.0" layoutY="161.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="191.0" text="Ratio of training to test data: ">
-      <padding>
-         <Insets bottom="5.0" />
-      </padding>
-   </Label>
 </VBox>
