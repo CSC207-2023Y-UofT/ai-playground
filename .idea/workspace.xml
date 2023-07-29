@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Javadoc created for FeaturesHiddenLayersController.java.">
+    <list default="true" id="be2dd017-553b-4235-9fbd-87199c74970d" name="Changes" comment="Updated formatting and added image files for dataset types.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/DataAttributesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playground/playground/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,22 +69,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.playground.playground.MainApplication" />
@@ -178,9 +179,7 @@
       <workItem from="1690566242756" duration="1371000" />
       <workItem from="1690598197063" duration="91000" />
       <workItem from="1690599539954" duration="1017000" />
-      <workItem from="1690608730379" duration="4880000" />
-      <workItem from="1690654732007" duration="36000" />
-      <workItem from="1690663561304" duration="39000" />
+      <workItem from="1690608730379" duration="2928000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed format issue for ml-parameters-view.fxml.">
       <option name="closed" value="true" />
@@ -206,63 +205,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690611262961</updated>
     </task>
-    <task id="LOCAL-00012" summary="Javadoc created for MainApplication.java.">
-      <option name="closed" value="true" />
-      <created>1690611705152</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1690611705152</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Javadoc created for GraphSystemController.java.">
-      <option name="closed" value="true" />
-      <created>1690611898278</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1690611898278</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Javadoc created for GraphSystemController.java.">
-      <option name="closed" value="true" />
-      <created>1690612001325</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1690612001325</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Javadoc created for DataAttributesController.java.">
-      <option name="closed" value="true" />
-      <created>1690612546169</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1690612546169</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Javadoc created for MainController.java.">
-      <option name="closed" value="true" />
-      <created>1690612708296</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1690612708296</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Javadoc created for MIParametersController.java.">
-      <option name="closed" value="true" />
-      <created>1690612744566</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1690612744566</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Javadoc created for FeaturesHiddenLayersController.java.">
-      <option name="closed" value="true" />
-      <created>1690613616830</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1690613616830</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,12 +247,6 @@
     <MESSAGE value="Fixed format issue for ml-parameters-view.fxml." />
     <MESSAGE value="Made +, - visible with add layer but invisible not working." />
     <MESSAGE value="Updated formatting and added image files for dataset types." />
-    <MESSAGE value="Javadoc created for MainApplication.java." />
-    <MESSAGE value="Javadoc created for GraphSystemController.java." />
-    <MESSAGE value="Javadoc created for DataAttributesController.java." />
-    <MESSAGE value="Javadoc created for MainController.java." />
-    <MESSAGE value="Javadoc created for MIParametersController.java." />
-    <MESSAGE value="Javadoc created for FeaturesHiddenLayersController.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc created for FeaturesHiddenLayersController.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated formatting and added image files for dataset types." />
   </component>
 </project>
