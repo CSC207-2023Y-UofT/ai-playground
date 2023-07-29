@@ -5,10 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.image.ImageView;
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class DataAttributesController implements Initializable {
@@ -41,6 +39,16 @@ public class DataAttributesController implements Initializable {
     @FXML
     private Button rectangularButton;
 
+    /**
+     * Initializer for DataAttributesController.java
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     public void initialize(URL location, ResourceBundle resources) {
 
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
@@ -59,21 +67,13 @@ public class DataAttributesController implements Initializable {
         setButtonFixedSize(radialButton);
         setButtonFixedSize(spiralButton);
         setButtonFixedSize(rectangularButton);
-
-//        setButtonWithImage(clusterButton, "playground-images/circle.jpg");
-//        setButtonWithImage(radialButton, "playground-images/gauss.jpg");
-//        setButtonWithImage(spiralButton, "playground-images/xor.jpg");
-//        setButtonWithImage(rectangularButton, "playground-images/spiral.jpg");
-
     }
 
-    private void setButtonWithImage(Button button, String imagePath) {
-        ImageView imageView = new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
-        button.setGraphic(imageView);
-        button.getStyleClass().add("image-button");
-    }
-
-
+    /**
+     * Slider for users to adjust the ratio of training to test data percentage.
+     * @param slider allows user to adjust the ratio of training to test data percentage.
+     * @param percentLabel displays the percent selected by the user using slider.
+     */
     private void updateSlider1Percent(Slider slider, Label percentLabel) {
         double value = slider.getValue();
         double max = slider.getMax();
@@ -82,12 +82,22 @@ public class DataAttributesController implements Initializable {
         percentLabel.setText("Ratio of training to test data: " + roundedPercentage + "%");
     }
 
+    /**
+     * Slider for users to adjust the noise.
+     * @param slider allows user to adjust the noise.
+     * @param numberLabel displays the noise value selected by the using the slider.
+     */
     private void updateSlider2Percent(Slider slider, Label numberLabel) {
         int value = (int) slider.getValue();
         String stringVal = String.format("%d", value);
         numberLabel.setText("Noise: " + stringVal);
     }
 
+    /**
+     * Slider for users to adjust the batch size.
+     * @param slider allows user to adjust the batch size.
+     * @param numberLabel displays the batch size value selected by the using the slider.
+     */
     private void updateSlider3Percent(Slider slider, Label numberLabel) {
         int value = (int) slider.getValue();
         String stringVal = String.format("%d", value);
