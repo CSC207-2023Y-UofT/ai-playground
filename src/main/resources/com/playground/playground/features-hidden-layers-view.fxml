@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.FeaturesHiddenLayersController">
     <children>
       <HBox prefHeight="60.0" prefWidth="700.0">
          <children>
@@ -62,9 +62,9 @@
             </VBox>
          </children>
       </HBox>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="600.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0">
          <children>
-            <VBox prefHeight="91.0" prefWidth="150.0">
+            <VBox prefHeight="91.0" prefWidth="147.0">
                <children>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="225.0">
                      <children>
@@ -138,7 +138,7 @@
                   </HBox>
                </children>
             </VBox>
-            <GridPane fx:id="neuralConnections" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="301.0">
+            <GridPane fx:id="neuralConnections" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="346.0" prefWidth="457.0" vgap="10">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="-Infinity" prefWidth="73.0" />
@@ -149,30 +149,38 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints />
-                <RowConstraints />
-                <RowConstraints maxHeight="20.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="20.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="remove1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" />
-                  <Button fx:id="add1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" />
-                  <Button fx:id="remove2" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="1" />
-                  <Button fx:id="add2" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="1" />
-                  <Button fx:id="add3" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="2" />
-                  <Button fx:id="remove3" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="2" />
-                  <Button fx:id="add4" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="3" />
-                  <Button fx:id="remove4" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="3" />
-                  <Button fx:id="add5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="4" />
-                  <Button fx:id="remove5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="4" />
-                  <Button fx:id="add6" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="5" />
-                  <Button fx:id="remove6" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="5" />
+                   <Button fx:id="remove1" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" />
+                   <Button fx:id="add1" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" />
+                   <Button fx:id="remove2" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="1" />
+                   <Button fx:id="add2" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="1" />
+                   <Button fx:id="add3" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="2" />
+                   <Button fx:id="remove3" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="2" />
+                   <Button fx:id="add4" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="3" />
+                   <Button fx:id="remove4" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="3" />
+                   <Button fx:id="add5" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="4" />
+                   <Button fx:id="remove5" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="4" />
+                   <Button fx:id="add6" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" prefWidth="25.0" text="+" visible="false" GridPane.columnIndex="5" />
+                   <Button fx:id="remove6" mnemonicParsing="false" onAction="#onRemoveButtonClicked" prefHeight="25.0" prefWidth="25.0" text="-" translateX="25.0" visible="false" GridPane.columnIndex="5" />
+                   <Label fx:id="neurons1" text="0 Neurons" GridPane.rowIndex="11" visible="false" />
+                   <Label fx:id="neurons2" text="0 Neurons" GridPane.columnIndex="1" GridPane.rowIndex="11" visible="false" />
+                   <Label fx:id="neurons3" text="0 Neurons" GridPane.columnIndex="2" GridPane.rowIndex="11" visible="false" />
+                   <Label fx:id="neurons4" text="0 Neurons" GridPane.columnIndex="3" GridPane.rowIndex="11" visible="false" />
+                   <Label fx:id="neurons5" text="0 Neurons" GridPane.columnIndex="4" GridPane.rowIndex="11" visible="false" />
+                   <Label fx:id="neurons6" text="0 Neurons" GridPane.columnIndex="5" GridPane.rowIndex="11" visible="false" />
+
                </children>
             </GridPane>
          </children>

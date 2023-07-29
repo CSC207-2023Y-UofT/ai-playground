@@ -1,28 +1,18 @@
 package com.playground.playground;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Box;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FeaturesHiddenLayersController implements Initializable{
+public class FeaturesHiddenLayersController implements Initializable {
     @FXML
     private Text numHiddenLayers;
     @FXML
@@ -39,8 +29,6 @@ public class FeaturesHiddenLayersController implements Initializable{
     private Button sinx1button;
     @FXML
     private Button sinx2button;
-    @FXML
-    public GridPane neuralConnections;
     @FXML
     private Button add1;
     @FXML
@@ -65,6 +53,21 @@ public class FeaturesHiddenLayersController implements Initializable{
     private Button add6;
     @FXML
     private Button remove6;
+    @FXML
+    public GridPane neuralConnections;
+
+    private Button[] addButtons;
+    private Button[] removeButtons;
+    private Button[][] aButtons;
+
+    private int[] aButtonCounts;
+
+    private int i = 0;
+
+    @FXML
+    private Label neurons1, neurons2, neurons3, neurons4, neurons5, neurons6;
+
+    private Label[] neuronLabels;
 
     public void initialize(URL location, ResourceBundle resources) {
         setButtonWithImage(x1pow2button, "playground-images/x1pow2button.jpg");
@@ -73,10 +76,13 @@ public class FeaturesHiddenLayersController implements Initializable{
         setButtonWithImage(sinx1button, "playground-images/sinx1button.jpg");
         setButtonWithImage(sinx2button, "playground-images/sinx2button.jpg");
 
+        addButtons = new Button[]{add1, add2, add3, add4, add5, add6};
+        removeButtons = new Button[]{remove1, remove2, remove3, remove4, remove5, remove6};
+        aButtons = new Button[6][8];
+        aButtonCounts = new int[6];
+        neuronLabels = new Label[]{neurons1, neurons2, neurons3, neurons4, neurons5, neurons6};
     }
 
-    // Method which takes two parameters, button and string (the image path), and sets the button with the
-    // corresponding image
     private void setButtonWithImage(Button button, String imagePath) {
         ImageView imageView = new ImageView(getClass().getResource(imagePath).toExternalForm());
         imageView.setFitWidth(35);
@@ -84,7 +90,6 @@ public class FeaturesHiddenLayersController implements Initializable{
         button.setGraphic(imageView);
         button.getStyleClass().add("image-button");
     }
-    int i = 0;
 
     @FXML
     private void onAddLayerClicked(ActionEvent event) {
@@ -92,31 +97,7 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount < 6 && i < 6) {
             currentCount++;
             numHiddenLayers.setText(String.valueOf(currentCount));
-            if (i >= 0){
-                add1.setVisible(true);
-                remove1.setVisible(true);
-            }
-            if (i >= 1) {
-                add2.setVisible(true);
-                remove2.setVisible(true);
-            }
-            if (i >= 2) {
-                add3.setVisible(true);
-                remove3.setVisible(true);
-            }
-            if (i >= 3) {
-                add4.setVisible(true);
-                remove4.setVisible(true);
-            }
-            if (i >= 4) {
-                add5.setVisible(true);
-                remove5.setVisible(true);
-            }
-            if (i >= 5) {
-                add6.setVisible(true);
-                remove6.setVisible(true);
-            }
-            addButton(i);
+            setButtonsVisibility(i, true);
             i++;
         }
     }
@@ -127,46 +108,59 @@ public class FeaturesHiddenLayersController implements Initializable{
         if (currentCount > 0 && i > 0) {
             currentCount--;
             numHiddenLayers.setText(String.valueOf(currentCount));
-            if (i > 0){
-                add1.setVisible(false);
-                remove1.setVisible(false);
-            }
-            if (i > 1) {
-                add2.setVisible(false);
-                remove2.setVisible(false);
-            }
-            if (i > 2) {
-                add3.setVisible(false);
-                remove3.setVisible(false);
-            }
-            if (i > 3) {
-                add4.setVisible(false);
-                remove4.setVisible(false);
-            }
-            if (i > 4) {
-                add5.setVisible(false);
-                remove5.setVisible(false);
-            }
-            if (i > 5) {
-                add6.setVisible(false);
-                remove6.setVisible(false);
-            }
-            removeButton(i);
+            setButtonsVisibility(i-1, false);
+            removeColumn(i-1);
             i--;
+
+            neuronLabels[i].setVisible(false);
+            aButtonCounts[i] = 0;
         }
     }
 
-    @FXML
-    public void addButton(int i){
-        int j = 1;
-        Button newLayer = new Button("a");
-        neuralConnections.add(newLayer, i, j, 1, 1);
+    private void setButtonsVisibility(int index, boolean isVisible) {
+        addButtons[index].setVisible(isVisible);
+        removeButtons[index].setVisible(isVisible);
     }
+
+    private void removeColumn(int index) {
+        for (int j = 0; j < aButtonCounts[index]; j++) {
+            neuralConnections.getChildren().remove(aButtons[index][j]);
+            aButtons[index][j] = null;
+        }
+        aButtonCounts[index] = 0;
+    }
+
     @FXML
-    public void removeButton(int i){
-        int j = 1;
-        neuralConnections.getChildren().removeIf(Button -> GridPane.getColumnIndex(Button) == i && GridPane.getRowIndex(Button) == j);
+    public void onAddButtonClicked(ActionEvent event) {
+        int index = Integer.parseInt(((Button) event.getSource()).getId().substring(3)) - 1;
+        if (aButtonCounts[index] < 8) {
+            Button newButton = new Button("neuron");
+            aButtons[index][aButtonCounts[index]] = newButton;
+            neuralConnections.add(newButton, index, aButtonCounts[index] + 2);
+            aButtonCounts[index]++;
+        }
+
+        neuronLabels[index].setText(aButtonCounts[index] + " Neurons");
+        neuronLabels[index].setVisible(true);
+    }
+
+    @FXML
+    public void onRemoveButtonClicked(ActionEvent event) {
+        int index = Integer.parseInt(((Button) event.getSource()).getId().substring(6)) - 1;
+        if (aButtonCounts[index] > 0) {
+            aButtonCounts[index]--;
+            neuralConnections.getChildren().remove(aButtons[index][aButtonCounts[index]]);
+            aButtons[index][aButtonCounts[index]] = null;
+
+            // Update the neuron count label
+            if (aButtonCounts[index] == 0) {
+                neuronLabels[index].setVisible(false);
+            } else {
+                neuronLabels[index].setText(aButtonCounts[index] + " Neurons");
+            }
+        }
     }
 
 
 }
+
