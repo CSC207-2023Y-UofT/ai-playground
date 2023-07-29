@@ -39,7 +39,7 @@
          </VBox.margin>
         </GridPane>
     </VBox>
-    <Label prefHeight="17.0" prefWidth="169.0" text="Ratio of training to test data:" translateX="10.0" translateY="-10.0">
+    <Label fx:id="slider1label" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="191.0" text="Ratio of training to test data: " translateX="10.0" translateY="-10.0">
       <padding>
          <Insets bottom="5.0" />
       </padding></Label>
@@ -47,9 +47,8 @@
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
-    <Label fx:id="slider1Percent" />
 
-    <Label text="Noise:" translateX="10.0" translateY="-20.0">
+    <Label fx:id="slider2label" text="Noise: " translateX="10.0" translateY="-20.0">
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
@@ -57,9 +56,8 @@
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
-    <Label fx:id="slider2Percent" />
 
-    <Label text="Batch size:" translateX="10.0" translateY="-40.0">
+    <Label fx:id="slider3label" text="Batch size: " translateX="10.0" translateY="-40.0">
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
@@ -67,10 +65,14 @@
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
-    <Label fx:id="slider3Percent" />
    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Regenerate" translateY="-50.0">
       <VBox.margin>
          <Insets left="15.0" />
       </VBox.margin>
    </Button>
+   <Label fx:id="slider1label1" layoutX="10.0" layoutY="161.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="191.0" text="Ratio of training to test data: ">
+      <padding>
+         <Insets bottom="5.0" />
+      </padding>
+   </Label>
 </VBox>

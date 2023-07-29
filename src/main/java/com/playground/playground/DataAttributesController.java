@@ -20,13 +20,13 @@ public class DataAttributesController implements Initializable {
     private Slider slider3;
 
     @FXML
-    private Label slider1Percent;
+    private Label slider1label;
 
     @FXML
-    private Label slider2Percent;
+    private Label slider2label;
 
     @FXML
-    private Label slider3Percent;
+    private Label slider3label;
     @FXML
     private Button clusterButton;
 
@@ -42,15 +42,15 @@ public class DataAttributesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
 
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSlider1Percent(slider1, slider1Percent);
+            updateSlider1Percent(slider1, slider1label);
         });
 
         slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSlider2Percent(slider2, slider2Percent);
+            updateSlider2Percent(slider2, slider2label);
         });
 
         slider3.valueProperty().addListener((observable, oldValue, newValue) -> {
-            updateSlider3Percent(slider3, slider3Percent);
+            updateSlider3Percent(slider3, slider3label);
         });
 
         setButtonFixedSize(clusterButton);
@@ -60,22 +60,32 @@ public class DataAttributesController implements Initializable {
 
     }
 
+//    private void updateSlider1Percent(Slider slider, Label percentLabel) {
+//        double value = slider.getValue();
+//        double max = slider.getMax();
+//        double percentage = (value / max) * 100;
+//        long roundedPercentage = Math.round(percentage);
+//        percentLabel.setText(String.format("%d%%", roundedPercentage));
+//    }
+
     private void updateSlider1Percent(Slider slider, Label percentLabel) {
         double value = slider.getValue();
         double max = slider.getMax();
         double percentage = (value / max) * 100;
         long roundedPercentage = Math.round(percentage);
-        percentLabel.setText(String.format("%d%%", roundedPercentage));
+        percentLabel.setText("Ratio of training to test data: " + roundedPercentage + "%");
     }
 
     private void updateSlider2Percent(Slider slider, Label numberLabel) {
         int value = (int) slider.getValue();
-        numberLabel.setText(String.format("%d", value));
+        String stringVal = String.format("%d", value);
+        numberLabel.setText("Noise: " + stringVal);
     }
 
     private void updateSlider3Percent(Slider slider, Label numberLabel) {
         int value = (int) slider.getValue();
-        numberLabel.setText(String.format("%d", value));
+        String stringVal = String.format("%d", value);
+        numberLabel.setText("Batch size: " + stringVal);
     }
 
     private void setButtonFixedSize(Button button) {
