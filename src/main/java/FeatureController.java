@@ -41,10 +41,12 @@ public class FeatureController {
             case "spiral":
                 dataset = GenerateDatasets.generateSpiralDatasets(noise);
                 break;
+            default:
+                throw new IllegalArgumentException("Invalid dataset name: " + dataName);
         }
-
         return dataset;
     }
+
 
     public static ArrayList<ArrayList<ArrayList<Double>>> applyFeature(String featureName,
                                                                        ArrayList<ArrayList<ArrayList<Double>>> dataset){
@@ -66,6 +68,8 @@ public class FeatureController {
                 case "sinY":
                     newDataset = Features.sinVal(dataset, 1);
                     break;
+                default:
+                    throw new IllegalArgumentException("Invalid dataset name: " + featureName);
             }
             return newDataset;
 
