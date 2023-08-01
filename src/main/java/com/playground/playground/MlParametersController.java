@@ -45,7 +45,6 @@ public class MlParametersController implements Initializable {
         button.setGraphic(imageView);
         button.getStyleClass().add("image-button");
     }
-
 }
 
 
