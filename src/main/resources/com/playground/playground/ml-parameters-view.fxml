@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="68.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.MlParametersController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Button fx:id="rewindButton" styleClass="circle-button">
+        <HBox.margin>
+            <Insets left="10.0" />
+        </HBox.margin></Button>
+    <Button fx:id="playButton" styleClass="circle-button">
+        <HBox.margin>
+            <Insets left="10.0" />
+        </HBox.margin></Button>
+    <Button fx:id="stepButton" styleClass="circle-button">
+        <HBox.margin>
+            <Insets left="10.0" />
+        </HBox.margin></Button>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Epoch" translateX="25.0" translateY="5.0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Text>
+   <Text fx:id="epochNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" translateX="50.0" translateY="8.0" wrappingWidth="73.095703125" />
+
+    <MenuBar prefHeight="28.0" prefWidth="651.0" translateX="-10.0">
+        <Menu text="Learning Rate">
+            <MenuItem text="0.00001" />
+            <MenuItem text="0.00001" />
+            <MenuItem text="0.0001" />
+            <MenuItem text="0.001" />
+            <MenuItem text="0.003" />
+            <MenuItem text="0.01" />
+            <MenuItem text="0.03" />
+            <MenuItem text="0.1" />
+            <MenuItem text="0.3" />
+            <MenuItem text="1" />
+            <MenuItem text="3" />
+            <MenuItem text="10" />
+        </Menu>
+        <Menu text="Activation">
+            <MenuItem text="ReLU" />
+            <MenuItem text="Tanh" />
+            <MenuItem text="Sigmoid" />
+            <MenuItem text="Linear" />
+        </Menu>
+        <Menu text="Regularization">
+            <MenuItem text="None" />
+            <MenuItem text="L1" />
+            <MenuItem text="L2" />
+        </Menu>
+        <Menu text="Regularization Rate">
+            <MenuItem text="0" />
+            <MenuItem text="0.001" />
+            <MenuItem text="0.003" />
+            <MenuItem text="0.01" />
+            <MenuItem text="0.03" />
+            <MenuItem text="0.1" />
+            <MenuItem text="0.3" />
+            <MenuItem text="1" />
+            <MenuItem text="3" />
+            <MenuItem text="10" />
+        </Menu>
+        <Menu text="Problem Type">
+            <MenuItem text="Classification" />
+            <MenuItem text="Regression" />
+        </Menu>
+        <HBox.margin>
+            <Insets left="80.0" />
+        </HBox.margin>
+        <cursor>
+            <Cursor fx:constant="NONE" />
+        </cursor>
+    </MenuBar>
+
+</HBox>
