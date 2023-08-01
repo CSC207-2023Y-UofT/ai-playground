@@ -193,6 +193,4 @@ public class FeaturesHiddenLayersController implements Initializable {
         }
     }
 
-
 }
-
