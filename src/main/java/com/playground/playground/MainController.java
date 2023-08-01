@@ -65,7 +65,6 @@ public class MainController implements Initializable {
         }
         featuresHiddenLayersController = featuresHiddenLayersLoader.getController();
         featuresHiddenLayersController.initialize(location, resources);
-
     }
 
 }
