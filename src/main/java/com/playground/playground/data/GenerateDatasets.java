@@ -1,4 +1,4 @@
-package com.playground.playground;
+package com.playground.playground.data;
 
 import java.lang.Math;
 import java.util.ArrayList;
