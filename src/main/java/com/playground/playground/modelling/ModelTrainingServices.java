@@ -43,10 +43,10 @@ public class ModelTrainingServices {
     this.statsFileName = statsFileName;
 
     List<List<Double>> points = new ArrayList<List<Double>>();
-    for (int i=0; i<trainingData.size(); i++){
+    for (int i=0; i<data.size(); i++){
       List<Double> point = new ArrayList<Double>();
-      point.add(trainingData.get(i).getKey().data().getDouble(0));
-      point.add(trainingData.get(i).getKey().data().getDouble(1));
+      point.add(data.get(i).getKey().data().getDouble(0));
+      point.add(data.get(i).getKey().data().getDouble(1));
       points.add(point);
     }
     for (int i=0; i<testData.size(); i++){
