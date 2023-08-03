@@ -17,9 +17,9 @@ import org.slf4j.LoggerFactory;
 
 public class ModelTrainingServices {
     private static final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
-    private INDArray data;
-    private INDArray labels;
-    private MultiLayerNetwork model;
+    private final INDArray data;
+    private final INDArray labels;
+    private final MultiLayerNetwork model;
     private int epochs;
     private int batchSize;
 
