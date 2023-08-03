@@ -60,7 +60,7 @@
             <MenuItem text="L1" />
             <MenuItem text="L2" />
         </Menu>
-        <Menu text="Regularization Rate">
+        <Menu text="Regularization Factor">
             <MenuItem text="0" />
             <MenuItem text="0.001" />
             <MenuItem text="0.003" />
