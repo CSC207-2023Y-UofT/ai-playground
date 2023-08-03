@@ -12,6 +12,10 @@ import org.deeplearning4j.nn.weights.WeightInit;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
+/**
+ * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall
+ * model structure and initializing the model DAG and its weights making it ready for training.
+ */
 public class NeuralNet {
   private final OptimizationAlgorithm optimizationAlgorithm;
   private final Updater optimizer;
@@ -29,7 +33,7 @@ public class NeuralNet {
   private MultiLayerNetwork model;
 
   /**
-   * The NeuralNetwork class is responsible for creating the DAGs in memory and creating an overall
+   * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall
    * model structure and initializing the model DAG and its weights making it ready for training.
    *
    * @param layers
