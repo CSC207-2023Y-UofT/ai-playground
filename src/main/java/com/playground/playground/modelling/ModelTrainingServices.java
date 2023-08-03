@@ -40,6 +40,21 @@ public class ModelTrainingServices {
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
+
+    List<List<Double>> points = new ArrayList<List<Double>>();
+    for (int i=0; i<trainingData.size(); i++){
+      List<Double> point = new ArrayList<Double>();
+      point.add(trainingData.get(i).getKey().data().getDouble(0));
+      point.add(trainingData.get(i).getKey().data().getDouble(1));
+      points.add(point);
+    }
+    for (int i=0; i<testData.size(); i++){
+      List<Double> point = new ArrayList<Double>();
+      point.add(testData.get(i).getKey().data().getDouble(0));
+      point.add(testData.get(i).getKey().data().getDouble(1));
+      points.add(point);
+    }
+    //   Here is where we initialize the graph in the UI
   }
 
 /**
