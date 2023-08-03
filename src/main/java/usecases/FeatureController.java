@@ -1,3 +1,4 @@
+package usecases;
 import java.util.ArrayList;
 
 public class FeatureController {
@@ -24,7 +25,10 @@ public class FeatureController {
             return applyFeature(featureName, data);
         }
 
-
+    /**
+     * Each inner ArrayList represents a pair of coordinates (x, y) and the outer ArrayLists represent
+     * collections of these coordinate pairs, orange and blue dots.
+     */
     public static ArrayList<ArrayList<ArrayList<Double>>> getData(String dataName, int noise) {
         ArrayList<ArrayList<ArrayList<Double>>> dataset = new ArrayList<>();
 

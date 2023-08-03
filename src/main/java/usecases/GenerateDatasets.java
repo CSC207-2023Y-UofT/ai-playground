@@ -1,3 +1,4 @@
+package usecases;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Random;
