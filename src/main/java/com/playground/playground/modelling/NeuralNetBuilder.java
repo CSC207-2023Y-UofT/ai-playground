@@ -1,7 +1,10 @@
 package com.playground.playground.modelling;
 
-import org.nd4j.linalg.learning.config.Adam;
-import org.nd4j.linalg.learning.config.IUpdater;
+import org.deeplearning4j.nn.api.OptimizationAlgorithm;
+import org.deeplearning4j.nn.conf.Updater;
+import org.deeplearning4j.nn.weights.WeightInit;
+import org.nd4j.linalg.activations.Activation;
+import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,11 +14,41 @@ public class NeuralNetBuilder {
     private double learningRate = 0.001;
     private int seed = 123;
     private int inputs = 2;
+    private OptimizationAlgorithm optimizationAlgorithm = OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT;
+    private Updater optimizer = Updater.ADAM;
+    private Activation activation = Activation.SOFTMAX;
+    private WeightInit weightInit = WeightInit.XAVIER;
+    private int nOut = 2;
+    private LossFunctions.LossFunction lossFunction = LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD;
 
     public NeuralNet buildNeuralNet() {
-        return new NeuralNet(layers, seed, inputs, learningRate);
+        return new NeuralNet(layers, seed, inputs, learningRate, optimizer, optimizationAlgorithm, activation, weightInit, nOut, lossFunction);
     }
 
+    public NeuralNetBuilder optimizationAlgorithm(OptimizationAlgorithm optimizationAlgorithm) {
+        this.optimizationAlgorithm = optimizationAlgorithm;
+        return this;
+    }
+    public  NeuralNetBuilder optimizer(Updater optimizer) {
+        this.optimizer = optimizer;
+        return this;
+    }
+    public  NeuralNetBuilder activation(Activation activation) {
+        this.activation = activation;
+        return this;
+    }
+    public  NeuralNetBuilder weightInit(WeightInit weightInit) {
+        this.weightInit = weightInit;
+        return this;
+    }
+    public  NeuralNetBuilder nOut(int nOut) {
+        this.nOut = nOut;
+        return this;
+    }
+    public  NeuralNetBuilder lossFunction(LossFunctions.LossFunction lossFunction) {
+        this.lossFunction = lossFunction;
+        return this;
+    }
     public NeuralNetBuilder inputs(int inputs) {
         this.inputs = inputs;
         return this;
