@@ -9,7 +9,7 @@ public class FeatureController {
          *  'cluster'
          *  'quadrant'
          *  'spiral'
-         * The 2nd parameter String featureName; represents which feature has been just been selected by the user
+         * The 2nd parameter ArrayList<String> featureName; represents which feature has been just been selected by the user
          * square
          *  'squareX'
          *  'squareY'
@@ -19,10 +19,14 @@ public class FeatureController {
          * The 3rd parameter Integer noise; represents the noise in the dataset
          */
 
-        public static ArrayList<ArrayList<ArrayList<Double>>> addTrainingData(String dataName, String featureName,
+        public static ArrayList<ArrayList<Object>> createTrainingData(String dataName, ArrayList<String> featureNames,
                                                                               int noise){
             ArrayList<ArrayList<ArrayList<Double>>> data = getData(dataName, noise);
-            return applyFeature(featureName, data);
+            ArrayList<ArrayList<Object>> newData = TransformDatasets.transform(data);
+            for(String feat : featureNames){
+                newData = applyFeature(feat, newData);
+            }
+            return newData;
         }
 
     /**
@@ -52,10 +56,9 @@ public class FeatureController {
     }
 
 
-    public static ArrayList<ArrayList<ArrayList<Double>>> applyFeature(String featureName,
-                                                                       ArrayList<ArrayList<ArrayList<Double>>> dataset){
-
-            ArrayList<ArrayList<ArrayList<Double>>> newDataset = new ArrayList<>();
+    public static ArrayList<ArrayList<Object>> applyFeature(String featureName,
+                                                                       ArrayList<ArrayList<Object>> dataset){
+        ArrayList<ArrayList<Object>> newDataset = new ArrayList<>();
             switch (featureName){
                 case "squareX":
                     newDataset = Features.squareVal(dataset, 0);
