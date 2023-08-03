@@ -103,7 +103,13 @@ public class ModelTrainingServices {
         log.info(
             String.format("Test Score at iteration %d is %s", i, model.score(testDataset.next())));
       }
-      //      Here is where we make the changes to UI for training score
+      //      Here is where we make the changes to UI for training and test score
+      while (dataset.hasNext()) {
+        DataSet t = dataset.next();
+        INDArray features = t.getFeatureMatrix();
+        INDArray predicted = model.output(features, false);
+        //        Here is where we make the graph in the UI
+      }
       while (testDataset.hasNext()) {
         DataSet t = testDataset.next();
         INDArray features = t.getFeatureMatrix();
