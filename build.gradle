@@ -40,6 +40,7 @@ dependencies {
     implementation("org.nd4j:nd4j-native-platform:0.9.1")
     implementation("org.datavec:datavec-api:0.9.1")
     implementation("org.deeplearning4j:deeplearning4j-core:0.9.1")
+    implementation("org.deeplearning4j:deeplearning4j-ui_2.11:0.9.1")
     implementation('org.controlsfx:controlsfx:11.1.2')
     implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
         exclude(group: 'org.openjfx')
