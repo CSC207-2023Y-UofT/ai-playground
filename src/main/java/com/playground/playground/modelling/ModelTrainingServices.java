@@ -36,7 +36,7 @@ public class ModelTrainingServices {
         this.batchSize = batchSize;
         if (verbose) {
             log.info(model.summary());
-            model.setListeners(new ScoreIterationListener(100));
+            model.setListeners(new ScoreIterationListener(10));
             log.info("Training model...");
         }
         for (int i = 0; i < epochs; i++) {
