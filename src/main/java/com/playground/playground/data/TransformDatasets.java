@@ -14,9 +14,9 @@ public class TransformDatasets {
      * @param data The input dataset to be transformed.
      * @return An ArrayList containing points with coordinates and associated weights.
      */
-    public static ArrayList<List<Object>> transform(ArrayList<ArrayList<ArrayList<Double>>> data) {
+    public static ArrayList<ArrayList<Object>> transform(ArrayList<ArrayList<ArrayList<Double>>> data) {
         // Initialize the output dataset
-        ArrayList<List<Object>> dataset = new ArrayList<List<Object>>();
+        ArrayList<ArrayList<Object>> dataset = new ArrayList<ArrayList<Object>>();
 
         // Get the number of points in each cluster
         int number0 = data.get(0).get(0).size();
@@ -25,7 +25,7 @@ public class TransformDatasets {
         // Transform points from cluster 0
         for (int i = 0; i < number0; i++) {
             int weight = 0; // Assign a weight of 0 for points in cluster 0
-            List<Object> point = new ArrayList<Object>();
+            ArrayList<Object> point = new ArrayList<Object>();
             ArrayList<Double> coord = new ArrayList<Double>();
             Double xp = data.get(0).get(0).get(i);
             Double yp = data.get(0).get(1).get(i);
@@ -39,7 +39,7 @@ public class TransformDatasets {
         // Transform points from cluster 1
         for (int i = 0; i < number1; i++) {
             int weight = 1; // Assign a weight of 1 for points in cluster 1
-            List<Object> point = new ArrayList<Object>();
+            ArrayList<Object> point = new ArrayList<Object>();
             ArrayList<Double> coord = new ArrayList<Double>();
             Double xp = data.get(1).get(0).get(i);
             Double yp = data.get(1).get(1).get(i);

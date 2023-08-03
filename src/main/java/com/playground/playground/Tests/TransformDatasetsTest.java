@@ -33,21 +33,21 @@ public class TransformDatasetsTest {
         sampleData.add(cluster1);
 
         // Perform transformation using TransformDatasets class
-        ArrayList<List<Object>> transformedData = TransformDatasets.transform(sampleData);
+        ArrayList<ArrayList<Object>> transformedData = TransformDatasets.transform(sampleData);
 
         // Run the tests
         testTransformedDataSize(transformedData);
         testClusterWeight(transformedData);
     }
 
-    private static void testTransformedDataSize(ArrayList<List<Object>> transformedData) {
+    private static void testTransformedDataSize(ArrayList<ArrayList<Object>> transformedData) {
         // Check if the transformed dataset has the correct size
         int expectedSize = 4; // Total number of points in both clusters
         assert transformedData.size() == expectedSize :
                 "Expected transformed dataset size: " + expectedSize + ", but got: " + transformedData.size();
     }
 
-    private static void testClusterWeight(ArrayList<List<Object>> transformedData) {
+    private static void testClusterWeight(ArrayList<ArrayList<Object>> transformedData) {
         // Check if each point in the transformed dataset has the correct cluster weight
         for (int i = 0; i < transformedData.size(); i++) {
             List<Object> point = transformedData.get(i);
