@@ -21,6 +21,9 @@ public class NeuralNetBuilder {
   private int nOut = 2;
   private LossFunctions.LossFunction lossFunction =
       LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD;
+  private boolean regularization = true;
+  private String regularizationType = "l2";
+  private double regularizationFactor = 0.0005;
 
   public NeuralNet buildNeuralNet() {
     return new NeuralNet(
@@ -33,11 +36,29 @@ public class NeuralNetBuilder {
         activation,
         weightInit,
         nOut,
-        lossFunction);
+        lossFunction,
+        regularization,
+        regularizationType,
+        regularizationFactor);
+  }
+
+  public NeuralNetBuilder regularizationType(String regularizationType) {
+    this.regularizationType = regularizationType;
+    return this;
+  }
+
+  public NeuralNetBuilder regularizationFactor(double regularizationFactor) {
+    this.regularizationFactor = regularizationFactor;
+    return this;
   }
 
   public NeuralNetBuilder optimizationAlgorithm(OptimizationAlgorithm optimizationAlgorithm) {
     this.optimizationAlgorithm = optimizationAlgorithm;
+    return this;
+  }
+
+  public NeuralNetBuilder regularization(boolean regularization) {
+    this.regularization = regularization;
     return this;
   }
 

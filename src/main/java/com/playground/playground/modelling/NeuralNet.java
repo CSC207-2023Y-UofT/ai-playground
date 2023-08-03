@@ -1,6 +1,7 @@
 package com.playground.playground.modelling;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
@@ -22,6 +23,9 @@ public class NeuralNet {
   private final WeightInit weightInit;
   private final int nOut;
   private final LossFunctions.LossFunction lossFunction;
+  private final boolean regularization;
+  private final String regularizationType;
+  private final double regularizationFactor;
   private MultiLayerNetwork model;
 
   public NeuralNet(
@@ -34,7 +38,10 @@ public class NeuralNet {
       Activation activation,
       WeightInit weightInit,
       int nOut,
-      LossFunctions.LossFunction lossFunction) {
+      LossFunctions.LossFunction lossFunction,
+      boolean regularization,
+      String regularizationType,
+      double regularizationFactor) {
     this.layers = layers;
     this.seed = seed;
     this.inputs = inputs;
@@ -45,14 +52,24 @@ public class NeuralNet {
     this.weightInit = weightInit;
     this.nOut = nOut;
     this.lossFunction = lossFunction;
+    this.regularization = regularization;
+    this.regularizationType = regularizationType;
+    this.regularizationFactor = regularizationFactor;
   }
 
   public MultiLayerNetwork generateModel() {
-    NeuralNetConfiguration.Builder builder = new NeuralNetConfiguration.Builder();
-    builder.seed(seed);
-    builder.learningRate(learningRate);
-    builder.optimizationAlgo(optimizationAlgorithm);
-    builder.updater(optimizer);
+    NeuralNetConfiguration.Builder builder =
+        new NeuralNetConfiguration.Builder()
+            .seed(seed)
+            .learningRate(learningRate)
+            .optimizationAlgo(optimizationAlgorithm)
+            .regularization(regularization)
+            .updater(optimizer);
+    if (Objects.equals(regularizationType, "l2")) {
+      builder = builder.l2(regularizationFactor);
+    } else {
+      builder = builder.l1(regularizationFactor);
+    }
     NeuralNetConfiguration.ListBuilder conf = builder.list();
 
     for (int i = 0; i < layers.size() - 1; i++) {
