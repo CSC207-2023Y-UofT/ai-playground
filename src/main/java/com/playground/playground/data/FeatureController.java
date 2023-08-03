@@ -1,4 +1,4 @@
-package usecases;
+package com.playground.playground.data;
 import java.util.ArrayList;
 
 public class FeatureController {
