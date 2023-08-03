@@ -1,6 +1,7 @@
 package com.playground.playground.modelling;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
@@ -11,7 +12,6 @@ import org.deeplearning4j.ui.storage.FileStatsStorage;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.primitives.Pair;
-import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,13 +42,13 @@ public class ModelTrainingServices {
     this.statsFileName = statsFileName;
 
     List<List<Double>> points = new ArrayList<List<Double>>();
-    for (int i=0; i<data.size(); i++){
+    for (int i = 0; i < data.size(); i++) {
       List<Double> point = new ArrayList<Double>();
       point.add(data.get(i).getKey().data().getDouble(0));
       point.add(data.get(i).getKey().data().getDouble(1));
       points.add(point);
     }
-    for (int i=0; i<testData.size(); i++){
+    for (int i = 0; i < testData.size(); i++) {
       List<Double> point = new ArrayList<Double>();
       point.add(testData.get(i).getKey().data().getDouble(0));
       point.add(testData.get(i).getKey().data().getDouble(1));
