@@ -12,6 +12,10 @@ import org.deeplearning4j.nn.weights.WeightInit;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
+/**
+ * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall
+ * model structure and initializing the model DAG and its weights making it ready for training.
+ */
 public class NeuralNet {
   private final OptimizationAlgorithm optimizationAlgorithm;
   private final Updater optimizer;
@@ -28,6 +32,24 @@ public class NeuralNet {
   private final double regularizationFactor;
   private MultiLayerNetwork model;
 
+  /**
+   * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall
+   * model structure and initializing the model DAG and its weights making it ready for training.
+   *
+   * @param layers
+   * @param seed
+   * @param inputs
+   * @param learningRate
+   * @param optimizer
+   * @param optimizationAlgorithm
+   * @param activation
+   * @param weightInit
+   * @param nOut
+   * @param lossFunction
+   * @param regularization
+   * @param regularizationType
+   * @param regularizationFactor
+   */
   public NeuralNet(
       ArrayList<Integer> layers,
       int seed,
@@ -57,6 +79,11 @@ public class NeuralNet {
     this.regularizationFactor = regularizationFactor;
   }
 
+  /**
+   * Initialize and create the overall model structure.
+   *
+   * @return The model object.
+   */
   public MultiLayerNetwork generateModel() {
     NeuralNetConfiguration.Builder builder =
         new NeuralNetConfiguration.Builder()
@@ -105,6 +132,11 @@ public class NeuralNet {
     return model;
   }
 
+  /**
+   * Display what the model looks like in a human readable format.
+   *
+   * @return The model summary string.
+   */
   public String modelSummary() {
     return model.summary();
   }
