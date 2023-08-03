@@ -11,6 +11,7 @@ import org.deeplearning4j.ui.storage.FileStatsStorage;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.primitives.Pair;
+import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +40,21 @@ public class ModelTrainingServices {
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
+
+    List<List<Double>> points = new ArrayList<List<Double>>();
+    for (int i=0; i<data.size(); i++){
+      List<Double> point = new ArrayList<Double>();
+      point.add(data.get(i).getKey().data().getDouble(0));
+      point.add(data.get(i).getKey().data().getDouble(1));
+      points.add(point);
+    }
+    for (int i=0; i<testData.size(); i++){
+      List<Double> point = new ArrayList<Double>();
+      point.add(testData.get(i).getKey().data().getDouble(0));
+      point.add(testData.get(i).getKey().data().getDouble(1));
+      points.add(point);
+    }
+    //   Here is where we initialize the graph in the UI
   }
 
   /**
@@ -83,11 +99,17 @@ public class ModelTrainingServices {
     for (int i = 0; i < epochs; i++) {
       model.fit(dataset);
       if (verbose) {
-        log.info(String.format("Score at iteration %d is %s", i, model.score()));
+        log.info(String.format("Train Score at iteration %d is %s", i, model.score()));
         log.info(
             String.format("Test Score at iteration %d is %s", i, model.score(testDataset.next())));
       }
-      //      Here is where we make the changes to UI for training score
+      //      Here is where we make the changes to UI for training and test score
+      while (dataset.hasNext()) {
+        DataSet t = dataset.next();
+        INDArray features = t.getFeatureMatrix();
+        INDArray predicted = model.output(features, false);
+        //        Here is where we make the graph in the UI
+      }
       while (testDataset.hasNext()) {
         DataSet t = testDataset.next();
         INDArray features = t.getFeatureMatrix();
