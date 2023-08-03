@@ -41,4 +41,8 @@ public class GraphSystemController implements Initializable {
 //
 //        neuralNetwork.getData().addAll(seriesHigh, seriesLow);
     }
+    /**
+     * Create a function that takes in a list of list by using nested for-loops, the x and y  coordinates for each point will be
+     * in each 
+     */
 }
