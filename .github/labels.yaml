@@ -1,0 +1,15 @@
+area:
+  - 'bug'
+  - 'important'
+  - 'modelling'
+  - 'ui'
+  - 'datasets'
+
+kind:
+  - 'documentation'
+  - 'cleanup'
+
+priority:
+  - 'low'
+  - 'mid'
+  - 'high'
