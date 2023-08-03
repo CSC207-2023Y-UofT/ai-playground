@@ -13,8 +13,8 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 /**
- * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall
- * model structure and initializing the model DAG and its weights making it ready for training.
+ * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall model
+ * structure and initializing the model DAG and its weights making it ready for training.
  */
 public class NeuralNet {
   private final OptimizationAlgorithm optimizationAlgorithm;

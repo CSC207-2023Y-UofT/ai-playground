@@ -14,9 +14,7 @@ import org.nd4j.linalg.primitives.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
-* This is the class that facilitates training the model and logging.
-*/
+/** This is the class that facilitates training the model and logging. */
 public class ModelTrainingServices {
   private static final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
   private final List<Pair<INDArray, INDArray>> data;
@@ -24,13 +22,14 @@ public class ModelTrainingServices {
   private final MultiLayerNetwork model;
   private final String statsFileName;
 
-/**
-* Constructor for the ModelTrainingServices class which initializers the data and model.
- * @param data
- * @param model
- * @param statsFileName
- * @param testData
-*/
+  /**
+   * Constructor for the ModelTrainingServices class which initializers the data and model.
+   *
+   * @param data
+   * @param model
+   * @param statsFileName
+   * @param testData
+   */
   public ModelTrainingServices(
       List<Pair<INDArray, INDArray>> data,
       MultiLayerNetwork model,
@@ -42,12 +41,13 @@ public class ModelTrainingServices {
     this.statsFileName = statsFileName;
   }
 
-/**
-* Train the model set through the constructor and created using the NeuralNet class.
- * @param epochs
- * @param batchSize
- * @param verbose
-*/
+  /**
+   * Train the model set through the constructor and created using the NeuralNet class.
+   *
+   * @param epochs
+   * @param batchSize
+   * @param verbose
+   */
   public void trainModel(int epochs, int batchSize, boolean verbose) {
 
     //    Example on the kind of data we need, example for a simple "and" operation dataset, we want
