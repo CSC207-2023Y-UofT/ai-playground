@@ -83,7 +83,7 @@ public class ModelTrainingServices {
     for (int i = 0; i < epochs; i++) {
       model.fit(dataset);
       if (verbose) {
-        log.info(String.format("Score at iteration %d is %s", i, model.score()));
+        log.info(String.format("Train Score at iteration %d is %s", i, model.score()));
         log.info(
             String.format("Test Score at iteration %d is %s", i, model.score(testDataset.next())));
       }
