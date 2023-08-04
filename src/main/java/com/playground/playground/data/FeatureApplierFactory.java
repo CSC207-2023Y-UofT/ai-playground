@@ -2,14 +2,6 @@ package com.playground.playground.data;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Possible names for Features:
- *  'squareX'
- *  'squareY'
- *  'XtimesY'
- *  'sinX'
- *  'sinY'
- */
 public class FeatureApplierFactory {
     private static final Map<String, FeatureApplier> applierMap= new HashMap<>();
 
@@ -21,6 +13,16 @@ public class FeatureApplierFactory {
         applierMap.put("sinY", new SinFeatureApplier(1));
     }
 
+    /**
+     *
+     * @param featureName String representing the feature chosen by the user. Possible names for Features:
+     *  'squareX'
+     *  'squareY'
+     *  'XtimesY'
+     *  'sinX'
+     *  'sinY'
+     * @return A FeatureApplier, this object applies the needed feature
+     */
     public static FeatureApplier getFeature(String featureName){
         FeatureApplier feature = applierMap.get(featureName);
 

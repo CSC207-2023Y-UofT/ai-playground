@@ -29,8 +29,10 @@ public class FeatureController {
                                                                               int noise){
             ArrayList<ArrayList<ArrayList<Double>>> data = getData(dataName, noise);
             ArrayList<ArrayList<Object>> newData = TransformDatasets.transform(data);
-            for(String feat : featureNames){
-                newData = applyFeature(feat, newData);
+
+            for(String featureName : featureNames){
+                FeatureApplier feature = FeatureApplierFactory.getFeature(featureName);
+                newData = feature.applyFeature(newData);
             }
             return newData;
         }
@@ -63,39 +65,6 @@ public class FeatureController {
             return dataset;
         }
 
-
-    /**
-     * Applies the required feature to the dataset
-     * @param featureName The feature to be applied
-     * @param dataset A dataset in the Neural Network Format
-     * @return The dataset with the correct feature appended to the coordinates list in the Neural Network formatted
-     * data.
-     */
-    public static ArrayList<ArrayList<Object>> applyFeature(String featureName,
-                                                                           ArrayList<ArrayList<Object>> dataset){
-            ArrayList<ArrayList<Object>> newDataset = new ArrayList<>();
-                switch (featureName){
-                    case "squareX":
-                        newDataset = Features.squareVal(dataset, 0);
-                        break;
-                    case "squareY":
-                        newDataset = Features.squareVal(dataset, 1);
-                        break;
-                    case "XtimesY":
-                        newDataset = Features.multiplyVal(dataset);
-                        break;
-                    case "sinX":
-                        newDataset = Features.sinVal(dataset, 0);
-                        break;
-                    case "sinY":
-                        newDataset = Features.sinVal(dataset, 1);
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Invalid dataset name: " + featureName);
-                }
-                return newDataset;
-
-        }
 
 
 }
