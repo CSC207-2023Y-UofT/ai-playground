@@ -62,7 +62,7 @@ public class TestFeatures {
         correct.add(25.0);
         correct.add(49.0);
 
-        for(int i = 0; i <= correct.size(); i++){
+        for(int i = 0; i < correct.size(); i++){
             ArrayList<Object> datapoint = XsquaredData.get(i);
             ArrayList<Double> coords = (ArrayList<Double>) datapoint.get(0);
             Double x_squared = coords.get(2);
