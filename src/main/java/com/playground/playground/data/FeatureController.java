@@ -2,6 +2,8 @@ package com.playground.playground.data;
 
 import java.util.ArrayList;
 
+import static com.playground.playground.data.GenerateDatasets.*;
+
 public class FeatureController {
 
   /**
@@ -40,16 +42,16 @@ public class FeatureController {
 
     switch (dataName) {
       case "circular":
-        dataset = GenerateDatasets.generateCircular(noise);
+        dataset = generateCircular(noise);
         break;
       case "cluster":
-        dataset = GenerateDatasets.generateClusters(noise);
+        dataset = generateClusters(noise);
         break;
       case "quadrant":
-        dataset = GenerateDatasets.generateQuadrantDatasets(noise);
+        dataset = generateQuadrantDatasets(noise);
         break;
       case "spiral":
-        dataset = GenerateDatasets.generateSpiralDatasets(noise);
+        dataset = generateSpiralDatasets(noise);
         break;
       default:
         throw new IllegalArgumentException("Invalid dataset name: " + dataName);
