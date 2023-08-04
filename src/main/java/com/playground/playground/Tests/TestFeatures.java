@@ -37,6 +37,9 @@ public class TestFeatures {
         // Perform transformation using TransformDatasets class
         ArrayList<ArrayList<Object>> transformedData = TransformDatasets.transform(sampleData);
 
+        // Create FeatureController instance
+        FeatureController controller = new FeatureController();
+
         // Apply x^2 feature to the data set
         ArrayList<ArrayList<Object>> XsquaredData = new SquareFeatureApplier(0).applyFeature(transformedData);
 
@@ -48,8 +51,11 @@ public class TestFeatures {
 
         // Run the tests
         testXsquaredOutput(XsquaredData);
+        testCreateTrainingData();
 
     }
+
+
     private static void testXsquaredOutput(ArrayList<ArrayList<Object>> XsquaredData){
         ArrayList<Double> correct = new ArrayList<>();
         correct.add(1.0);
@@ -65,4 +71,25 @@ public class TestFeatures {
         }
 
     }
+    private static void testCreateTrainingData() {
+        try {
+            String dataName = "cluster";
+            ArrayList<String> featureNames = new ArrayList<>();
+            featureNames.add("squareX");
+            featureNames.add("sinY");
+            int noise = 10;
+
+            // Call the createTrainingData function
+            ArrayList<ArrayList<Object>> trainingData = FeatureController.createTrainingData(dataName, featureNames, noise);
+
+            for(int i = 0; i < 4; i++){
+                ArrayList<Object> datapoint = trainingData.get(i);
+                ArrayList<Double> coords = (ArrayList<Double>) datapoint.get(0);
+                System.out.println("Coordinates of datapoint " + (i+1) + ": " + coords);
+            }
+        } catch (Exception e) {
+            System.out.println("testCreateTrainingData failed: unexpected exception " + e);
+        }
+    }
+
 }
