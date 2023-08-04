@@ -25,7 +25,8 @@ The user is presented with an interactive UI where they can choose various aspec
 
 The user is also presented with start, stop, and resume buttons to facilitate their use of the program. The output decision boundary is graphed onto the dataset after each Epoch. The user can see various training metrics such as Epoch number and Training loss to gauge a deeper understanding of the neural network.
 
-## Clean Architecture
+### Clean Architecture
+WIP
 
 ### SOLID Principles
 
