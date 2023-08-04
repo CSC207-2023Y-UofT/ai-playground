@@ -1,14 +1,9 @@
 package com.playground.playground.Tests;
-
-import com.beust.jcommander.internal.Lists;
-import com.playground.playground.data.Features;
+import com.playground.playground.data.*;
 import com.playground.playground.data.TransformDatasets;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import static com.playground.playground.data.Features.*;
 
 public class TestFeatures {
     public static void main(String[] args) {
@@ -43,13 +38,13 @@ public class TestFeatures {
         ArrayList<ArrayList<Object>> transformedData = TransformDatasets.transform(sampleData);
 
         // Apply x^2 feature to the data set
-        ArrayList<ArrayList<Object>> XsquaredData = squareVal(transformedData, 0);
+        ArrayList<ArrayList<Object>> XsquaredData = new SquareFeatureApplier(0).applyFeature(transformedData);
 
         // Apply sin(y) feature
-        ArrayList<ArrayList<Object>> ySinData = sinVal(transformedData, 1);
+        ArrayList<ArrayList<Object>> ySinData = new SinFeatureApplier(1).applyFeature(transformedData);
 
         // Apply X*Y feature
-        ArrayList<ArrayList<Object>> XYData = multiplyVal(transformedData);
+        ArrayList<ArrayList<Object>> XYData = new MultiplyFeatureApplier().applyFeature(transformedData);
 
         // Run the tests
         testXsquaredOutput(XsquaredData);
