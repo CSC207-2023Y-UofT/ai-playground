@@ -54,4 +54,42 @@ The project is organized into packages:
 
 - The `data` package contains classes for generating different types of datasets (`CircularDatasetGenerator`, `QuadrantDatasetGenerator`, `SpiralDatasetGenerator`, and `ClusterDatasetGenerator`) and the `DataProcessor` class that generates datasets based on the selected `DatasetGenerator`.
 
-- The `modelling` package contains classes related to building neural networks (`NeuralNet`
+- The `modelling` package contains classes related to building neural networks (`NeuralNet` and `NeuralNetBuilder`) and model training services (`ModelTrainingServices`).
+
+- The `Tests` package contains extensive unit tests to ensure the correctness and reliability of the dataset generation and neural network modules.
+
+## User Stories
+
+1. As a user, I want to see the decision boundary (represented graphically) update and the training loss after every epoch on the graph, superimposed over the input data points.
+
+2. As a user, I want to see how modifying the input dataset (distribution of the data) and the noise of the data (how clustered the points are) affects the decision boundary.
+
+3. As a teacher, I want to show students a highly accessible way of visualizing how changing the number of layers and how many nodes exist in each layer affects the decision boundary.
+
+4. As a Deep Learning enthusiast, I want to see how different input features (the properties applied to the input data before it reaches the neural network) affect the decision boundary.
+
+5. As a user, I want to be able to press a button to start/stop and reset the training of the model.
+
+6. As a user, I want to see how the weights of each feature change (represented by the connection lines between nodes) with the number of epochs.
+
+## Use of GitHub
+
+The AI Playground project demonstrates effective use of GitHub's features and best practices to foster collaboration, version control, and code management. Here are some key aspects of how GitHub was utilized in this project:
+
+1. **Version Control with Git:** The project is hosted on GitHub, utilizing Git for version control. All changes and updates to the codebase are tracked, allowing for easy collaboration among team members and maintaining a history of code changes.
+
+2. **Pull Requests (PRs):** The team followed a collaborative workflow using pull requests. Whenever a new feature or enhancement was developed, a new branch was created from the `main` branch. After implementing the changes, a pull request was opened to merge the feature branch into the `main` branch. This allowed for code review, discussions, and quality assurance before merging.
+
+3. **Code Reviews:** Every pull request was subjected to code reviews by team members. This process ensured that the code met the project's standards, adhered to best practices, and was free of any potential issues. Code reviews also provided an opportunity for knowledge sharing and learning among team members.
+
+4. **Issue Tracking:** GitHub's issue tracking system was extensively used to manage tasks, enhancements, and bug reports. Whenever a new feature or bug fix was required, an issue was created, assigned to team members, and labeled appropriately. This allowed for better organization and transparency in the development process.
+
+5. **Project Boards:** GitHub project boards were used to manage the development process. Tasks and issues were categorized into different columns, such as "To Do," "In Progress," and "Done." This provided a visual representation of the project's progress and helped the team stay focused on critical tasks.
+
+6. **Code Organization and Collaboration:** The codebase was well-organized into different packages and modules. Team members collaborated on specific features and modules while minimizing conflicts and ensuring smooth integration.
+
+7. **Documentation and Comments:** The team placed significant emphasis on documentation and comments within the codebase. This made the code more understandable and maintainable for all team members and future contributors.
+
+8. **Code Quality and Linting:** GitHub's integration with code quality tools and linters helped maintain consistent code standards and identify potential issues early in the development process.
+
+Overall, the use of GitHub played a crucial role in facilitating collaboration, code management, and efficient development workflows throughout the AI Playground project. It allowed the team to work cohesively, implement new features, and address issues effectively, resulting in a successful and well-structured project.
