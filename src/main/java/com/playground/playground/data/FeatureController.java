@@ -18,12 +18,11 @@ public class FeatureController {
    */
   public static ArrayList<ArrayList<Object>> createTrainingData(
       String dataName, ArrayList<String> featureNames, int noise) {
-    ArrayList<ArrayList<ArrayList<Double>>> data = getData(dataName, noise);
-    ArrayList<ArrayList<Object>> newData = TransformDatasets.transform(data);
+    ArrayList<ArrayList<Object>> data = getData(dataName, noise);
 
     for (String featureName : featureNames) {
       FeatureApplier feature = FeatureApplierFactory.getFeature(featureName);
-      newData = feature.applyFeature(newData);
+      newData = feature.applyFeature(data);
     }
     return newData;
   }
@@ -35,21 +34,25 @@ public class FeatureController {
    * @param noise amount of noise in the dataset
    * @return A dataset in the data format
    */
-  public static ArrayList<ArrayList<ArrayList<Double>>> getData(String dataName, int noise) {
-    ArrayList<ArrayList<ArrayList<Double>>> dataset = new ArrayList<>();
+  public static ArrayList<ArrayList<Object>> getData(String dataName, int noise) {
+    ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
 
     switch (dataName) {
       case "circular":
-        dataset = GenerateDatasets.generateCircular(noise);
+        DataProcessor dataProcessorCircular = new DataProcessor(new CircularDatasetGenerator());
+        dataset = dataProcessorCircular.process(noise);
         break;
       case "cluster":
-        dataset = GenerateDatasets.generateClusters(noise);
+        DataProcessor dataProcessorCluster = new DataProcessor(new ClusterDatasetGenerator());
+        dataset = dataProcessorCluster.process(noise);
         break;
       case "quadrant":
-        dataset = GenerateDatasets.generateQuadrantDatasets(noise);
+        DataProcessor dataProcessorQuadrant = new DataProcessor(new QuadrantDatasetGenerator());
+        dataset = dataProcessorQuadrant.process(noise);
         break;
       case "spiral":
-        dataset = GenerateDatasets.generateSpiralDatasets(noise);
+        DataProcessor dataProcessorSpiral = new DataProcessor(new SpiralDatasetGenerator());
+        dataset = dataProcessorSpiral.process(noise);
         break;
       default:
         throw new IllegalArgumentException("Invalid dataset name: " + dataName);
