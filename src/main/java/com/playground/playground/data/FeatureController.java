@@ -19,13 +19,12 @@ public class FeatureController {
   public static ArrayList<ArrayList<Object>> createTrainingData(
       String dataName, ArrayList<String> featureNames, int noise) {
     ArrayList<ArrayList<Object>> data = getData(dataName, noise);
-    ArrayList<ArrayList<Object>> newData = new ArrayList<>();
 
     for (String featureName : featureNames) {
       FeatureApplier feature = FeatureApplierFactory.getFeature(featureName);
-      newData = feature.applyFeature(data);
+      data = feature.applyFeature(data);
     }
-    return newData;
+    return data;
   }
 
   /**
