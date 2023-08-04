@@ -1,6 +1,6 @@
 package com.playground.playground.data;
 
-import static com.playground.playground.data.GenerateDatasets.*;
+import static com.playground.playground.data.*;
 
 import java.util.ArrayList;
 
