@@ -10,13 +10,14 @@ public class MainLauncher {
 
   public static void main(String[] args) {
     // Start JavaFX on the JavaFX Application Thread
-    Platform.startup(() -> {
-      try {
-        launchApplication(args);
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    });
+    Platform.startup(
+        () -> {
+          try {
+            launchApplication(args);
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        });
   }
 
   private static void launchApplication(String[] args) throws Exception {
