@@ -36,24 +36,24 @@
 
     <MenuBar prefHeight="28.0" prefWidth="651.0" translateX="-10.0">
         <Menu text="Learning Rate">
-            <MenuItem text="0.00001" />
-            <MenuItem text="0.00001" />
-            <MenuItem text="0.0001" />
-            <MenuItem text="0.001" />
-            <MenuItem text="0.003" />
-            <MenuItem text="0.01" />
-            <MenuItem text="0.03" />
-            <MenuItem text="0.1" />
-            <MenuItem text="0.3" />
-            <MenuItem text="1" />
-            <MenuItem text="3" />
-            <MenuItem text="10" />
+            <MenuItem fx:id="item1" text="0.00001" />
+            <MenuItem fx:id="item2" text="0.00001" />
+            <MenuItem fx:id="item3" text="0.0001" />
+            <MenuItem fx:id="item4" text="0.001" />
+            <MenuItem fx:id="item5" text="0.003" />
+            <MenuItem fx:id="item6" text="0.01" />
+            <MenuItem fx:id="item7" text="0.03" />
+            <MenuItem fx:id="item8" onAction="#handleLearn" text="0.1" />
+            <MenuItem fx:id="item9" text="0.3" />
+            <MenuItem fx:id="item10" text="1" />
+            <MenuItem fx:id="item11" text="3" />
+            <MenuItem fx:id="item12" text="10" />
         </Menu>
         <Menu text="Activation">
-            <MenuItem text="ReLU" />
-            <MenuItem text="Tanh" />
-            <MenuItem text="Sigmoid" />
-            <MenuItem text="Linear" />
+            <MenuItem fx:id="reLu" onAction="#handleActivation" text="ReLU" />
+            <MenuItem fx:id="tanH" onAction="#handleActivation" text="Tanh" />
+            <MenuItem fx:id="sigmoid" onAction="#handleActivation" text="Sigmoid" />
+            <MenuItem fx:id="linear" onAction="#handleActivation" text="Linear" />
         </Menu>
         <Menu text="Regularization">
             <MenuItem text="None" />
@@ -61,16 +61,16 @@
             <MenuItem text="L2" />
         </Menu>
         <Menu text="Regularization Rate">
-            <MenuItem text="0" />
-            <MenuItem text="0.001" />
-            <MenuItem text="0.003" />
-            <MenuItem text="0.01" />
-            <MenuItem text="0.03" />
-            <MenuItem text="0.1" />
-            <MenuItem text="0.3" />
-            <MenuItem text="1" />
-            <MenuItem text="3" />
-            <MenuItem text="10" />
+            <MenuItem onAction="#handleLearn" text="0" />
+            <MenuItem onAction="#handleLearn" text="0.001" />
+            <MenuItem onAction="#handleLearn" text="0.003" />
+            <MenuItem onAction="#handleLearn" text="0.01" />
+            <MenuItem onAction="#handleLearn" text="0.03" />
+            <MenuItem onAction="#handleLearn" text="0.1" />
+            <MenuItem onAction="#handleLearn" text="0.3" />
+            <MenuItem onAction="#handleLearn" text="1" />
+            <MenuItem onAction="#handleLearn" text="3" />
+            <MenuItem onAction="#handleLearn" text="10" />
         </Menu>
         <Menu text="Problem Type">
             <MenuItem text="Classification" />
