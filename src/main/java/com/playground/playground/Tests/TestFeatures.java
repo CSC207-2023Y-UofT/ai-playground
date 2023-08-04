@@ -1,7 +1,6 @@
 package com.playground.playground.Tests;
 
-import static com.playground.playground.data.Features.*;
-
+import com.playground.playground.data.*;
 import com.playground.playground.data.TransformDatasets;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -38,17 +37,23 @@ public class TestFeatures {
     // Perform transformation using TransformDatasets class
     ArrayList<ArrayList<Object>> transformedData = TransformDatasets.transform(sampleData);
 
+    // Create FeatureController instance
+    FeatureController controller = new FeatureController();
+
     // Apply x^2 feature to the data set
-    ArrayList<ArrayList<Object>> XsquaredData = squareVal(transformedData, 0);
+    ArrayList<ArrayList<Object>> XsquaredData =
+        new SquareFeatureApplier(0).applyFeature(transformedData);
 
     // Apply sin(y) feature
-    ArrayList<ArrayList<Object>> ySinData = sinVal(transformedData, 1);
+    ArrayList<ArrayList<Object>> ySinData = new SinFeatureApplier(1).applyFeature(transformedData);
 
     // Apply X*Y feature
-    ArrayList<ArrayList<Object>> XYData = multiplyVal(transformedData);
+    ArrayList<ArrayList<Object>> XYData =
+        new MultiplyFeatureApplier().applyFeature(transformedData);
 
     // Run the tests
     testXsquaredOutput(XsquaredData);
+    testCreateTrainingData();
   }
 
   private static void testXsquaredOutput(ArrayList<ArrayList<Object>> XsquaredData) {
@@ -63,6 +68,28 @@ public class TestFeatures {
       ArrayList<Double> coords = (ArrayList<Double>) datapoint.get(0);
       Double x_squared = coords.get(2);
       assert Objects.equals(x_squared, correct.get(i));
+    }
+  }
+
+  private static void testCreateTrainingData() {
+    try {
+      String dataName = "cluster";
+      ArrayList<String> featureNames = new ArrayList<>();
+      featureNames.add("squareX");
+      featureNames.add("sinY");
+      int noise = 10;
+
+      // Call the createTrainingData function
+      ArrayList<ArrayList<Object>> trainingData =
+          FeatureController.createTrainingData(dataName, featureNames, noise);
+
+      for (int i = 0; i < 4; i++) {
+        ArrayList<Object> datapoint = trainingData.get(i);
+        ArrayList<Double> coords = (ArrayList<Double>) datapoint.get(0);
+        System.out.println("Coordinates of datapoint " + (i + 1) + ": " + coords);
+      }
+    } catch (Exception e) {
+      System.out.println("testCreateTrainingData failed: unexpected exception " + e);
     }
   }
 }
