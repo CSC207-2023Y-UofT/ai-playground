@@ -1,39 +1,56 @@
-# Project Template
+# AI Playground
 
-This is a template repository for CSC 207 projects. 
-This repository contains starter code for a gradle project.
-It also contains workflow documents that give instructions on how to manage your Github repository and how to use Github Projects for efficient collaboration.
+This program can help users visualize the decision boundary produced by a neural network given a collection of data points. The data points will be clustered in various patterns to explore the impacts of changing elements of the neural network, such as the number of layers, the number of neurons, the neural network features (transformations made on the input data points), and how noise in the dataset affects the neural network.
 
-## Checklist For Your Project
-- [ ] Verify the correct settings for your project repository
-- [ ] Set up Github Projects
-- [ ] Create the implementation plan using issues and Github Projects
-- [ ] Create deveopment branches for your features
-- [ ] Use pull requests to merge finished features into main branch
-- [ ] Conduct code reviews
+## Usage
 
-**If your team has trouble with any of these steps, please ask on Piazza. For example, with how GitHub Classroom works, your team *may* not have permissions to do some of the first few steps, in which case we'll post alternative instructions as needed.**
+1. Clone the repository to your local machine.
+2. Open the project in an IDE or editor that supports Java 11.
+3. Run `src/main/java/com/playground/playground/MainLauncher.java`.
 
-## Workflow Documents
+## Software Specification
 
-* Github Workflow: Please refer to the workflow that was introduced in the first lab. You should follow this when working on your code. The following document provides additional details too.
+The user is presented with an interactive UI where they can choose various aspects of a handcrafted Neural Network:
 
-* [Project Planning and Development Guide](project_plan_dev.md): This document helps you to understand how to create and maintain a project plan for your class project. **This document helps you to complete the Implementation Plan Milestone.**
+1. Dataset: Randomly generated datasets on-click, possibilities include Circular, Cluster, Quadrant, and Spiral datasets.
+2. Ratio of Training to Testing Data: Helps the user understand the balance between the amount of training and data, useful to understand concepts such as overfitting.
+3. Noise: Choosing a value between 0 and 50 adds 0 to 500 random points onto the dataset.
+4. Batch Size: Allows choosing the number of samples to be propagated through the network, useful in understanding the trade-off between batch size and the number of iterations.
+5. Learning Rate: Provides various choices for the learning rate.
+6. Activation Function: Choose the activation function for the neural network.
+7. Regularization: Choose whether to apply regularization to the neural network.
+8. Regularization Rate: Choose the rate for regularization if applied.
+9. Features: Choose from a range of features or properties to be used as the first layer of the neural network.
+10. Number of Nodes and Layers: Choose the number of layers and the number of nodes in each layer.
 
-## Gradle Project
-Import this project into your Intellij editor. It should automatically recognise this as a gradle repository.
-The starter code was built using SDK version 11.0.1. Ensure that you are using this version for this project. (You can, of course, change the SDK version as per your requirement if your team has all agreed to use a different version)
+The user is also presented with start, stop, and resume buttons to facilitate their use of the program. The output decision boundary is graphed onto the dataset after each Epoch. The user can see various training metrics such as Epoch number and Training loss to gauge a deeper understanding of the neural network.
 
-You have been provided with two starter files for demonstration: HelloWorld and HelloWorldTest.
+## Clean Architecture
 
-You will find HelloWorld in `src/main/java/tutorial` directory. Right click on the HelloWorld file and click on `Run HelloWorld.main()`.
-This should run the program and print on your console.
+### SOLID Principles
 
-You will find HelloWorldTest in `src/test/java/tutorial` directory. Right click on the HelloWorldTest file and click on `Run HelloWorldTest`.
-All tests should pass. Your team can remove this sample of how testing works once you start adding your project code to the repo.
+- **Single Responsibility Principle (SRP):** The `DataProcessor` class adheres to the SRP by taking the responsibility of dataset generation away from the `FeatureController`. This separation of concerns makes the codebase cleaner and more focused on specific tasks, enhancing code readability and maintainability.
 
-Moving forward, we expect you to maintain this project structure. You *should* use Gradle as the build environment, but it is fine if your team prefers to use something else -- just remove the gradle files and push your preferred project setup. Assuming you stick with Gradle, your source code should go into `src/main/java` (you can keep creating more subdirectories as per your project requirement). Every source class can auto-generate a test file for you. For example, open HelloWorld.java file and click on the `HelloWorld` variable as shown in the image below. You should see an option `Generate` and on clicking this your should see an option `Test`. Clicking on this will generate a JUnit test file for `HelloWorld` class. This was used to generate the `HelloWorldTest`.
+- **Open/Closed Principle (OCP):** The implementation of the Strategy pattern allows for the extension of dataset generation capabilities without modifying existing code. By introducing new classes that implement the `DatasetGenerator` interface, we can easily introduce additional dataset generation algorithms, ensuring the codebase remains open for extension but closed for modification.
 
-![image](https://user-images.githubusercontent.com/5333020/196066655-d3c97bf4-fdbd-46b0-b6ae-aeb8dbcf351d.png)
+- **Liskov Substitution Principle (LSP):** The `DatasetGenerator` interface acts as a contract, ensuring that all concrete generator classes (e.g., `CircularDatasetGenerator`, `QuadrantDatasetGenerator`, etc.) can be used interchangeably in the `DataProcessor`. This promotes robustness and makes it easier to add new generators in the future.
 
-You can create another simple class and try generating a test for this class.
+- **Interface Segregation Principle (ISP):** The `DatasetGenerator` interface is designed to have minimal and specific methods required for generating datasets. This ensures that the implementing classes do not have to implement unnecessary methods, promoting a more focused and concise design.
+
+- **Dependency Inversion Principle (DIP):** The use of the `DatasetGenerator` interface in the `DataProcessor` class demonstrates adherence to DIP. Instead of depending on concrete classes directly, the `DataProcessor` relies on abstractions, which decouples the high-level module from low-level details, leading to a more flexible and maintainable architecture.
+
+### Design Patterns
+
+- **Singleton Pattern:** The Singleton pattern is employed to ensure that the dataset generators (`CircularDatasetGenerator`, `QuadrantDatasetGenerator`, `SpiralDatasetGenerator`, and `ClusterDatasetGenerator`) have a single global instance across the application. This guarantees that all dataset generation requests go through the same generator instances, promoting consistency and avoiding unnecessary instantiation.
+
+- **Strategy Pattern:** The Strategy pattern is used to enable dynamic switching between different dataset generation algorithms. The `DatasetGenerator` interface defines the contract for dataset generation algorithms, and individual generator classes implement this interface. The `DataProcessor` class acts as the client and accepts a dataset generator as a constructor parameter, allowing it to work with any class that implements the `DatasetGenerator` interface.
+
+- **Composite Pattern:** The Composite pattern is employed in the `TransformDatasets` class to transform the dataset from an ArrayList of ArrayLists to an ArrayList of Lists with weights. This transformation allows for more efficient data representation, where each point includes coordinates and associated weights. The Composite pattern enables the processing of complex nested data structures with a unified interface.
+
+## Code Organization
+
+The project is organized into packages:
+
+- The `data` package contains classes for generating different types of datasets (`CircularDatasetGenerator`, `QuadrantDatasetGenerator`, `SpiralDatasetGenerator`, and `ClusterDatasetGenerator`) and the `DataProcessor` class that generates datasets based on the selected `DatasetGenerator`.
+
+- The `modelling` package contains classes related to building neural networks (`NeuralNet`
