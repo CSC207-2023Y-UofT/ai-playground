@@ -26,10 +26,10 @@ public class ModelTrainingServices {
   /**
    * Constructor for the ModelTrainingServices class which initializers the data and model.
    *
-   * @param data
-   * @param model
-   * @param statsFileName
-   * @param testData
+   * @param data The training dataset.
+   * @param model The model DAG.
+   * @param statsFileName The name of the logging file which will be saved to the disk.
+   * @param testData The testing dataset.
    */
   public ModelTrainingServices(
       List<Pair<INDArray, INDArray>> data,
@@ -60,9 +60,9 @@ public class ModelTrainingServices {
   /**
    * Train the model set through the constructor and created using the NeuralNet class.
    *
-   * @param epochs
-   * @param batchSize
-   * @param verbose
+   * @param epochs Number of iterations you should train for.
+   * @param batchSize The batch size to use while training.
+   * @param verbose Should you print to the logger.
    */
   public void trainModel(int epochs, int batchSize, boolean verbose) {
 
