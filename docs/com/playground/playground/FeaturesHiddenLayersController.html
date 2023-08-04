@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -203,6 +203,13 @@ implements javafx.fxml.Initializable</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSelectedParameters()">getSelectedParameters</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Allows other classes to retrieve selected parameters</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initialize(java.net.URL,java.util.ResourceBundle)">initialize</a></span>&#8203;(java.net.URL&nbsp;location,
           java.util.ResourceBundle&nbsp;resources)</code></th>
@@ -210,14 +217,14 @@ implements javafx.fxml.Initializable</pre>
 <div class="block">Initializer for FeaturesHiddenLayersController.java</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onAddButtonClicked(javafx.event.ActionEvent)">onAddButtonClicked</a></span>&#8203;(javafx.event.ActionEvent&nbsp;event)</code></th>
 <td class="colLast">
 <div class="block">Helper function for onAddButtonClicked used to add a neuron to the hidden layer graph.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onRemoveButtonClicked(javafx.event.ActionEvent)">onRemoveButtonClicked</a></span>&#8203;(javafx.event.ActionEvent&nbsp;event)</code></th>
 <td class="colLast">
@@ -303,6 +310,20 @@ implements javafx.fxml.Initializable</pre>
      null</code> if the location is not known.</dd>
 <dd><code>resources</code> - The resources used to localize the root object, or <code>null</code> if the root
      object was not localized.</dd>
+</dl>
+</li>
+</ul>
+<a id="getSelectedParameters()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSelectedParameters</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getSelectedParameters()</pre>
+<div class="block">Allows other classes to retrieve selected parameters</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>selectedButtons Returns the string representation of the buttons selected</dd>
 </dl>
 </li>
 </ul>
