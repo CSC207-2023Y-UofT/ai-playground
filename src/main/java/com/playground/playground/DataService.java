@@ -16,7 +16,11 @@ public class DataService {
     // Private constructor to prevent direct instantiation
     private DataService() {}
 
-    // Method to get the singleton instance
+    /**
+     * Method to get an instance of the DataService class.
+     * If the instance does not exist, it is created.
+     * @return the instance of the DataService class
+     */
     public static synchronized DataService getInstance() {
         if (instance == null) {
             instance = new DataService();
