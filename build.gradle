@@ -84,6 +84,7 @@ tasks.create(name: "testCoverage", type: JacocoReport, dependsOn: "test") {
     reports {
         html.required.set(true)
         xml.required.set(true)
+        csv.required.set(true)
     }
 
     def excludes = [

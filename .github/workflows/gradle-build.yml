@@ -32,3 +32,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: test
+
+      - name: Generate JaCoCo Test Coverage Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
+          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
