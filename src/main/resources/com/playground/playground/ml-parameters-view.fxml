@@ -19,7 +19,7 @@
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
-    <Button fx:id="playButton" styleClass="circle-button" onAction="#handlePlayButtonClick">
+    <Button fx:id="playButton" onAction="#handlePlayButtonClick" styleClass="circle-button">
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
@@ -61,20 +61,20 @@
             <MenuItem fx:id="l2" onAction="#handleRegularization" text="L2" />
         </Menu>
         <Menu text="Regularization Rate">
-            <MenuItem fx:id="reg1" text="0" />
-            <MenuItem fx:id="reg2" text="0.001" />
-            <MenuItem fx:id="reg3" text="0.003" />
-            <MenuItem fx:id="reg4" text="0.01" />
-            <MenuItem fx:id="reg5" text="0.03" />
-            <MenuItem fx:id="reg6" text="0.1" />
-            <MenuItem fx:id="reg7" text="0.3" />
-            <MenuItem fx:id="reg8" text="1" />
-            <MenuItem fx:id="reg9" text="3" />
-            <MenuItem fx:id="reg10" text="10" />
+            <MenuItem fx:id="reg1" onAction="#handleRegularizationRate" text="0" />
+            <MenuItem fx:id="reg2" onAction="#handleRegularizationRate" text="0.001" />
+            <MenuItem fx:id="reg3" onAction="#handleRegularizationRate" text="0.003" />
+            <MenuItem fx:id="reg4" onAction="#handleRegularizationRate" text="0.01" />
+            <MenuItem fx:id="reg5" onAction="#handleRegularizationRate" text="0.03" />
+            <MenuItem fx:id="reg6" onAction="#handleRegularizationRate" text="0.1" />
+            <MenuItem fx:id="reg7" onAction="#handleRegularizationRate" text="0.3" />
+            <MenuItem fx:id="reg8" onAction="#handleRegularizationRate" text="1" />
+            <MenuItem fx:id="reg9" onAction="#handleRegularizationRate" text="3" />
+            <MenuItem fx:id="reg10" onAction="#handleRegularizationRate" text="10" />
         </Menu>
         <Menu text="Problem Type">
-            <MenuItem fx:id="classify" text="Classification" />
-            <MenuItem fx:id="regress" text="Regression" />
+            <MenuItem fx:id="classify" onAction="#handleProblem" text="Classification" />
+            <MenuItem fx:id="regress" onAction="#handleProblem" text="Regression" />
         </Menu>
         <HBox.margin>
             <Insets left="80.0" />
