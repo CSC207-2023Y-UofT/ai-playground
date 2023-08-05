@@ -1,4 +1,4 @@
-package com.playground.playground.modelling;
+package com.playground.playground.data;
 
 import com.playground.playground.data.*;
 import org.junit.jupiter.api.Test;
