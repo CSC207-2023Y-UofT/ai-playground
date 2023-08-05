@@ -133,6 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">PrepareData</span>
 extends java.lang.Object</pre>
+<div class="block">This class helps make data ready for the model trianing.</div>
 </li>
 </ul>
 </div>
@@ -156,7 +157,9 @@ extends java.lang.Object</pre>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,java.util.List,java.util.List)">PrepareData</a></span>&#8203;(int&nbsp;batchSize,
            java.util.List&lt;org.nd4j.linalg.primitives.Pair&lt;org.nd4j.linalg.api.ndarray.INDArray,&#8203;org.nd4j.linalg.api.ndarray.INDArray&gt;&gt;&nbsp;data,
            java.util.List&lt;org.nd4j.linalg.primitives.Pair&lt;org.nd4j.linalg.api.ndarray.INDArray,&#8203;org.nd4j.linalg.api.ndarray.INDArray&gt;&gt;&nbsp;testData)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Default constructor for PrepareData.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -219,6 +222,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;PrepareData&#8203;(int&nbsp;batchSize,
                    java.util.List&lt;org.nd4j.linalg.primitives.Pair&lt;org.nd4j.linalg.api.ndarray.INDArray,&#8203;org.nd4j.linalg.api.ndarray.INDArray&gt;&gt;&nbsp;data,
                    java.util.List&lt;org.nd4j.linalg.primitives.Pair&lt;org.nd4j.linalg.api.ndarray.INDArray,&#8203;org.nd4j.linalg.api.ndarray.INDArray&gt;&gt;&nbsp;testData)</pre>
+<div class="block">Default constructor for PrepareData.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>batchSize</code> - Batch size for the trianing data.</dd>
+<dd><code>data</code> - Training Dataset.</dd>
+<dd><code>testData</code> - Testing Dataset.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -238,6 +248,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getDataset</h4>
 <pre class="methodSignature">public&nbsp;org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator&nbsp;getDataset()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The transformed training dataset</dd>
+</dl>
 </li>
 </ul>
 <a id="getTestDataset()">
@@ -247,6 +261,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTestDataset</h4>
 <pre class="methodSignature">public&nbsp;org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator&nbsp;getTestDataset()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The transformed testing dataset.</dd>
+</dl>
 </li>
 </ul>
 </li>
