@@ -38,10 +38,8 @@ jobs:
         with:
           arguments: testCoverage
 
-      - run: ls build/reports/jacoco/test/
-
       - name: Generate JaCoCo Test Coverage Badge
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
-          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+          jacoco-csv-file: build/reports/jacoco/testCoverage/jacocoTestReport.csv
