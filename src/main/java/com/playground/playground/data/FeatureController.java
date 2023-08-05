@@ -2,6 +2,7 @@ package com.playground.playground.data;
 
 import java.util.ArrayList;
 import com.google.common.primitives.Doubles;
+import org.nd4j.linalg.api.buffer.DataBuffer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.primitives.Pair;
@@ -33,10 +34,11 @@ public class FeatureController {
 
     List<Pair<INDArray, INDArray>> dataset = new ArrayList<Pair<INDArray, INDArray>>();
     for (ArrayList<Object> points : data) {
-      ArrayList<Doubles> coords = points.get(0);
-      INDArray coord = Nd4j.create(coords);
+      ArrayList<Doubles> coords;
+      coords = (ArrayList<Doubles>) points.get(0);
+      INDArray coord = Nd4j.create((DataBuffer) coords);
       final double[] labels = new double[1];
-      labels[0] = points.get(1);
+      labels[0] = (double) points.get(1);
       INDArray weight = Nd4j.create(labels);
       Pair<INDArray, INDArray> point = Pair.create(coord, weight);
       dataset.add(point);
