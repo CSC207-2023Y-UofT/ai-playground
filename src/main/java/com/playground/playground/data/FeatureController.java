@@ -1,7 +1,5 @@
 package com.playground.playground.data;
 
-import static com.playground.playground.data.GenerateDatasets.*;
-
 import java.util.ArrayList;
 
 public class FeatureController {
