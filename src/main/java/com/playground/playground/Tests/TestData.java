@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions;
 
 /**
  * Test class to validate the functionality of various components in the data package.
@@ -21,19 +26,19 @@ public class TestData {
         DatasetGenerator circularDatasetGenerator = new CircularDatasetGenerator();
         ArrayList<ArrayList<ArrayList<Double>>> circularDataset = circularDatasetGenerator.generate(10);
 
-        assertNotNull(circularDataset);
-        assertEquals(2, circularDataset.size());
+        Assertions.assertNotNull(circularDataset);
+        Assertions.assertEquals(2, circularDataset.size());
 
         ArrayList<ArrayList<Double>> cluster1 = circularDataset.get(0);
         ArrayList<ArrayList<Double>> cluster2 = circularDataset.get(1);
 
-        assertFalse(cluster1.isEmpty());
-        assertFalse(cluster2.isEmpty());
+        Assertions.assertFalse(cluster1.isEmpty());
+        Assertions.assertFalse(cluster2.isEmpty());
 
-        assertTrue(cluster1.get(0).size() > 1000);
-        assertTrue(cluster1.get(1).size() > 1000);
-        assertTrue(cluster2.get(0).size() > 1000);
-        assertTrue(cluster2.get(1).size() > 1000);
+        Assertions.assertTrue(cluster1.get(0).size() > 1000);
+        Assertions.assertTrue(cluster1.get(1).size() > 1000);
+        Assertions.assertTrue(cluster2.get(0).size() > 1000);
+        Assertions.assertTrue(cluster2.get(1).size() > 1000);
     }
 
     /**
@@ -44,19 +49,19 @@ public class TestData {
         DatasetGenerator quadrantDatasetGenerator = new QuadrantDatasetGenerator();
         ArrayList<ArrayList<ArrayList<Double>>> quadrantDataset = quadrantDatasetGenerator.generate(10);
 
-        assertNotNull(quadrantDataset);
-        assertEquals(2, quadrantDataset.size());
+        Assertions.assertNotNull(quadrantDataset);
+        Assertions.assertEquals(2, quadrantDataset.size());
 
         ArrayList<ArrayList<Double>> cluster1 = quadrantDataset.get(0);
         ArrayList<ArrayList<Double>> cluster2 = quadrantDataset.get(1);
 
-        assertFalse(cluster1.isEmpty());
-        assertFalse(cluster2.isEmpty());
+        Assertions.assertFalse(cluster1.isEmpty());
+        Assertions.assertFalse(cluster2.isEmpty());
 
-        assertTrue(cluster1.get(0).size() < 1000);
-        assertTrue(cluster1.get(1).size() < 1000);
-        assertTrue(cluster2.get(0).size() < 1000);
-        assertTrue(cluster2.get(1).size() < 1000);
+        Assertions.assertTrue(cluster1.get(0).size() < 1000);
+        Assertions.assertTrue(cluster1.get(1).size() < 1000);
+        Assertions.assertTrue(cluster2.get(0).size() < 1000);
+        Assertions.assertTrue(cluster2.get(1).size() < 1000);
     }
 
     /**
@@ -67,19 +72,19 @@ public class TestData {
         DatasetGenerator spiralDatasetGenerator = new SpiralDatasetGenerator();
         ArrayList<ArrayList<ArrayList<Double>>> spiralDataset = spiralDatasetGenerator.generate(10);
 
-        assertNotNull(spiralDataset);
-        assertEquals(2, spiralDataset.size());
+        Assertions.assertNotNull(spiralDataset);
+        Assertions.assertEquals(2, spiralDataset.size());
 
         ArrayList<ArrayList<Double>> cluster1 = spiralDataset.get(0);
         ArrayList<ArrayList<Double>> cluster2 = spiralDataset.get(1);
 
-        assertFalse(cluster1.isEmpty());
-        assertFalse(cluster2.isEmpty());
+        Assertions.assertFalse(cluster1.isEmpty());
+        Assertions.assertFalse(cluster2.isEmpty());
 
-        assertTrue(cluster1.get(0).size() < 1000);
-        assertTrue(cluster1.get(1).size() < 1000);
-        assertTrue(cluster2.get(0).size() < 1000);
-        assertTrue(cluster2.get(1).size() < 1000);
+        Assertions.assertTrue(cluster1.get(0).size() < 1000);
+        Assertions.assertTrue(cluster1.get(1).size() < 1000);
+        Assertions.assertTrue(cluster2.get(0).size() < 1000);
+        Assertions.assertTrue(cluster2.get(1).size() < 1000);
     }
 
     /**
@@ -99,8 +104,8 @@ public class TestData {
 
         ArrayList<ArrayList<Object>> transformedData = TransformDatasets.transform(sampleData);
 
-        assertNotNull(transformedData);
-        assertFalse(transformedData.isEmpty());
-        assertTrue(transformedData.size() <= 6);
+        Assertions.assertNotNull(transformedData);
+        Assertions.assertFalse(transformedData.isEmpty());
+        Assertions.assertTrue(transformedData.size() <= 6);
     }
 }
