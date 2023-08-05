@@ -34,4 +34,13 @@ public class FeatureTest {
         assertEquals(16.0, data2.get(2));
     }
 
+    @Test
+    public void testFeatureApplierFactory() {
+        FeatureApplier feature = FeatureApplierFactory.getFeature("squareX");
+        assertNotNull(feature);
+        assertTrue(feature instanceof SquareFeatureApplier);
+    }
+
+
+
 }
