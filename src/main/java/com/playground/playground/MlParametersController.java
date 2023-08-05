@@ -165,6 +165,9 @@ public class MlParametersController implements Initializable {
     int batch = DataAttributesController.initializeBatchSize;
     int test = DataAttributesController.initializeTestRatio;
     System.out.println(noise);
+    System.out.println(batch);
+    System.out.println(test);
+
     String problemType = MlParametersController.handleProblem;
     double regularRate = MlParametersController.handleRegularizationRate;
     String regular = MlParametersController.handleRegularization;
@@ -192,13 +195,12 @@ public class MlParametersController implements Initializable {
       activationType = Activation.SIGMOID;
     }
 
-
     String dataset = DataAttributesController.dataset;
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
-
     List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
     List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
-
+    System.out.println(selectedButtons);
+    System.out.println(dataset);
     PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
     INDArrayDataSetIterator trainDataset = dataGen.getDataset();
     INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
