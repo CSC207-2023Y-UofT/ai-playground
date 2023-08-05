@@ -48,18 +48,20 @@ jobs:
           jacoco-csv-file: build/reports/jacoco/testCoverage/testCoverage.csv
 
       - name: Log coverage percentages to workflow output
+        if: runner.os == 'Linux'
         run: |
           echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
           echo "branches = ${{ steps.jacoco.outputs.branches }}"
   
       - name: Upload JaCoCo coverage report as a workflow artifact
+        if: runner.os == 'Linux'
         uses: actions/upload-artifact@v2
         with:
           name: jacoco-report
           path: target/site/jacoco/
   
       - name: Commit and push the coverage badges and summary file
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ github.event_name != 'pull_request' and runner.os == 'Linux'}}
         run: |
           cd badges
           if [[ `git status --porcelain *.svg *.json` ]]; then
