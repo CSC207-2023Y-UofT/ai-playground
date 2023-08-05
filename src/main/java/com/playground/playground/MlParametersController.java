@@ -152,5 +152,4 @@ public class MlParametersController implements Initializable {
     all.add(this.learningRate.toString());
     return all;
   }
-
 }
