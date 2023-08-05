@@ -91,7 +91,7 @@ WIP
 
 - **Composite Pattern:** The Composite pattern is employed in the `TransformDatasets` class to transform the dataset from an ArrayList of ArrayLists to an ArrayList of Lists with weights. This transformation allows for more efficient data representation, where each point includes coordinates and associated weights. The Composite pattern enables the processing of complex nested data structures with a unified interface.
 
-## Code Organization
+### Code Organization
 
 The project is organized into packages:
 
@@ -101,7 +101,7 @@ The project is organized into packages:
 
 - The `Tests` package contains extensive unit tests to ensure the correctness and reliability of the dataset generation and neural network modules.
 
-## User Stories
+### User Stories
 
 1. As a user, I want to see the decision boundary (represented graphically) update and the training loss after every epoch on the graph, superimposed over the input data points.
 
@@ -115,7 +115,7 @@ The project is organized into packages:
 
 6. As a user, I want to see how the weights of each feature change (represented by the connection lines between nodes) with the number of epochs.
 
-## Use of GitHub
+### Use of GitHub
 
 The AI Playground project demonstrates effective use of GitHub's features and best practices to foster collaboration, version control, and code management. Here are some key aspects of how GitHub was utilized in this project:
 
