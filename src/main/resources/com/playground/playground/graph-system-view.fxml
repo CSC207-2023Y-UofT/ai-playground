@@ -4,13 +4,14 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="457.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
    <VBox prefHeight="462.0" prefWidth="485.0">
       <children>
-          <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="neural-network-text">
+          <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="389.0" prefWidth="400.0" styleClass="neural-network-text">
               <xAxis>
                   <NumberAxis fx:id="yAxis" lowerBound="-5.5" side="BOTTOM" upperBound="5.5" />
               </xAxis>
@@ -23,6 +24,11 @@
                <VBox prefHeight="58.0" prefWidth="144.0">
                   <children>
                      <CheckBox fx:id="showTestData" mnemonicParsing="false" prefHeight="18.0" prefWidth="111.0" text="Show test data" />
+                     <Label prefWidth="120.0" text="Training Loss:">
+                        <VBox.margin>
+                           <Insets top="10.0" />
+                        </VBox.margin>
+                     </Label>
                   </children>
                   <padding>
                      <Insets left="20.0" />
@@ -31,6 +37,11 @@
                <VBox prefHeight="58.0" prefWidth="192.0">
                   <children>
                      <CheckBox fx:id="discreteOutput" mnemonicParsing="false" prefHeight="18.0" prefWidth="123.0" text="Discretize output" />
+                     <Label prefWidth="120.0" text="Test Loss:">
+                        <VBox.margin>
+                           <Insets top="10.0" />
+                        </VBox.margin>
+                     </Label>
                   </children>
                   <padding>
                      <Insets left="70.0" />
