@@ -29,24 +29,37 @@ public class GraphSystemController implements Initializable {
    * Updates the graph with a new dataset.
    *
    * The method first clears the current data in the graph, and then adds the new data. Each cluster is added as a new
-   * series in the graph.
+   * series in the graph. Then, it sets the colours of the points
    *
    * @param dataset The new dataset to display in the graph.
+   * @param colors An ArrayList of 0's or 1's corresponding to the colour of the points on the dataset.
    */
 
-
-  public void updateGraph(ArrayList<ArrayList<ArrayList<Double>>> dataset) {
-// Clear the current data
+  public void updateGraph(ArrayList<ArrayList<ArrayList<Double>>> dataset, ArrayList<Integer> colors) {
+    // Clear the current data
     neuralNetwork.getData().clear();
 
-
-// Add the new data
-    for (ArrayList<ArrayList<Double>> cluster : dataset) {
+    // Add the new data
+    for (int i = 0; i < dataset.size(); i++) {
+      ArrayList<ArrayList<Double>> cluster = dataset.get(i);
       XYChart.Series<Number, Number> series = new XYChart.Series<>();
       ArrayList<Double> x = cluster.get(0);
       ArrayList<Double> y = cluster.get(1);
-      for (int i = 0; i < x.size(); i++) {
-        series.getData().add(new XYChart.Data<Number, Number>(x.get(i), y.get(i)));
+      for (int j = 0; j < x.size(); j++) {
+        XYChart.Data<Number, Number> data = new XYChart.Data<>(x.get(j), y.get(j));
+        series.getData().add(data);
+
+        // Change the color of the data point based on the color value
+        int finalI = i;
+        data.nodeProperty().addListener((ov, oldNode, newNode) -> {
+          if (newNode != null) {
+            if (colors.get(finalI) == 1) {
+              newNode.setStyle("-fx-background-color: blue;");
+            } else {
+              newNode.setStyle("-fx-background-color: green;");
+            }
+          }
+        });
       }
       neuralNetwork.getData().add(series);
     }
