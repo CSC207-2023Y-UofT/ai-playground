@@ -68,20 +68,33 @@ The AI Playground displays various training metrics, including Epoch number, Tes
 
 By offering these interactive features and visualizations, the AI Playground aims to make neural networks more accessible and understandable for users. Users can experiment with different configurations and datasets to gain a deeper understanding of how neural networks work and how to optimize their performance for specific tasks. The software provides a valuable educational tool for students, researchers, and enthusiasts interested in machine learning and neural networks.
 
-### Clean Architecture
+## Clean Architecture
 WIP
 
-### SOLID Principles
+## SOLID Principles
 
-- **Single Responsibility Principle (SRP):** The `DataProcessor` class adheres to the SRP by taking the responsibility of dataset generation away from the `FeatureController`. This separation of concerns makes the codebase cleaner and more focused on specific tasks, enhancing code readability and maintainability.
+The AI Playground project adheres to SOLID principles:
 
-- **Open/Closed Principle (OCP):** The implementation of the Strategy pattern allows for the extension of dataset generation capabilities without modifying existing code. By introducing new classes that implement the `DatasetGenerator` interface, we can easily introduce additional dataset generation algorithms, ensuring the codebase remains open for extension but closed for modification.
+### Single Responsibility Principle (SRP)
+- Each class has a single responsibility.
+- `FeatureApplier` applies specific features to the dataset.
+- `DataGeneratorFactory` creates different dataset generators.
 
-- **Liskov Substitution Principle (LSP):** The `DatasetGenerator` interface acts as a contract, ensuring that all concrete generator classes (e.g., `CircularDatasetGenerator`, `QuadrantDatasetGenerator`, etc.) can be used interchangeably in the `DataProcessor`. This promotes robustness and makes it easier to add new generators in the future.
+### Open/Closed Principle (OCP)
+- Designed to be easily extensible.
+- New feature appliers or dataset generators can be added by implementing interfaces.
 
-- **Interface Segregation Principle (ISP):** The `DatasetGenerator` interface is designed to have minimal and specific methods required for generating datasets. This ensures that the implementing classes do not have to implement unnecessary methods, promoting a more focused and concise design.
+### Liskov Substitution Principle (LSP)
+- Subclasses can be used interchangeably with their parent classes.
+- All dataset generators implement the `DatasetGenerator` interface.
 
-- **Dependency Inversion Principle (DIP):** The use of the `DatasetGenerator` interface in the `DataProcessor` class demonstrates adherence to DIP. Instead of depending on concrete classes directly, the `DataProcessor` relies on abstractions, which decouples the high-level module from low-level details, leading to a more flexible and maintainable architecture.
+### Interface Segregation Principle (ISP)
+- Small, focused interfaces are created.
+- `DatasetGenerator` and `FeatureApplier` interfaces define only relevant methods.
+
+### Dependency Inversion Principle (DIP)
+- Dependency Injection is used, relying on abstractions rather than concrete implementations.
+- `DataProcessor` depends on the `DatasetGenerator` interface.
 
 ### Design Patterns
 
@@ -91,7 +104,7 @@ WIP
 
 - **Composite Pattern:** The Composite pattern is employed in the `TransformDatasets` class to transform the dataset from an ArrayList of ArrayLists to an ArrayList of Lists with weights. This transformation allows for more efficient data representation, where each point includes coordinates and associated weights. The Composite pattern enables the processing of complex nested data structures with a unified interface.
 
-### Code Organization
+## Code Organization
 
 The AI Playground project follows structured code organization:
 
@@ -103,7 +116,7 @@ The AI Playground project follows structured code organization:
 
 By organizing the code in this manner, the AI Playground project becomes more maintainable and readable.
 
-### User Stories
+## User Stories
 
 1. As a user, I want to see the decision boundary (represented graphically) update and the training loss after every epoch on the graph, superimposed over the input data points.
 
@@ -117,7 +130,7 @@ By organizing the code in this manner, the AI Playground project becomes more ma
 
 6. As a user, I want to see how the weights of each feature change (represented by the connection lines between nodes) with the number of epochs.
 
-### Use of GitHub
+## Use of GitHub
 
 The AI Playground project demonstrates effective use of GitHub's features and best practices to foster collaboration, version control, and code management. Here are some key aspects of how GitHub was utilized in this project:
 
