@@ -23,7 +23,7 @@ The user is presented with an interactive UI where they can choose various aspec
 9. Features: Choose from a range of features or properties to be used as the first layer of the neural network.
 10. Number of Nodes and Layers: Choose the number of layers and the number of nodes in each layer.
 
-The user is also presented with start, stop, and resume buttons to facilitate their use of the program. The output decision boundary is graphed onto the dataset after each Epoch. The user can see various training metrics such as Epoch number and Training loss to gauge a deeper understanding of the neural network.
+The user is also presented with start, stop, and resume buttons to facilitate their use of the program. The output decision boundary is graphed onto the dataset after each Epoch. The user can see various training metrics such as Epoch number, Testing loss and Training loss to gauge a deeper understanding of the neural network.
 
 ### Clean Architecture
 WIP
