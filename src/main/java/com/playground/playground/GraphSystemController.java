@@ -36,6 +36,14 @@ public class GraphSystemController implements Initializable {
       }
     });
   }
+  /**
+   * Updates the graph with a new dataset.
+   *
+   * The method first clears the current data in the graph, and then adds the new data. Each cluster is added as a new
+   * series in the graph.
+   *
+   * @param dataset The new dataset to display in the graph.
+   */
 
   public void updateGraph(ArrayList<ArrayList<ArrayList<Double>>> dataset) {
     // Clear the current data

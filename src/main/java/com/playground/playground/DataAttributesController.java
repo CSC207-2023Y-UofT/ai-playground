@@ -80,7 +80,12 @@ public class DataAttributesController implements Initializable {
     graphSystemController = new GraphSystemController();
 
   }
-
+  /**
+   * Handles the action when a button is clicked and generates the dataset based on the type of the button clicked.
+   *
+   * @param event The action event that occurred (button click).
+   * @param type The type of the dataset to generate.
+   */
   private void handleButtonAction(ActionEvent event, String type) {
     // Get the noise value from the slider
     int noise = (int) slider2.getValue();
@@ -106,24 +111,40 @@ public class DataAttributesController implements Initializable {
 
     dataService.setDataset(dataset);
   }
-
+  /**
+   * Handles the action when the "Cluster" button is clicked and generates the "Cluster" dataset.
+   *
+   * @param event The action event that occurred (button click).
+   */
   public void handleClusterButtonAction(ActionEvent event) {
     handleButtonAction(event, "cluster");
   }
+  /**
+   * Handles the action when the "Radial" button is clicked and generates the "Radial" dataset.
+   *
+   * @param event The action event that occurred (button click).
+   */
 
   public void handleRadialButtonAction(ActionEvent event) {
     handleButtonAction(event, "radial");
   }
+  /**
+   * Handles the action when the "Spiral" button is clicked and generates the "Spiral" dataset.
+   *
+   * @param event The action event that occurred (button click).
+   */
 
   public void handleSpiralButtonAction(ActionEvent event) {
     handleButtonAction(event, "spiral");
   }
-
+  /**
+   * Handles the action when the "rectangular" button is clicked and generates the "rectangular" dataset.
+   *
+   * @param event The action event that occurred (button click).
+   */
   public void handleRectangularButtonAction(ActionEvent event) {
     handleButtonAction(event, "rectangular");
   }
-
-
 
   /**
    * Slider for users to adjust the ratio of training to test data percentage.
