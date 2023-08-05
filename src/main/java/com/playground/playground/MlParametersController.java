@@ -159,7 +159,8 @@ public class MlParametersController implements Initializable {
     int test = DataAttributesController.testRatio;
     String problemType = MlParametersController.handleProblem;
     double regularizeRate = MlParametersController.handleRegularizationRate;
-    ArrayList<Integer> hiddenLayers = new ArrayList<Integer>(FeaturesHiddenLayersController.getLayersNeurons);
+    List<Integer> hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons;
+    System.out.println(hiddenLayers);
     String activation = MlParametersController.handleActivation;
 
     Activation activationType = Activation.SOFTMAX;
@@ -184,15 +185,15 @@ public class MlParametersController implements Initializable {
     INDArrayDataSetIterator trainDataset = dataGen.getDataset();
     INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
 
-    Object model =
-        new NeuralNetBuilder()
-            .activation(activationType)
-            .inputs(hiddenLayers.get(0))
-            .layers((ArrayList<Integer>) hiddenLayers)
-            .learningRate()
-            .lossFunction()
-            .nOut()
-            .optimizer()
-            .buildNeuralNet();
+//    Object model =
+//        new NeuralNetBuilder()
+//            .activation(activationType)
+//            .inputs(hiddenLayers.get(0))
+//            .layers((ArrayList<Integer>) hiddenLayers)
+//            .learningRate()
+//            .lossFunction()
+//            .nOut()
+//            .optimizer()
+//            .buildNeuralNet();
   }
 }
