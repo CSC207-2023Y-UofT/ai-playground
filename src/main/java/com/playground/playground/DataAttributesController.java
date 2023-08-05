@@ -30,7 +30,8 @@ public class DataAttributesController implements Initializable {
   @FXML private Button spiralButton;
 
   @FXML private Button rectangularButton;
-
+  public static int testRatio;
+  public static int batchSize;
   public static int noise;
   public static String dataset;
 
@@ -114,10 +115,16 @@ public class DataAttributesController implements Initializable {
     button.setPrefSize(70, 50);
   }
 
-  public void initialize(MouseEvent mouseEvent) {
+  public void initializeTestRatio(MouseEvent mouseEvent) {
+    testRatio = (int) slider1.getValue();
+  }
+  public void initializeNoise(MouseEvent mouseEvent) {
     noise = (int) slider2.getValue();
   }
-
+  public void initializeBatchSize(MouseEvent mouseEvent) {
+    batchSize = (int) slider3.getValue();
+  }
+  
   public void handleCLusterButton(ActionEvent actionEvent) {
     dataset = "cluster";
   }

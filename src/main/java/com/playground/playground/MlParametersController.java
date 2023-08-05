@@ -18,6 +18,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 public class MlParametersController implements Initializable {
+  private static String handleProblem;
+  private static double handleRegularizationRate;
   @FXML private Button stepButton;
 
   @FXML private Button playButton;
@@ -104,8 +106,8 @@ public class MlParametersController implements Initializable {
 
   public String handleProblem(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
-    String handleProblem = selection.getText();
-    return handleProblem;
+    String problem = selection.getText();
+    return problem;
   }
 
   public double handleRegularizationRate(ActionEvent actionEvent) {
@@ -144,6 +146,12 @@ public class MlParametersController implements Initializable {
 
   public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
     int noise = DataAttributesController.noise;
+    int batch = DataAttributesController.batchSize;
+    int test = DataAttributesController.testRatio;
+    String problemType = MlParametersController.handleProblem;
+    double regularizeRate = MlParametersController.handleRegularizationRate;
+    Object hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons;
+
     String dataset = DataAttributesController.dataset;
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
