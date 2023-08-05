@@ -93,13 +93,15 @@ WIP
 
 ### Code Organization
 
-The project is organized into packages:
+The AI Playground project follows structured code organization:
 
-- The `data` package contains classes for generating different types of datasets (`CircularDatasetGenerator`, `QuadrantDatasetGenerator`, `SpiralDatasetGenerator`, and `ClusterDatasetGenerator`) and the `DataProcessor` class that generates datasets based on the selected `DatasetGenerator`.
+1. Project is divided into packages representing specific domains or layers like `interface_adapter`, `usecase`, `entity`, and `resources`.
 
-- The `modelling` package contains classes related to building neural networks (`NeuralNet` and `NeuralNetBuilder`) and model training services (`ModelTrainingServices`).
+2. Within each package, classes are organized based on their functionality and responsibilities.
 
-- The `Tests` package contains extensive unit tests to ensure the correctness and reliability of the dataset generation and neural network modules.
+3. The `test` package contains test classes for unit testing various components of the application.
+
+By organizing the code in this manner, the AI Playground project becomes more maintainable and readable.
 
 ### User Stories
 
