@@ -40,7 +40,7 @@ public class MlParametersController implements Initializable {
   @FXML private MenuItem reLu;
   @FXML private MenuItem tanH;
   @FXML private MenuItem sigmoid;
-  @FXML private MenuItem linear;
+  @FXML private MenuItem softMax;
   @FXML private MenuItem none;
   @FXML private MenuItem l1;
   @FXML private MenuItem l2;
@@ -86,7 +86,7 @@ public class MlParametersController implements Initializable {
     reLu.setOnAction(this::handleActivation);
     tanH.setOnAction(this::handleActivation);
     sigmoid.setOnAction(this::handleActivation);
-    linear.setOnAction(this::handleActivation);
+    softMax.setOnAction(this::handleActivation);
     none.setOnAction(this::handleRegularization);
     l1.setOnAction(this::handleRegularization);
     l2.setOnAction(this::handleRegularization);
