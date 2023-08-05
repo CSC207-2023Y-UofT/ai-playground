@@ -1,6 +1,10 @@
 package com.playground.playground.data;
 
 import java.util.ArrayList;
+import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.primitives.Pair;
+
+import java.util.List;
 
 public class FeatureController {
 
