@@ -86,6 +86,32 @@ public class FeatureTest {
         assertEquals(20.0, data2.get(2));
     }
 
+    @Test
+    public void testFeatureController() {
+        // mock data, noise, and features
+        String dataName = "circular";
+        ArrayList<String> featureNames = new ArrayList<>(Arrays.asList("squareX", "sinY"));
+        int noise = 10;
+
+        ArrayList<ArrayList<Object>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
+        assertNotNull(result);
+        assertEquals(1000, result.size());
+
+        for(ArrayList<Object> point : result) {
+            ArrayList<Double> coordinates = (ArrayList<Double>) point.get(0);
+
+            assertEquals(4, coordinates.size());
+
+            double x = coordinates.get(0);
+            double y = coordinates.get(1);
+            double squaredX = coordinates.get(2);
+            double sinY = coordinates.get(3);
+
+            assertEquals(x * x, squaredX, 1e-6);
+            assertEquals(Math.sin(y), sinY, 1e-6);
+        }
+    }
+
 
 
 }
