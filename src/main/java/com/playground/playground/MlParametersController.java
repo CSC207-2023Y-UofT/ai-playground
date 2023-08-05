@@ -14,9 +14,12 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+
 import static java.lang.Math.round;
 
+
 public class MlParametersController implements Initializable {
+  private DataAttributesController dataAttributesController;
   @FXML private Button stepButton;
 
   @FXML private Button playButton;
@@ -133,6 +136,7 @@ public class MlParametersController implements Initializable {
     this.learningRate = Double.parseDouble(selection.getText());
   }
 
+
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView =
             new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
@@ -142,8 +146,13 @@ public class MlParametersController implements Initializable {
     button.getStyleClass().add("image-button");
 
   }
+  public void handleButton(ActionEvent actionEvent){
 
-  public ArrayList<String> getAll(){
+    int noise = dataAttributesController.getSlider2Value();
+    System.out.println(noise);
+  }
+
+  public ArrayList<String> getParameters(){
     ArrayList<String> all = new ArrayList<>();
     all.add(this.problemTypes);
     all.add(this.regularization);
