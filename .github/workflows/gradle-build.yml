@@ -1,4 +1,4 @@
-name: Run Gradle Build
+name: Run Gradle Build and Test
 
 on: [push, pull_request]
 
@@ -27,3 +27,20 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
+
+      - name: Setup and execute Gradle 'test' task
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test
+
+      - name: Setup and execute Gradle 'testCoverage' task
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: testCoverage
+
+      - name: Generate JaCoCo Test Coverage Badge
+        if: runner.os == 'Linux'
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
+          jacoco-csv-file: build/reports/jacoco/testCoverage/testCoverage.csv
