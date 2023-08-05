@@ -34,12 +34,12 @@ jobs:
           arguments: test
 
       - name: Setup and execute Gradle 'testCoverage' task
-        if: runner.os == 'Linux'
         uses: gradle/gradle-build-action@v2
         with:
           arguments: testCoverage
 
       - name: Generate JaCoCo Test Coverage Badge
+        if: runner.os == 'Linux'
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
