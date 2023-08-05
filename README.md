@@ -1,6 +1,10 @@
 # AI Playground
 
-The AI Playground is a software program designed to help users visualize the decision boundary produced by a neural network using different datasets and configurations. It aims to provide an interactive and educational experience for understanding how neural networks work and how various factors impact their performance.
+The AI Playground is an interactive software program designed to help users explore and visualize the decision boundary produced by a neural network using various datasets and configurations. It offers an educational and hands-on experience, allowing users to understand how neural networks function and how different factors impact their performance.
+
+Users can select from a range of datasets, adjust the training-to-testing data ratio, introduce noise, customize batch size and learning rate, and experiment with different activation functions and regularization options. The program's intuitive interface provides start, stop, and resume buttons, enabling users to observe the decision boundary graphed onto the dataset after each training epoch.
+
+The AI Playground serves as a valuable tool for students, researchers, and machine learning enthusiasts to gain practical insights into the world of artificial intelligence.
 
 ## Usage
 
