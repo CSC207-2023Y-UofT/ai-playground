@@ -34,11 +34,11 @@ public class GraphSystemController implements Initializable {
 
   }
 
-  public void setTestLoss(int testL){
+  public void setTestLoss(double testL){
     testLoss.setText("Training Loss: " + testL);
   }
 
-  public void setTrainingLoss(int trainL){
+  public void setTrainingLoss(double trainL){
     testLoss.setText("Test Loss: " + trainL);
   }
 
