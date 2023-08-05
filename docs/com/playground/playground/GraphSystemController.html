@@ -189,7 +189,8 @@ implements javafx.fxml.Initializable</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateGraph(java.util.ArrayList)">updateGraph</a></span>&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateGraph(java.util.ArrayList,java.util.ArrayList)">updateGraph</a></span>&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset,
+           java.util.ArrayList&lt;java.lang.Integer&gt;&nbsp;colors)</code></th>
 <td class="colLast">
 <div class="block">Updates the graph with a new dataset.</div>
 </td>
@@ -252,20 +253,22 @@ implements javafx.fxml.Initializable</pre>
 </dl>
 </li>
 </ul>
-<a id="updateGraph(java.util.ArrayList)">
+<a id="updateGraph(java.util.ArrayList,java.util.ArrayList)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>updateGraph</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;updateGraph&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;updateGraph&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset,
+                        java.util.ArrayList&lt;java.lang.Integer&gt;&nbsp;colors)</pre>
 <div class="block">Updates the graph with a new dataset.
 
  The method first clears the current data in the graph, and then adds the new data. Each cluster is added as a new
- series in the graph.</div>
+ series in the graph. Then, it sets the colours of the points</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dataset</code> - The new dataset to display in the graph.</dd>
+<dd><code>colors</code> - An ArrayList of 0's or 1's corresponding to the colour of the points on the dataset.</dd>
 </dl>
 </li>
 </ul>
