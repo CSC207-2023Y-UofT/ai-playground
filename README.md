@@ -1,8 +1,10 @@
 # AI Playground
 
-This program can help users visualize the decision boundary produced by a neural network given a collection of data points. The data points will be clustered in various patterns to explore the impacts of changing elements of the neural network, such as the number of layers, the number of neurons, the neural network features (transformations made on the input data points), and how noise in the dataset affects the neural network.
+The AI Playground is a software program designed to help users visualize the decision boundary produced by a neural network using different datasets and configurations. It aims to provide an interactive and educational experience for understanding how neural networks work and how various factors impact their performance.
 
 ## Usage
+
+To use the AI Playground, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Open the project in an IDE or editor that supports Java 11.
@@ -10,20 +12,61 @@ This program can help users visualize the decision boundary produced by a neural
 
 ## Software Specification
 
-The user is presented with an interactive UI where they can choose various aspects of a handcrafted Neural Network:
+The AI Playground offers the following features for users to interact with:
 
-1. Dataset: Randomly generated datasets on-click, possibilities include Circular, Cluster, Quadrant, and Spiral datasets.
-2. Ratio of Training to Testing Data: Helps the user understand the balance between the amount of training and data, useful to understand concepts such as overfitting.
-3. Noise: Choosing a value between 0 and 50 adds 0 to 500 random points onto the dataset.
-4. Batch Size: Allows choosing the number of samples to be propagated through the network, useful in understanding the trade-off between batch size and the number of iterations.
-5. Learning Rate: Provides various choices for the learning rate.
-6. Activation Function: Choose the activation function for the neural network.
-7. Regularization: Choose whether to apply regularization to the neural network.
-8. Regularization Rate: Choose the rate for regularization if applied.
-9. Features: Choose from a range of features or properties to be used as the first layer of the neural network.
-10. Number of Nodes and Layers: Choose the number of layers and the number of nodes in each layer.
+### 1. Choose Dataset
 
-The user is also presented with start, stop, and resume buttons to facilitate their use of the program. The output decision boundary is graphed onto the dataset after each Epoch. The user can see various training metrics such as Epoch number, Testing loss and Training loss to gauge a deeper understanding of the neural network.
+Users can select from various randomly generated datasets, such as Circular, Cluster, Quadrant, and Spiral datasets. Each dataset represents different clustering patterns that can be used to observe the decision boundary produced by the neural network.
+
+### 2. Set Training-to-Testing Ratio
+
+The user can control the ratio of training to testing data. This feature helps users understand the trade-off between the amount of training data and testing data and the concept of overfitting.
+
+### 3. Add Noise
+
+Users can introduce noise to the dataset by choosing a noise level between 0 and 50. This feature allows users to see how noise affects the decision boundary and the robustness of the neural network.
+
+### 4. Set Batch Size
+
+The batch size can be adjusted, allowing users to explore the impact of batch size on the number of samples propagated through the network during training. This provides insights into the trade-offs between batch size and the number of iterations.
+
+### 5. Set Learning Rate
+
+The learning rate can be customized, offering various choices for users. Adjusting the learning rate helps users observe how it affects the training process and convergence speed.
+
+### 6. Choose Activation Function
+
+Users can choose the activation function for the neural network. Different activation functions have distinct effects on the network's performance and learning behavior.
+
+### 7. Enable Regularization
+
+Regularization can be turned on or off. Users can observe how regularization affects the model's performance and prevents overfitting.
+
+### 8. Set Regularization Rate
+
+If regularization is enabled, users can set the rate for regularization. This parameter controls the strength of the regularization effect on the neural network.
+
+### 9. Choose Features
+
+The AI Playground offers a selection of features or properties to be used as the first layer of the neural network. Users can experiment with different features to observe their impact on the model's performance.
+
+### 10. Set Number of Layers and Nodes
+
+Users can specify the number of layers and the number of nodes in each layer. This feature allows users to design custom neural network architectures and understand how the network's structure affects its capabilities.
+
+### 11. Start, Stop, and Resume Training
+
+The software provides buttons to start, stop, and resume the training process. This allows users to control the training procedure and observe the decision boundary at different stages of training.
+
+### 12. Visualize Decision Boundary
+
+After each training epoch, the decision boundary is graphed onto the dataset. Users can see the evolving decision boundary and understand how the neural network learns to classify data points.
+
+### 13. Training Metrics
+
+The AI Playground displays various training metrics, including Epoch number, Testing loss, and Training loss. These metrics provide users with insights into the neural network's performance during training.
+
+By offering these interactive features and visualizations, the AI Playground aims to make neural networks more accessible and understandable for users. Users can experiment with different configurations and datasets to gain a deeper understanding of how neural networks work and how to optimize their performance for specific tasks. The software provides a valuable educational tool for students, researchers, and enthusiasts interested in machine learning and neural networks.
 
 ### Clean Architecture
 WIP
