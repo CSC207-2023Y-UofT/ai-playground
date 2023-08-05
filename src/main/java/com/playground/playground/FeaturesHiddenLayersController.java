@@ -101,7 +101,7 @@ public class FeaturesHiddenLayersController implements Initializable {
         selectedButtons.remove(buttonName);
       } else {
         // Button wasn't selected, select it
-        button.setStyle("-fx-background-color: pink;");
+        button.setStyle("-fx-background-color: blue;");
         // Add the button name to the selectedButtons list
         selectedButtons.add(buttonName);
       }
