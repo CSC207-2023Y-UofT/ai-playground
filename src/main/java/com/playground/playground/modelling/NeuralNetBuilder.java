@@ -51,7 +51,7 @@ public class NeuralNetBuilder {
   /**
    * Set regularization type, either one of "l1" or "l2", defaults to "l2".
    *
-   * @param regularizationType
+   * @param regularizationType The regularization to use, defaults to L2.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder regularizationType(String regularizationType) {
@@ -62,7 +62,7 @@ public class NeuralNetBuilder {
   /**
    * Set the regularization factor, defaults to 5e-4.
    *
-   * @param regularizationFactor
+   * @param regularizationFactor The regularization factor to use.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder regularizationFactor(double regularizationFactor) {
@@ -73,7 +73,7 @@ public class NeuralNetBuilder {
   /**
    * Set the optimization algorithm, defaults to SGD.
    *
-   * @param optimizationAlgorithm
+   * @param optimizationAlgorithm Optimization Algorithm to use, defaults to SGD.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder optimizationAlgorithm(OptimizationAlgorithm optimizationAlgorithm) {
@@ -84,7 +84,7 @@ public class NeuralNetBuilder {
   /**
    * Should you use regularization?, defaults to true.
    *
-   * @param regularization
+   * @param regularization Should you use regularization, defaults to true.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder regularization(boolean regularization) {
@@ -95,7 +95,7 @@ public class NeuralNetBuilder {
   /**
    * Set the optimizer, defaults to Adam.
    *
-   * @param optimizer
+   * @param optimizer Optimizer to use, defaults to Adam.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder optimizer(Updater optimizer) {
@@ -106,7 +106,7 @@ public class NeuralNetBuilder {
   /**
    * Set activation function for all except the output layer, defaults to ReLU.
    *
-   * @param activation
+   * @param activation The activation to use, defaults to ReLU.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder activation(Activation activation) {
@@ -117,7 +117,7 @@ public class NeuralNetBuilder {
   /**
    * Set weight initialization startegy, defaults to Xavier.
    *
-   * @param weightInit
+   * @param weightInit The weight initialization to use, defaults to Xavier.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder weightInit(WeightInit weightInit) {
@@ -128,7 +128,7 @@ public class NeuralNetBuilder {
   /**
    * Set the number of outputs, defaults to 2.
    *
-   * @param nOut
+   * @param nOut The number of outputs the model should return, defaults to 2.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder nOut(int nOut) {
@@ -139,7 +139,7 @@ public class NeuralNetBuilder {
   /**
    * Set loss function, defaults to negative log likelihood.
    *
-   * @param lossFunction
+   * @param lossFunction The loss function to use, defaults to negative log likelihood.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder lossFunction(LossFunctions.LossFunction lossFunction) {
@@ -150,7 +150,7 @@ public class NeuralNetBuilder {
   /**
    * Set the number of inputs, defaults to 2.
    *
-   * @param inputs
+   * @param inputs Number of inputs to this model, defaults to 2.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder inputs(int inputs) {
@@ -162,7 +162,7 @@ public class NeuralNetBuilder {
    * A list of numbers showing the number of nodes ine ach layer, excluding the last layer but
    * including the first layer in this list, defaults to [2,4,2].
    *
-   * @param layers
+   * @param layers List of layers excluding the output layer, defaults to [2, 4, 2].
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder layers(ArrayList<Integer> layers) {
@@ -173,7 +173,7 @@ public class NeuralNetBuilder {
   /**
    * Set learning rate, defaults to 1e-3.
    *
-   * @param learningRate
+   * @param learningRate The learning rate to use.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder learningRate(double learningRate) {
@@ -184,7 +184,7 @@ public class NeuralNetBuilder {
   /**
    * Set seed for the experiments, defaults to 123 (ideally choose 3047).
    *
-   * @param seed
+   * @param seed Seed to use to train model, defaults to 123.
    * @return NeuralNetBuilder object
    */
   public NeuralNetBuilder seed(int seed) {

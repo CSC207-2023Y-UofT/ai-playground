@@ -47,7 +47,6 @@ public class FeaturesHiddenLayersController implements Initializable {
 
   private List<String> selectedButtons = new ArrayList<>();
 
-
   /**
    * Initializer for FeaturesHiddenLayersController.java
    *
@@ -70,11 +69,11 @@ public class FeaturesHiddenLayersController implements Initializable {
     neuronLabels = new Label[] {neurons1, neurons2, neurons3, neurons4, neurons5, neurons6};
 
     // Adding the behavior for buttons
-    toggleButtonSelection(x1pow2button, "x1pow2button");
-    toggleButtonSelection(x2pow2button, "x2pow2button");
-    toggleButtonSelection(x1x2button, "x1x2button");
-    toggleButtonSelection(sinx1button, "sinx1button");
-    toggleButtonSelection(sinx2button, "sinx2button");
+    toggleButtonSelection(x1pow2button, "squareX");
+    toggleButtonSelection(x2pow2button, "squareY");
+    toggleButtonSelection(x1x2button, "XtimesY");
+    toggleButtonSelection(sinx1button, "sinX");
+    toggleButtonSelection(sinx2button, "sinY");
   }
 
   private void setButtonWithImage(Button button, String imagePath) {
@@ -92,20 +91,21 @@ public class FeaturesHiddenLayersController implements Initializable {
    * @param buttonName The string representation of the button that will be stored in the arraylist
    */
   private void toggleButtonSelection(Button button, String buttonName) {
-    button.setOnAction(event -> {
-      String currentStyle = button.getStyle();
-      if (currentStyle.contains("-fx-background-color: blue;")) {
-        // Button was selected, unselect it
-        button.setStyle("");
-        // Remove the button name from the selectedButtons list
-        selectedButtons.remove(buttonName);
-      } else {
-        // Button wasn't selected, select it
-        button.setStyle("-fx-background-color: blue;");
-        // Add the button name to the selectedButtons list
-        selectedButtons.add(buttonName);
-      }
-    });
+    button.setOnAction(
+        event -> {
+          String currentStyle = button.getStyle();
+          if (currentStyle.contains("-fx-background-color: blue;")) {
+            // Button was selected, unselect it
+            button.setStyle("");
+            // Remove the button name from the selectedButtons list
+            selectedButtons.remove(buttonName);
+          } else {
+            // Button wasn't selected, select it
+            button.setStyle("-fx-background-color: blue;");
+            // Add the button name to the selectedButtons list
+            selectedButtons.add(buttonName);
+          }
+        });
   }
 
   /**
