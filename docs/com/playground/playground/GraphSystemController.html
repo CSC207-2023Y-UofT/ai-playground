@@ -190,7 +190,9 @@ implements javafx.fxml.Initializable</pre>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateGraph(java.util.ArrayList)">updateGraph</a></span>&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Updates the graph with a new dataset.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -262,6 +264,14 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>updateGraph</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;updateGraph&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset)</pre>
+<div class="block">Updates the graph with a new dataset.
+
+ The method first clears the current data in the graph, and then adds the new data. Each cluster is added as a new
+ series in the graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dataset</code> - The new dataset to display in the graph.</dd>
+</dl>
 </li>
 </ul>
 </li>
