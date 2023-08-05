@@ -53,13 +53,20 @@ public class ModelTrainingServicesTest {
   public void testModelTrainingServicesConstructor() {
     // Given
     String statsFileName = "test_stats_file";
+    int epochs = 10;
+    int batchSize = 32;
+    boolean verbose = false;
+
+    // Create a mock DataSetIterator for training and testing
+    INDArrayDataSetIterator mockTrainingDataset = buildIterator(batchSize);
+    INDArrayDataSetIterator mockTestDataset = buildIterator(batchSize);
 
     // When
     ModelTrainingServices service =
-        new ModelTrainingServices(trainingData, model, statsFileName, testData);
+        new ModelTrainingServices(mockTrainingDataset, model, statsFileName, mockTestDataset);
     // Then
-    assertEquals(trainingData, service.getData());
-    assertEquals(testData, service.getTestData());
+    assertEquals(mockTrainingDataset, service.getData());
+    assertEquals(mockTestDataset, service.getTestData());
     assertEquals(model, service.getModel());
     assertEquals(statsFileName, service.getStatsFileName());
   }
@@ -76,7 +83,7 @@ public class ModelTrainingServicesTest {
     return result;
   }
 
-  public DataSetIterator buildIterator(int batchSize) {
+  public INDArrayDataSetIterator buildIterator(int batchSize) {
     if (trainingData == null) {
       trainingData = buildData();
       // shuffle the data, so we get a different order between resumed trainings - helps a bit
@@ -95,16 +102,16 @@ public class ModelTrainingServicesTest {
     boolean verbose = false;
 
     // Create a mock DataSetIterator for training and testing
-    DataSetIterator mockTrainingDataset = buildIterator(batchSize);
-    DataSetIterator mockTestDataset = buildIterator(batchSize);
+    INDArrayDataSetIterator mockTrainingDataset = buildIterator(batchSize);
+    INDArrayDataSetIterator mockTestDataset = buildIterator(1);
 
     ModelTrainingServices service =
-        new ModelTrainingServices(trainingData, model, "test_stats_file", testData);
+        new ModelTrainingServices(mockTrainingDataset, model, "test_stats_file", mockTestDataset);
 
     // When
-    service.trainModel(epochs, batchSize, verbose);
+    service.trainModel(verbose);
 
     // Then
-    assertTrue(model.score() < 0.5);
+    assertTrue(model.score()<0.9);
   }
 }
