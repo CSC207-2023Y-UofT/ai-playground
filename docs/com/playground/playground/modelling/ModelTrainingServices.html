@@ -226,10 +226,10 @@ extends java.lang.Object</pre>
 <div class="block">Constructor for the ModelTrainingServices class which initializers the data and model.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>data</code> - </dd>
-<dd><code>model</code> - </dd>
-<dd><code>statsFileName</code> - </dd>
-<dd><code>testData</code> - </dd>
+<dd><code>data</code> - The training dataset.</dd>
+<dd><code>model</code> - The model DAG.</dd>
+<dd><code>statsFileName</code> - The name of the logging file which will be saved to the disk.</dd>
+<dd><code>testData</code> - The testing dataset.</dd>
 </dl>
 </li>
 </ul>
@@ -255,9 +255,9 @@ extends java.lang.Object</pre>
 <div class="block">Train the model set through the constructor and created using the NeuralNet class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>epochs</code> - </dd>
-<dd><code>batchSize</code> - </dd>
-<dd><code>verbose</code> - </dd>
+<dd><code>epochs</code> - Number of iterations you should train for.</dd>
+<dd><code>batchSize</code> - The batch size to use while training.</dd>
+<dd><code>verbose</code> - Should you print to the logger.</dd>
 </dl>
 </li>
 </ul>

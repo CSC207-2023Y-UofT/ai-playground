@@ -341,7 +341,7 @@ extends java.lang.Object</pre>
 <div class="block">Set regularization type, either one of "l1" or "l2", defaults to "l2".</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>regularizationType</code> - </dd>
+<dd><code>regularizationType</code> - The regularization to use, defaults to L2.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -357,7 +357,7 @@ extends java.lang.Object</pre>
 <div class="block">Set the regularization factor, defaults to 5e-4.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>regularizationFactor</code> - </dd>
+<dd><code>regularizationFactor</code> - The regularization factor to use.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -373,7 +373,7 @@ extends java.lang.Object</pre>
 <div class="block">Set the optimization algorithm, defaults to SGD.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>optimizationAlgorithm</code> - </dd>
+<dd><code>optimizationAlgorithm</code> - Optimization Algorithm to use, defaults to SGD.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -389,7 +389,7 @@ extends java.lang.Object</pre>
 <div class="block">Should you use regularization?, defaults to true.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>regularization</code> - </dd>
+<dd><code>regularization</code> - Should you use regularization, defaults to true.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -405,7 +405,7 @@ extends java.lang.Object</pre>
 <div class="block">Set the optimizer, defaults to Adam.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>optimizer</code> - </dd>
+<dd><code>optimizer</code> - Optimizer to use, defaults to Adam.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -421,7 +421,7 @@ extends java.lang.Object</pre>
 <div class="block">Set activation function for all except the output layer, defaults to ReLU.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>activation</code> - </dd>
+<dd><code>activation</code> - The activation to use, defaults to ReLU.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -437,7 +437,7 @@ extends java.lang.Object</pre>
 <div class="block">Set weight initialization startegy, defaults to Xavier.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>weightInit</code> - </dd>
+<dd><code>weightInit</code> - The weight initialization to use, defaults to Xavier.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -453,7 +453,7 @@ extends java.lang.Object</pre>
 <div class="block">Set the number of outputs, defaults to 2.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>nOut</code> - </dd>
+<dd><code>nOut</code> - The number of outputs the model should return, defaults to 2.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -469,7 +469,7 @@ extends java.lang.Object</pre>
 <div class="block">Set loss function, defaults to negative log likelihood.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>lossFunction</code> - </dd>
+<dd><code>lossFunction</code> - The loss function to use, defaults to negative log likelihood.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -485,7 +485,7 @@ extends java.lang.Object</pre>
 <div class="block">Set the number of inputs, defaults to 2.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>inputs</code> - </dd>
+<dd><code>inputs</code> - Number of inputs to this model, defaults to 2.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -502,7 +502,7 @@ extends java.lang.Object</pre>
  including the first layer in this list, defaults to [2,4,2].</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>layers</code> - </dd>
+<dd><code>layers</code> - List of layers excluding the output layer, defaults to [2, 4, 2].</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -518,7 +518,7 @@ extends java.lang.Object</pre>
 <div class="block">Set learning rate, defaults to 1e-3.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>learningRate</code> - </dd>
+<dd><code>learningRate</code> - The learning rate to use.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>
@@ -534,7 +534,7 @@ extends java.lang.Object</pre>
 <div class="block">Set seed for the experiments, defaults to 123 (ideally choose 3047).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>seed</code> - </dd>
+<dd><code>seed</code> - Seed to use to train model, defaults to 123.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NeuralNetBuilder object</dd>
 </dl>

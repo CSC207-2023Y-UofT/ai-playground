@@ -134,7 +134,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">NeuralNet</span>
 extends java.lang.Object</pre>
 <div class="block">The NeuralNet class is responsible for creating the DAGs in memory and creating an overall model
- structure and initializing the model DAG and its weights making it ready for training.</div>
+ structure and initializing the model DAG and its weights making it ready for training. This class
+ should not be used at all and only the associated builder class should be used.</div>
 </li>
 </ul>
 </div>
@@ -252,19 +253,19 @@ extends java.lang.Object</pre>
  model structure and initializing the model DAG and its weights making it ready for training.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>layers</code> - </dd>
-<dd><code>seed</code> - </dd>
-<dd><code>inputs</code> - </dd>
-<dd><code>learningRate</code> - </dd>
-<dd><code>optimizer</code> - </dd>
-<dd><code>optimizationAlgorithm</code> - </dd>
-<dd><code>activation</code> - </dd>
-<dd><code>weightInit</code> - </dd>
-<dd><code>nOut</code> - </dd>
-<dd><code>lossFunction</code> - </dd>
-<dd><code>regularization</code> - </dd>
-<dd><code>regularizationType</code> - </dd>
-<dd><code>regularizationFactor</code> - </dd>
+<dd><code>layers</code> - List of layers excluding the output layer, defaults to [2, 4, 2].</dd>
+<dd><code>seed</code> - Seed to use to train model, defaults to 123.</dd>
+<dd><code>inputs</code> - Number of inputs to this model, defaults to 2.</dd>
+<dd><code>learningRate</code> - The learning rate to use.</dd>
+<dd><code>optimizer</code> - Optimizer to use, defaults to Adam.</dd>
+<dd><code>optimizationAlgorithm</code> - Optimization Algorithm to use, defaults to SGD.</dd>
+<dd><code>activation</code> - The activation to use, defaults to ReLU.</dd>
+<dd><code>weightInit</code> - The weight initialization to use, defaults to Xavier.</dd>
+<dd><code>nOut</code> - The number of outputs the model should return, defaults to 2.</dd>
+<dd><code>lossFunction</code> - The loss function to use, defaults to negative log likelihood.</dd>
+<dd><code>regularization</code> - Should you use regularization, defaults to true.</dd>
+<dd><code>regularizationType</code> - The regularization to use, defaults to L2.</dd>
+<dd><code>regularizationFactor</code> - The regularization factor to use.</dd>
 </dl>
 </li>
 </ul>
