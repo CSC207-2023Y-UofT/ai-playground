@@ -1,6 +1,7 @@
 package com.playground.playground;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -12,6 +13,8 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+
+import static java.lang.Math.round;
 
 public class MlParametersController implements Initializable {
   @FXML private Button stepButton;
@@ -94,6 +97,11 @@ public class MlParametersController implements Initializable {
     reg10.setOnAction(this::handleRegularizationRate);
     classify.setOnAction(this::handleProblemType);
     regress.setOnAction(this::handleProblemType);
+    this.problemTypes = "classification";
+    this.regularization = "L1";
+    this.regularizationRate = 0.1;
+    this.activation = "Relu";
+    this.learningRate = 0.1;
   }
 
   Double regularizationRate;
@@ -134,4 +142,15 @@ public class MlParametersController implements Initializable {
     button.getStyleClass().add("image-button");
 
   }
+
+  public ArrayList<String> getAll(){
+    ArrayList<String> all = new ArrayList<>();
+    all.add(this.problemTypes);
+    all.add(this.regularization);
+    all.add((String) this.regularization);
+    all.add(this.activation);
+    all.add(this.learningRate.toString());
+    return all;
+  }
+
 }
