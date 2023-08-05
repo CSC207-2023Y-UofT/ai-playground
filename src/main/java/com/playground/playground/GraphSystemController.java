@@ -13,10 +13,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 
 
 public class GraphSystemController implements Initializable {
   @FXML private ScatterChart neuralNetwork;
+  @FXML private Label testLoss;
+  @FXML private Label trainingLoss;
+
 
 
   /**
@@ -25,6 +29,15 @@ public class GraphSystemController implements Initializable {
   public void initialize(URL location, ResourceBundle resources) {
 
   }
+
+  public void setTestLoss(int testL){
+    testLoss.setText("Training Loss: " + testL);
+  }
+
+  public void setTrainingLoss(int trainL){
+    testLoss.setText("Test Loss: " + trainL);
+  }
+
   /**
    * Updates the graph with a new dataset.
    *

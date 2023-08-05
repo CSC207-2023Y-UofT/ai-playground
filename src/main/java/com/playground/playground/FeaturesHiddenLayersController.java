@@ -101,7 +101,7 @@ public class FeaturesHiddenLayersController implements Initializable {
         selectedButtons.remove(buttonName);
       } else {
         // Button wasn't selected, select it
-        button.setStyle("-fx-background-color: pink;");
+        button.setStyle("-fx-background-color: blue;");
         // Add the button name to the selectedButtons list
         selectedButtons.add(buttonName);
       }
@@ -215,4 +215,15 @@ public class FeaturesHiddenLayersController implements Initializable {
       }
     }
   }
+  public List<Integer> getLayersNeurons(){
+    List<Integer> layerNeurons = new ArrayList<>();
+    int numberHiddenLayers = Integer.parseInt(numHiddenLayers.getText());
+    layerNeurons.add(selectedButtons.size());
+    for (int i = 0; i < numberHiddenLayers; i++){
+      layerNeurons.add(aButtonCounts[i]);
+    }
+    layerNeurons.add(2);
+    return layerNeurons;
+  }
+
 }
