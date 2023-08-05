@@ -244,8 +244,6 @@ public class FeaturesHiddenLayersController implements Initializable {
     for (int i = 0; i < numberHiddenLayers; i++){
       layerNeurons.add(aButtonsCountsAccess[i]);
     }
-    System.out.println(numberHiddenLayers);
-    System.out.println(layerNeurons);
     layersNeurons = layerNeurons;
   }
   public static List<Integer> getLayersNeurons(){

@@ -129,6 +129,7 @@ public class DataAttributesController implements Initializable {
   }
   public int initializeNoise(MouseEvent mouseEvent) {
     noise = (int) slider2.getValue();
+    DataAttributesController.initializeNoise = noise;
     return noise;
   }
   public int initializeBatchSize(MouseEvent mouseEvent) {
