@@ -1,4 +1,4 @@
-package com.playground.playground.data;
+package com.playground.playground.clean_architecture.interface_adapter;
 
 import java.util.ArrayList;
 

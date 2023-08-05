@@ -1,23 +1,13 @@
-package com.playground.playground.data;
+package com.playground.playground.clean_architecture.interface_adapter;
 
 import java.util.ArrayList;
 
-public class SinFeatureApplier implements FeatureApplier {
-  private final int axis;
-
+public class MultiplyFeatureApplier implements FeatureApplier {
   /**
-   * @param axis the axis of the coordinates to apply the sin function to (0 = x-axis, 1 = y-axis)
-   */
-  public SinFeatureApplier(int axis) {
-    this.axis = axis;
-  }
-
-  /**
-   * Applies the sin function to the values of either the x or y-axis of a dataset.
+   * Multiplies the x and y values of each data point in the provided dataset.
    *
    * @param dataset Given in the transformed dataset format
-   * @return The same dataset with sin applied to the correct axis values appended to the correct
-   *     coordinates list
+   * @return the same dataset with the x multiplied with y added to the correct data set.
    */
   @Override
   public ArrayList<ArrayList<Object>> applyFeature(ArrayList<ArrayList<Object>> dataset) {
@@ -27,8 +17,7 @@ public class SinFeatureApplier implements FeatureApplier {
       ArrayList<Double> oldCoordinates = (ArrayList<Double>) datapoint.get(0);
       ArrayList<Double> newCoordinates = new ArrayList<>(oldCoordinates);
       Integer state = (Integer) datapoint.get(1);
-      Double point = newCoordinates.get(axis);
-      point = Math.sin(point);
+      Double point = newCoordinates.get(0) * newCoordinates.get(1);
       newCoordinates.add(point);
       ArrayList<Object> newDatapoint = new ArrayList<>();
       newDatapoint.add(newCoordinates);

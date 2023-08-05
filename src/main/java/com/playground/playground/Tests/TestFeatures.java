@@ -1,7 +1,10 @@
 package com.playground.playground.Tests;
 
-import com.playground.playground.data.*;
-import com.playground.playground.data.TransformDatasets;
+import com.playground.playground.clean_architecture.interface_adapter.FeatureController;
+import com.playground.playground.clean_architecture.interface_adapter.MultiplyFeatureApplier;
+import com.playground.playground.clean_architecture.interface_adapter.SinFeatureApplier;
+import com.playground.playground.clean_architecture.interface_adapter.SquareFeatureApplier;
+import com.playground.playground.clean_architecture.usecase.TransformDatasets;
 import java.util.ArrayList;
 import java.util.Objects;
 

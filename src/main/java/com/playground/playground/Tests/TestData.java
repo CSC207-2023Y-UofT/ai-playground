@@ -1,6 +1,10 @@
 package com.playground.playground.Tests;
 
-import com.playground.playground.data.*;
+import com.playground.playground.clean_architecture.usecase.CircularDatasetGenerator;
+import com.playground.playground.clean_architecture.entity.DatasetGenerator;
+import com.playground.playground.clean_architecture.usecase.QuadrantDatasetGenerator;
+import com.playground.playground.clean_architecture.usecase.SpiralDatasetGenerator;
+import com.playground.playground.clean_architecture.usecase.TransformDatasets;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.playground.playground.data;
+package com.playground.playground.clean_architecture.entity;
 
 import java.util.ArrayList;
 
