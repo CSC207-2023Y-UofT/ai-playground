@@ -1,5 +1,6 @@
 package com.playground.playground;
 
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,10 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 
+import akka.actor.dsl.Creators;
 import com.playground.playground.data.FeatureController;
+import com.playground.playground.modelling.NeuralNetBuilder;
+import com.playground.playground.modelling.PrepareData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,10 +20,15 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
+import org.nd4j.linalg.activations.Activation;
+import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.primitives.Pair;
 
 public class MlParametersController implements Initializable {
   private static String handleProblem;
   private static double handleRegularizationRate;
+  private static String handleActivation;
   @FXML private Button stepButton;
 
   @FXML private Button playButton;
@@ -150,12 +159,40 @@ public class MlParametersController implements Initializable {
     int test = DataAttributesController.testRatio;
     String problemType = MlParametersController.handleProblem;
     double regularizeRate = MlParametersController.handleRegularizationRate;
-    Object hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons;
+    ArrayList<Integer> hiddenLayers = new ArrayList<Integer>(FeaturesHiddenLayersController.getLayersNeurons);
+    String activation = MlParametersController.handleActivation;
+
+    Activation activationType = Activation.SOFTMAX;
+    if (Objects.equals(activation, "ReLU")) {
+      activationType = Activation.RELU;
+    }
+    else if(Objects.equals(activation, "TanH")){
+      activationType = Activation.TANH;
+    }
+    else if(Objects.equals(activation, "Sigmoid")){
+      activationType = Activation.SIGMOID;
+    }
+
 
     String dataset = DataAttributesController.dataset;
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
-    FeatureController.createTrainingData(dataset, selectedButtons, noise);
+    List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
+    List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
 
+    PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
+    INDArrayDataSetIterator trainDataset = dataGen.getDataset();
+    INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
+
+    Object model =
+        new NeuralNetBuilder()
+            .activation(activationType)
+            .inputs(hiddenLayers.get(0))
+            .layers((ArrayList<Integer>) hiddenLayers)
+            .learningRate()
+            .lossFunction()
+            .nOut()
+            .optimizer()
+            .buildNeuralNet();
   }
 }
