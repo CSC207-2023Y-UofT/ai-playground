@@ -29,6 +29,8 @@ public class MlParametersController implements Initializable {
   private static String handleProblem;
   private static double handleRegularizationRate;
   private static String handleActivation;
+  private static String handleRegularization;
+  private static double handleLearningRate;
   @FXML private Button stepButton;
 
   @FXML private Button playButton;
@@ -116,30 +118,35 @@ public class MlParametersController implements Initializable {
   public String handleProblem(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String problem = selection.getText();
+    MlParametersController.handleProblem = problem;
     return problem;
   }
 
   public double handleRegularizationRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     double regularizationRate = Double.parseDouble(selection.getText());
+    MlParametersController.handleRegularizationRate = regularizationRate;
     return regularizationRate;
   }
 
   public String handleRegularization(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String regularization = selection.getText().toLowerCase();
+    MlParametersController.handleRegularization = regularization;
     return regularization;
   }
 
   public String handleActivation(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String activation = selection.getText();
+    MlParametersController.handleActivation = activation;
     return activation;
   }
 
   public double handleLearningRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     double learningRate = Double.parseDouble(selection.getText());
+    MlParametersController.handleLearningRate = learningRate;
     return learningRate;
   }
 
@@ -154,13 +161,24 @@ public class MlParametersController implements Initializable {
 
 
   public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
-    int noise = DataAttributesController.noise;
-    int batch = DataAttributesController.batchSize;
-    int test = DataAttributesController.testRatio;
+    int noise = DataAttributesController.initializeNoise;
+    int batch = DataAttributesController.initializeBatchSize;
+    int test = DataAttributesController.initializeTestRatio;
+    System.out.println(noise);
     String problemType = MlParametersController.handleProblem;
+    double regularRate = MlParametersController.handleRegularizationRate;
+    String regular = MlParametersController.handleRegularization;
+    String activate = MlParametersController.handleActivation;
+    double learnRate = MlParametersController.handleLearningRate;
+    System.out.println(problemType + " " + regularRate + " " + regular + " " + activate + " " + learnRate);
     double regularizeRate = MlParametersController.handleRegularizationRate;
-    List<Integer> hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons;
+
+    FeaturesHiddenLayersController.setLayersNeurons();
+
+    List<Integer> hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons();
     System.out.println(hiddenLayers);
+
+
     String activation = MlParametersController.handleActivation;
 
     Activation activationType = Activation.SOFTMAX;

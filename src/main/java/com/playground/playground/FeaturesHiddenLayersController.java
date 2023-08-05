@@ -47,7 +47,11 @@ public class FeaturesHiddenLayersController implements Initializable {
   private Label[] neuronLabels;
 
   public static ArrayList<String> selectedButtons = new ArrayList<>();
-  public static List<Integer> getLayersNeurons = new ArrayList<>();
+  public static List<Integer> layersNeurons = new ArrayList<>();
+
+  public static Button[][] aButtonsAccess;
+  public static int[] aButtonsCountsAccess;
+  public static int numHiddenLayersAccess;
 
 
   /**
@@ -68,7 +72,9 @@ public class FeaturesHiddenLayersController implements Initializable {
     addButtons = new Button[] {add1, add2, add3, add4, add5, add6};
     removeButtons = new Button[] {remove1, remove2, remove3, remove4, remove5, remove6};
     aButtons = new Button[6][8];
+    aButtonsAccess = new Button[6][8];
     aButtonCounts = new int[6];
+    aButtonsCountsAccess = new int[6];
     neuronLabels = new Label[] {neurons1, neurons2, neurons3, neurons4, neurons5, neurons6};
 
     // Adding the behavior for buttons
@@ -127,6 +133,7 @@ public class FeaturesHiddenLayersController implements Initializable {
     if (currentCount < 6 && i < 6) {
       currentCount++;
       numHiddenLayers.setText(String.valueOf(currentCount));
+      setNumHiddenLayers();
       setButtonsVisibility(i, true);
       i++;
     }
@@ -143,11 +150,13 @@ public class FeaturesHiddenLayersController implements Initializable {
     if (currentCount > 0 && i > 0) {
       currentCount--;
       numHiddenLayers.setText(String.valueOf(currentCount));
+      setNumHiddenLayers();
       setButtonsVisibility(i - 1, false);
       removeColumn(i - 1);
       i--;
       neuronLabels[i].setVisible(false);
       aButtonCounts[i] = 0;
+      aButtonsCountsAccess[i] = 0;
     }
   }
 
@@ -172,8 +181,10 @@ public class FeaturesHiddenLayersController implements Initializable {
     for (int j = 0; j < aButtonCounts[index]; j++) {
       neuralConnections.getChildren().remove(aButtons[index][j]);
       aButtons[index][j] = null;
+      aButtonsAccess[index][j] = null;
     }
     aButtonCounts[index] = 0;
+    aButtonsCountsAccess[index] = 0;
   }
 
   /**
@@ -187,8 +198,10 @@ public class FeaturesHiddenLayersController implements Initializable {
     if (aButtonCounts[index] < 8) {
       Button newButton = new Button("Node");
       aButtons[index][aButtonCounts[index]] = newButton;
+      aButtonsAccess[index][aButtonsCountsAccess[index]] = newButton;
       neuralConnections.add(newButton, index, aButtonCounts[index] + 2);
       aButtonCounts[index]++;
+      aButtonsCountsAccess[index]++;
     }
 
     neuronLabels[index].setText(aButtonCounts[index] + " Neurons");
@@ -206,8 +219,10 @@ public class FeaturesHiddenLayersController implements Initializable {
     int index = Integer.parseInt(((Button) event.getSource()).getId().substring(6)) - 1;
     if (aButtonCounts[index] > 0) {
       aButtonCounts[index]--;
+      aButtonsCountsAccess[index]--;
       neuralConnections.getChildren().remove(aButtons[index][aButtonCounts[index]]);
       aButtons[index][aButtonCounts[index]] = null;
+      aButtonsAccess[index][aButtonsCountsAccess[index]] = null;
 
       // Update the neuron count label
       if (aButtonCounts[index] == 0) {
@@ -217,14 +232,26 @@ public class FeaturesHiddenLayersController implements Initializable {
       }
     }
   }
-  public List<Integer> getLayersNeurons(){
-    List<Integer> layerNeurons = new ArrayList<>();
-    int numberHiddenLayers = Integer.parseInt(numHiddenLayers.getText());
-    layerNeurons.add(selectedButtons.size());
-    for (int i = 0; i < numberHiddenLayers; i++){
-      layerNeurons.add(aButtonCounts[i]);
-    }
-    return layerNeurons;
+
+
+  private void setNumHiddenLayers() {
+    numHiddenLayersAccess = Integer.parseInt(numHiddenLayers.getText());
   }
+
+  public static void setLayersNeurons(){
+    List<Integer> layerNeurons = new ArrayList<>();
+    int numberHiddenLayers = numHiddenLayersAccess; //Correct do not change.
+    for (int i = 0; i < numberHiddenLayers; i++){
+      layerNeurons.add(aButtonsCountsAccess[i]);
+    }
+    System.out.println(numberHiddenLayers);
+    System.out.println(layerNeurons);
+    layersNeurons = layerNeurons;
+  }
+  public static List<Integer> getLayersNeurons(){
+    return layersNeurons;
+
+  }
+
 
 }
