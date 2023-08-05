@@ -50,10 +50,10 @@ public class FeatureController {
       //      for (int i = 0; i < size; i++) {
       //        doubleArray[i] = coords.get(i);
       //      }
-      System.out.println(Arrays.toString(target));
+//      System.out.println(Arrays.toString(target));
       INDArray coord = Nd4j.create(target);
       final double[] labels = new double[1];
-      labels[0] = (double) points.get(1);
+      labels[0] = (double) (Integer) points.get(1);
       INDArray weight = Nd4j.create(labels);
       Pair<INDArray, INDArray> point = Pair.create(coord, weight);
       dataset.add(point);
