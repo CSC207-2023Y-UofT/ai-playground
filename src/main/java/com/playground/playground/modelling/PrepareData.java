@@ -11,9 +11,10 @@ public class PrepareData {
     private final List<Pair<INDArray, INDArray>> data;
     private final List<Pair<INDArray, INDArray>> testData;
 
-    public PrepareData(List<Pair<INDArray, INDArray>> data, List<Pair<INDArray, INDArray>> testData) {
+    public PrepareData(int batchSize, List<Pair<INDArray, INDArray>> data, List<Pair<INDArray, INDArray>> testData) {
         this.data = data;
         this.testData = testData;
+        this.batchSize = batchSize;
     }
 
     public INDArrayDataSetIterator getDataset() {
