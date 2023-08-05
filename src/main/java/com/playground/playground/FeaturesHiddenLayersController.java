@@ -215,4 +215,15 @@ public class FeaturesHiddenLayersController implements Initializable {
       }
     }
   }
+  public List<Integer> getLayersNeurons(){
+    List<Integer> layerNeurons = new ArrayList<>();
+    int numberHiddenLayers = Integer.parseInt(numHiddenLayers.getText());
+    layerNeurons.add(selectedButtons.size());
+    for (int i = 0; i < numberHiddenLayers; i++){
+      layerNeurons.add(aButtonCounts[i]);
+    }
+    layerNeurons.add(2);
+    return layerNeurons;
+  }
+
 }
