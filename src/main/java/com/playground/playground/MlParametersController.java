@@ -104,25 +104,25 @@ public class MlParametersController implements Initializable {
   
   public void handleProblemType(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
-    problemTypes = selection.getText();
+    this.problemTypes = selection.getText();
   }
   public void handleRegularizationRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
-    regularizationRate = Double.parseDouble(selection.getText());
+    this.regularizationRate = Double.parseDouble(selection.getText());
   }
   public void handleRegularization(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
-    regularization = selection.getText();
+    this.regularization = selection.getText();
   }
 
   public void handleActivation(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
-    activation = selection.getText();
+    this.activation = selection.getText();
   }
 
   public void handleLearningRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
-    learningRate = Double.parseDouble(selection.getText());
+    this.learningRate = Double.parseDouble(selection.getText());
   }
 
   private void setButtonWithImage(Button button, String imagePath) {
