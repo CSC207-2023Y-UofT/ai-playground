@@ -2,7 +2,7 @@ package com.playground.playground.modelling;
 
 import java.util.ArrayList;
 
-import com.playground.playground.clean_architecture.entity.NeuralNet;
+import com.playground.playground.entity.NeuralNet;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;

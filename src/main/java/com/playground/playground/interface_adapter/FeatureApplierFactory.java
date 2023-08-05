@@ -1,4 +1,4 @@
-package com.playground.playground.clean_architecture.interface_adapter;
+package com.playground.playground.interface_adapter;
 
 import java.util.HashMap;
 import java.util.Map;

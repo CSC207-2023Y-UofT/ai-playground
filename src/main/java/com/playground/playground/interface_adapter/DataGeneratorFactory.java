@@ -1,10 +1,10 @@
-package com.playground.playground.clean_architecture.interface_adapter;
+package com.playground.playground.interface_adapter;
 
-import com.playground.playground.clean_architecture.usecase.CircularDatasetGenerator;
-import com.playground.playground.clean_architecture.usecase.ClusterDatasetGenerator;
-import com.playground.playground.clean_architecture.usecase.QuadrantDatasetGenerator;
-import com.playground.playground.clean_architecture.usecase.SpiralDatasetGenerator;
-import com.playground.playground.clean_architecture.entity.DatasetGenerator;
+import com.playground.playground.usecase.CircularDatasetGenerator;
+import com.playground.playground.usecase.ClusterDatasetGenerator;
+import com.playground.playground.usecase.QuadrantDatasetGenerator;
+import com.playground.playground.usecase.SpiralDatasetGenerator;
+import com.playground.playground.entity.DatasetGenerator;
 
 /**
  * The DataGeneratorFactory class is responsible for creating instances of various DatasetGenerator implementations

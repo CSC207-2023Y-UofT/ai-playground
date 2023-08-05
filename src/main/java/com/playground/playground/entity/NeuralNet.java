@@ -1,4 +1,4 @@
-package com.playground.playground.clean_architecture.entity;
+package com.playground.playground.entity;
 
 import java.util.ArrayList;
 import java.util.Objects;

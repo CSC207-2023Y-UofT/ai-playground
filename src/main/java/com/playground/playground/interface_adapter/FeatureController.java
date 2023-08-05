@@ -1,7 +1,7 @@
-package com.playground.playground.clean_architecture.interface_adapter;
+package com.playground.playground.interface_adapter;
 
-import com.playground.playground.clean_architecture.usecase.DataProcessor;
-import com.playground.playground.clean_architecture.entity.DatasetGenerator;
+import com.playground.playground.usecase.DataProcessor;
+import com.playground.playground.entity.DatasetGenerator;
 
 import java.util.ArrayList;
 

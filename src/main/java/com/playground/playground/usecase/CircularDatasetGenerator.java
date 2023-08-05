@@ -1,6 +1,6 @@
-package com.playground.playground.clean_architecture.usecase;
+package com.playground.playground.usecase;
 
-import com.playground.playground.clean_architecture.entity.DatasetGenerator;
+import com.playground.playground.entity.DatasetGenerator;
 
 import java.util.ArrayList;
 

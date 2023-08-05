@@ -1,4 +1,4 @@
-package com.playground.playground.clean_architecture.usecase;
+package com.playground.playground.usecase;
 
 import java.util.ArrayList;
 
