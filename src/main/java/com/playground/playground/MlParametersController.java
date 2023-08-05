@@ -156,5 +156,6 @@ public class MlParametersController implements Initializable {
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
     FeatureController.createTrainingData(dataset, selectedButtons, noise);
+
   }
 }
