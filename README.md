@@ -118,9 +118,21 @@ The AI Playground project adheres to SOLID principles:
 
 - **Singleton Pattern:** The Singleton pattern is employed to ensure that the dataset generators (`CircularDatasetGenerator`, `QuadrantDatasetGenerator`, `SpiralDatasetGenerator`, and `ClusterDatasetGenerator`) have a single global instance across the application. This guarantees that all dataset generation requests go through the same generator instances, promoting consistency and avoiding unnecessary instantiation.
 
-- **Strategy Pattern:** The Strategy pattern is used to enable dynamic switching between different dataset generation algorithms. The `DatasetGenerator` interface defines the contract for dataset generation algorithms, and individual generator classes implement this interface. The `DataProcessor` class acts as the client and accepts a dataset generator as a constructor parameter, allowing it to work with any class that implements the `DatasetGenerator` interface.
-
 - **Composite Pattern:** The Composite pattern is employed in the `TransformDatasets` class to transform the dataset from an ArrayList of ArrayLists to an ArrayList of Lists with weights. This transformation allows for more efficient data representation, where each point includes coordinates and associated weights. The Composite pattern enables the processing of complex nested data structures with a unified interface.
+
+- **Factory Pattern:**
+  - `DataGeneratorFactory`: This factory encapsulates the creation of different dataset generators (`CircularDatasetGenerator`, `ClusterDatasetGenerator`, `QuadrantDatasetGenerator`, and `SpiralDatasetGenerator`). It allows clients to obtain instances of dataset generators without knowing their concrete classes.
+  - `FeatureApplierFactory`: This factory encapsulates the creation of different feature appliers (`SquareFeatureApplier`, `SinFeatureApplier`, and `MultiplyFeatureApplier`). It allows clients to obtain instances of feature appliers without knowing their concrete classes.
+
+- **Strategy Pattern:**
+  - `FeatureController`: The Strategy pattern is used in `FeatureController` to apply different features to the dataset. The `FeatureApplier` interface defines the strategy, and concrete implementations like `SquareFeatureApplier`, `SinFeatureApplier`, and `MultiplyFeatureApplier` provide different algorithms for applying features.
+  - `DataProcessor`: The Strategy pattern is used in `DataProcessor` to generate different datasets based on user input. The `DatasetGenerator` interface defines the strategy, and concrete implementations like `CircularDatasetGenerator`, `ClusterDatasetGenerator`, `QuadrantDatasetGenerator`, and `SpiralDatasetGenerator` provide different algorithms for generating datasets.
+
+- **Builder Pattern:**
+  - `NeuralNetBuilder`: The Builder pattern is used in `NeuralNetBuilder` to construct `NeuralNet` objects step by step. It provides a clear and readable way to configure various parameters of the neural network before building the final object.
+
+- **Iterator Pattern:**
+  - `DataSetIterator`: The Iterator pattern is used in the `modelling` package to provide a way to traverse dataset elements without exposing the underlying representation. This abstraction allows iterating through the dataset efficiently regardless of its internal structure. For example, the `INDArrayDataSetIterator` implements the iterator interface to traverse through the dataset's INDArray elements.
 
 ## Code Organization
 
