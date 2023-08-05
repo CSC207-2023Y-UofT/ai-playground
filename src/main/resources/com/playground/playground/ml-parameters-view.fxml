@@ -53,7 +53,7 @@
             <MenuItem fx:id="reLu" onAction="#handleActivation" text="ReLU" />
             <MenuItem fx:id="tanH" onAction="#handleActivation" text="Tanh" />
             <MenuItem fx:id="sigmoid" onAction="#handleActivation" text="Sigmoid" />
-            <MenuItem fx:id="linear" onAction="#handleActivation" text="Linear" />
+            <MenuItem fx:id="softMax" onAction="#handleActivation" text="SoftMax" />
         </Menu>
         <Menu text="Regularization">
             <MenuItem fx:id="none" onAction="#handleRegularization" text="None" />
