@@ -54,12 +54,12 @@ public class FeatureController {
    * @return A dataset in the data format
    */
   public static ArrayList<ArrayList<Object>> getData(String dataName, int noise) {
-        ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
+    ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
 
-        DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
-        DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
-        dataset = dataProcessor.process(noise);
+    DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
+    DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
+    dataset = dataProcessor.process(noise);
 
-        return dataset;
+    return dataset;
   }
 }
