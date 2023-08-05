@@ -268,6 +268,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the current dataset.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/PrepareData.html#getDataset()">getDataset()</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/PrepareData.html" title="class in com.playground.playground.modelling">PrepareData</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/data/FeatureApplierFactory.html#getFeature(java.lang.String)">getFeature(String)</a></span> - Static method in class com.playground.playground.data.<a href="com/playground/playground/data/FeatureApplierFactory.html" title="class in com.playground.playground.data">FeatureApplierFactory</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#getInstance()">getInstance()</a></span> - Static method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
@@ -280,9 +282,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#getTestData()">getTestData()</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#getTestDataset()">getTestDataset()</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#getTrainingDataset()">getTrainingDataset()</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
+<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/PrepareData.html#getTestDataset()">getTestDataset()</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/PrepareData.html" title="class in com.playground.playground.modelling">PrepareData</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/playground/playground/GraphSystemController.html" title="class in com.playground.playground"><span class="typeNameLink">GraphSystemController</span></a> - Class in <a href="com/playground/playground/package-summary.html">com.playground.playground</a></dt>
 <dd>&nbsp;</dd>
@@ -383,7 +383,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">This is the class that facilitates training the model and logging.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#%3Cinit%3E(java.util.List,org.deeplearning4j.nn.multilayer.MultiLayerNetwork,java.lang.String,java.util.List)">ModelTrainingServices(List&lt;Pair&lt;INDArray, INDArray&gt;&gt;, MultiLayerNetwork, String, List&lt;Pair&lt;INDArray, INDArray&gt;&gt;)</a></span> - Constructor for class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
+<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#%3Cinit%3E(org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator,org.deeplearning4j.nn.multilayer.MultiLayerNetwork,java.lang.String,org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator)">ModelTrainingServices(INDArrayDataSetIterator, MultiLayerNetwork, String, INDArrayDataSetIterator)</a></span> - Constructor for class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
 <dd>
 <div class="block">Constructor for the ModelTrainingServices class which initializers the data and model.</div>
 </dd>
@@ -449,6 +449,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">P</h2>
 <dl>
+<dt><a href="com/playground/playground/modelling/PrepareData.html" title="class in com.playground.playground.modelling"><span class="typeNameLink">PrepareData</span></a> - Class in <a href="com/playground/playground/modelling/package-summary.html">com.playground.playground.modelling</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/PrepareData.html#%3Cinit%3E(java.util.List,java.util.List)">PrepareData(List&lt;Pair&lt;INDArray, INDArray&gt;&gt;, List&lt;Pair&lt;INDArray, INDArray&gt;&gt;)</a></span> - Constructor for class com.playground.playground.modelling.<a href="com/playground/playground/modelling/PrepareData.html" title="class in com.playground.playground.modelling">PrepareData</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/data/DataProcessor.html#process(int)">process(int)</a></span> - Method in class com.playground.playground.data.<a href="com/playground/playground/data/DataProcessor.html" title="class in com.playground.playground.data">DataProcessor</a></dt>
 <dd>
 <div class="block">Processes the generated datasets by applying a transformation.</div>
@@ -503,12 +507,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#setStatsFileName(java.lang.String)">setStatsFileName(String)</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#setTestData(java.util.List)">setTestData(List&lt;Pair&lt;INDArray, INDArray&gt;&gt;)</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#setTestDataset(org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator)">setTestDataset(INDArrayDataSetIterator)</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#setTrainingDataset(org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator)">setTrainingDataset(INDArrayDataSetIterator)</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="com/playground/playground/data/SinFeatureApplier.html" title="class in com.playground.playground.data"><span class="typeNameLink">SinFeatureApplier</span></a> - Class in <a href="com/playground/playground/data/package-summary.html">com.playground.playground.data</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/data/SinFeatureApplier.html#%3Cinit%3E(int)">SinFeatureApplier(int)</a></span> - Constructor for class com.playground.playground.data.<a href="com/playground/playground/data/SinFeatureApplier.html" title="class in com.playground.playground.data">SinFeatureApplier</a></dt>
@@ -529,7 +527,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">T</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#trainModel(int,int,boolean)">trainModel(int, int, boolean)</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
+<dt><span class="memberNameLink"><a href="com/playground/playground/modelling/ModelTrainingServices.html#trainModel(boolean)">trainModel(boolean)</a></span> - Method in class com.playground.playground.modelling.<a href="com/playground/playground/modelling/ModelTrainingServices.html" title="class in com.playground.playground.modelling">ModelTrainingServices</a></dt>
 <dd>
 <div class="block">Train the model set through the constructor and created using the NeuralNet class.</div>
 </dd>
