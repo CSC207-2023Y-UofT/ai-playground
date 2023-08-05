@@ -112,6 +112,25 @@ public class FeatureTest {
         }
     }
 
+    @Test
+    public void testFeatureControllerNoFeatures() {
+        // mock data, no features
+        String dataName = "circular";
+        ArrayList<String> featureNames = new ArrayList<>();
+        int noise = 10;
+
+        ArrayList<ArrayList<Object>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
+        assertNotNull(result);
+        assertEquals(1000, result.size());
+
+        for(ArrayList<Object> point : result) {
+            ArrayList<Double> coordinates = (ArrayList<Double>) point.get(0);
+
+            // Verify that only the original data is included (no additional features)
+            assertEquals(2, coordinates.size());
+        }
+    }
+
 
 
 }
