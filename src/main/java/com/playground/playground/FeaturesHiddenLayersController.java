@@ -45,7 +45,8 @@ public class FeaturesHiddenLayersController implements Initializable {
 
   private Label[] neuronLabels;
 
-  private List<String> selectedButtons = new ArrayList<>();
+  public static ArrayList<String> selectedButtons = new ArrayList<>();
+
 
   /**
    * Initializer for FeaturesHiddenLayersController.java
@@ -91,21 +92,20 @@ public class FeaturesHiddenLayersController implements Initializable {
    * @param buttonName The string representation of the button that will be stored in the arraylist
    */
   private void toggleButtonSelection(Button button, String buttonName) {
-    button.setOnAction(
-        event -> {
-          String currentStyle = button.getStyle();
-          if (currentStyle.contains("-fx-background-color: blue;")) {
-            // Button was selected, unselect it
-            button.setStyle("");
-            // Remove the button name from the selectedButtons list
-            selectedButtons.remove(buttonName);
-          } else {
-            // Button wasn't selected, select it
-            button.setStyle("-fx-background-color: blue;");
-            // Add the button name to the selectedButtons list
-            selectedButtons.add(buttonName);
-          }
-        });
+    button.setOnAction(event -> {
+      String currentStyle = button.getStyle();
+      if (currentStyle.contains("-fx-background-color: blue;")) {
+        // Button was selected, unselect it
+        button.setStyle("");
+        // Remove the button name from the selectedButtons list
+        selectedButtons.remove(buttonName);
+      } else {
+        // Button wasn't selected, select it
+        button.setStyle("-fx-background-color: pink;");
+        // Add the button name to the selectedButtons list
+        selectedButtons.add(buttonName);
+      }
+    });
   }
 
   /**
@@ -113,9 +113,6 @@ public class FeaturesHiddenLayersController implements Initializable {
    *
    * @return selectedButtons Returns the string representation of the buttons selected
    */
-  public List<String> getSelectedParameters() {
-    return selectedButtons;
-  }
 
   /**
    * Adds a layer to the hidden layer graph and increases the value of the layer counter by 1.

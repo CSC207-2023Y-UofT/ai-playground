@@ -1,14 +1,15 @@
 package com.playground.playground;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 
 public class DataAttributesController implements Initializable {
   @FXML private Slider slider1;
@@ -30,13 +31,8 @@ public class DataAttributesController implements Initializable {
 
   @FXML private Button rectangularButton;
 
-  @FXML private DataService dataService;
-
-  private GraphSystemController graphSystemController;
-
-  public DataAttributesController() {
-    this.dataService = DataService.getInstance();
-  }
+  public static int noise;
+  public static String dataset;
 
   /**
    * Initializer for DataAttributesController.java
@@ -74,10 +70,14 @@ public class DataAttributesController implements Initializable {
     setButtonFixedSize(spiralButton);
     setButtonFixedSize(rectangularButton);
 
-    // Initialize the GraphSystemController
-    graphSystemController = new GraphSystemController();
   }
 
+  /**
+   * Slider for users to adjust the ratio of training to test data percentage.
+   *
+   * @param slider allows user to adjust the ratio of training to test data percentage.
+   * @param percentLabel displays the percent selected by the user using slider.
+   */
   private void updateSlider1Percent(Slider slider, Label percentLabel) {
     double value = slider.getValue();
     double max = slider.getMax();
@@ -97,9 +97,6 @@ public class DataAttributesController implements Initializable {
     String stringVal = String.format("%d", value);
     numberLabel.setText("Noise: " + stringVal);
   }
-  public int getSlider2Value(){
-    return (int) slider2.getValue();
-  }
 
   /**
    * Slider for users to adjust the batch size.
@@ -115,5 +112,25 @@ public class DataAttributesController implements Initializable {
 
   private void setButtonFixedSize(Button button) {
     button.setPrefSize(70, 50);
+  }
+
+  public void initialize(MouseEvent mouseEvent) {
+    noise = (int) slider2.getValue();
+  }
+
+  public void handleCLusterButton(ActionEvent actionEvent) {
+    dataset = "cluster";
+  }
+
+  public void handleRadialButton(ActionEvent actionEvent) {
+    dataset = "circular";
+  }
+
+  public void handleSpiralButton(ActionEvent actionEvent) {
+    dataset = "spiral";
+  }
+
+  public void handleRectangularButton(ActionEvent actionEvent) {
+    dataset = "quadrant";
   }
 }
