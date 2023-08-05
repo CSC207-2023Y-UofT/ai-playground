@@ -14,7 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 public class FeaturesHiddenLayersController implements Initializable {
-  public static Object getLayersNeurons;
+
   @FXML private Text numHiddenLayers;
   @FXML private Button addLayer;
   @FXML private Button removeLayer;
@@ -47,6 +47,7 @@ public class FeaturesHiddenLayersController implements Initializable {
   private Label[] neuronLabels;
 
   public static ArrayList<String> selectedButtons = new ArrayList<>();
+  public static List<Integer> getLayersNeurons = new ArrayList<>();
 
 
   /**
