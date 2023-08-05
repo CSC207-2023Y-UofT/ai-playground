@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import akka.actor.dsl.Creators;
 import com.playground.playground.data.FeatureController;
+import com.playground.playground.modelling.NeuralNet;
 import com.playground.playground.modelling.NeuralNetBuilder;
 import com.playground.playground.modelling.PrepareData;
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
+import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
@@ -152,7 +154,7 @@ public class MlParametersController implements Initializable {
 
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView =
-        new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
+            new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
     imageView.setFitWidth(40); // Adjust the width as needed
     imageView.setFitHeight(40); // Adjust the height as needed
     button.setGraphic(imageView);
@@ -195,30 +197,39 @@ public class MlParametersController implements Initializable {
       activationType = Activation.SIGMOID;
     }
 
-    String dataSet = DataAttributesController.dataset;
-    ArrayList<String> buttonsSelected = FeaturesHiddenLayersController.getSelectedButtons();
-    System.out.println(FeaturesHiddenLayersController.getSelectedButtons());
-    System.out.println(buttonsSelected);
-    System.out.println(dataSet);
-    List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataSet, buttonsSelected, noise);
-    List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataSet, buttonsSelected, noise);
-    System.out.println(buttonsSelected);
-    System.out.println("Hello world.");
+    String dataset = DataAttributesController.dataset;
+    ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
+    List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
+    List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
+    System.out.println(selectedButtons);
+    System.out.println(dataset);
 
+    PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
+    INDArrayDataSetIterator trainDataset = dataGen.getDataset();
+    INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
 
-    // PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
-    // INDArrayDataSetIterator trainDataset = dataGen.getDataset();
-    // INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
+//    System.out.println("finished");
+    String regularizationType = "l2";
+    boolean shouldRegularize = false;
+    if (regular != null) {
+      shouldRegularize = true;
+      regularizationType = regular;
+    }
+    MultiLayerNetwork model =
+            new NeuralNetBuilder()
+                    .activation(activationType)
+                    .inputs(hiddenLayers.get(0))
+                    .layers((ArrayList<Integer>) hiddenLayers)
+                    .learningRate(learnRate)
+                    .nOut(2)
+                    .regularization(shouldRegularize)
+                    .regularizationType(regularizationType)
+                    .regularizationFactor(regularRate)
+                    .buildNeuralNet()
+                    .generateModel();
 
-//    Object model =
-//        new NeuralNetBuilder()
-//            .activation(activationType)
-//            .inputs(hiddenLayers.get(0))
-//            .layers((ArrayList<Integer>) hiddenLayers)
-//            .learningRate()
-//            .lossFunction()
-//            .nOut()
-//            .optimizer()
-//            .buildNeuralNet();
+    System.out.println(model.summary());
+
+//    MainController.graphSystemController.updateGraph();
   }
 }
