@@ -195,15 +195,20 @@ public class MlParametersController implements Initializable {
       activationType = Activation.SIGMOID;
     }
 
-    String dataset = DataAttributesController.dataset;
-    ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
-    List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
-    List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
-    System.out.println(selectedButtons);
-    System.out.println(dataset);
-    PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
-    INDArrayDataSetIterator trainDataset = dataGen.getDataset();
-    INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
+    String dataSet = DataAttributesController.dataset;
+    ArrayList<String> buttonsSelected = FeaturesHiddenLayersController.getSelectedButtons();
+    System.out.println(FeaturesHiddenLayersController.getSelectedButtons());
+    System.out.println(buttonsSelected);
+    System.out.println(dataSet);
+    List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataSet, buttonsSelected, noise);
+    List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataSet, buttonsSelected, noise);
+    System.out.println(buttonsSelected);
+    System.out.println("Hello world.");
+
+
+    // PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
+    // INDArrayDataSetIterator trainDataset = dataGen.getDataset();
+    // INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
 
 //    Object model =
 //        new NeuralNetBuilder()

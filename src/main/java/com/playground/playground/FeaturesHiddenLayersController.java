@@ -116,6 +116,14 @@ public class FeaturesHiddenLayersController implements Initializable {
     });
   }
 
+  public static ArrayList<String> getSelectedButtons(){
+    return FeaturesHiddenLayersController.selectedButtons;
+  }
+
+
+
+
+
   /**
    * Allows other classes to retrieve selected parameters
    *
