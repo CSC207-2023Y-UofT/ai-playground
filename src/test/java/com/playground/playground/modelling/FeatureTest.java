@@ -12,6 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FeatureTest {
 
+    /**
+     * This tests the SquareFeatureApplier to ensure the correct points are being squared and appended correctly
+     */
     @Test
     public void testSquareFeatureApplier() {
         ArrayList<Object> dataPoint1 = new ArrayList<>(
@@ -34,6 +37,9 @@ public class FeatureTest {
         assertEquals(16.0, data2.get(2));
     }
 
+    /**
+     * checks that the feature applier is working properly
+     */
     @Test
     public void testFeatureApplierFactory() {
         FeatureApplier feature = FeatureApplierFactory.getFeature("squareX");
@@ -41,7 +47,9 @@ public class FeatureTest {
         assertTrue(feature instanceof SquareFeatureApplier);
     }
 
-
+    /**
+     * This tests the SinFeatureApplier to ensure the correct points are being Sin and appended correctly
+     */
     @Test
     public void testSinFeatureApplier() {
         ArrayList<Object> dataPoint1 = new ArrayList<>(
@@ -64,6 +72,9 @@ public class FeatureTest {
         assertEquals(0.0, data2.get(2), 0.0001);
     }
 
+    /**
+     * This tests the MultiplyFeatureApplier to ensure the correct points are being multiplied and appended correctly
+     */
     @Test
     public void testMultiplyFeatureApplier() {
         ArrayList<Object> dataPoint1 = new ArrayList<>(
@@ -86,15 +97,23 @@ public class FeatureTest {
         assertEquals(20.0, data2.get(2));
     }
 
+    /**
+     * This tests the FeatureController to ensure there are the correct number of Blue and Orange point, and that
+     * the proper Features are being applied correctly.
+     */
     @Test
     public void testFeatureController() {
         String dataName = "circular";
+        int data_size = 2000;
         ArrayList<String> featureNames = new ArrayList<>(Arrays.asList("squareX", "sinY"));
         int noise = 10;
 
         ArrayList<ArrayList<Object>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
         assertNotNull(result);
-        assertTrue(result.size() <= 3000);
+
+        // If dataGenerator produces 1000 Blue and 1000 Orange points
+        int rnd_points = data_size/noise;
+        assertEquals(result.size(), data_size + rnd_points);
 
         for(ArrayList<Object> point : result) {
             ArrayList<Double> coordinates = (ArrayList<Double>) point.get(0);
@@ -110,17 +129,22 @@ public class FeatureTest {
             assertEquals(Math.sin(y), sinY, 1e-6);
         }
     }
-
+    /**
+     * This tests the FeatureController when there are no features. Checks correct number of Blue and Orange points,
+     * and that no extra features are being applied.
+     */
     @Test
     public void testFeatureControllerNoFeatures() {
         // mock data, no features
+        int data_size = 2000;
         String dataName = "circular";
         ArrayList<String> featureNames = new ArrayList<>();
         int noise = 10;
         ArrayList<ArrayList<Object>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
 
         assertNotNull(result);
-        assertTrue(result.size() <= 3000);
+        int rnd_points = data_size/noise;
+        assertEquals(result.size(), data_size + rnd_points);
 
         for(ArrayList<Object> point : result) {
             ArrayList<Double> coordinates = (ArrayList<Double>) point.get(0);
