@@ -19,7 +19,7 @@
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
-    <Button fx:id="playButton" styleClass="circle-button">
+    <Button fx:id="playButton" styleClass="circle-button" onAction="#handlePlayButtonClick">
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
