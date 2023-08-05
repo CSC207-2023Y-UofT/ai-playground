@@ -249,11 +249,6 @@ implements javafx.fxml.Initializable</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>initialize</code>&nbsp;in interface&nbsp;<code>javafx.fxml.Initializable</code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>location</code> - The location used to resolve relative paths for the root object, or <code>
-     null</code> if the location is not known.</dd>
-<dd><code>resources</code> - The resources used to localize the root object, or <code>null</code> if the root
-     object was not localized.</dd>
 </dl>
 </li>
 </ul>
@@ -266,8 +261,8 @@ implements javafx.fxml.Initializable</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;updateGraph&#8203;(java.util.ArrayList&lt;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Double&gt;&gt;&gt;&nbsp;dataset)</pre>
 <div class="block">Updates the graph with a new dataset.
 
- <p>The method first clears the current data in the graph, and then adds the new data. Each
- cluster is added as a new series in the graph.</div>
+ The method first clears the current data in the graph, and then adds the new data. Each cluster is added as a new
+ series in the graph.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dataset</code> - The new dataset to display in the graph.</dd>
