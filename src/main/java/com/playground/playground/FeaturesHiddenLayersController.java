@@ -1,6 +1,8 @@
 package com.playground.playground;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,6 +45,9 @@ public class FeaturesHiddenLayersController implements Initializable {
 
   private Label[] neuronLabels;
 
+  public static ArrayList<String> selectedButtons = new ArrayList<>();
+
+
   /**
    * Initializer for FeaturesHiddenLayersController.java
    *
@@ -63,6 +68,13 @@ public class FeaturesHiddenLayersController implements Initializable {
     aButtons = new Button[6][8];
     aButtonCounts = new int[6];
     neuronLabels = new Label[] {neurons1, neurons2, neurons3, neurons4, neurons5, neurons6};
+
+    // Adding the behavior for buttons
+    toggleButtonSelection(x1pow2button, "squareX");
+    toggleButtonSelection(x2pow2button, "squareY");
+    toggleButtonSelection(x1x2button, "XtimesY");
+    toggleButtonSelection(sinx1button, "sinX");
+    toggleButtonSelection(sinx2button, "sinY");
   }
 
   private void setButtonWithImage(Button button, String imagePath) {
@@ -72,6 +84,35 @@ public class FeaturesHiddenLayersController implements Initializable {
     button.setGraphic(imageView);
     button.getStyleClass().add("image-button");
   }
+
+  /**
+   * Handles the toggling of parameter buttons, and adds them to the selectedbuttons arraylist
+   *
+   * @param button The button to set the behavior for.
+   * @param buttonName The string representation of the button that will be stored in the arraylist
+   */
+  private void toggleButtonSelection(Button button, String buttonName) {
+    button.setOnAction(event -> {
+      String currentStyle = button.getStyle();
+      if (currentStyle.contains("-fx-background-color: blue;")) {
+        // Button was selected, unselect it
+        button.setStyle("");
+        // Remove the button name from the selectedButtons list
+        selectedButtons.remove(buttonName);
+      } else {
+        // Button wasn't selected, select it
+        button.setStyle("-fx-background-color: pink;");
+        // Add the button name to the selectedButtons list
+        selectedButtons.add(buttonName);
+      }
+    });
+  }
+
+  /**
+   * Allows other classes to retrieve selected parameters
+   *
+   * @return selectedButtons Returns the string representation of the buttons selected
+   */
 
   /**
    * Adds a layer to the hidden layer graph and increases the value of the layer counter by 1.

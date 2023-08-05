@@ -1,8 +1,13 @@
 package com.playground.playground;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import com.playground.playground.data.FeatureController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,7 +20,6 @@ public class MlParametersController implements Initializable {
   @FXML private Button playButton;
   @FXML private Button rewindButton;
   @FXML private Text epochNumber;
-
   /**
    * Initializer for MIParametersController.java
    *
@@ -38,5 +42,14 @@ public class MlParametersController implements Initializable {
     imageView.setFitHeight(40); // Adjust the height as needed
     button.setGraphic(imageView);
     button.getStyleClass().add("image-button");
+  }
+
+
+  public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
+    int noise = DataAttributesController.noise;
+    String dataset = DataAttributesController.dataset;
+    ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
+
+    FeatureController.createTrainingData(dataset, selectedButtons, noise);
   }
 }

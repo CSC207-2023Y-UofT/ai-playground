@@ -2,11 +2,14 @@ package com.playground.playground;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 
 public class DataAttributesController implements Initializable {
   @FXML private Slider slider1;
@@ -27,6 +30,9 @@ public class DataAttributesController implements Initializable {
   @FXML private Button spiralButton;
 
   @FXML private Button rectangularButton;
+
+  public static int noise;
+  public static String dataset;
 
   /**
    * Initializer for DataAttributesController.java
@@ -63,6 +69,7 @@ public class DataAttributesController implements Initializable {
     setButtonFixedSize(radialButton);
     setButtonFixedSize(spiralButton);
     setButtonFixedSize(rectangularButton);
+
   }
 
   /**
@@ -105,5 +112,25 @@ public class DataAttributesController implements Initializable {
 
   private void setButtonFixedSize(Button button) {
     button.setPrefSize(70, 50);
+  }
+
+  public void initialize(MouseEvent mouseEvent) {
+    noise = (int) slider2.getValue();
+  }
+
+  public void handleCLusterButton(ActionEvent actionEvent) {
+    dataset = "cluster";
+  }
+
+  public void handleRadialButton(ActionEvent actionEvent) {
+    dataset = "circular";
+  }
+
+  public void handleSpiralButton(ActionEvent actionEvent) {
+    dataset = "spiral";
+  }
+
+  public void handleRectangularButton(ActionEvent actionEvent) {
+    dataset = "quadrant";
   }
 }
