@@ -2,8 +2,7 @@ package com.playground.playground.modelling;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
-import lombok.Setter;
+
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -12,19 +11,17 @@ import org.deeplearning4j.ui.stats.StatsListener;
 import org.deeplearning4j.ui.storage.FileStatsStorage;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
-import org.nd4j.linalg.primitives.Pair;
+import org.nd4j.linalg.util.NDArrayUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** This is the class that facilitates training the model and logging. */
 public class ModelTrainingServices {
   private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
-  @Setter private List<Pair<INDArray, INDArray>> data;
-  private List<Pair<INDArray, INDArray>> testData;
+  private final INDArrayDataSetIterator data;
+  private final INDArrayDataSetIterator testData;
   private MultiLayerNetwork model;
   private String statsFileName;
-  private INDArrayDataSetIterator dataset;
-  private INDArrayDataSetIterator testDataset;
 
   /**
    * Constructor for the ModelTrainingServices class which initializers the data and model.
@@ -35,39 +32,38 @@ public class ModelTrainingServices {
    * @param testData The testing dataset.
    */
   public ModelTrainingServices(
-      List<Pair<INDArray, INDArray>> data,
+      INDArrayDataSetIterator data,
       MultiLayerNetwork model,
       String statsFileName,
-      List<Pair<INDArray, INDArray>> testData) {
+      INDArrayDataSetIterator testData) {
     this.data = data;
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
-
-    List<List<Double>> points = new ArrayList<List<Double>>();
-    for (int i = 0; i < data.size(); i++) {
-      List<Double> point = new ArrayList<Double>();
-      point.add(data.get(i).getKey().data().getDouble(0));
-      point.add(data.get(i).getKey().data().getDouble(1));
-      points.add(point);
-    }
-    for (int i = 0; i < testData.size(); i++) {
-      List<Double> point = new ArrayList<Double>();
-      point.add(testData.get(i).getKey().data().getDouble(0));
-      point.add(testData.get(i).getKey().data().getDouble(1));
-      points.add(point);
-    }
-    //   Here is where we initialize the graph in the UI
+    //
+    //    List<List<Double>> points = new ArrayList<List<Double>>();
+    //    for (int i = 0; i < data.size(); i++) {
+    //      List<Double> point = new ArrayList<Double>();
+    //      point.add(data.get(i).getKey().data().getDouble(0));
+    //      point.add(data.get(i).getKey().data().getDouble(1));
+    //      points.add(point);
+    //    }
+    //    for (int i = 0; i < testData.size(); i++) {
+    //      List<Double> point = new ArrayList<Double>();
+    //      point.add(testData.get(i).getKey().data().getDouble(0));
+    //      point.add(testData.get(i).getKey().data().getDouble(1));
+    //      points.add(point);
+    //    }
+    //    //   Here is where we initialize the graph in the UI
   }
 
   /**
    * Train the model set through the constructor and created using the NeuralNet class.
    *
-   * @param epochs Number of iterations you should train for.
-   * @param batchSize The batch size to use while training.
    * @param verbose Should you print to the logger.
+   * @return
    */
-  public void trainModel(int epochs, int batchSize, boolean verbose) {
+  public Object[] trainModel(boolean verbose) {
 
     //    Example on the kind of data we need, example for a simple "and" operation dataset, we want
     // the same, two or more numbers for the features and 1 number (1 or 0) for label.
@@ -88,55 +84,63 @@ public class ModelTrainingServices {
     //      );
     //    }
 
-    INDArrayDataSetIterator dataset = new INDArrayDataSetIterator(data, batchSize);
-    INDArrayDataSetIterator testDataset = new INDArrayDataSetIterator(testData, 1);
-    this.dataset = dataset;
-    this.testDataset = testDataset;
-
     File statsFile = new File(statsFileName);
     StatsStorage statsStorage = new FileStatsStorage(statsFile);
+    ArrayList<Integer> predictions = new ArrayList<Integer>();
 
     if (verbose) {
       log.info(model.summary());
       log.info("Training model...");
     }
+
     model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
-    for (int i = 0; i < epochs; i++) {
-      model.fit(dataset);
-      if (verbose) {
-        log.info(String.format("Train Score at iteration %d is %s", i, model.score()));
-        log.info(
-            String.format("Test Score at iteration %d is %s", i, model.score(testDataset.next())));
-      }
-      //      Here is where we make the changes to UI for training and test score
-      while (dataset.hasNext()) {
-        DataSet t = dataset.next();
-        INDArray features = t.getFeatureMatrix();
-        INDArray predicted = model.output(features, false);
-        //        Here is where we make the graph in the UI
-      }
-      while (testDataset.hasNext()) {
-        DataSet t = testDataset.next();
-        INDArray features = t.getFeatureMatrix();
-        INDArray predicted = model.output(features, false);
-        //        Here is where we make the graph in the UI
+
+    for (int i = 0; i < 10; i++) {
+      model.fit(data);
+    }
+
+    double trainScore = model.score();
+    double testScore = model.score(testData.next());
+
+    if (verbose) {
+      log.info(String.format("Train Score is %s", trainScore));
+      log.info(String.format("Test Score is %s", testScore));
+    }
+
+    while (data.hasNext()) {
+      DataSet t = data.next();
+      INDArray features = t.getFeatureMatrix();
+      INDArray predicted = model.output(features, false);
+
+      int[] batchPredictions = NDArrayUtil.toInts(predicted);
+      for (int i = 0; i<=batchPredictions.length; i++) {
+        predictions.add(batchPredictions[i]);
       }
     }
+//    while (testData.hasNext()) {
+//      DataSet t = testData.next();
+//      INDArray features = t.getFeatureMatrix();
+//      INDArray predicted = model.output(features, false);
+//      //        Here is where we make the graph in the UI
+//    }
+
     if (verbose) {
       log.info("Training completed");
     }
+
+    Object[] outputs = new Object[3];
+    outputs[0] = trainScore;
+    outputs[1] = testScore;
+    outputs[2] = predictions;
+    return outputs;
   }
 
-  public List<Pair<INDArray, INDArray>> getData() {
+  public INDArrayDataSetIterator getData() {
     return data;
   }
 
-  public List<Pair<INDArray, INDArray>> getTestData() {
+  public INDArrayDataSetIterator getTestData() {
     return testData;
-  }
-
-  public void setTestData(List<Pair<INDArray, INDArray>> testData) {
-    this.testData = testData;
   }
 
   public MultiLayerNetwork getModel() {
@@ -153,21 +157,5 @@ public class ModelTrainingServices {
 
   public void setStatsFileName(String statsFileName) {
     this.statsFileName = statsFileName;
-  }
-
-  public void setTrainingDataset(INDArrayDataSetIterator dataset) {
-    this.dataset = dataset;
-  }
-
-  public INDArrayDataSetIterator getTrainingDataset() {
-    return dataset;
-  }
-
-  public void setTestDataset(INDArrayDataSetIterator testDataset) {
-    this.testDataset = testDataset;
-  }
-
-  public INDArrayDataSetIterator getTestDataset() {
-    return testDataset;
   }
 }
