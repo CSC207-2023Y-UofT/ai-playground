@@ -48,7 +48,6 @@ public class GraphSystemController implements Initializable {
       for (int j = 0; j < x.size(); j++) {
         XYChart.Data<Number, Number> data = new XYChart.Data<>(x.get(j), y.get(j));
         series.getData().add(data);
-
         // Change the color of the data point based on the color value
         int finalI = i;
         data.nodeProperty().addListener((ov, oldNode, newNode) -> {
