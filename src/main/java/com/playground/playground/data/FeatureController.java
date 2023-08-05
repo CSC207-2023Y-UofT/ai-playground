@@ -2,11 +2,13 @@ package com.playground.playground.data;
 
 import java.util.ArrayList;
 import com.google.common.primitives.Doubles;
+import org.apache.commons.lang.ArrayUtils;
 import org.nd4j.linalg.api.buffer.DataBuffer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.primitives.Pair;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class FeatureController {
@@ -34,9 +36,22 @@ public class FeatureController {
 
     List<Pair<INDArray, INDArray>> dataset = new ArrayList<Pair<INDArray, INDArray>>();
     for (ArrayList<Object> points : data) {
-      ArrayList<Doubles> coords;
-      coords = (ArrayList<Doubles>) points.get(0);
-      INDArray coord = Nd4j.create((DataBuffer) coords);
+//      double[] coords;
+      ArrayList<Double> coords = (ArrayList<Double>) points.get(0);
+//      double[] arr = points.get(0).stream().mapToDouble(Double::doubleValue).toArray(); //via method reference
+      double[] target = new double[coords.size()];
+      for (int i = 0; i < target.length; i++) {
+//        target[i] = doubles.get(i).doubleValue();  // java 1.4 style
+        // or:
+        target[i] = coords.get(i);                // java 1.5+ style (outboxing)
+      }
+      //      int size = coords.size();
+      //      final double[] doubleArray = new double[size];
+      //      for (int i = 0; i < size; i++) {
+      //        doubleArray[i] = coords.get(i);
+      //      }
+      System.out.println(Arrays.toString(target));
+      INDArray coord = Nd4j.create(target);
       final double[] labels = new double[1];
       labels[0] = (double) points.get(1);
       INDArray weight = Nd4j.create(labels);
@@ -54,12 +69,12 @@ public class FeatureController {
    * @return A dataset in the data format
    */
   public static ArrayList<ArrayList<Object>> getData(String dataName, int noise) {
-    ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
+        ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
 
-    DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
-    DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
-    dataset = dataProcessor.process(noise);
+        DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
+        DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
+        dataset = dataProcessor.process(noise);
 
-    return dataset;
+        return dataset;
   }
 }
