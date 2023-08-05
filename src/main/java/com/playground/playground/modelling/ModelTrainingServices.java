@@ -3,6 +3,8 @@ package com.playground.playground.modelling;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import lombok.Setter;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -17,11 +19,14 @@ import org.slf4j.LoggerFactory;
 
 /** This is the class that facilitates training the model and logging. */
 public class ModelTrainingServices {
-  private static final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
-  private final List<Pair<INDArray, INDArray>> data;
-  private final List<Pair<INDArray, INDArray>> testData;
-  private final MultiLayerNetwork model;
-  private final String statsFileName;
+  private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
+  @Setter
+  private List<Pair<INDArray, INDArray>> data;
+  private List<Pair<INDArray, INDArray>> testData;
+  private MultiLayerNetwork model;
+  private String statsFileName;
+  private INDArrayDataSetIterator dataset;
+  private INDArrayDataSetIterator testDataset;
 
   /**
    * Constructor for the ModelTrainingServices class which initializers the data and model.
@@ -87,6 +92,8 @@ public class ModelTrainingServices {
 
     INDArrayDataSetIterator dataset = new INDArrayDataSetIterator(data, batchSize);
     INDArrayDataSetIterator testDataset = new INDArrayDataSetIterator(testData, 1);
+    this.dataset = dataset;
+    this.testDataset = testDataset;
 
     File statsFile = new File(statsFileName);
     StatsStorage statsStorage = new FileStatsStorage(statsFile);
@@ -120,5 +127,49 @@ public class ModelTrainingServices {
     if (verbose) {
       log.info("Training completed");
     }
+  }
+
+  public List<Pair<INDArray, INDArray>> getData() {
+    return data;
+  }
+
+  public List<Pair<INDArray, INDArray>> getTestData() {
+    return testData;
+  }
+
+  public void setTestData(List<Pair<INDArray, INDArray>> testData) {
+    this.testData = testData;
+  }
+
+  public MultiLayerNetwork getModel() {
+    return model;
+  }
+
+  public void setModel(MultiLayerNetwork model) {
+    this.model = model;
+  }
+
+  public String getStatsFileName() {
+    return statsFileName;
+  }
+
+  public void setStatsFileName(String statsFileName) {
+    this.statsFileName = statsFileName;
+  }
+
+  public void setTrainingDataset(INDArrayDataSetIterator dataset) {
+    this.dataset = dataset;
+  }
+
+  public INDArrayDataSetIterator getTrainingDataset() {
+    return dataset;
+  }
+
+  public void setTestDataset(INDArrayDataSetIterator testDataset) {
+    this.testDataset = testDataset;
+  }
+
+  public INDArrayDataSetIterator getTestDataset() {
+    return testDataset;
   }
 }
