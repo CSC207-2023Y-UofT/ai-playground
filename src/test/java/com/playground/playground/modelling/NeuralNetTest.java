@@ -11,56 +11,74 @@ import org.junit.jupiter.api.Test;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
+/**
+ * Test class to validate the functionality of the NeuralNet class.
+ */
 class NeuralNetTest {
-  private NeuralNet neuralNet;
+    private NeuralNet neuralNet;
 
-  @BeforeEach
-  void setUp() {
-    ArrayList<Integer> layers = new ArrayList<>();
-    layers.add(2);
-    layers.add(4);
-    layers.add(2);
-    int seed = 123;
-    int inputs = 2;
-    double learningRate = 0.01;
-    Updater optimizer = Updater.ADAM;
-    OptimizationAlgorithm optimizationAlgorithm = OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT;
-    Activation activation = Activation.RELU;
-    WeightInit weightInit = WeightInit.XAVIER;
-    int nOut = 2;
-    LossFunctions.LossFunction lossFunction = LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD;
-    boolean regularization = true;
-    String regularizationType = "L2";
-    double regularizationFactor = 0.001;
+    /**
+     * Sets up the NeuralNet instance with required configurations before each test.
+     */
+    @BeforeEach
+    void setUp() {
+        // Set up the configuration parameters for the NeuralNet instance
+        ArrayList<Integer> layers = new ArrayList<>();
+        layers.add(2);
+        layers.add(4);
+        layers.add(2);
+        int seed = 123;
+        int inputs = 2;
+        double learningRate = 0.01;
+        Updater optimizer = Updater.ADAM;
+        OptimizationAlgorithm optimizationAlgorithm = OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT;
+        Activation activation = Activation.RELU;
+        WeightInit weightInit = WeightInit.XAVIER;
+        int nOut = 2;
+        LossFunctions.LossFunction lossFunction = LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD;
+        boolean regularization = true;
+        String regularizationType = "L2";
+        double regularizationFactor = 0.001;
 
-    neuralNet =
-        new NeuralNet(
-            layers,
-            seed,
-            inputs,
-            learningRate,
-            optimizer,
-            optimizationAlgorithm,
-            activation,
-            weightInit,
-            nOut,
-            lossFunction,
-            regularization,
-            regularizationType,
-            regularizationFactor);
-  }
+        // Create the NeuralNet instance
+        neuralNet =
+                new NeuralNet(
+                        layers,
+                        seed,
+                        inputs,
+                        learningRate,
+                        optimizer,
+                        optimizationAlgorithm,
+                        activation,
+                        weightInit,
+                        nOut,
+                        lossFunction,
+                        regularization,
+                        regularizationType,
+                        regularizationFactor);
+    }
 
-  @Test
-  void testGenerateModel() {
-    MultiLayerNetwork model = neuralNet.generateModel();
-    Assertions.assertNotNull(model);
-  }
+    /**
+     * Test the generateModel() method of NeuralNet class to ensure it generates a model correctly.
+     */
+    @Test
+    void testGenerateModel() {
+        // When
+        MultiLayerNetwork model = neuralNet.generateModel();
+        // Then
+        Assertions.assertNotNull(model);
+    }
 
-  @Test
-  void testModelSummary() {
-    MultiLayerNetwork model = neuralNet.generateModel();
-    String summary = neuralNet.modelSummary();
-    Assertions.assertNotNull(summary);
-    Assertions.assertEquals(model.summary(), summary);
-  }
+    /**
+     * Test the modelSummary() method of NeuralNet class to ensure it provides a summary of the model.
+     */
+    @Test
+    void testModelSummary() {
+        // When
+        MultiLayerNetwork model = neuralNet.generateModel();
+        String summary = neuralNet.modelSummary();
+        // Then
+        Assertions.assertNotNull(summary);
+        Assertions.assertEquals(model.summary(), summary);
+    }
 }
