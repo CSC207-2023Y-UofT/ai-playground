@@ -22,10 +22,11 @@
          </font></Text>
         <Label styleClass="gray-text" text="Choose a dataset" translateX="50.0" translateY="-10.0" />
         <GridPane alignment="CENTER_LEFT" hgap="10" translateX="5.0" translateY="-10.0" vgap="10">
-            <Button fx:id="clusterButton" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Button fx:id="radialButton" prefHeight="26.0" prefWidth="83.0" text="Radial" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Button fx:id="spiralButton" prefHeight="26.0" prefWidth="83.0" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Button fx:id="rectangularButton" prefHeight="26.0" prefWidth="84.0" text="Rectangular" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="clusterButton" onAction="#handleClusterButtonAction" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button fx:id="radialButton" onAction="#handleRadialButtonAction" prefHeight="26.0" prefWidth="83.0" text="Radial" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button fx:id="spiralButton" onAction="#handleSpiralButtonAction" prefHeight="26.0" prefWidth="83.0" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button fx:id="rectangularButton" onAction="#handleRectangularButtonAction" prefHeight="26.0" prefWidth="84.0" text="Rectangular" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
             <columnConstraints>
                 <ColumnConstraints />
                 <ColumnConstraints />

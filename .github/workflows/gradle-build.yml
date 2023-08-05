@@ -33,8 +33,14 @@ jobs:
         with:
           arguments: test
 
+      - name: Setup and execute Gradle 'testCoverage' task
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: testCoverage
+
       - name: Generate JaCoCo Test Coverage Badge
+        if: runner.os == 'Linux'
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
-          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+          jacoco-csv-file: build/reports/jacoco/testCoverage/testCoverage.csv
