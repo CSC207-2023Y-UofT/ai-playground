@@ -35,28 +35,12 @@ public class FeatureController {
    * @return A dataset in the data format
    */
   public static ArrayList<ArrayList<Object>> getData(String dataName, int noise) {
-    ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
+        ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
 
-    switch (dataName) {
-      case "circular":
-        DataProcessor dataProcessorCircular = new DataProcessor(new CircularDatasetGenerator());
-        dataset = dataProcessorCircular.process(noise);
-        break;
-      case "cluster":
-        DataProcessor dataProcessorCluster = new DataProcessor(new ClusterDatasetGenerator());
-        dataset = dataProcessorCluster.process(noise);
-        break;
-      case "quadrant":
-        DataProcessor dataProcessorQuadrant = new DataProcessor(new QuadrantDatasetGenerator());
-        dataset = dataProcessorQuadrant.process(noise);
-        break;
-      case "spiral":
-        DataProcessor dataProcessorSpiral = new DataProcessor(new SpiralDatasetGenerator());
-        dataset = dataProcessorSpiral.process(noise);
-        break;
-      default:
-        throw new IllegalArgumentException("Invalid dataset name: " + dataName);
-    }
-    return dataset;
+        DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
+        DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
+        dataset = dataProcessor.process(noise);
+
+        return dataset;
   }
 }
