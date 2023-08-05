@@ -3,6 +3,7 @@ package com.playground.playground.modelling;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Setter;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -17,19 +18,21 @@ import org.slf4j.LoggerFactory;
 
 /** This is the class that facilitates training the model and logging. */
 public class ModelTrainingServices {
-  private static final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
-  private final List<Pair<INDArray, INDArray>> data;
-  private final List<Pair<INDArray, INDArray>> testData;
-  private final MultiLayerNetwork model;
-  private final String statsFileName;
+  private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
+  @Setter private List<Pair<INDArray, INDArray>> data;
+  private List<Pair<INDArray, INDArray>> testData;
+  private MultiLayerNetwork model;
+  private String statsFileName;
+  private INDArrayDataSetIterator dataset;
+  private INDArrayDataSetIterator testDataset;
 
   /**
    * Constructor for the ModelTrainingServices class which initializers the data and model.
    *
-   * @param data
-   * @param model
-   * @param statsFileName
-   * @param testData
+   * @param data The training dataset.
+   * @param model The model DAG.
+   * @param statsFileName The name of the logging file which will be saved to the disk.
+   * @param testData The testing dataset.
    */
   public ModelTrainingServices(
       List<Pair<INDArray, INDArray>> data,
@@ -60,9 +63,9 @@ public class ModelTrainingServices {
   /**
    * Train the model set through the constructor and created using the NeuralNet class.
    *
-   * @param epochs
-   * @param batchSize
-   * @param verbose
+   * @param epochs Number of iterations you should train for.
+   * @param batchSize The batch size to use while training.
+   * @param verbose Should you print to the logger.
    */
   public void trainModel(int epochs, int batchSize, boolean verbose) {
 
@@ -87,6 +90,8 @@ public class ModelTrainingServices {
 
     INDArrayDataSetIterator dataset = new INDArrayDataSetIterator(data, batchSize);
     INDArrayDataSetIterator testDataset = new INDArrayDataSetIterator(testData, 1);
+    this.dataset = dataset;
+    this.testDataset = testDataset;
 
     File statsFile = new File(statsFileName);
     StatsStorage statsStorage = new FileStatsStorage(statsFile);
@@ -120,5 +125,49 @@ public class ModelTrainingServices {
     if (verbose) {
       log.info("Training completed");
     }
+  }
+
+  public List<Pair<INDArray, INDArray>> getData() {
+    return data;
+  }
+
+  public List<Pair<INDArray, INDArray>> getTestData() {
+    return testData;
+  }
+
+  public void setTestData(List<Pair<INDArray, INDArray>> testData) {
+    this.testData = testData;
+  }
+
+  public MultiLayerNetwork getModel() {
+    return model;
+  }
+
+  public void setModel(MultiLayerNetwork model) {
+    this.model = model;
+  }
+
+  public String getStatsFileName() {
+    return statsFileName;
+  }
+
+  public void setStatsFileName(String statsFileName) {
+    this.statsFileName = statsFileName;
+  }
+
+  public void setTrainingDataset(INDArrayDataSetIterator dataset) {
+    this.dataset = dataset;
+  }
+
+  public INDArrayDataSetIterator getTrainingDataset() {
+    return dataset;
+  }
+
+  public void setTestDataset(INDArrayDataSetIterator testDataset) {
+    this.testDataset = testDataset;
+  }
+
+  public INDArrayDataSetIterator getTestDataset() {
+    return testDataset;
   }
 }

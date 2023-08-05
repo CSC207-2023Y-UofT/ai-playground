@@ -1,7 +1,5 @@
 package com.playground.playground.data;
 
-import static com.playground.playground.data.GenerateDatasets.*;
-
 import java.util.ArrayList;
 
 public class FeatureController {
@@ -20,14 +18,13 @@ public class FeatureController {
    */
   public static ArrayList<ArrayList<Object>> createTrainingData(
       String dataName, ArrayList<String> featureNames, int noise) {
-    ArrayList<ArrayList<ArrayList<Double>>> data = getData(dataName, noise);
-    ArrayList<ArrayList<Object>> newData = TransformDatasets.transform(data);
+    ArrayList<ArrayList<Object>> data = getData(dataName, noise);
 
     for (String featureName : featureNames) {
       FeatureApplier feature = FeatureApplierFactory.getFeature(featureName);
-      newData = feature.applyFeature(newData);
+      data = feature.applyFeature(data);
     }
-    return newData;
+    return data;
   }
 
   /**
@@ -37,25 +34,13 @@ public class FeatureController {
    * @param noise amount of noise in the dataset
    * @return A dataset in the data format
    */
-  public static ArrayList<ArrayList<ArrayList<Double>>> getData(String dataName, int noise) {
-    ArrayList<ArrayList<ArrayList<Double>>> dataset = new ArrayList<>();
+  public static ArrayList<ArrayList<Object>> getData(String dataName, int noise) {
+        ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
 
-    switch (dataName) {
-      case "circular":
-        dataset = generateCircular(noise);
-        break;
-      case "cluster":
-        dataset = generateClusters(noise);
-        break;
-      case "quadrant":
-        dataset = generateQuadrantDatasets(noise);
-        break;
-      case "spiral":
-        dataset = generateSpiralDatasets(noise);
-        break;
-      default:
-        throw new IllegalArgumentException("Invalid dataset name: " + dataName);
-    }
-    return dataset;
+        DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
+        DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
+        dataset = dataProcessor.process(noise);
+
+        return dataset;
   }
 }
