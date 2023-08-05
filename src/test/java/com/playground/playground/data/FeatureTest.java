@@ -2,9 +2,12 @@ package com.playground.playground.data;
 
 import com.playground.playground.data.*;
 import org.junit.jupiter.api.Test;
+import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.primitives.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -108,15 +111,15 @@ public class FeatureTest {
         ArrayList<String> featureNames = new ArrayList<>(Arrays.asList("squareX", "sinY"));
         int noise = 10;
 
-        ArrayList<ArrayList<Object>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
+        List<Pair<INDArray, INDArray>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
         assertNotNull(result);
 
         // If dataGenerator produces 1000 Blue and 1000 Orange points
         int rnd_points = data_size/noise;
         assertEquals(result.size(), data_size + rnd_points);
 
-        for(ArrayList<Object> point : result) {
-            ArrayList<Double> coordinates = (ArrayList<Double>) point.get(0);
+        for(Pair<INDArray, INDArray> point : result) {
+            ArrayList<Double> coordinates = (ArrayList<Double>) point.getKey();
 
             assertEquals(4, coordinates.size());
 
@@ -140,18 +143,15 @@ public class FeatureTest {
         String dataName = "circular";
         ArrayList<String> featureNames = new ArrayList<>();
         int noise = 10;
-        ArrayList<ArrayList<Object>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
+        List<Pair<INDArray, INDArray>> result = FeatureController.createTrainingData(dataName, featureNames, noise);
 
         assertNotNull(result);
         int rnd_points = data_size/noise;
         assertEquals(result.size(), data_size + rnd_points);
 
-        for(ArrayList<Object> point : result) {
-            ArrayList<Double> coordinates = (ArrayList<Double>) point.get(0);
+        for(Pair<INDArray, INDArray> point : result) {
+            ArrayList<Double> coordinates = (ArrayList<Double>) point.getKey();
             assertEquals(2, coordinates.size());
         }
     }
-
-
-
 }
