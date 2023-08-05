@@ -69,11 +69,11 @@ public class FeaturesHiddenLayersController implements Initializable {
     neuronLabels = new Label[] {neurons1, neurons2, neurons3, neurons4, neurons5, neurons6};
 
     // Adding the behavior for buttons
-    toggleButtonSelection(x1pow2button, "x1pow2button");
-    toggleButtonSelection(x2pow2button, "x2pow2button");
-    toggleButtonSelection(x1x2button, "x1x2button");
-    toggleButtonSelection(sinx1button, "sinx1button");
-    toggleButtonSelection(sinx2button, "sinx2button");
+    toggleButtonSelection(x1pow2button, "squareX");
+    toggleButtonSelection(x2pow2button, "squareY");
+    toggleButtonSelection(x1x2button, "XtimesY");
+    toggleButtonSelection(sinx1button, "sinX");
+    toggleButtonSelection(sinx2button, "sinY");
   }
 
   private void setButtonWithImage(Button button, String imagePath) {
