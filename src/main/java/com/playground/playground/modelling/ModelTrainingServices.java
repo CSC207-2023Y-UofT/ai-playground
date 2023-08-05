@@ -3,7 +3,6 @@ package com.playground.playground.modelling;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import lombok.Setter;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
@@ -20,8 +19,7 @@ import org.slf4j.LoggerFactory;
 /** This is the class that facilitates training the model and logging. */
 public class ModelTrainingServices {
   private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
-  @Setter
-  private List<Pair<INDArray, INDArray>> data;
+  @Setter private List<Pair<INDArray, INDArray>> data;
   private List<Pair<INDArray, INDArray>> testData;
   private MultiLayerNetwork model;
   private String statsFileName;

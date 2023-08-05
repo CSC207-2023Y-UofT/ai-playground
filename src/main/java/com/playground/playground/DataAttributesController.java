@@ -1,16 +1,15 @@
 package com.playground.playground;
 
+import com.playground.playground.data.GenerateDatasets;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import com.playground.playground.data.GenerateDatasets;
 
 public class DataAttributesController implements Initializable {
   @FXML private Slider slider1;
@@ -78,10 +77,11 @@ public class DataAttributesController implements Initializable {
 
     // Initialize the GraphSystemController
     graphSystemController = new GraphSystemController();
-
   }
+
   /**
-   * Handles the action when a button is clicked and generates the dataset based on the type of the button clicked.
+   * Handles the action when a button is clicked and generates the dataset based on the type of the
+   * button clicked.
    *
    * @param event The action event that occurred (button click).
    * @param type The type of the dataset to generate.
@@ -111,6 +111,7 @@ public class DataAttributesController implements Initializable {
 
     dataService.setDataset(dataset);
   }
+
   /**
    * Handles the action when the "Cluster" button is clicked and generates the "Cluster" dataset.
    *
@@ -119,26 +120,28 @@ public class DataAttributesController implements Initializable {
   public void handleClusterButtonAction(ActionEvent event) {
     handleButtonAction(event, "cluster");
   }
+
   /**
    * Handles the action when the "Radial" button is clicked and generates the "Radial" dataset.
    *
    * @param event The action event that occurred (button click).
    */
-
   public void handleRadialButtonAction(ActionEvent event) {
     handleButtonAction(event, "radial");
   }
+
   /**
    * Handles the action when the "Spiral" button is clicked and generates the "Spiral" dataset.
    *
    * @param event The action event that occurred (button click).
    */
-
   public void handleSpiralButtonAction(ActionEvent event) {
     handleButtonAction(event, "spiral");
   }
+
   /**
-   * Handles the action when the "rectangular" button is clicked and generates the "rectangular" dataset.
+   * Handles the action when the "rectangular" button is clicked and generates the "rectangular"
+   * dataset.
    *
    * @param event The action event that occurred (button click).
    */
