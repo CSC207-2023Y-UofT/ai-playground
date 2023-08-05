@@ -14,7 +14,8 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 /**
  * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall model
- * structure and initializing the model DAG and its weights making it ready for training.
+ * structure and initializing the model DAG and its weights making it ready for training. This class
+ * should not be used at all and only the associated builder class should be used.
  */
 public class NeuralNet {
   private final OptimizationAlgorithm optimizationAlgorithm;
@@ -36,19 +37,19 @@ public class NeuralNet {
    * The NeuralNet class is responsible for creating the DAGs in memory and creating an overall
    * model structure and initializing the model DAG and its weights making it ready for training.
    *
-   * @param layers
-   * @param seed
-   * @param inputs
-   * @param learningRate
-   * @param optimizer
-   * @param optimizationAlgorithm
-   * @param activation
-   * @param weightInit
-   * @param nOut
-   * @param lossFunction
-   * @param regularization
-   * @param regularizationType
-   * @param regularizationFactor
+   * @param layers List of layers excluding the output layer, defaults to [2, 4, 2].
+   * @param seed Seed to use to train model, defaults to 123.
+   * @param inputs Number of inputs to this model, defaults to 2.
+   * @param learningRate The learning rate to use.
+   * @param optimizer Optimizer to use, defaults to Adam.
+   * @param optimizationAlgorithm Optimization Algorithm to use, defaults to SGD.
+   * @param activation The activation to use, defaults to ReLU.
+   * @param weightInit The weight initialization to use, defaults to Xavier.
+   * @param nOut The number of outputs the model should return, defaults to 2.
+   * @param lossFunction The loss function to use, defaults to negative log likelihood.
+   * @param regularization Should you use regularization, defaults to true.
+   * @param regularizationType The regularization to use, defaults to L2.
+   * @param regularizationFactor The regularization factor to use.
    */
   public NeuralNet(
       ArrayList<Integer> layers,
@@ -99,7 +100,7 @@ public class NeuralNet {
     }
     NeuralNetConfiguration.ListBuilder conf = builder.list();
 
-    for (int i = 0; i < layers.size() - 1; i++) {
+    for (int i = 0; i <= layers.size() - 1; i++) {
       if (i == 0) {
         conf =
             conf.layer(
