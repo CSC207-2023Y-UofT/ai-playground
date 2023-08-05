@@ -69,7 +69,25 @@ The AI Playground displays various training metrics, including Epoch number, Tes
 By offering these interactive features and visualizations, the AI Playground aims to make neural networks more accessible and understandable for users. Users can experiment with different configurations and datasets to gain a deeper understanding of how neural networks work and how to optimize their performance for specific tasks. The software provides a valuable educational tool for students, researchers, and enthusiasts interested in machine learning and neural networks.
 
 ## Clean Architecture
-WIP
+
+The AI Playground project follows Clean Architecture principles:
+
+### interface_adapter layer
+- Contains classes interacting with the external world.
+- Includes UI components like `FeatureController`.
+- Provides an interface for data generators like `DataProcessor`.
+
+### usecase layer
+- Holds business logic and use cases.
+- Includes classes like `ModelTrainingServices` for training the neural network.
+
+### entity layer
+- Contains domain model and business entities.
+- Includes classes like `NeuralNet` representing the neural network model.
+
+### resources layer
+- Contains configuration files and resources.
+- For example, external configuration files would be placed here.
 
 ## SOLID Principles
 
