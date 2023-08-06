@@ -2,21 +2,14 @@ package com.playground.playground;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import com.playground.playground.data.FeatureController;
-import com.playground.playground.modelling.ModelTrainingServices;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/**
-* The MainController class is responsible for assimilating values from other controllers.
-*/
+/** The MainController class is responsible for assimilating values from other controllers. */
 public class MainController implements Initializable {
   private DataAttributesController dataAttributesController;
   @FXML private VBox dataAttributesBox;
@@ -76,5 +69,4 @@ public class MainController implements Initializable {
     featuresHiddenLayersController = featuresHiddenLayersLoader.getController();
     featuresHiddenLayersController.initialize(location, resources);
   }
-
 }

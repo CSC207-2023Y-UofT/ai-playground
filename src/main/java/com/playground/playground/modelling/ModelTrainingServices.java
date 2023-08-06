@@ -2,11 +2,8 @@ package com.playground.playground.modelling;
 
 import java.io.File;
 import java.util.ArrayList;
-
-import com.rits.cloning.Cloner;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
-import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.stats.StatsListener;
@@ -103,7 +100,6 @@ public class ModelTrainingServices {
 
     model.fit(data);
 
-
     double trainScore = model.score();
     double testScore = model.score(testData.next());
 
@@ -113,7 +109,7 @@ public class ModelTrainingServices {
     }
 
     System.out.println("Start While");
-//    Evaluation eval = new Evaluation(2);
+    //    Evaluation eval = new Evaluation(2);
     System.out.println(data);
     while (copyData.hasNext()) {
       DataSet t = copyData.next();
@@ -123,26 +119,25 @@ public class ModelTrainingServices {
       System.out.println(predicted);
 
       int[] batchPredictions = NDArrayUtil.toInts(predicted);
-      for (int i = 0; i<batchPredictions.length; i++) {
+      for (int i = 0; i < batchPredictions.length; i++) {
         predictions.add(batchPredictions[i]);
       }
     }
     System.out.println("Predictions Now:");
     System.out.println(predictions);
-//    while (testData.hasNext()) {
-//      DataSet t = testData.next();
-//      INDArray features = t.getFeatureMatrix();
-//      INDArray predicted = model.output(features, false);
-//      //        Here is where we make the graph in the UI
-//    }
+    //    while (testData.hasNext()) {
+    //      DataSet t = testData.next();
+    //      INDArray features = t.getFeatureMatrix();
+    //      INDArray predicted = model.output(features, false);
+    //      //        Here is where we make the graph in the UI
+    //    }
 
     if (verbose) {
       log.info("Training completed");
     }
 
     ArrayList<Integer> intList = new ArrayList<Integer>(predictions.size());
-    for (int i : predictions)
-    {
+    for (int i : predictions) {
       intList.add(i);
     }
 
@@ -153,50 +148,44 @@ public class ModelTrainingServices {
     return outputs;
   }
 
-/**
-*
- * @return The training dataset.
-*/
+  /**
+   * @return The training dataset.
+   */
   public INDArrayDataSetIterator getData() {
     return data;
   }
 
-/**
-*
- * @return The testing dataset.
-*/
+  /**
+   * @return The testing dataset.
+   */
   public INDArrayDataSetIterator getTestData() {
     return testData;
   }
 
-/**
-*
- * @return Get the model.
-*/
+  /**
+   * @return Get the model.
+   */
   public MultiLayerNetwork getModel() {
     return model;
   }
 
-/**
-*
- * @param model The model to set.
-*/
+  /**
+   * @param model The model to set.
+   */
   public void setModel(MultiLayerNetwork model) {
     this.model = model;
   }
 
-/**
-*
- * @return The name of the logging stats file.
-*/
+  /**
+   * @return The name of the logging stats file.
+   */
   public String getStatsFileName() {
     return statsFileName;
   }
 
-/**
-*
- * @param statsFileName The stats file name to set.
-*/
+  /**
+   * @param statsFileName The stats file name to set.
+   */
   public void setStatsFileName(String statsFileName) {
     this.statsFileName = statsFileName;
   }

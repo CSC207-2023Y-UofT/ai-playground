@@ -13,7 +13,6 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.nd4j.linalg.api.ndarray.INDArray;
-import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.primitives.Pair;
 
@@ -63,7 +62,8 @@ public class ModelTrainingServicesTest {
 
     // When
     ModelTrainingServices service =
-        new ModelTrainingServices(mockTrainingDataset, mockTrainingDataset, model, statsFileName, mockTestDataset);
+        new ModelTrainingServices(
+            mockTrainingDataset, mockTrainingDataset, model, statsFileName, mockTestDataset);
     // Then
     assertEquals(mockTrainingDataset, service.getData());
     assertEquals(mockTestDataset, service.getTestData());
@@ -106,12 +106,13 @@ public class ModelTrainingServicesTest {
     INDArrayDataSetIterator mockTestDataset = buildIterator(1);
 
     ModelTrainingServices service =
-        new ModelTrainingServices(mockTrainingDataset, mockTrainingDataset, model, "test_stats_file", mockTestDataset);
+        new ModelTrainingServices(
+            mockTrainingDataset, mockTrainingDataset, model, "test_stats_file", mockTestDataset);
 
     // When
     service.trainModel(verbose);
 
     // Then
-    assertTrue(model.score()<0.9);
+    assertTrue(model.score() < 0.9);
   }
 }

@@ -3,7 +3,8 @@ package com.playground.playground.data;
 import java.util.ArrayList;
 
 /**
- * Applies a multiplication feature to the dataset by multiplying the x and y values of each data point.
+ * Applies a multiplication feature to the dataset by multiplying the x and y values of each data
+ * point.
  */
 public class MultiplyFeatureApplier implements FeatureApplier {
   /**

@@ -128,6 +128,7 @@ public class FeatureTest {
       double sinY = coordinates.getDouble(3);
     }
   }
+
   /**
    * This tests the FeatureController when there are no features. Checks correct number of Blue and
    * Orange points, and that no extra features are being applied.
