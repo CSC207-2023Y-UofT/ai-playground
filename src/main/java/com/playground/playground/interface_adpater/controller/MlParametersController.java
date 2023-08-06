@@ -1,12 +1,13 @@
-package com.playground.playground;
+package com.playground.playground.interface_adpater.controller;
 
-import com.playground.playground.data.DataGeneratorFactory;
+import com.playground.playground.DataAttributesController;
+import com.playground.playground.DataService;
+import com.playground.playground.FeaturesHiddenLayersController;
 import com.playground.playground.data.FeatureController;
 import com.playground.playground.modelling.ModelTrainingServices;
 import com.playground.playground.modelling.NeuralNetBuilder;
 import com.playground.playground.modelling.PrepareData;
 
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.*;
 
@@ -90,9 +91,11 @@ public class MlParametersController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     // setting buttons
-    setButtonWithImage(rewindButton, "playground-images/rewind-button.png");
-    setButtonWithImage(playButton, "playground-images/play-button.png");
-    setButtonWithImage(stepButton, "playground-images/fast-forward-button.png");
+    setButtonWithImage(
+            rewindButton, "/com/playground/playground/playground-images/rewind-button.png");
+    setButtonWithImage(playButton, "/com/playground/playground/playground-images/play-button.png");
+    setButtonWithImage(
+            stepButton, "/com/playground/playground/playground-images/fast-forward-button.png");
 
     // Set event handlers for menu items
     learn1.setOnAction(this::handleLearningRate);
