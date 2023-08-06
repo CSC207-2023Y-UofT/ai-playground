@@ -93,6 +93,8 @@ The AI Playground project follows Clean Architecture principles:
 - Contains configuration files and resources.
 - For example, external configuration files would be placed here.
 
+### frameworks layer
+
 ## SOLID Principles
 
 The AI Playground project adheres to SOLID principles:
