@@ -8,7 +8,7 @@ You can contribute us by filing issues, bugs and PRs. You can also take a look a
 - Proposing new features
 - Becoming a maintainer
 
-If you want to discuss on something then feel free to present your opinions, views or any other relevant comment on [discussions](https://github.com/CSC207-2023Y-UofT/ai-playground/discussions). 
+If you want to discuss on something then feel free to present your opinions, views or any other relevant comments on [discussions](https://github.com/CSC207-2023Y-UofT/ai-playground/discussions). 
 Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
 ### Code contribution
