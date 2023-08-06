@@ -30,6 +30,7 @@ public class ModelTrainingServices {
    * Constructor for the ModelTrainingServices class which initializers the data and model.
    *
    * @param data The training dataset.
+   * @param copyData The training dataset for reporting training scores.
    * @param model The model DAG.
    * @param statsFileName The name of the logging file which will be saved to the disk.
    * @param testData The testing dataset.
@@ -65,8 +66,8 @@ public class ModelTrainingServices {
   /**
    * Train the model set through the constructor and created using the NeuralNet class.
    *
-   * @param verbose Should you print to the logger.
-   * @return
+   * @param verbose Should you print to the logger?
+   * @return An ArrayList with trainingScore, testingScore and an ArrayList of Predictions.
    */
   public Object[] trainModel(boolean verbose) {
 
