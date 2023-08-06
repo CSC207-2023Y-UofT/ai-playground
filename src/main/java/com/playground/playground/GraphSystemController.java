@@ -68,6 +68,7 @@ public class GraphSystemController implements Initializable {
 
       XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
       series.getData().add(data);
+      System.out.println(series);
       // Change the color of the data point based on the color value
       int finalI = i;
       data.nodeProperty().addListener((ov, oldNode, newNode) -> {
@@ -79,7 +80,6 @@ public class GraphSystemController implements Initializable {
           }
         }
       });
-
       neuralNetwork.getData().add(series);
     }
   }

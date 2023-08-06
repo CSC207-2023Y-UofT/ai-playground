@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import akka.actor.dsl.Creators;
 import com.playground.playground.data.FeatureController;
+import com.playground.playground.modelling.ModelTrainingServices;
 import com.playground.playground.modelling.NeuralNet;
 import com.playground.playground.modelling.NeuralNetBuilder;
 import com.playground.playground.modelling.PrepareData;
@@ -199,6 +200,11 @@ public class MlParametersController implements Initializable {
 
     String dataset = DataAttributesController.dataset;
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
+
+    if (selectedButtons == null) {
+      selectedButtons = new ArrayList<String>();
+    }
+
     List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
     List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
     System.out.println(selectedButtons);
@@ -215,21 +221,34 @@ public class MlParametersController implements Initializable {
       shouldRegularize = true;
       regularizationType = regular;
     }
+
+    int numFeatures = selectedButtons.size() + 2;
+
     MultiLayerNetwork model =
-            new NeuralNetBuilder()
-                    .activation(activationType)
-                    .inputs(hiddenLayers.get(0))
-                    .layers((ArrayList<Integer>) hiddenLayers)
-                    .learningRate(learnRate)
-                    .nOut(2)
-                    .regularization(shouldRegularize)
-                    .regularizationType(regularizationType)
-                    .regularizationFactor(regularRate)
-                    .buildNeuralNet()
-                    .generateModel();
+        new NeuralNetBuilder()
+            .activation(activationType)
+            .inputs(numFeatures)
+            .layers((ArrayList<Integer>) hiddenLayers)
+            .learningRate(learnRate)
+            .nOut(1)
+            .regularization(shouldRegularize)
+            .regularizationType(regularizationType)
+            .regularizationFactor(regularRate)
+            .buildNeuralNet()
+            .generateModel();
 
     System.out.println(model.summary());
 
-//    MainController.graphSystemController.updateGraph();
+    hiddenLayers.add(0, numFeatures);
+    System.out.print(hiddenLayers);
+
+    ModelTrainingServices TrainingController =
+        new ModelTrainingServices(trainDataset, model, "statsLog", testDataset);
+
+    Object[] results = TrainingController.trainModel(true);
+
+    MainController.graphSystemController.updateGraph(rawData, (ArrayList<Integer>) results[2]);
+    MainController.graphSystemController.setTestLoss((Double) results[1]);
+    MainController.graphSystemController.setTrainingLoss((Double) results[0]);
   }
 }
