@@ -1,14 +1,15 @@
 package com.playground.playground;
 
+import com.playground.playground.data.DataGeneratorFactory;
 import com.playground.playground.data.FeatureController;
 import com.playground.playground.modelling.ModelTrainingServices;
 import com.playground.playground.modelling.NeuralNetBuilder;
 import com.playground.playground.modelling.PrepareData;
+
+import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -71,6 +72,12 @@ public class MlParametersController implements Initializable {
   @FXML private MenuItem reg10;
   @FXML private MenuItem classify;
   @FXML private MenuItem regress;
+  private DataService dataService;
+  private GraphSystemController graphSystemController;
+
+  public MlParametersController() {
+    this.dataService = DataService.getInstance();
+  }
 
   /**
    * Initializes the MlParametersController after its root element has been processed.
@@ -119,6 +126,7 @@ public class MlParametersController implements Initializable {
     reg10.setOnAction(this::handleRegularizationRate);
     classify.setOnAction(this::handleProblem);
     regress.setOnAction(this::handleProblem);
+    graphSystemController = new GraphSystemController();
   }
 
   /**
@@ -240,6 +248,7 @@ public class MlParametersController implements Initializable {
       selectedButtons = new ArrayList<>();
     }
 
+
     // Prepare training and test data
     List<Pair<INDArray, INDArray>> rawData =
         FeatureController.createTrainingData(dataset, selectedButtons, noise);
@@ -283,17 +292,11 @@ public class MlParametersController implements Initializable {
 
     Object[] results = trainingController.trainModel(true);
 
-    // Update the graph with the results
-    MainController.graphSystemController.updateGraph(rawData, (ArrayList<Integer>) results[2]);
+    System.out.println("Setting dataset...");
+    dataService.setDataset(rawData);
+    dataService.setResults((ArrayList<Integer>) results[2]);
+    System.out.println("Dataset set to: " + dataService.getDataset());
 
-    // Set default values if results are null
-    if (results[1] == null) {
-      results[1] = 0.0;
-    }
-    if (results[0] == null) {
-      results[0] = 0.0;
-    }
   }
-
-  public void handleStopButtonClick(javafx.event.ActionEvent actionEvent) {}
+  public void handleStopButtonClick(ActionEvent actionEvent) {}
 }

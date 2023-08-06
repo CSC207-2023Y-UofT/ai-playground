@@ -22,7 +22,7 @@ public class ClusterDatasetGenerator implements DatasetGenerator {
     double cluster1CenterX = 5.0;
     double cluster1CenterY = 5.0;
     double cluster1StdDeviation = 1.5;
-    int cluster1Size = 1000;
+    int cluster1Size = 500;
 
     ArrayList<ArrayList<Double>> cluster1 =
         generateCluster(
@@ -33,7 +33,7 @@ public class ClusterDatasetGenerator implements DatasetGenerator {
     double cluster2CenterX = -5.0;
     double cluster2CenterY = -5.0;
     double cluster2StdDeviation = 1.0;
-    int cluster2Size = 1000;
+    int cluster2Size = 500;
 
     ArrayList<ArrayList<Double>> cluster2 =
         generateCluster(
