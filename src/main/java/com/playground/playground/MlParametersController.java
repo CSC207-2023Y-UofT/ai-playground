@@ -255,8 +255,8 @@ public class MlParametersController implements Initializable {
     if (results[0] == null) {
       results[0] = 0.0;
     }
-    MainController.graphSystemController.setTestLoss((Double) results[1]);
-    MainController.graphSystemController.setTrainingLoss((Double) results[0]);
+//    MainController.graphSystemController.setTestLoss((Double) results[1]);
+//    MainController.graphSystemController.setTrainingLoss((Double) results[0]);
   }
   public void handleStopButtonClick(javafx.event.ActionEvent actionEvent) {
 
