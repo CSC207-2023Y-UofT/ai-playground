@@ -53,6 +53,8 @@ public class GraphSystemController implements Initializable {
                 updateGraph(dataService.getDataset(), newValue);
               }
             });
+    setTestLoss(0);
+    setTrainingLoss(0);
   }
 
   public void setTestLoss(double testL) {
@@ -60,7 +62,7 @@ public class GraphSystemController implements Initializable {
   }
 
   public void setTrainingLoss(double trainL) {
-    testLoss.setText(String.valueOf(trainL));
+    trainingLoss.setText(String.valueOf(trainL));
   }
 
   /**
