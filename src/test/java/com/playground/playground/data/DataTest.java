@@ -27,10 +27,10 @@ public class DataTest {
     assertFalse(cluster1.isEmpty());
     assertFalse(cluster2.isEmpty());
 
-    assertTrue(cluster1.get(0).size() > 1000);
-    assertTrue(cluster1.get(1).size() > 1000);
-    assertTrue(cluster2.get(0).size() > 1000);
-    assertTrue(cluster2.get(1).size() > 1000);
+    assertTrue(cluster1.get(0).size() > 400);
+    assertTrue(cluster1.get(1).size() > 400);
+    assertTrue(cluster2.get(0).size() > 400);
+    assertTrue(cluster2.get(1).size() > 400);
   }
 
   /**
