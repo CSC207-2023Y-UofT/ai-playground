@@ -100,6 +100,19 @@ public class NeuralNet {
     }
     NeuralNetConfiguration.ListBuilder conf = builder.list();
 
+    if (layers.size() == 1) {
+      conf =
+              conf.layer(
+                      0,
+                      new DenseLayer.Builder()
+                              .nIn(inputs)
+                              .nOut(nOut)
+                              .activation(activation)
+                              .weightInit(weightInit)
+                              .build());
+    }
+
+    else{
     for (int i = 0; i <= layers.size() - 1; i++) {
       if (i == 0) {
         conf =
@@ -121,6 +134,7 @@ public class NeuralNet {
                     .weightInit(weightInit)
                     .build());
       }
+    }
     }
     conf =
         conf.layer(

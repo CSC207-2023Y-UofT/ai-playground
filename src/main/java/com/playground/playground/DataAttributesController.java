@@ -12,6 +12,9 @@ import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
 public class DataAttributesController implements Initializable {
+  public static int initializeTestRatio;
+  public static int initializeNoise;
+  public static int initializeBatchSize;
   @FXML private Slider slider1;
 
   @FXML private Slider slider2;
@@ -30,9 +33,11 @@ public class DataAttributesController implements Initializable {
   @FXML private Button spiralButton;
 
   @FXML private Button rectangularButton;
-
+  public static int testRatio;
+  public static int batchSize;
   public static int noise;
   public static String dataset;
+  
 
   /**
    * Initializer for DataAttributesController.java
@@ -83,6 +88,7 @@ public class DataAttributesController implements Initializable {
     double max = slider.getMax();
     double percentage = (value / max) * 100;
     long roundedPercentage = Math.round(percentage);
+    DataAttributesController.initializeTestRatio = (int) roundedPercentage;
     percentLabel.setText("Ratio of training to test data: " + roundedPercentage + "%");
   }
 
@@ -94,6 +100,7 @@ public class DataAttributesController implements Initializable {
    */
   private void updateSlider2Percent(Slider slider, Label numberLabel) {
     int value = (int) slider.getValue();
+    DataAttributesController.initializeNoise = value;
     String stringVal = String.format("%d", value);
     numberLabel.setText("Noise: " + stringVal);
   }
@@ -106,6 +113,7 @@ public class DataAttributesController implements Initializable {
    */
   private void updateSlider3Percent(Slider slider, Label numberLabel) {
     int value = (int) slider.getValue();
+    DataAttributesController.initializeBatchSize = value;
     String stringVal = String.format("%d", value);
     numberLabel.setText("Batch size: " + stringVal);
   }
@@ -114,10 +122,23 @@ public class DataAttributesController implements Initializable {
     button.setPrefSize(70, 50);
   }
 
-  public void initialize(MouseEvent mouseEvent) {
+  public int initializeTestRatio(MouseEvent mouseEvent) {
+    testRatio = (int) slider1.getValue();
+    DataAttributesController.initializeTestRatio = testRatio;
+    return testRatio;
+  }
+  public int initializeNoise(MouseEvent mouseEvent) {
     noise = (int) slider2.getValue();
+    DataAttributesController.initializeNoise = noise;
+    return noise;
+  }
+  public int initializeBatchSize(MouseEvent mouseEvent) {
+    batchSize = (int) slider3.getValue();
+    DataAttributesController.initializeBatchSize = batchSize;
+    return batchSize;
   }
 
+  
   public void handleCLusterButton(ActionEvent actionEvent) {
     dataset = "cluster";
   }

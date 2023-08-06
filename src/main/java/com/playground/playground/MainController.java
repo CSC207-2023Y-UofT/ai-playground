@@ -20,7 +20,7 @@ public class MainController implements Initializable {
   private MlParametersController mlParametersController;
   @FXML private HBox mlParametersBox;
 
-  private GraphSystemController graphSystemController;
+  public static GraphSystemController graphSystemController;
   @FXML private VBox graphSystemBox;
 
   private FeaturesHiddenLayersController featuresHiddenLayersController;
