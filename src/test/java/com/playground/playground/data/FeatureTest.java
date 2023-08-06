@@ -112,7 +112,7 @@ public class FeatureTest {
     assertNotNull(result);
 
     // If dataGenerator produces 1000 Blue and 1000 Orange points
-    int rnd_points = data_size / noise;
+    int rnd_points = 10 * noise;
     assertEquals(result.size(), data_size + rnd_points);
 
     for (Pair<INDArray, INDArray> point : result) {
@@ -144,7 +144,7 @@ public class FeatureTest {
         FeatureController.createTrainingData(dataName, featureNames, noise);
 
     assertNotNull(result);
-    int rnd_points = data_size / noise;
+    int rnd_points = 10 * noise;
     assertEquals(result.size(), data_size + rnd_points);
 
     for (Pair<INDArray, INDArray> point : result) {
