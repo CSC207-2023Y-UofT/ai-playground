@@ -1,4 +1,8 @@
-# AI Playground
+# AI Playground ![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FCSC207-2023Y-UofT%2Fai-playground)
+
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CSC207-2023Y-UofT/ai-playground/.github%2Fworkflows%2Fgradle-build.yml?label=Build%20and%20Run%20Tests)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CSC207-2023Y-UofT/ai-playground/.github%2Fworkflows%2Fpublish-javadoc.yml?label=Deploy%20Documentation)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CSC207-2023Y-UofT/ai-playground/.github%2Fworkflows%2Flint.yml?label=Java%20Style%20Guide)
 
 The AI Playground is an interactive software program designed to help users explore and visualize the decision boundary produced by a neural network using various datasets and configurations. It offers an educational and hands-on experience, allowing users to understand how neural networks function and how different factors impact their performance.
 
