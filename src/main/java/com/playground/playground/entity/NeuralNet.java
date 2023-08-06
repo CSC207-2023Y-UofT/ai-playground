@@ -1,4 +1,4 @@
-package com.playground.playground.modelling;
+package com.playground.playground.entity;
 
 import java.util.ArrayList;
 import java.util.Objects;

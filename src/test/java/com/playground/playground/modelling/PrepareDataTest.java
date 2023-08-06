@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import com.playground.playground.usecase.modelling.PrepareData;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,5 @@
-package com.playground.playground;
+package com.playground.playground.interface_adapater.controller;
 
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,17 +7,13 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 
-import akka.actor.dsl.Creators;
-import com.playground.playground.data.FeatureController;
-import com.playground.playground.modelling.ModelTrainingServices;
-import com.playground.playground.modelling.NeuralNet;
-import com.playground.playground.modelling.NeuralNetBuilder;
-import com.playground.playground.modelling.PrepareData;
+import com.playground.playground.entity.NeuralNetBuilder;
+import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
+import com.playground.playground.usecase.modelling.PrepareData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;

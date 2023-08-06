@@ -1,4 +1,6 @@
-package com.playground.playground.data;
+package com.playground.playground.usecase.features;
+
+import com.playground.playground.entity.FeatureApplier;
 
 import java.util.ArrayList;
 

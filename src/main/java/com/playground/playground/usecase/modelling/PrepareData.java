@@ -1,4 +1,4 @@
-package com.playground.playground.modelling;
+package com.playground.playground.usecase.modelling;
 
 import java.util.List;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
@@ -6,7 +6,7 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
 
 /**
-* This class helps make data ready for the model trianing.
+* This class helps make data ready for the model training.
 */
 public class PrepareData {
     private final List<Pair<INDArray, INDArray>> data;
@@ -16,7 +16,7 @@ public class PrepareData {
 /**
 * Default constructor for PrepareData.
  *
- * @param batchSize Batch size for the trianing data.
+ * @param batchSize Batch size for the training data.
  * @param data Training Dataset.
  * @param testData Testing Dataset.
 */

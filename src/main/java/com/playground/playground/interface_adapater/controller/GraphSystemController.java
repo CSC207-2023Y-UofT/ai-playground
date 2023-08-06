@@ -1,4 +1,4 @@
-package com.playground.playground;
+package com.playground.playground.interface_adapater.controller;
 
 
 import java.net.URL;

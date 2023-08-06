@@ -1,16 +1,28 @@
-package com.playground.playground.data;
+package com.playground.playground.usecase.features;
+
+import com.playground.playground.entity.FeatureApplier;
 
 import java.util.ArrayList;
 
 /**
- * Applies a multiplication feature to the dataset by multiplying the x and y values of each data point.
+ * Applies the sine function to a specific axis (x or y) of the data points in the dataset.
  */
-public class MultiplyFeatureApplier implements FeatureApplier {
+public class SinFeatureApplier implements FeatureApplier {
+  private final int axis;
+
   /**
-   * Multiplies the x and y values of each data point in the provided dataset.
+   * @param axis the axis of the coordinates to apply the sin function to (0 = x-axis, 1 = y-axis)
+   */
+  public SinFeatureApplier(int axis) {
+    this.axis = axis;
+  }
+
+  /**
+   * Applies the sin function to the values of either the x or y-axis of a dataset.
    *
    * @param dataset Given in the transformed dataset format
-   * @return the same dataset with the x multiplied with y added to the correct data set.
+   * @return The same dataset with sin applied to the correct axis values appended to the correct
+   *     coordinates list
    */
   @Override
   public ArrayList<ArrayList<Object>> applyFeature(ArrayList<ArrayList<Object>> dataset) {
@@ -20,7 +32,8 @@ public class MultiplyFeatureApplier implements FeatureApplier {
       ArrayList<Double> oldCoordinates = (ArrayList<Double>) datapoint.get(0);
       ArrayList<Double> newCoordinates = new ArrayList<>(oldCoordinates);
       Integer state = (Integer) datapoint.get(1);
-      Double point = newCoordinates.get(0) * newCoordinates.get(1);
+      Double point = newCoordinates.get(axis);
+      point = Math.sin(point);
       newCoordinates.add(point);
       ArrayList<Object> newDatapoint = new ArrayList<>();
       newDatapoint.add(newCoordinates);

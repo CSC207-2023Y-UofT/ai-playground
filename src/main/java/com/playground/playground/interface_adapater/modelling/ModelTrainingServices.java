@@ -1,12 +1,10 @@
-package com.playground.playground.modelling;
+package com.playground.playground.interface_adapater.modelling;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import com.rits.cloning.Cloner;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
-import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.stats.StatsListener;

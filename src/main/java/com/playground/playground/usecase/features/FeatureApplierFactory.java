@@ -1,4 +1,9 @@
-package com.playground.playground.data;
+package com.playground.playground.usecase.features;
+
+import com.playground.playground.entity.FeatureApplier;
+import com.playground.playground.usecase.features.MultiplyFeatureApplier;
+import com.playground.playground.usecase.features.SinFeatureApplier;
+import com.playground.playground.usecase.features.SquareFeatureApplier;
 
 import java.util.HashMap;
 import java.util.Map;

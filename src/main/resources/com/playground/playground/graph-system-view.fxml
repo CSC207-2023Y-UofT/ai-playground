@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="457.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.GraphSystemController">
+<VBox prefHeight="457.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapater.controller.GraphSystemController">
    <VBox prefHeight="462.0" prefWidth="485.0">
       <children>
           <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="389.0" prefWidth="400.0" styleClass="neural-network-text">

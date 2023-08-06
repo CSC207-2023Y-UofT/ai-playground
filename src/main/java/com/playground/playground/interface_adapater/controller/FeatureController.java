@@ -1,14 +1,16 @@
-package com.playground.playground.data;
+package com.playground.playground.interface_adapater.controller;
 
 import java.util.ArrayList;
-import com.google.common.primitives.Doubles;
-import org.apache.commons.lang.ArrayUtils;
-import org.nd4j.linalg.api.buffer.DataBuffer;
+
+import com.playground.playground.usecase.datasets.DataGeneratorFactory;
+import com.playground.playground.entity.DatasetGenerator;
+import com.playground.playground.entity.FeatureApplier;
+import com.playground.playground.usecase.features.FeatureApplierFactory;
+import com.playground.playground.usecase.datasets.DataProcessor;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.primitives.Pair;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
