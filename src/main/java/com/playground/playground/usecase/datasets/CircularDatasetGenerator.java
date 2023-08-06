@@ -26,7 +26,7 @@ public class CircularDatasetGenerator implements DatasetGenerator {
     int radius0 = 7;
 
     // Generate points for the first cluster
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 500; i++) {
       double deviation0 = (Math.random() * 4) - 2;
       double angle = Math.random() * 2 * Math.PI;
       double xp = Math.cos(angle) * (radius0 + deviation0);
@@ -40,7 +40,7 @@ public class CircularDatasetGenerator implements DatasetGenerator {
 
     int radius1 = 4;
     // Generate points for the second cluster
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 500; i++) {
       double deviation1 = Math.random();
       double angle = Math.random() * 2 * Math.PI;
       double xp = Math.cos(angle) * radius1 * deviation1;

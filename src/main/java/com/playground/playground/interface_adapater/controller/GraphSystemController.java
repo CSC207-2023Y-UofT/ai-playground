@@ -4,6 +4,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import com.playground.playground.DataService;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.ScatterChart;
@@ -16,9 +20,30 @@ public class GraphSystemController implements Initializable {
   @FXML private ScatterChart neuralNetwork;
   @FXML private Label testLoss;
   @FXML private Label trainingLoss;
-
+  private DataService dataService;
   /** Construct the graph using the neural network. */
-  public void initialize(URL location, ResourceBundle resources) {}
+  public void initialize(URL location, ResourceBundle resources) {
+    // Get the DataService instance
+    dataService = DataService.getInstance();
+
+    // Add a listener to the dataset property in the data service
+    dataService.datasetProperty().addListener(new ChangeListener<List<Pair<INDArray, INDArray>>>() {
+      @Override
+      public void changed(ObservableValue<? extends List<Pair<INDArray, INDArray>>> observable, List<Pair<INDArray, INDArray>> oldValue, List<Pair<INDArray, INDArray>> newValue) {
+        updateGraph(newValue, dataService.getResults());
+      }
+    });
+
+    // Add a listener to the results property in the data service
+    dataService.resultsProperty().addListener(new ChangeListener<ArrayList<Integer>>() {
+      @Override
+      public void changed(ObservableValue<? extends ArrayList<Integer>> observable, ArrayList<Integer> oldValue, ArrayList<Integer> newValue) {
+        updateGraph(dataService.getDataset(), newValue);
+      }
+    });
+  }
+
+
 
   public void setTestLoss(double testL) {
     testLoss.setText(String.valueOf(testL));
@@ -60,16 +85,16 @@ public class GraphSystemController implements Initializable {
       // Change the color of the data point based on the color value
       int finalI = i;
       data.nodeProperty()
-          .addListener(
-              (ov, oldNode, newNode) -> {
-                if (newNode != null) {
-                  if (colors.get(finalI) == 1) {
-                    newNode.setStyle("-fx-background-color: blue;");
-                  } else {
-                    newNode.setStyle("-fx-background-color: green;");
-                  }
-                }
-              });
+              .addListener(
+                      (ov, oldNode, newNode) -> {
+                        if (newNode != null) {
+                          if (colors.get(finalI) == 1) {
+                            newNode.setStyle("-fx-background-color: blue;");
+                          } else {
+                            newNode.setStyle("-fx-background-color: green;");
+                          }
+                        }
+                      });
       neuralNetwork.getData().add(series);
     }
   }
