@@ -23,8 +23,8 @@ import org.w3c.dom.Text;
 
 public class GraphSystemController implements Initializable {
   @FXML private ScatterChart neuralNetwork;
-  @FXML private Text testLoss;
-  @FXML private Text trainingLoss;
+  @FXML private Label testLoss;
+  @FXML private Label trainingLoss;
 
 
 
@@ -36,11 +36,11 @@ public class GraphSystemController implements Initializable {
   }
 
   public void setTestLoss(double testL){
-    testLoss.setTextContent(String.valueOf(testL));
+    testLoss.setText(String.valueOf(testL));
   }
 
   public void setTrainingLoss(double trainL){
-    testLoss.setTextContent(String.valueOf(trainL));
+    testLoss.setText(String.valueOf(trainL));
   }
 
   /**
@@ -52,7 +52,6 @@ public class GraphSystemController implements Initializable {
    * @param dataset The new dataset to display in the graph.
    * @param colors An ArrayList of 0's or 1's corresponding to the colour of the points on the dataset.
    */
-
   public void updateGraph(List<Pair<INDArray, INDArray>> dataset, ArrayList<Integer> colors) {
     // Clear the current data
     neuralNetwork.getData().clear();
