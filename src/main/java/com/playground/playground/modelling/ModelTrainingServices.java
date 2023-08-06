@@ -153,26 +153,50 @@ public class ModelTrainingServices {
     return outputs;
   }
 
+/**
+*
+ * @return The training dataset.
+*/
   public INDArrayDataSetIterator getData() {
     return data;
   }
 
+/**
+*
+ * @return The testing dataset.
+*/
   public INDArrayDataSetIterator getTestData() {
     return testData;
   }
 
+/**
+*
+ * @return Get the model.
+*/
   public MultiLayerNetwork getModel() {
     return model;
   }
 
+/**
+*
+ * @param model The model to set.
+*/
   public void setModel(MultiLayerNetwork model) {
     this.model = model;
   }
 
+/**
+*
+ * @return The name of the logging stats file.
+*/
   public String getStatsFileName() {
     return statsFileName;
   }
 
+/**
+*
+ * @param statsFileName The stats file name to set.
+*/
   public void setStatsFileName(String statsFileName) {
     this.statsFileName = statsFileName;
   }
