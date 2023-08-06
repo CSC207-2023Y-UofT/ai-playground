@@ -247,10 +247,11 @@ extends java.lang.Object</pre>
  create a single dataset in the correct format for training.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dataName</code> - Represents which dataset has been chosen by the user. Legit names: 'circular'
-     'cluster' 'quadrant' 'spiral'</dd>
-<dd><code>featureNames</code> - List of features that have been selected by the user. Must be: 'squareX'
-     'squareY' 'XtimesY' 'sinX' 'sinY'</dd>
+<dd><code>dataName</code> - Represents which dataset has been chosen by the user.
+ PRECONDITION data name must be one of the following: "circular", "cluster", "quadrant", "spiral"</dd>
+<dd><code>featureNames</code> - List of features that have been selected by the user.  PRECONDITION feature name either empty
+                     list or a list containing one or more of the following: "squareX", "squareY", "XtimesY",
+                     "sinX", "sinY"</dd>
 <dd><code>noise</code> - Int represent the noise of data</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>dataset in Neural Net configuration containing original x and y values, and all

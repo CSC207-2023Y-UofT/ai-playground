@@ -231,8 +231,9 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;<a href="FeatureApplier.html" title="interface in com.playground.playground.data">FeatureApplier</a>&nbsp;getFeature&#8203;(java.lang.String&nbsp;featureName)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>featureName</code> - String representing the feature chosen by the user. Possible names for
-     Features: 'squareX' 'squareY' 'XtimesY' 'sinX' 'sinY'</dd>
+<dd><code>featureName</code> - String representing the feature chosen by the user.
+  Precondition feature name either empty list or a list containing one or more of the following:
+                    "squareX", "squareY", "XtimesY", "sinX", "sinY"</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A FeatureApplier, this object applies the needed feature</dd>
 </dl>
