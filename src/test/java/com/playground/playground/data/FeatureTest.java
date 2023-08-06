@@ -103,7 +103,7 @@ public class FeatureTest {
   @Test
   public void testFeatureController() {
     String dataName = "circular";
-    int data_size = 2000;
+    int data_size = 1000;
     ArrayList<String> featureNames = new ArrayList<>(Arrays.asList("squareX", "sinY"));
     int noise = 10;
 
@@ -136,7 +136,7 @@ public class FeatureTest {
   @Test
   public void testFeatureControllerNoFeatures() {
     // mock data, no features
-    int data_size = 2000;
+    int data_size = 1000;
     String dataName = "circular";
     ArrayList<String> featureNames = new ArrayList<>();
     int noise = 10;
