@@ -29,11 +29,11 @@ import org.nd4j.linalg.primitives.Pair;
  */
 public class MlParametersController implements Initializable {
   // Fields for storing user selections
-  private static String handleProblem;
-  private static double handleRegularizationRate;
-  private static String handleActivation;
-  private static String handleRegularization;
-  private static double handleLearningRate;
+  private static String handleProblem = "Classification";
+  private static double handleRegularizationRate = 1;
+  private static String handleActivation = "Sigmoid";
+  private static String handleRegularization = "L1";
+  private static double handleLearningRate = 1;
 
   // JavaFX Components
   @FXML private Button stepButton;

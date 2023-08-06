@@ -41,7 +41,7 @@ public class DataAttributesController implements Initializable {
   public static int testRatio = 80;
   public static int batchSize = 20;
   public static int noise = 1;
-  public static String dataset = "Cluster";
+  public static String dataset = "cluster";
 
   /**
    * Initializer for DataAttributesController.java
