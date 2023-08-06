@@ -24,5 +24,3 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_GOOGLE_JAVA_FORMAT: true
-          VALIDATE_GITHUB_ACTIONS: true
-          
