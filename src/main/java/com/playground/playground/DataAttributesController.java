@@ -11,6 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
+/**
+* This controller handles all the dataset related options on the UI.
+*/
 public class DataAttributesController implements Initializable {
   public static int initializeTestRatio;
   public static int initializeNoise;
@@ -118,39 +121,83 @@ public class DataAttributesController implements Initializable {
     numberLabel.setText("Batch size: " + stringVal);
   }
 
+  /**
+   * Sets the preferred size of the given button to 70 by 50.
+   *
+   * @param button the button to be resized
+   */
   private void setButtonFixedSize(Button button) {
     button.setPrefSize(70, 50);
   }
 
+  /**
+   * Initializes the test ratio value from the slider and updates the corresponding attribute in DataAttributesController.
+   *
+   * @param mouseEvent the event triggered by the mouse
+   * @return the initialized test ratio
+   */
   public int initializeTestRatio(MouseEvent mouseEvent) {
     testRatio = (int) slider1.getValue();
     DataAttributesController.initializeTestRatio = testRatio;
     return testRatio;
   }
+  /**
+   * Initializes the noise value from the slider and updates the corresponding attribute in DataAttributesController.
+   *
+   * @param mouseEvent the event triggered by the mouse
+   * @return the initialized noise value
+   */
   public int initializeNoise(MouseEvent mouseEvent) {
     noise = (int) slider2.getValue();
     DataAttributesController.initializeNoise = noise;
     return noise;
   }
+
+  /**
+   * Initializes the batch size value from the slider and updates the corresponding attribute in DataAttributesController.
+   *
+   * @param mouseEvent the event triggered by the mouse
+   * @return the initialized batch size
+   */
   public int initializeBatchSize(MouseEvent mouseEvent) {
     batchSize = (int) slider3.getValue();
     DataAttributesController.initializeBatchSize = batchSize;
     return batchSize;
   }
 
-  
+  /**
+   * Handles the action event when the "cluster" button is clicked, setting the dataset to "cluster".
+   *
+   * @param actionEvent the action event triggered by the button
+   */
   public void handleCLusterButton(ActionEvent actionEvent) {
     dataset = "cluster";
   }
 
+  /**
+   * Handles the action event when the "circular" button is clicked, setting the dataset to "circular".
+   *
+   * @param actionEvent the action event triggered by the button
+   */
   public void handleRadialButton(ActionEvent actionEvent) {
     dataset = "circular";
   }
 
+
+  /**
+   * Handles the action event when the "spiral" button is clicked, setting the dataset to "spiral".
+   *
+   * @param actionEvent the action event triggered by the button
+   */
   public void handleSpiralButton(ActionEvent actionEvent) {
     dataset = "spiral";
   }
 
+  /**
+   * Handles the action event when the "quadrant" button is clicked, setting the dataset to "quadrant".
+   *
+   * @param actionEvent the action event triggered by the button
+   */
   public void handleRectangularButton(ActionEvent actionEvent) {
     dataset = "quadrant";
   }

@@ -28,14 +28,20 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
 
+/**
+ * The MlParametersController class handles the user interface for specifying machine learning parameters.
+ * It allows users to choose various hyperparameters like activation functions, regularization, learning rate, etc.
+ */
 public class MlParametersController implements Initializable {
+  // Fields for storing user selections
   private static String handleProblem;
   private static double handleRegularizationRate;
   private static String handleActivation;
   private static String handleRegularization;
   private static double handleLearningRate;
-  @FXML private Button stepButton;
 
+  // JavaFX Components
+  @FXML private Button stepButton;
   @FXML private Button playButton;
   @FXML private Button rewindButton;
   @FXML private Text epochNumber;
@@ -73,18 +79,19 @@ public class MlParametersController implements Initializable {
 
 
   /**
-   * Initializer for MIParametersController.java
+   * Initializes the MlParametersController after its root element has been processed.
    *
-   * @param location The location used to resolve relative paths for the root object, or {@code
-   *     null} if the location is not known.
-   * @param resources The resources used to localize the root object, or {@code null} if the root
-   *     object was not localized.
+   * @param location  The location used to resolve relative paths for the root object, or {@code null} if the location is not known.
+   * @param resources The resources used to localize the root object, or {@code null} if the root object was not localized.
    */
+  @Override
   public void initialize(URL location, ResourceBundle resources) {
     // setting buttons
     setButtonWithImage(rewindButton, "playground-images/rewind-button.png");
     setButtonWithImage(playButton, "playground-images/play-button.png");
     setButtonWithImage(stepButton, "playground-images/fast-forward-button.png");
+
+    // Set event handlers for menu items
     learn1.setOnAction(this::handleLearningRate);
     learn2.setOnAction(this::handleLearningRate);
     learn3.setOnAction(this::handleLearningRate);
@@ -118,6 +125,12 @@ public class MlParametersController implements Initializable {
     regress.setOnAction(this::handleProblem);
   }
 
+  /**
+   * Handles the event when the user selects a problem type (classification or regression) from the menu.
+   * 
+   * @param actionEvent The ActionEvent representing the user's selection.
+   * @return The selected problem type.
+   */
   public String handleProblem(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String problem = selection.getText();
@@ -125,6 +138,12 @@ public class MlParametersController implements Initializable {
     return problem;
   }
 
+  /**
+   * Handles the event when the user selects a regularization rate from the menu.
+   * 
+   * @param actionEvent The ActionEvent representing the user's selection.
+   * @return The selected regularization rate.
+   */
   public double handleRegularizationRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     double regularizationRate = Double.parseDouble(selection.getText());
@@ -139,6 +158,12 @@ public class MlParametersController implements Initializable {
     return regularization;
   }
 
+  /**
+   * Handles the event when the user selects an activation function from the menu.
+   * 
+   * @param actionEvent The ActionEvent representing the user's selection.
+   * @return The selected activation function.
+   */
   public String handleActivation(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String activation = selection.getText();
@@ -146,6 +171,12 @@ public class MlParametersController implements Initializable {
     return activation;
   }
 
+  /**
+   * Handles the event when the user selects a learning rate from the menu.
+   * 
+   * @param actionEvent The ActionEvent representing the user's selection.
+   * @return The selected learning rate.
+   */
   public double handleLearningRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     double learningRate = Double.parseDouble(selection.getText());
@@ -153,6 +184,12 @@ public class MlParametersController implements Initializable {
     return learningRate;
   }
 
+   /**
+   * Sets the graphic (image) for a button.
+   * 
+   * @param button    The Button to which the image should be set.
+   * @param imagePath The path of the image file.
+   */
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView =
             new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
@@ -162,70 +199,70 @@ public class MlParametersController implements Initializable {
     button.getStyleClass().add("image-button");
   }
 
-
-  public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
+  /**
+ * Handles the event when the "Play" button is clicked to start the model training.
+ * This method fetches user-selected parameters, prepares data, creates a neural network model,
+ * trains the model, and updates the graph with the training results.
+ *
+ * @param actionEvent The ActionEvent representing the "Play" button click.
+ */
+public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
+    // Fetch necessary parameters from other controllers
     int noise = DataAttributesController.initializeNoise;
     int batch = DataAttributesController.initializeBatchSize;
     int test = DataAttributesController.initializeTestRatio;
-    System.out.println(noise);
-    System.out.println(batch);
-    System.out.println(test);
 
+    // Get user-selected parameters from other components
     String problemType = MlParametersController.handleProblem;
     double regularRate = MlParametersController.handleRegularizationRate;
     String regular = MlParametersController.handleRegularization;
     String activate = MlParametersController.handleActivation;
     double learnRate = MlParametersController.handleLearningRate;
-    System.out.println(problemType + " " + regularRate + " " + regular + " " + activate + " " + learnRate);
     double regularizeRate = MlParametersController.handleRegularizationRate;
 
+    // Fetch hidden layers from other components
     FeaturesHiddenLayersController.setLayersNeurons();
-
     List<Integer> hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons();
-    System.out.println(hiddenLayers);
 
-
+    // Map activation function string to Activation enum
     String activation = MlParametersController.handleActivation;
-
     Activation activationType = Activation.SOFTMAX;
     if (Objects.equals(activation, "ReLU")) {
-      activationType = Activation.RELU;
-    }
-    else if(Objects.equals(activation, "TanH")){
-      activationType = Activation.TANH;
-    }
-    else if(Objects.equals(activation, "Sigmoid")){
-      activationType = Activation.SIGMOID;
+        activationType = Activation.RELU;
+    } else if (Objects.equals(activation, "TanH")) {
+        activationType = Activation.TANH;
+    } else if (Objects.equals(activation, "Sigmoid")) {
+        activationType = Activation.SIGMOID;
     }
 
+    // Get dataset and selected buttons
     String dataset = DataAttributesController.dataset;
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
     if (selectedButtons == null) {
-      selectedButtons = new ArrayList<String>();
+        selectedButtons = new ArrayList<>();
     }
 
+    // Prepare training and test data
     List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
     List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
-    System.out.println(selectedButtons);
-    System.out.println(dataset);
 
     PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
     INDArrayDataSetIterator trainDataset = dataGen.getDataset();
     INDArrayDataSetIterator testDataset = dataGen.getTestDataset();
 
-//    System.out.println("finished");
+    // Set default regularization type
     String regularizationType = "l2";
     boolean shouldRegularize = false;
     if (regular != null) {
-      shouldRegularize = true;
-      regularizationType = regular;
+        shouldRegularize = true;
+        regularizationType = regular;
     }
 
     int numFeatures = selectedButtons.size() + 2;
 
-    MultiLayerNetwork model =
-        new NeuralNetBuilder()
+    // Create the neural network model
+    MultiLayerNetwork model = new NeuralNetBuilder()
             .activation(activationType)
             .inputs(numFeatures)
             .layers((ArrayList<Integer>) hiddenLayers)
@@ -237,27 +274,26 @@ public class MlParametersController implements Initializable {
             .buildNeuralNet()
             .generateModel();
 
-    System.out.println(model.summary());
-
     hiddenLayers.add(0, numFeatures);
-    System.out.print(hiddenLayers);
 
-    ModelTrainingServices TrainingController =
-        new ModelTrainingServices(trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
+    // Train the model and get the results
+    ModelTrainingServices trainingController =
+            new ModelTrainingServices(trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
-    Object[] results = TrainingController.trainModel(true);
+    Object[] results = trainingController.trainModel(true);
 
-    System.out.println(results[2]);
+    // Update the graph with the results
     MainController.graphSystemController.updateGraph(rawData, (ArrayList<Integer>) results[2]);
+
+    // Set default values if results are null
     if (results[1] == null) {
-      results[1] = 0.0;
+        results[1] = 0.0;
     }
     if (results[0] == null) {
-      results[0] = 0.0;
+        results[0] = 0.0;
     }
-//    MainController.graphSystemController.setTestLoss((Double) results[1]);
-//    MainController.graphSystemController.setTrainingLoss((Double) results[0]);
-  }
+}
+
   public void handleStopButtonClick(javafx.event.ActionEvent actionEvent) {
 
   }

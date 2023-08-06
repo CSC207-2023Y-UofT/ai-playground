@@ -14,6 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+/**
+* The MainController class is responsible for assimilating values from other controllers.
+*/
 public class MainController implements Initializable {
   private DataAttributesController dataAttributesController;
   @FXML private VBox dataAttributesBox;

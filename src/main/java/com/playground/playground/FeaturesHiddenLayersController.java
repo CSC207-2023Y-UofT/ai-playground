@@ -13,6 +13,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
+/**
+* This controller is responsible for handling data related to the hidden layers and features.
+*/
 public class FeaturesHiddenLayersController implements Initializable {
 
   @FXML private Text numHiddenLayers;
@@ -85,6 +88,11 @@ public class FeaturesHiddenLayersController implements Initializable {
     toggleButtonSelection(sinx2button, "sinY");
   }
 
+/**
+* Set an image to be placed over a button.
+ * @param button The button to set an image on.
+ * @param imagePath The path to the image.
+*/
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView = new ImageView(getClass().getResource(imagePath).toExternalForm());
     imageView.setFitWidth(35);
@@ -116,19 +124,13 @@ public class FeaturesHiddenLayersController implements Initializable {
     });
   }
 
+/**
+*
+ * @return A list of the selected buttons.
+*/
   public static ArrayList<String> getSelectedButtons(){
     return FeaturesHiddenLayersController.selectedButtons;
   }
-
-
-
-
-
-  /**
-   * Allows other classes to retrieve selected parameters
-   *
-   * @return selectedButtons Returns the string representation of the buttons selected
-   */
 
   /**
    * Adds a layer to the hidden layer graph and increases the value of the layer counter by 1.
@@ -242,6 +244,9 @@ public class FeaturesHiddenLayersController implements Initializable {
   }
 
 
+/**
+* Parse and set the number of hidden layers.
+*/
   private void setNumHiddenLayers() {
     numHiddenLayersAccess = Integer.parseInt(numHiddenLayers.getText());
   }
@@ -254,6 +259,10 @@ public class FeaturesHiddenLayersController implements Initializable {
     }
     layersNeurons = layerNeurons;
   }
+/**
+*
+ * @return A List of the Neural Network architecture
+*/
   public static List<Integer> getLayersNeurons(){
     return layersNeurons;
 
