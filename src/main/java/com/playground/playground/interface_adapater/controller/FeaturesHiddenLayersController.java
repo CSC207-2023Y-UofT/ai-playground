@@ -63,11 +63,11 @@ public class FeaturesHiddenLayersController implements Initializable {
    *     object was not localized.
    */
   public void initialize(URL location, ResourceBundle resources) {
-    setButtonWithImage(x1pow2button, "playground-images/x1pow2button.jpg");
-    setButtonWithImage(x2pow2button, "playground-images/x2pow2button.jpg");
-    setButtonWithImage(x1x2button, "playground-images/x1x2button.jpg");
-    setButtonWithImage(sinx1button, "playground-images/sinx1button.jpg");
-    setButtonWithImage(sinx2button, "playground-images/sinx2button.jpg");
+    setButtonWithImage(x1pow2button, "/com/playground/playground/playground-images/x1pow2button.jpg");
+    setButtonWithImage(x2pow2button, "/com/playground/playground/playground-images/x2pow2button.jpg");
+    setButtonWithImage(x1x2button, "/com/playground/playground/playground-images/x1x2button.jpg");
+    setButtonWithImage(sinx1button, "/com/playground/playground/playground-images/sinx1button.jpg");
+    setButtonWithImage(sinx2button, "/com/playground/playground/playground-images/sinx2button.jpg");
 
     addButtons = new Button[] {add1, add2, add3, add4, add5, add6};
     removeButtons = new Button[] {remove1, remove2, remove3, remove4, remove5, remove6};
