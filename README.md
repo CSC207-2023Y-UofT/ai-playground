@@ -187,3 +187,21 @@ The AI Playground project demonstrates effective use of GitHub's features and be
 8. **Code Quality and Linting:** GitHub's integration with code quality tools and linters helped maintain consistent code standards and identify potential issues early in the development process.
 
 Overall, the use of GitHub played a crucial role in facilitating collaboration, code management, and efficient development workflows throughout the AI Playground project. It allowed the team to work cohesively, implement new features, and address issues effectively, resulting in a successful and well-structured project.
+
+## License
+
+```
+Copyright 2023 Shivesh Prakash, Rishit Dagli, Robert Ford, Rohan Patra, Alvina Yang and Amr Alomari
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
