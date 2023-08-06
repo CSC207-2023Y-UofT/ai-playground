@@ -3,9 +3,6 @@ package com.playground.playground;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.playground.playground.interface_adpater.controller.GraphSystemController;
-import com.playground.playground.interface_adpater.controller.MlParametersController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

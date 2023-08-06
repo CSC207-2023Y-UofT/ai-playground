@@ -1,6 +1,4 @@
-package com.playground.playground.usecase.datasets;
-
-import com.playground.playground.data.DatasetGenerator;
+package com.playground.playground.data;
 
 import java.util.ArrayList;
 

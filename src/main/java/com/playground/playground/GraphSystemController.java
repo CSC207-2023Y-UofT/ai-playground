@@ -1,4 +1,4 @@
-package com.playground.playground.interface_adpater.controller;
+package com.playground.playground;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -9,7 +9,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.playground.playground.DataService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
