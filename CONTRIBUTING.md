@@ -15,7 +15,7 @@ Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in
 
 - Open issue regarding proposed change.
 - If your proposed change is approved, Fork this repo and do changes.
-- Open PR against latest *development* branch. Add nice description in PR.
+- Open PR against latest *development* branch. Add a nice and detailed description in the PR.
 - You're done!
 
 ### Code contribution checklist
