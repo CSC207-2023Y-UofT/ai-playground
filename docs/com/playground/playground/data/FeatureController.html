@@ -133,6 +133,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">FeatureController</span>
 extends java.lang.Object</pre>
+<div class="block">FeatureController is responsible for managing the creation and manipulation
+ of datasets for training purposes. It includes methods for generating specific
+ datasets with noise and applying selected features to the data.</div>
 </li>
 </ul>
 </div>
@@ -188,7 +191,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getData(java.lang.String,int)">getData</a></span>&#8203;(java.lang.String&nbsp;dataName,
        int&nbsp;noise)</code></th>
 <td class="colLast">
-<div class="block">Generates the required dataset</div>
+<div class="block">Generates the required dataset.</div>
 </td>
 </tr>
 </table>
@@ -244,14 +247,14 @@ extends java.lang.Object</pre>
                                                                                                                                                                   java.util.ArrayList&lt;java.lang.String&gt;&nbsp;featureNames,
                                                                                                                                                                   int&nbsp;noise)</pre>
 <div class="block">Creates a dataset for the training data. It applies all the features given by the user to
- create a single dataset in the correct format for training.</div>
+ create a single dataset in the INDArray which is the correct format for training.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dataName</code> - Represents which dataset has been chosen by the user.
- PRECONDITION data name must be one of the following: "circular", "cluster", "quadrant", "spiral"</dd>
-<dd><code>featureNames</code> - List of features that have been selected by the user.  PRECONDITION feature name either empty
-                     list or a list containing one or more of the following: "squareX", "squareY", "XtimesY",
-                     "sinX", "sinY"</dd>
+                      PRECONDITION data name must be one of the following: "circular", "cluster", "quadrant", "spiral"</dd>
+<dd><code>featureNames</code> - List of features that have been selected by the user. PRECONDITION feature name either empty
+                      list or a list containing one or more of the following: "squareX", "squareY", "XtimesY",
+                      "sinX", "sinY"</dd>
 <dd><code>noise</code> - Int represent the noise of data</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>dataset in Neural Net configuration containing original x and y values, and all
@@ -267,7 +270,7 @@ extends java.lang.Object</pre>
 <h4>getData</h4>
 <pre class="methodSignature">public static&nbsp;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Object&gt;&gt;&nbsp;getData&#8203;(java.lang.String&nbsp;dataName,
                                                                                  int&nbsp;noise)</pre>
-<div class="block">Generates the required dataset</div>
+<div class="block">Generates the required dataset.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dataName</code> - Name of the required dataset</dd>

@@ -138,6 +138,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">DataAttributesController</span>
 extends java.lang.Object
 implements javafx.fxml.Initializable</pre>
+<div class="block">This controller handles all the dataset related options on the UI.</div>
 </li>
 </ul>
 </div>
@@ -235,22 +236,30 @@ implements javafx.fxml.Initializable</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleCLusterButton(javafx.event.ActionEvent)">handleCLusterButton</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the action event when the "cluster" button is clicked, setting the dataset to "cluster".</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRadialButton(javafx.event.ActionEvent)">handleRadialButton</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the action event when the "circular" button is clicked, setting the dataset to "circular".</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRectangularButton(javafx.event.ActionEvent)">handleRectangularButton</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the action event when the "quadrant" button is clicked, setting the dataset to "quadrant".</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleSpiralButton(javafx.event.ActionEvent)">handleSpiralButton</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the action event when the "spiral" button is clicked, setting the dataset to "spiral".</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -263,17 +272,23 @@ implements javafx.fxml.Initializable</pre>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeBatchSize(javafx.scene.input.MouseEvent)">initializeBatchSize</a></span>&#8203;(javafx.scene.input.MouseEvent&nbsp;mouseEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initializes the batch size value from the slider and updates the corresponding attribute in DataAttributesController.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeNoise(javafx.scene.input.MouseEvent)">initializeNoise</a></span>&#8203;(javafx.scene.input.MouseEvent&nbsp;mouseEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initializes the noise value from the slider and updates the corresponding attribute in DataAttributesController.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeTestRatio(javafx.scene.input.MouseEvent)">initializeTestRatio</a></span>&#8203;(javafx.scene.input.MouseEvent&nbsp;mouseEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initializes the test ratio value from the slider and updates the corresponding attribute in DataAttributesController.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -418,6 +433,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>initializeTestRatio</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;initializeTestRatio&#8203;(javafx.scene.input.MouseEvent&nbsp;mouseEvent)</pre>
+<div class="block">Initializes the test ratio value from the slider and updates the corresponding attribute in DataAttributesController.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mouseEvent</code> - the event triggered by the mouse</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the initialized test ratio</dd>
+</dl>
 </li>
 </ul>
 <a id="initializeNoise(javafx.scene.input.MouseEvent)">
@@ -427,6 +449,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>initializeNoise</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;initializeNoise&#8203;(javafx.scene.input.MouseEvent&nbsp;mouseEvent)</pre>
+<div class="block">Initializes the noise value from the slider and updates the corresponding attribute in DataAttributesController.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mouseEvent</code> - the event triggered by the mouse</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the initialized noise value</dd>
+</dl>
 </li>
 </ul>
 <a id="initializeBatchSize(javafx.scene.input.MouseEvent)">
@@ -436,6 +465,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>initializeBatchSize</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;initializeBatchSize&#8203;(javafx.scene.input.MouseEvent&nbsp;mouseEvent)</pre>
+<div class="block">Initializes the batch size value from the slider and updates the corresponding attribute in DataAttributesController.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mouseEvent</code> - the event triggered by the mouse</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the initialized batch size</dd>
+</dl>
 </li>
 </ul>
 <a id="handleCLusterButton(javafx.event.ActionEvent)">
@@ -445,6 +481,11 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleCLusterButton</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;handleCLusterButton&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the action event when the "cluster" button is clicked, setting the dataset to "cluster".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - the action event triggered by the button</dd>
+</dl>
 </li>
 </ul>
 <a id="handleRadialButton(javafx.event.ActionEvent)">
@@ -454,6 +495,11 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleRadialButton</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;handleRadialButton&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the action event when the "circular" button is clicked, setting the dataset to "circular".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - the action event triggered by the button</dd>
+</dl>
 </li>
 </ul>
 <a id="handleSpiralButton(javafx.event.ActionEvent)">
@@ -463,6 +509,11 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleSpiralButton</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;handleSpiralButton&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the action event when the "spiral" button is clicked, setting the dataset to "spiral".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - the action event triggered by the button</dd>
+</dl>
 </li>
 </ul>
 <a id="handleRectangularButton(javafx.event.ActionEvent)">
@@ -472,6 +523,11 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleRectangularButton</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;handleRectangularButton&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the action event when the "quadrant" button is clicked, setting the dataset to "quadrant".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - the action event triggered by the button</dd>
+</dl>
 </li>
 </ul>
 </li>

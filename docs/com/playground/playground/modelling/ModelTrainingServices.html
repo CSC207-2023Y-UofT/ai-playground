@@ -257,6 +257,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>data</code> - The training dataset.</dd>
+<dd><code>copyData</code> - The training dataset for reporting training scores.</dd>
 <dd><code>model</code> - The model DAG.</dd>
 <dd><code>statsFileName</code> - The name of the logging file which will be saved to the disk.</dd>
 <dd><code>testData</code> - The testing dataset.</dd>
@@ -283,8 +284,9 @@ extends java.lang.Object</pre>
 <div class="block">Train the model set through the constructor and created using the NeuralNet class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>verbose</code> - Should you print to the logger.</dd>
+<dd><code>verbose</code> - Should you print to the logger?</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>An ArrayList with trainingScore, testingScore and an ArrayList of Predictions.</dd>
 </dl>
 </li>
 </ul>
@@ -295,6 +297,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getData</h4>
 <pre class="methodSignature">public&nbsp;org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator&nbsp;getData()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The training dataset.</dd>
+</dl>
 </li>
 </ul>
 <a id="getTestData()">
@@ -304,6 +310,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTestData</h4>
 <pre class="methodSignature">public&nbsp;org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator&nbsp;getTestData()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The testing dataset.</dd>
+</dl>
 </li>
 </ul>
 <a id="getModel()">
@@ -313,6 +323,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getModel</h4>
 <pre class="methodSignature">public&nbsp;org.deeplearning4j.nn.multilayer.MultiLayerNetwork&nbsp;getModel()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Get the model.</dd>
+</dl>
 </li>
 </ul>
 <a id="setModel(org.deeplearning4j.nn.multilayer.MultiLayerNetwork)">
@@ -322,6 +336,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setModel</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setModel&#8203;(org.deeplearning4j.nn.multilayer.MultiLayerNetwork&nbsp;model)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - The model to set.</dd>
+</dl>
 </li>
 </ul>
 <a id="getStatsFileName()">
@@ -331,6 +349,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getStatsFileName</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getStatsFileName()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The name of the logging stats file.</dd>
+</dl>
 </li>
 </ul>
 <a id="setStatsFileName(java.lang.String)">
@@ -340,6 +362,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setStatsFileName</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setStatsFileName&#8203;(java.lang.String&nbsp;statsFileName)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>statsFileName</code> - The stats file name to set.</dd>
+</dl>
 </li>
 </ul>
 </li>

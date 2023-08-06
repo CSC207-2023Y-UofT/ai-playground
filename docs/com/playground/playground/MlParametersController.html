@@ -138,6 +138,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">MlParametersController</span>
 extends java.lang.Object
 implements javafx.fxml.Initializable</pre>
+<div class="block">The MlParametersController class handles the user interface for specifying machine learning parameters.
+ It allows users to choose various hyperparameters like activation functions, regularization, learning rate, etc.</div>
 </li>
 </ul>
 </div>
@@ -182,22 +184,30 @@ implements javafx.fxml.Initializable</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleActivation(javafx.event.ActionEvent)">handleActivation</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the event when the user selects an activation function from the menu.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleLearningRate(javafx.event.ActionEvent)">handleLearningRate</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the event when the user selects a learning rate from the menu.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handlePlayButtonClick(javafx.event.ActionEvent)">handlePlayButtonClick</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the event when the "Play" button is clicked to start the model training.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleProblem(javafx.event.ActionEvent)">handleProblem</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the event when the user selects a problem type (classification or regression) from the menu.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -207,7 +217,9 @@ implements javafx.fxml.Initializable</pre>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRegularizationRate(javafx.event.ActionEvent)">handleRegularizationRate</a></span>&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles the event when the user selects a regularization rate from the menu.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -219,7 +231,7 @@ implements javafx.fxml.Initializable</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initialize(java.net.URL,java.util.ResourceBundle)">initialize</a></span>&#8203;(java.net.URL&nbsp;location,
           java.util.ResourceBundle&nbsp;resources)</code></th>
 <td class="colLast">
-<div class="block">Initializer for MIParametersController.java</div>
+<div class="block">Initializes the MlParametersController after its root element has been processed.</div>
 </td>
 </tr>
 </table>
@@ -273,15 +285,13 @@ implements javafx.fxml.Initializable</pre>
 <h4>initialize</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;initialize&#8203;(java.net.URL&nbsp;location,
                        java.util.ResourceBundle&nbsp;resources)</pre>
-<div class="block">Initializer for MIParametersController.java</div>
+<div class="block">Initializes the MlParametersController after its root element has been processed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>initialize</code>&nbsp;in interface&nbsp;<code>javafx.fxml.Initializable</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>location</code> - The location used to resolve relative paths for the root object, or <code>
-     null</code> if the location is not known.</dd>
-<dd><code>resources</code> - The resources used to localize the root object, or <code>null</code> if the root
-     object was not localized.</dd>
+<dd><code>location</code> - The location used to resolve relative paths for the root object, or <code>null</code> if the location is not known.</dd>
+<dd><code>resources</code> - The resources used to localize the root object, or <code>null</code> if the root object was not localized.</dd>
 </dl>
 </li>
 </ul>
@@ -292,6 +302,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleProblem</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;handleProblem&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the event when the user selects a problem type (classification or regression) from the menu.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - The ActionEvent representing the user's selection.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The selected problem type.</dd>
+</dl>
 </li>
 </ul>
 <a id="handleRegularizationRate(javafx.event.ActionEvent)">
@@ -301,6 +318,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleRegularizationRate</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;handleRegularizationRate&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the event when the user selects a regularization rate from the menu.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - The ActionEvent representing the user's selection.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The selected regularization rate.</dd>
+</dl>
 </li>
 </ul>
 <a id="handleRegularization(javafx.event.ActionEvent)">
@@ -319,6 +343,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleActivation</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;handleActivation&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the event when the user selects an activation function from the menu.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - The ActionEvent representing the user's selection.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The selected activation function.</dd>
+</dl>
 </li>
 </ul>
 <a id="handleLearningRate(javafx.event.ActionEvent)">
@@ -328,6 +359,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handleLearningRate</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;handleLearningRate&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the event when the user selects a learning rate from the menu.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - The ActionEvent representing the user's selection.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The selected learning rate.</dd>
+</dl>
 </li>
 </ul>
 <a id="handlePlayButtonClick(javafx.event.ActionEvent)">
@@ -337,6 +375,13 @@ implements javafx.fxml.Initializable</pre>
 <li class="blockList">
 <h4>handlePlayButtonClick</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;handlePlayButtonClick&#8203;(javafx.event.ActionEvent&nbsp;actionEvent)</pre>
+<div class="block">Handles the event when the "Play" button is clicked to start the model training.
+ This method fetches user-selected parameters, prepares data, creates a neural network model,
+ trains the model, and updates the graph with the training results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionEvent</code> - The ActionEvent representing the "Play" button click.</dd>
+</dl>
 </li>
 </ul>
 <a id="handleStopButtonClick(javafx.event.ActionEvent)">
