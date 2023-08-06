@@ -44,7 +44,7 @@ public class MainLauncher {
 
     // Create a new JavaFX Stage (window)
     Stage stage = new Stage();
-    stage.setTitle("Tensorflow Playground");
+    stage.setTitle("AI Playground");
     stage.setScene(scene);
 
     // Show the stage to display the application
