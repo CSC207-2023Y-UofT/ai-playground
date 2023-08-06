@@ -2,7 +2,6 @@ package com.playground.playground;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import org.nd4j.linalg.api.ndarray.INDArray;
@@ -13,7 +12,8 @@ import org.nd4j.linalg.primitives.Pair;
  * JavaFX properties to allow other classes to observe changes to the dataset.
  */
 public class DataService {
-  private final ObjectProperty<List<Pair<INDArray, INDArray>>> dataset = new SimpleObjectProperty<>();
+  private final ObjectProperty<List<Pair<INDArray, INDArray>>> dataset =
+      new SimpleObjectProperty<>();
   private final ObjectProperty<ArrayList<Integer>> results = new SimpleObjectProperty<>();
 
   private static DataService instance;
