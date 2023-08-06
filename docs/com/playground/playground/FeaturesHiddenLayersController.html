@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":9,"i1":9,"i2":10,"i3":10,"i4":10,"i5":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -159,8 +159,28 @@ implements javafx.fxml.Initializable</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static javafx.scene.control.Button[][]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#aButtonsAccess">aButtonsAccess</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#aButtonsCountsAccess">aButtonsCountsAccess</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static java.util.List&lt;java.lang.Integer&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#layersNeurons">layersNeurons</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>javafx.scene.layout.GridPane</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#neuralConnections">neuralConnections</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#numHiddenLayersAccess">numHiddenLayersAccess</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -201,18 +221,23 @@ implements javafx.fxml.Initializable</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;java.lang.Integer&gt;</code></td>
+<td class="colFirst"><code>static java.util.List&lt;java.lang.Integer&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLayersNeurons()">getLayersNeurons</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>static java.util.ArrayList&lt;java.lang.String&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSelectedButtons()">getSelectedButtons</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initialize(java.net.URL,java.util.ResourceBundle)">initialize</a></span>&#8203;(java.net.URL&nbsp;location,
           java.util.ResourceBundle&nbsp;resources)</code></th>
@@ -220,19 +245,24 @@ implements javafx.fxml.Initializable</pre>
 <div class="block">Initializer for FeaturesHiddenLayersController.java</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onAddButtonClicked(javafx.event.ActionEvent)">onAddButtonClicked</a></span>&#8203;(javafx.event.ActionEvent&nbsp;event)</code></th>
 <td class="colLast">
 <div class="block">Helper function for onAddButtonClicked used to add a neuron to the hidden layer graph.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onRemoveButtonClicked(javafx.event.ActionEvent)">onRemoveButtonClicked</a></span>&#8203;(javafx.event.ActionEvent&nbsp;event)</code></th>
 <td class="colLast">
 <div class="block">Helper function for onRemovedLayerClicked used to remove a neuron from the hidden layer graph.</div>
 </td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLayersNeurons()">setLayersNeurons</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -270,10 +300,46 @@ implements javafx.fxml.Initializable</pre>
 <a id="selectedButtons">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>selectedButtons</h4>
 <pre>public static&nbsp;java.util.ArrayList&lt;java.lang.String&gt; selectedButtons</pre>
+</li>
+</ul>
+<a id="layersNeurons">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>layersNeurons</h4>
+<pre>public static&nbsp;java.util.List&lt;java.lang.Integer&gt; layersNeurons</pre>
+</li>
+</ul>
+<a id="aButtonsAccess">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aButtonsAccess</h4>
+<pre>public static&nbsp;javafx.scene.control.Button[][] aButtonsAccess</pre>
+</li>
+</ul>
+<a id="aButtonsCountsAccess">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aButtonsCountsAccess</h4>
+<pre>public static&nbsp;int[] aButtonsCountsAccess</pre>
+</li>
+</ul>
+<a id="numHiddenLayersAccess">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>numHiddenLayersAccess</h4>
+<pre>public static&nbsp;int numHiddenLayersAccess</pre>
 </li>
 </ul>
 </li>
@@ -325,6 +391,15 @@ implements javafx.fxml.Initializable</pre>
 </dl>
 </li>
 </ul>
+<a id="getSelectedButtons()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSelectedButtons</h4>
+<pre class="methodSignature">public static&nbsp;java.util.ArrayList&lt;java.lang.String&gt;&nbsp;getSelectedButtons()</pre>
+</li>
+</ul>
 <a id="onAddButtonClicked(javafx.event.ActionEvent)">
 <!--   -->
 </a>
@@ -354,13 +429,22 @@ implements javafx.fxml.Initializable</pre>
 </dl>
 </li>
 </ul>
+<a id="setLayersNeurons()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLayersNeurons</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;setLayersNeurons()</pre>
+</li>
+</ul>
 <a id="getLayersNeurons()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getLayersNeurons</h4>
-<pre class="methodSignature">public&nbsp;java.util.List&lt;java.lang.Integer&gt;&nbsp;getLayersNeurons()</pre>
+<pre class="methodSignature">public static&nbsp;java.util.List&lt;java.lang.Integer&gt;&nbsp;getLayersNeurons()</pre>
 </li>
 </ul>
 </li>
