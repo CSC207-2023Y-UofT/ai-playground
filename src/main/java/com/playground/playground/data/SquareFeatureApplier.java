@@ -15,11 +15,10 @@ public class SquareFeatureApplier implements FeatureApplier {
   /**
    * Squares the values of either the x or y-axis of a dataset
    *
-   * @param dataset Given in the transformed dataset format for Example: [ [[x_0, y_0], 0], [[x_1,
-   *     y_1], 1], [[x_2, y_2], 0], [[x_3, y_3], 1] ]
-   * @return The same dataset with the correct axis values squared appended to the correct
-   *     coordinates list. result Example: [ [[x_0, y_0, x_0^2], 0], [[x_1, y_1, x_1^2], 1], [[x_2,
-   *     y_2, x_2^2], 0], [[x_3, y_3, x_3^2], 1] ]
+   * @param dataset Given in the transformed dataset format for
+   *                Example: [ [[x_0, y_0], 0], [[x_1, y_1], 1], [[x_2, y_2], 0], [[x_3, y_3], 1] ]
+   * @return The same dataset with the correct axis values squared appended to the correct coordinates list.
+   * Example: [ [[x_0, y_0, x_0^2], 0], [[x_1, y_1, x_1^2], 1], [[x_2, y_2, x_2^2], 0], [[x_3, y_3, x_3^2], 1] ]
    */
   @Override
   public ArrayList<ArrayList<Object>> applyFeature(ArrayList<ArrayList<Object>> dataset) {
