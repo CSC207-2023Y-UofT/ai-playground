@@ -1,5 +1,6 @@
 package com.playground.playground.interface_adapater.controller;
 
+import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
 import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
 import com.playground.playground.usecase.modelling.PrepareData;
@@ -70,6 +71,12 @@ public class MlParametersController implements Initializable {
   @FXML private MenuItem reg10;
   @FXML private MenuItem classify;
   @FXML private MenuItem regress;
+  private DataService dataService;
+  private GraphSystemController graphSystemController;
+
+  public MlParametersController() {
+    this.dataService = DataService.getInstance();
+  }
 
   /**
    * Initializes the MlParametersController after its root element has been processed.
@@ -82,11 +89,9 @@ public class MlParametersController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     // setting buttons
-    setButtonWithImage(
-        rewindButton, "/com/playground/playground/playground-images/rewind-button.png");
+    setButtonWithImage(rewindButton, "/com/playground/playground/playground-images/rewind-button.png");
     setButtonWithImage(playButton, "/com/playground/playground/playground-images/play-button.png");
-    setButtonWithImage(
-        stepButton, "/com/playground/playground/playground-images/fast-forward-button.png");
+    setButtonWithImage(stepButton, "/com/playground/playground/playground-images/fast-forward-button.png");
 
     // Set event handlers for menu items
     learn1.setOnAction(this::handleLearningRate);
@@ -120,6 +125,7 @@ public class MlParametersController implements Initializable {
     reg10.setOnAction(this::handleRegularizationRate);
     classify.setOnAction(this::handleProblem);
     regress.setOnAction(this::handleProblem);
+    graphSystemController = new GraphSystemController();
   }
 
   /**
@@ -190,7 +196,7 @@ public class MlParametersController implements Initializable {
    */
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView =
-        new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
+            new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
     imageView.setFitWidth(40); // Adjust the width as needed
     imageView.setFitHeight(40); // Adjust the height as needed
     button.setGraphic(imageView);
@@ -243,9 +249,9 @@ public class MlParametersController implements Initializable {
 
     // Prepare training and test data
     List<Pair<INDArray, INDArray>> rawData =
-        FeatureController.createTrainingData(dataset, selectedButtons, noise);
+            FeatureController.createTrainingData(dataset, selectedButtons, noise);
     List<Pair<INDArray, INDArray>> rawTestData =
-        FeatureController.createTrainingData(dataset, selectedButtons, noise);
+            FeatureController.createTrainingData(dataset, selectedButtons, noise);
 
     PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
     INDArrayDataSetIterator trainDataset = dataGen.getDataset();
@@ -263,38 +269,32 @@ public class MlParametersController implements Initializable {
 
     // Create the neural network model
     MultiLayerNetwork model =
-        new NeuralNetBuilder()
-            .activation(activationType)
-            .inputs(numFeatures)
-            .layers((ArrayList<Integer>) hiddenLayers)
-            .learningRate(learnRate)
-            .nOut(1)
-            .regularization(shouldRegularize)
-            .regularizationType(regularizationType)
-            .regularizationFactor(regularRate)
-            .buildNeuralNet()
-            .generateModel();
+            new NeuralNetBuilder()
+                    .activation(activationType)
+                    .inputs(numFeatures)
+                    .layers((ArrayList<Integer>) hiddenLayers)
+                    .learningRate(learnRate)
+                    .nOut(1)
+                    .regularization(shouldRegularize)
+                    .regularizationType(regularizationType)
+                    .regularizationFactor(regularRate)
+                    .buildNeuralNet()
+                    .generateModel();
 
     hiddenLayers.add(0, numFeatures);
 
     // Train the model and get the results
     ModelTrainingServices trainingController =
-        new ModelTrainingServices(
-            trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
+            new ModelTrainingServices(
+                    trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
     Object[] results = trainingController.trainModel(true);
 
-    // Update the graph with the results
-    MainController.graphSystemController.updateGraph(rawData, (ArrayList<Integer>) results[2]);
+    System.out.println("Setting dataset...");
+    dataService.setDataset(rawData);
+    dataService.setResults((ArrayList<Integer>) results[2]);
+    System.out.println("Dataset set to: " + dataService.getDataset());
 
-    // Set default values if results are null
-    if (results[1] == null) {
-      results[1] = 0.0;
-    }
-    if (results[0] == null) {
-      results[0] = 0.0;
-    }
   }
-
-  public void handleStopButtonClick(javafx.event.ActionEvent actionEvent) {}
+  public void handleStopButtonClick(ActionEvent actionEvent) {}
 }
