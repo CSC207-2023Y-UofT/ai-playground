@@ -18,12 +18,13 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
+import org.w3c.dom.Text;
 
 
 public class GraphSystemController implements Initializable {
   @FXML private ScatterChart neuralNetwork;
-  @FXML private Label testLoss;
-  @FXML private Label trainingLoss;
+  @FXML private Text testLoss;
+  @FXML private Text trainingLoss;
 
 
 
@@ -35,11 +36,11 @@ public class GraphSystemController implements Initializable {
   }
 
   public void setTestLoss(double testL){
-    testLoss.setText("Training Loss: " + testL);
+    testLoss.setTextContent(String.valueOf(testL));
   }
 
   public void setTrainingLoss(double trainL){
-    testLoss.setText("Test Loss: " + trainL);
+    testLoss.setTextContent(String.valueOf(trainL));
   }
 
   /**
@@ -55,7 +56,6 @@ public class GraphSystemController implements Initializable {
   public void updateGraph(List<Pair<INDArray, INDArray>> dataset, ArrayList<Integer> colors) {
     // Clear the current data
     neuralNetwork.getData().clear();
-
     XYChart.Series<Number, Number> series = new XYChart.Series<>();
 
     // Add the new data
