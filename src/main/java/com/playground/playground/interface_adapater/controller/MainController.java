@@ -3,7 +3,6 @@ package com.playground.playground.interface_adapater.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,7 +31,9 @@ public class MainController implements Initializable {
    *     object was not localized.
    */
   public void initialize(URL location, ResourceBundle resources) {
-    FXMLLoader dataattloader = new FXMLLoader(getClass().getResource("/com/playground/playground/data-attributes-view.fxml"));
+    FXMLLoader dataattloader =
+        new FXMLLoader(
+            getClass().getResource("/com/playground/playground/data-attributes-view.fxml"));
     try {
       dataAttributesBox = dataattloader.load();
     } catch (IOException e) {
@@ -41,7 +42,9 @@ public class MainController implements Initializable {
     dataAttributesController = dataattloader.getController();
     dataAttributesController.initialize(location, resources);
 
-    FXMLLoader mlparamloader = new FXMLLoader(getClass().getResource("/com/playground/playground/ml-parameters-view.fxml"));
+    FXMLLoader mlparamloader =
+        new FXMLLoader(
+            getClass().getResource("/com/playground/playground/ml-parameters-view.fxml"));
     try {
       mlParametersBox = mlparamloader.load();
     } catch (IOException e) {
@@ -51,7 +54,8 @@ public class MainController implements Initializable {
     mlParametersController = mlparamloader.getController();
     mlParametersController.initialize(location, resources);
 
-    FXMLLoader graphSystemLoader = new FXMLLoader(getClass().getResource("/com/playground/playground/graph-system-view.fxml"));
+    FXMLLoader graphSystemLoader =
+        new FXMLLoader(getClass().getResource("/com/playground/playground/graph-system-view.fxml"));
     try {
       graphSystemBox = graphSystemLoader.load();
     } catch (IOException e) {
@@ -61,7 +65,8 @@ public class MainController implements Initializable {
     graphSystemController.initialize(location, resources);
 
     FXMLLoader featuresHiddenLayersLoader =
-        new FXMLLoader(getClass().getResource("/com/playground/playground/features-hidden-layers-view.fxml"));
+        new FXMLLoader(
+            getClass().getResource("/com/playground/playground/features-hidden-layers-view.fxml"));
     try {
       featuresHiddenLayersBox = featuresHiddenLayersLoader.load();
     } catch (IOException e) {
