@@ -102,39 +102,37 @@ public class NeuralNet {
 
     if (layers.size() == 1) {
       conf =
+          conf.layer(
+              0,
+              new DenseLayer.Builder()
+                  .nIn(inputs)
+                  .nOut(nOut)
+                  .activation(activation)
+                  .weightInit(weightInit)
+                  .build());
+    } else {
+      for (int i = 0; i <= layers.size() - 1; i++) {
+        if (i == 0) {
+          conf =
               conf.layer(
-                      0,
-                      new DenseLayer.Builder()
-                              .nIn(inputs)
-                              .nOut(nOut)
-                              .activation(activation)
-                              .weightInit(weightInit)
-                              .build());
-    }
-
-    else{
-    for (int i = 0; i <= layers.size() - 1; i++) {
-      if (i == 0) {
-        conf =
-            conf.layer(
-                i,
-                new DenseLayer.Builder()
-                    .nIn(inputs)
-                    .nOut(layers.get(i + 1))
-                    .activation(activation)
-                    .weightInit(weightInit)
-                    .build());
-      } else {
-        conf =
-            conf.layer(
-                i,
-                new DenseLayer.Builder()
-                    .nOut(layers.get(i))
-                    .activation(activation)
-                    .weightInit(weightInit)
-                    .build());
+                  i,
+                  new DenseLayer.Builder()
+                      .nIn(inputs)
+                      .nOut(layers.get(i + 1))
+                      .activation(activation)
+                      .weightInit(weightInit)
+                      .build());
+        } else {
+          conf =
+              conf.layer(
+                  i,
+                  new DenseLayer.Builder()
+                      .nOut(layers.get(i))
+                      .activation(activation)
+                      .weightInit(weightInit)
+                      .build());
+        }
       }
-    }
     }
     conf =
         conf.layer(

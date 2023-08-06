@@ -2,7 +2,6 @@ package com.playground.playground.entity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.weights.WeightInit;

@@ -1,15 +1,13 @@
 package com.playground.playground.interface_adapater.controller;
 
+import com.playground.playground.entity.NeuralNetBuilder;
+import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
+import com.playground.playground.usecase.modelling.PrepareData;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
-
-import com.playground.playground.entity.NeuralNetBuilder;
-import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
-import com.playground.playground.usecase.modelling.PrepareData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,8 +22,9 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
 
 /**
- * The MlParametersController class handles the user interface for specifying machine learning parameters.
- * It allows users to choose various hyperparameters like activation functions, regularization, learning rate, etc.
+ * The MlParametersController class handles the user interface for specifying machine learning
+ * parameters. It allows users to choose various hyperparameters like activation functions,
+ * regularization, learning rate, etc.
  */
 public class MlParametersController implements Initializable {
   // Fields for storing user selections
@@ -72,12 +71,13 @@ public class MlParametersController implements Initializable {
   @FXML private MenuItem classify;
   @FXML private MenuItem regress;
 
-
   /**
    * Initializes the MlParametersController after its root element has been processed.
    *
-   * @param location  The location used to resolve relative paths for the root object, or {@code null} if the location is not known.
-   * @param resources The resources used to localize the root object, or {@code null} if the root object was not localized.
+   * @param location The location used to resolve relative paths for the root object, or {@code
+   *     null} if the location is not known.
+   * @param resources The resources used to localize the root object, or {@code null} if the root
+   *     object was not localized.
    */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -121,8 +121,9 @@ public class MlParametersController implements Initializable {
   }
 
   /**
-   * Handles the event when the user selects a problem type (classification or regression) from the menu.
-   * 
+   * Handles the event when the user selects a problem type (classification or regression) from the
+   * menu.
+   *
    * @param actionEvent The ActionEvent representing the user's selection.
    * @return The selected problem type.
    */
@@ -135,7 +136,7 @@ public class MlParametersController implements Initializable {
 
   /**
    * Handles the event when the user selects a regularization rate from the menu.
-   * 
+   *
    * @param actionEvent The ActionEvent representing the user's selection.
    * @return The selected regularization rate.
    */
@@ -155,7 +156,7 @@ public class MlParametersController implements Initializable {
 
   /**
    * Handles the event when the user selects an activation function from the menu.
-   * 
+   *
    * @param actionEvent The ActionEvent representing the user's selection.
    * @return The selected activation function.
    */
@@ -168,7 +169,7 @@ public class MlParametersController implements Initializable {
 
   /**
    * Handles the event when the user selects a learning rate from the menu.
-   * 
+   *
    * @param actionEvent The ActionEvent representing the user's selection.
    * @return The selected learning rate.
    */
@@ -179,15 +180,15 @@ public class MlParametersController implements Initializable {
     return learningRate;
   }
 
-   /**
+  /**
    * Sets the graphic (image) for a button.
-   * 
-   * @param button    The Button to which the image should be set.
+   *
+   * @param button The Button to which the image should be set.
    * @param imagePath The path of the image file.
    */
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView =
-            new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
+        new ImageView(Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm());
     imageView.setFitWidth(40); // Adjust the width as needed
     imageView.setFitHeight(40); // Adjust the height as needed
     button.setGraphic(imageView);
@@ -195,13 +196,13 @@ public class MlParametersController implements Initializable {
   }
 
   /**
- * Handles the event when the "Play" button is clicked to start the model training.
- * This method fetches user-selected parameters, prepares data, creates a neural network model,
- * trains the model, and updates the graph with the training results.
- *
- * @param actionEvent The ActionEvent representing the "Play" button click.
- */
-public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
+   * Handles the event when the "Play" button is clicked to start the model training. This method
+   * fetches user-selected parameters, prepares data, creates a neural network model, trains the
+   * model, and updates the graph with the training results.
+   *
+   * @param actionEvent The ActionEvent representing the "Play" button click.
+   */
+  public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
     // Fetch necessary parameters from other controllers
     int noise = DataAttributesController.initializeNoise;
     int batch = DataAttributesController.initializeBatchSize;
@@ -223,11 +224,11 @@ public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
     String activation = MlParametersController.handleActivation;
     Activation activationType = Activation.SOFTMAX;
     if (Objects.equals(activation, "ReLU")) {
-        activationType = Activation.RELU;
+      activationType = Activation.RELU;
     } else if (Objects.equals(activation, "TanH")) {
-        activationType = Activation.TANH;
+      activationType = Activation.TANH;
     } else if (Objects.equals(activation, "Sigmoid")) {
-        activationType = Activation.SIGMOID;
+      activationType = Activation.SIGMOID;
     }
 
     // Get dataset and selected buttons
@@ -235,12 +236,14 @@ public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
     if (selectedButtons == null) {
-        selectedButtons = new ArrayList<>();
+      selectedButtons = new ArrayList<>();
     }
 
     // Prepare training and test data
-    List<Pair<INDArray, INDArray>> rawData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
-    List<Pair<INDArray, INDArray>> rawTestData = FeatureController.createTrainingData(dataset, selectedButtons, noise);
+    List<Pair<INDArray, INDArray>> rawData =
+        FeatureController.createTrainingData(dataset, selectedButtons, noise);
+    List<Pair<INDArray, INDArray>> rawTestData =
+        FeatureController.createTrainingData(dataset, selectedButtons, noise);
 
     PrepareData dataGen = new PrepareData(batch, rawData, rawTestData);
     INDArrayDataSetIterator trainDataset = dataGen.getDataset();
@@ -250,14 +253,15 @@ public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
     String regularizationType = "l2";
     boolean shouldRegularize = false;
     if (regular != null) {
-        shouldRegularize = true;
-        regularizationType = regular;
+      shouldRegularize = true;
+      regularizationType = regular;
     }
 
     int numFeatures = selectedButtons.size() + 2;
 
     // Create the neural network model
-    MultiLayerNetwork model = new NeuralNetBuilder()
+    MultiLayerNetwork model =
+        new NeuralNetBuilder()
             .activation(activationType)
             .inputs(numFeatures)
             .layers((ArrayList<Integer>) hiddenLayers)
@@ -273,7 +277,8 @@ public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
 
     // Train the model and get the results
     ModelTrainingServices trainingController =
-            new ModelTrainingServices(trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
+        new ModelTrainingServices(
+            trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
     Object[] results = trainingController.trainModel(true);
 
@@ -282,15 +287,12 @@ public void handlePlayButtonClick(javafx.event.ActionEvent actionEvent) {
 
     // Set default values if results are null
     if (results[1] == null) {
-        results[1] = 0.0;
+      results[1] = 0.0;
     }
     if (results[0] == null) {
-        results[0] = 0.0;
+      results[0] = 0.0;
     }
-}
-
-  public void handleStopButtonClick(javafx.event.ActionEvent actionEvent) {
-
   }
 
+  public void handleStopButtonClick(javafx.event.ActionEvent actionEvent) {}
 }

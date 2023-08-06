@@ -3,16 +3,13 @@ package com.playground.playground.interface_adapater.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/**
-* The MainController class is responsible for assimilating values from other controllers.
-*/
+/** The MainController class is responsible for assimilating values from other controllers. */
 public class MainController implements Initializable {
   private DataAttributesController dataAttributesController;
   @FXML private VBox dataAttributesBox;
@@ -72,5 +69,4 @@ public class MainController implements Initializable {
     featuresHiddenLayersController = featuresHiddenLayersLoader.getController();
     featuresHiddenLayersController.initialize(location, resources);
   }
-
 }

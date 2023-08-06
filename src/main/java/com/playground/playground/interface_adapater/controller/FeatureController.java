@@ -1,22 +1,20 @@
 package com.playground.playground.interface_adapater.controller;
 
-import java.util.ArrayList;
-
-import com.playground.playground.usecase.datasets.DataGeneratorFactory;
 import com.playground.playground.entity.DatasetGenerator;
 import com.playground.playground.entity.FeatureApplier;
-import com.playground.playground.usecase.features.FeatureApplierFactory;
+import com.playground.playground.usecase.datasets.DataGeneratorFactory;
 import com.playground.playground.usecase.datasets.DataProcessor;
+import com.playground.playground.usecase.features.FeatureApplierFactory;
+import java.util.ArrayList;
+import java.util.List;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.primitives.Pair;
 
-import java.util.List;
-
 /**
- * FeatureController is responsible for managing the creation and manipulation
- * of datasets for training purposes. It includes methods for generating specific
- * datasets with noise and applying selected features to the data.
+ * FeatureController is responsible for managing the creation and manipulation of datasets for
+ * training purposes. It includes methods for generating specific datasets with noise and applying
+ * selected features to the data.
  */
 public class FeatureController {
 
@@ -24,12 +22,12 @@ public class FeatureController {
    * Creates a dataset for the training data. It applies all the features given by the user to
    * create a single dataset in the INDArray which is the correct format for training.
    *
-   * @param dataName      Represents which dataset has been chosen by the user.
-   *                      PRECONDITION data name must be one of the following: "circular", "cluster", "quadrant", "spiral"
-   * @param featureNames  List of features that have been selected by the user. PRECONDITION feature name either empty
-   *                      list or a list containing one or more of the following: "squareX", "squareY", "XtimesY",
-   *                      "sinX", "sinY"
-   * @param noise         Int represent the noise of data
+   * @param dataName Represents which dataset has been chosen by the user. PRECONDITION data name
+   *     must be one of the following: "circular", "cluster", "quadrant", "spiral"
+   * @param featureNames List of features that have been selected by the user. PRECONDITION feature
+   *     name either empty list or a list containing one or more of the following: "squareX",
+   *     "squareY", "XtimesY", "sinX", "sinY"
+   * @param noise Int represent the noise of data
    * @return dataset in Neural Net configuration containing original x and y values, and all
    *     applicable features
    */
@@ -63,16 +61,16 @@ public class FeatureController {
    * Generates the required dataset.
    *
    * @param dataName Name of the required dataset
-   * @param noise    amount of noise in the dataset
+   * @param noise amount of noise in the dataset
    * @return A dataset in the data format
    */
   public static ArrayList<ArrayList<Object>> getData(String dataName, int noise) {
-        ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
+    ArrayList<ArrayList<Object>> dataset = new ArrayList<>();
 
-        DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
-        DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
-        dataset = dataProcessor.process(noise);
+    DatasetGenerator datasetGenerator = DataGeneratorFactory.createDataGenerator(dataName);
+    DataProcessor dataProcessor = new DataProcessor(datasetGenerator);
+    dataset = dataProcessor.process(noise);
 
-        return dataset;
+    return dataset;
   }
 }

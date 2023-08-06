@@ -13,9 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-/**
-* This controller is responsible for handling data related to the hidden layers and features.
-*/
+/** This controller is responsible for handling data related to the hidden layers and features. */
 public class FeaturesHiddenLayersController implements Initializable {
 
   @FXML private Text numHiddenLayers;
@@ -56,7 +54,6 @@ public class FeaturesHiddenLayersController implements Initializable {
   public static int[] aButtonsCountsAccess;
   public static int numHiddenLayersAccess;
 
-
   /**
    * Initializer for FeaturesHiddenLayersController.java
    *
@@ -88,11 +85,12 @@ public class FeaturesHiddenLayersController implements Initializable {
     toggleButtonSelection(sinx2button, "sinY");
   }
 
-/**
-* Set an image to be placed over a button.
- * @param button The button to set an image on.
- * @param imagePath The path to the image.
-*/
+  /**
+   * Set an image to be placed over a button.
+   *
+   * @param button The button to set an image on.
+   * @param imagePath The path to the image.
+   */
   private void setButtonWithImage(Button button, String imagePath) {
     ImageView imageView = new ImageView(getClass().getResource(imagePath).toExternalForm());
     imageView.setFitWidth(35);
@@ -108,27 +106,27 @@ public class FeaturesHiddenLayersController implements Initializable {
    * @param buttonName The string representation of the button that will be stored in the arraylist
    */
   private void toggleButtonSelection(Button button, String buttonName) {
-    button.setOnAction(event -> {
-      String currentStyle = button.getStyle();
-      if (currentStyle.contains("-fx-background-color: blue;")) {
-        // Button was selected, unselect it
-        button.setStyle("");
-        // Remove the button name from the selectedButtons list
-        FeaturesHiddenLayersController.selectedButtons.remove(buttonName);
-      } else {
-        // Button wasn't selected, select it
-        button.setStyle("-fx-background-color: blue;");
-        // Add the button name to the selectedButtons list
-        FeaturesHiddenLayersController.selectedButtons.add(buttonName);
-      }
-    });
+    button.setOnAction(
+        event -> {
+          String currentStyle = button.getStyle();
+          if (currentStyle.contains("-fx-background-color: blue;")) {
+            // Button was selected, unselect it
+            button.setStyle("");
+            // Remove the button name from the selectedButtons list
+            FeaturesHiddenLayersController.selectedButtons.remove(buttonName);
+          } else {
+            // Button wasn't selected, select it
+            button.setStyle("-fx-background-color: blue;");
+            // Add the button name to the selectedButtons list
+            FeaturesHiddenLayersController.selectedButtons.add(buttonName);
+          }
+        });
   }
 
-/**
-*
- * @return A list of the selected buttons.
-*/
-  public static ArrayList<String> getSelectedButtons(){
+  /**
+   * @return A list of the selected buttons.
+   */
+  public static ArrayList<String> getSelectedButtons() {
     return FeaturesHiddenLayersController.selectedButtons;
   }
 
@@ -243,30 +241,24 @@ public class FeaturesHiddenLayersController implements Initializable {
     }
   }
 
-
-/**
-* Parse and set the number of hidden layers.
-*/
+  /** Parse and set the number of hidden layers. */
   private void setNumHiddenLayers() {
     numHiddenLayersAccess = Integer.parseInt(numHiddenLayers.getText());
   }
 
-  public static void setLayersNeurons(){
+  public static void setLayersNeurons() {
     List<Integer> layerNeurons = new ArrayList<>();
-    int numberHiddenLayers = numHiddenLayersAccess; //Correct do not change.
-    for (int i = 0; i < numberHiddenLayers; i++){
+    int numberHiddenLayers = numHiddenLayersAccess; // Correct do not change.
+    for (int i = 0; i < numberHiddenLayers; i++) {
       layerNeurons.add(aButtonsCountsAccess[i]);
     }
     layersNeurons = layerNeurons;
   }
-/**
-*
- * @return A List of the Neural Network architecture
-*/
-  public static List<Integer> getLayersNeurons(){
+
+  /**
+   * @return A List of the Neural Network architecture
+   */
+  public static List<Integer> getLayersNeurons() {
     return layersNeurons;
-
   }
-
-
 }

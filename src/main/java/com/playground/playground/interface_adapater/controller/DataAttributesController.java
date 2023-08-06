@@ -2,7 +2,6 @@ package com.playground.playground.interface_adapater.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,9 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
-/**
-* This controller handles all the dataset related options on the UI.
-*/
+/** This controller handles all the dataset related options on the UI. */
 public class DataAttributesController implements Initializable {
   public static int initializeTestRatio;
   public static int initializeNoise;
@@ -40,7 +37,6 @@ public class DataAttributesController implements Initializable {
   public static int batchSize;
   public static int noise;
   public static String dataset;
-  
 
   /**
    * Initializer for DataAttributesController.java
@@ -77,7 +73,6 @@ public class DataAttributesController implements Initializable {
     setButtonFixedSize(radialButton);
     setButtonFixedSize(spiralButton);
     setButtonFixedSize(rectangularButton);
-
   }
 
   /**
@@ -131,7 +126,8 @@ public class DataAttributesController implements Initializable {
   }
 
   /**
-   * Initializes the test ratio value from the slider and updates the corresponding attribute in DataAttributesController.
+   * Initializes the test ratio value from the slider and updates the corresponding attribute in
+   * DataAttributesController.
    *
    * @param mouseEvent the event triggered by the mouse
    * @return the initialized test ratio
@@ -141,8 +137,10 @@ public class DataAttributesController implements Initializable {
     DataAttributesController.initializeTestRatio = testRatio;
     return testRatio;
   }
+
   /**
-   * Initializes the noise value from the slider and updates the corresponding attribute in DataAttributesController.
+   * Initializes the noise value from the slider and updates the corresponding attribute in
+   * DataAttributesController.
    *
    * @param mouseEvent the event triggered by the mouse
    * @return the initialized noise value
@@ -154,7 +152,8 @@ public class DataAttributesController implements Initializable {
   }
 
   /**
-   * Initializes the batch size value from the slider and updates the corresponding attribute in DataAttributesController.
+   * Initializes the batch size value from the slider and updates the corresponding attribute in
+   * DataAttributesController.
    *
    * @param mouseEvent the event triggered by the mouse
    * @return the initialized batch size
@@ -166,7 +165,8 @@ public class DataAttributesController implements Initializable {
   }
 
   /**
-   * Handles the action event when the "cluster" button is clicked, setting the dataset to "cluster".
+   * Handles the action event when the "cluster" button is clicked, setting the dataset to
+   * "cluster".
    *
    * @param actionEvent the action event triggered by the button
    */
@@ -175,14 +175,14 @@ public class DataAttributesController implements Initializable {
   }
 
   /**
-   * Handles the action event when the "circular" button is clicked, setting the dataset to "circular".
+   * Handles the action event when the "circular" button is clicked, setting the dataset to
+   * "circular".
    *
    * @param actionEvent the action event triggered by the button
    */
   public void handleRadialButton(ActionEvent actionEvent) {
     dataset = "circular";
   }
-
 
   /**
    * Handles the action event when the "spiral" button is clicked, setting the dataset to "spiral".
@@ -194,7 +194,8 @@ public class DataAttributesController implements Initializable {
   }
 
   /**
-   * Handles the action event when the "quadrant" button is clicked, setting the dataset to "quadrant".
+   * Handles the action event when the "quadrant" button is clicked, setting the dataset to
+   * "quadrant".
    *
    * @param actionEvent the action event triggered by the button
    */

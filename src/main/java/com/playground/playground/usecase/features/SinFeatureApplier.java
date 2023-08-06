@@ -1,12 +1,9 @@
 package com.playground.playground.usecase.features;
 
 import com.playground.playground.entity.FeatureApplier;
-
 import java.util.ArrayList;
 
-/**
- * Applies the sine function to a specific axis (x or y) of the data points in the dataset.
- */
+/** Applies the sine function to a specific axis (x or y) of the data points in the dataset. */
 public class SinFeatureApplier implements FeatureApplier {
   private final int axis;
 

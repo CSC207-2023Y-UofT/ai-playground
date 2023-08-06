@@ -4,11 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
+import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.junit.jupiter.api.BeforeEach;
@@ -63,7 +62,8 @@ public class ModelTrainingServicesTest {
 
     // When
     ModelTrainingServices service =
-        new ModelTrainingServices(mockTrainingDataset, mockTrainingDataset, model, statsFileName, mockTestDataset);
+        new ModelTrainingServices(
+            mockTrainingDataset, mockTrainingDataset, model, statsFileName, mockTestDataset);
     // Then
     assertEquals(mockTrainingDataset, service.getData());
     assertEquals(mockTestDataset, service.getTestData());
@@ -106,12 +106,13 @@ public class ModelTrainingServicesTest {
     INDArrayDataSetIterator mockTestDataset = buildIterator(1);
 
     ModelTrainingServices service =
-        new ModelTrainingServices(mockTrainingDataset, mockTrainingDataset, model, "test_stats_file", mockTestDataset);
+        new ModelTrainingServices(
+            mockTrainingDataset, mockTrainingDataset, model, "test_stats_file", mockTestDataset);
 
     // When
     service.trainModel(verbose);
 
     // Then
-    assertTrue(model.score()<0.9);
+    assertTrue(model.score() < 0.9);
   }
 }
