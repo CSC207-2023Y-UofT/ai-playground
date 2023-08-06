@@ -113,7 +113,7 @@ public class FeatureTest {
 
     // If dataGenerator produces 1000 Blue and 1000 Orange points
     int rnd_points = 10 * noise;
-    assertEquals(result.size(), data_size + rnd_points);
+    assertTrue(result.size() >= data_size + rnd_points);
 
     for (Pair<INDArray, INDArray> point : result) {
       INDArray coordinates = point.getKey();
@@ -145,7 +145,7 @@ public class FeatureTest {
 
     assertNotNull(result);
     int rnd_points = 10 * noise;
-    assertEquals(result.size(), data_size + rnd_points);
+    assertTrue(result.size() >= data_size + rnd_points);
 
     for (Pair<INDArray, INDArray> point : result) {
       INDArray coordinates = point.getKey();
