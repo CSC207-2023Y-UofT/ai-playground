@@ -3,8 +3,10 @@ package com.playground.playground.modelling;
 import java.io.File;
 import java.util.ArrayList;
 
+import com.rits.cloning.Cloner;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
+import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.stats.StatsListener;
@@ -20,6 +22,7 @@ public class ModelTrainingServices {
   private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
   private final INDArrayDataSetIterator data;
   private final INDArrayDataSetIterator testData;
+  private final INDArrayDataSetIterator copyData;
   private MultiLayerNetwork model;
   private String statsFileName;
 
@@ -33,10 +36,12 @@ public class ModelTrainingServices {
    */
   public ModelTrainingServices(
       INDArrayDataSetIterator data,
+      INDArrayDataSetIterator copyData,
       MultiLayerNetwork model,
       String statsFileName,
       INDArrayDataSetIterator testData) {
     this.data = data;
+    this.copyData = copyData;
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
@@ -95,9 +100,8 @@ public class ModelTrainingServices {
 
     model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
 
-    for (int i = 0; i < 10; i++) {
-      model.fit(data);
-    }
+    model.fit(data);
+
 
     double trainScore = model.score();
     double testScore = model.score(testData.next());
@@ -107,16 +111,23 @@ public class ModelTrainingServices {
       log.info(String.format("Test Score is %s", testScore));
     }
 
-    while (data.hasNext()) {
-      DataSet t = data.next();
+    System.out.println("Start While");
+//    Evaluation eval = new Evaluation(2);
+    System.out.println(data);
+    while (copyData.hasNext()) {
+      DataSet t = copyData.next();
       INDArray features = t.getFeatureMatrix();
       INDArray predicted = model.output(features, false);
+      System.out.println("Predicted Now:");
+      System.out.println(predicted);
 
       int[] batchPredictions = NDArrayUtil.toInts(predicted);
-      for (int i = 0; i<=batchPredictions.length; i++) {
+      for (int i = 0; i<batchPredictions.length; i++) {
         predictions.add(batchPredictions[i]);
       }
     }
+    System.out.println("Predictions Now:");
+    System.out.println(predictions);
 //    while (testData.hasNext()) {
 //      DataSet t = testData.next();
 //      INDArray features = t.getFeatureMatrix();
@@ -128,10 +139,16 @@ public class ModelTrainingServices {
       log.info("Training completed");
     }
 
+    ArrayList<Integer> intList = new ArrayList<Integer>(predictions.size());
+    for (int i : predictions)
+    {
+      intList.add(i);
+    }
+
     Object[] outputs = new Object[3];
     outputs[0] = trainScore;
     outputs[1] = testScore;
-    outputs[2] = predictions;
+    outputs[2] = intList;
     return outputs;
   }
 

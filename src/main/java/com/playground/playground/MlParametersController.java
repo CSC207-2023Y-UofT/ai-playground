@@ -243,11 +243,18 @@ public class MlParametersController implements Initializable {
     System.out.print(hiddenLayers);
 
     ModelTrainingServices TrainingController =
-        new ModelTrainingServices(trainDataset, model, "statsLog", testDataset);
+        new ModelTrainingServices(trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
     Object[] results = TrainingController.trainModel(true);
 
+    System.out.println(results[2]);
     MainController.graphSystemController.updateGraph(rawData, (ArrayList<Integer>) results[2]);
+    if (results[1] == null) {
+      results[1] = 0.0;
+    }
+    if (results[0] == null) {
+      results[0] = 0.0;
+    }
     MainController.graphSystemController.setTestLoss((Double) results[1]);
     MainController.graphSystemController.setTrainingLoss((Double) results[0]);
   }
