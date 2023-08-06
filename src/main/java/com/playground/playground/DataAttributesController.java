@@ -11,6 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
+/**
+* This controller handles all the dataset related options on the UI.
+*/
 public class DataAttributesController implements Initializable {
   public static int initializeTestRatio;
   public static int initializeNoise;
