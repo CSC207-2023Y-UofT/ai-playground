@@ -17,10 +17,11 @@ public class FeatureController {
    * Creates a dataset for the training data. It applies all the features given by the user to
    * create a single dataset in the correct format for training.
    *
-   * @param dataName Represents which dataset has been chosen by the user. Legit names: 'circular'
-   *     'cluster' 'quadrant' 'spiral'
-   * @param featureNames List of features that have been selected by the user. Must be: 'squareX'
-   *     'squareY' 'XtimesY' 'sinX' 'sinY'
+   * @param dataName Represents which dataset has been chosen by the user.
+   * PRECONDITION data name must be one of the following: "circular", "cluster", "quadrant", "spiral"
+   * @param featureNames List of features that have been selected by the user.  PRECONDITION feature name either empty
+   *                     list or a list containing one or more of the following: "squareX", "squareY", "XtimesY",
+   *                     "sinX", "sinY"
    * @param noise Int represent the noise of data
    * @return dataset in Neural Net configuration containing original x and y values, and all
    *     applicable features

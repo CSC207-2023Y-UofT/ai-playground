@@ -15,8 +15,9 @@ public class FeatureApplierFactory {
   }
 
   /**
-   * @param featureName String representing the feature chosen by the user. Possible names for
-   *     Features: 'squareX' 'squareY' 'XtimesY' 'sinX' 'sinY'
+   * @param featureName String representing the feature chosen by the user.
+   *  Precondition feature name either empty list or a list containing one or more of the following:
+   *                    "squareX", "squareY", "XtimesY", "sinX", "sinY"
    * @return A FeatureApplier, this object applies the needed feature
    */
   public static FeatureApplier getFeature(String featureName) {
