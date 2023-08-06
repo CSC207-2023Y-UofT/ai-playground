@@ -3,6 +3,11 @@ package com.playground.playground.data;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A factory class responsible for creating and providing instances of FeatureApplier.
+ * Based on the provided feature name, the corresponding FeatureApplier object is returned.
+ * The available features include "squareX", "squareY", "XtimesY", "sinX", "sinY".
+ */
 public class FeatureApplierFactory {
   private static final Map<String, FeatureApplier> applierMap = new HashMap<>();
 
