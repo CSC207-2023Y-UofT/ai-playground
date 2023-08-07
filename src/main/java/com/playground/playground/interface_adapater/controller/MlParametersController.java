@@ -228,6 +228,7 @@ public class MlParametersController implements Initializable {
 
     // Fetch hidden layers from other components
     FeaturesHiddenLayersController.setLayersNeurons();
+    System.out.println(FeaturesHiddenLayersController.getLayersNeurons());
     List<Integer> hiddenLayers = FeaturesHiddenLayersController.getLayersNeurons();
 
     // Map activation function string to Activation enum
@@ -268,7 +269,6 @@ public class MlParametersController implements Initializable {
     }
 
     int numFeatures = selectedButtons.size() + 2;
-
     // Create the neural network model
     MultiLayerNetwork model =
         new NeuralNetBuilder()

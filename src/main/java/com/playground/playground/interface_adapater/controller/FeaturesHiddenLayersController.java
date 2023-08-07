@@ -89,9 +89,11 @@ public class FeaturesHiddenLayersController implements Initializable {
     toggleButtonSelection(sinx2button, "sinY");
 
     //Set default configuration to 1 hidden layer 1 node
-    onAddLayerClicked(null);
-    ActionEvent defaultEvent = new ActionEvent(add1, null);
-    onAddButtonClicked(defaultEvent);
+    onAddLayerClicked(new ActionEvent(addLayer, null));
+    onAddButtonClicked(new ActionEvent(add1, null));
+    numHiddenLayersAccess = 1;
+    aButtonsCountsAccess = new int[6];
+    aButtonsCountsAccess[0] = 1;
   }
 
   /**
@@ -163,6 +165,7 @@ public class FeaturesHiddenLayersController implements Initializable {
    */
   @FXML
   private void onRemoveLayerClicked(ActionEvent event) {
+
     int currentCount = Integer.parseInt(numHiddenLayers.getText());
     if (currentCount > 0 && i > 0) {
       currentCount--;
