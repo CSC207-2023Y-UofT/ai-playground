@@ -1,6 +1,8 @@
 package com.playground.playground.interface_adapater.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,10 +35,13 @@ public class DataAttributesController implements Initializable {
   @FXML private Button spiralButton;
 
   @FXML private Button rectangularButton;
-  public static int testRatio;
-  public static int batchSize;
-  public static int noise;
-  public static String dataset;
+  private ArrayList<Button> listButtons = new ArrayList<>();
+
+
+  public static int testRatio = 80;
+  public static int batchSize = 20;
+  public static int noise = 1;
+  public static String dataset = "cluster";
 
   /**
    * Initializer for DataAttributesController.java
@@ -47,21 +52,27 @@ public class DataAttributesController implements Initializable {
    *     object was not localized.
    */
   public void initialize(URL location, ResourceBundle resources) {
-
+    //Set testRatio slider to default value
+    slider1.setValue(testRatio);
+    updateSlider1Percent(slider1, slider1label);
     slider1
         .valueProperty()
         .addListener(
             (observable, oldValue, newValue) -> {
               updateSlider1Percent(slider1, slider1label);
             });
-
+    //Set noise slider to default value
+    slider2.setValue(noise);
+    updateSlider2Percent(slider2, slider2label);
     slider2
         .valueProperty()
         .addListener(
             (observable, oldValue, newValue) -> {
               updateSlider2Percent(slider2, slider2label);
             });
-
+    //Set batchsize slider to default value
+    slider3.setValue(batchSize);
+    updateSlider3Percent(slider3, slider3label);
     slider3
         .valueProperty()
         .addListener(
@@ -73,6 +84,28 @@ public class DataAttributesController implements Initializable {
     setButtonFixedSize(radialButton);
     setButtonFixedSize(spiralButton);
     setButtonFixedSize(rectangularButton);
+    listButtons.add(clusterButton);
+    listButtons.add(radialButton);
+    listButtons.add(spiralButton);
+    listButtons.add(rectangularButton);
+
+    // Adding the behavior for buttons
+    toggleButtonSelection(clusterButton);
+    toggleButtonSelection(radialButton);
+    toggleButtonSelection(spiralButton);
+    toggleButtonSelection(rectangularButton);
+    //Show cluster dataset as default
+    clusterButton.setStyle("-fx-background-color: lightblue;");
+  }
+
+  private void toggleButtonSelection(Button button) {
+    button.setOnAction(
+            event -> {
+              for(Button btn : listButtons) {
+                btn.setStyle("");
+              }
+              button.setStyle("-fx-background-color: lightblue;");
+            });
   }
 
   /**
@@ -172,6 +205,7 @@ public class DataAttributesController implements Initializable {
    */
   public void handleCLusterButton(ActionEvent actionEvent) {
     dataset = "cluster";
+
   }
 
   /**

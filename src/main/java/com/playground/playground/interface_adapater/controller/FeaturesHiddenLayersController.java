@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
+import javax.swing.*;
+
 /** This controller is responsible for handling data related to the hidden layers and features. */
 public class FeaturesHiddenLayersController implements Initializable {
 
@@ -85,6 +87,13 @@ public class FeaturesHiddenLayersController implements Initializable {
     toggleButtonSelection(x1x2button, "XtimesY");
     toggleButtonSelection(sinx1button, "sinX");
     toggleButtonSelection(sinx2button, "sinY");
+
+    //Set default configuration to 1 hidden layer 1 node
+    onAddLayerClicked(new ActionEvent(addLayer, null));
+    onAddButtonClicked(new ActionEvent(add1, null));
+    numHiddenLayersAccess = 1;
+    aButtonsCountsAccess = new int[6];
+    aButtonsCountsAccess[0] = 1;
   }
 
   /**
@@ -156,6 +165,7 @@ public class FeaturesHiddenLayersController implements Initializable {
    */
   @FXML
   private void onRemoveLayerClicked(ActionEvent event) {
+
     int currentCount = Integer.parseInt(numHiddenLayers.getText());
     if (currentCount > 0 && i > 0) {
       currentCount--;
