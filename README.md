@@ -99,11 +99,9 @@ The AI Playground project follows Clean Architecture principles:
 - Contains domain model and business entities.
 - Includes classes like `NeuralNet` representing the neural network model.
 
-### resources layer
+### resources/frameworks layer
 - Contains configuration files and resources.
 - For example, external configuration files would be placed here.
-
-### frameworks layer
 
 ## SOLID Principles
 
