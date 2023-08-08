@@ -63,7 +63,7 @@ public class ModelTrainingServicesTest {
     // When
     ModelTrainingServices service =
         new ModelTrainingServices(
-            mockTrainingDataset, mockTrainingDataset, model, statsFileName, mockTestDataset);
+            mockTrainingDataset, model, statsFileName, mockTestDataset);
     // Then
     assertEquals(mockTrainingDataset, service.getData());
     assertEquals(mockTestDataset, service.getTestData());
@@ -107,7 +107,7 @@ public class ModelTrainingServicesTest {
 
     ModelTrainingServices service =
         new ModelTrainingServices(
-            mockTrainingDataset, mockTrainingDataset, model, "test_stats_file", mockTestDataset);
+            mockTrainingDataset, model, "test_stats_file", mockTestDataset);
 
     // When
     service.trainModel(verbose);

@@ -2,7 +2,10 @@ package com.playground.playground;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
@@ -15,7 +18,8 @@ public class DataService {
   private final ObjectProperty<List<Pair<INDArray, INDArray>>> dataset =
       new SimpleObjectProperty<>();
   private final ObjectProperty<ArrayList<Integer>> results = new SimpleObjectProperty<>();
-
+  private final DoubleProperty trainScore = new SimpleDoubleProperty();
+  private final DoubleProperty testScore = new SimpleDoubleProperty();
   private static DataService instance;
 
   // Private constructor to prevent direct instantiation
@@ -53,5 +57,31 @@ public class DataService {
 
   public ObjectProperty<ArrayList<Integer>> resultsProperty() {
     return results;
+  }
+
+  // Getters, setters, and property methods for the trainScore
+  public double getTrainScore() {
+    return trainScore.get();
+  }
+
+  public void setTrainScore(double trainScore) {
+    this.trainScore.set(trainScore);
+  }
+
+  public DoubleProperty trainScoreProperty() {
+    return trainScore;
+  }
+
+  // Getters, setters, and property methods for the testScore
+  public double getTestScore() {
+    return testScore.get();
+  }
+
+  public void setTestScore(double testScore) {
+    this.testScore.set(testScore);
+  }
+
+  public DoubleProperty testScoreProperty() {
+    return testScore;
   }
 }

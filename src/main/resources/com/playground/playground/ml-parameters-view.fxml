@@ -27,12 +27,13 @@
         <HBox.margin>
             <Insets left="10.0" />
         </HBox.margin></Button>
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Epoch" translateX="25.0" translateY="5.0">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Epoch: " translateX="25.0" translateY="5.0">
       <font>
          <Font size="18.0" />
       </font>
    </Text>
    <Text fx:id="epochNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" translateX="50.0" translateY="8.0" wrappingWidth="73.095703125" />
+
 
     <MenuBar prefHeight="28.0" prefWidth="651.0" translateX="-10.0">
         <Menu text="Learning Rate">
