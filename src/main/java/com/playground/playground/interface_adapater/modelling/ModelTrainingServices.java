@@ -19,7 +19,7 @@ public class ModelTrainingServices {
   private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
   private final INDArrayDataSetIterator data;
   private final INDArrayDataSetIterator testData;
-  private final INDArrayDataSetIterator copyData;
+//  private final INDArrayDataSetIterator copyData;
   private MultiLayerNetwork model;
   private String statsFileName;
 
@@ -27,19 +27,18 @@ public class ModelTrainingServices {
    * Constructor for the ModelTrainingServices class which initializers the data and model.
    *
    * @param data The training dataset.
-   * @param copyData The training dataset for reporting training scores.
    * @param model The model DAG.
    * @param statsFileName The name of the logging file which will be saved to the disk.
    * @param testData The testing dataset.
    */
   public ModelTrainingServices(
       INDArrayDataSetIterator data,
-      INDArrayDataSetIterator copyData,
+//      INDArrayDataSetIterator copyData,
       MultiLayerNetwork model,
       String statsFileName,
       INDArrayDataSetIterator testData) {
     this.data = data;
-    this.copyData = copyData;
+//    this.copyData = copyData;
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
@@ -115,8 +114,9 @@ public class ModelTrainingServices {
     System.out.println("Start While");
     //    Evaluation eval = new Evaluation(2);
     System.out.println(data);
-    while (copyData.hasNext()) {
-      DataSet t = copyData.next();
+    data.reset();
+    while (data.hasNext()) {
+      DataSet t = data.next();
       INDArray features = t.getFeatureMatrix();
       INDArray predicted = model.output(features, false);
       System.out.println("Predicted Now:");

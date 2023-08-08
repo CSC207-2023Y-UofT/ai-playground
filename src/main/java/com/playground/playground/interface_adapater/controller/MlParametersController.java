@@ -288,9 +288,12 @@ public class MlParametersController implements Initializable {
     hiddenLayers.add(0, numFeatures);
 
     // Train the model and get the results
-    ModelTrainingServices trainingController =
-        new ModelTrainingServices(
-            trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
+        ModelTrainingServices trainingController =
+            new ModelTrainingServices(
+                    trainDataset, model, "statsLog", testDataset);
+//    ModelTrainingServices trainingController =
+//            new ModelTrainingServices(
+//                    trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
 //    Object[] results = trainingController.trainModel(true);
     while (!stopButtonClick) {
