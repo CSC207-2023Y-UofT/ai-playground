@@ -309,18 +309,6 @@ public class MlParametersController implements Initializable {
 //    dataService.setResults((ArrayList<Integer>) results[2]);
 //    System.out.println("Dataset set to: " + dataService.getDataset());
 
-    boolean continueTraining = true;
-
-    while (continueTraining) {
-      results = trainingController.trainModel(true);
-
-      dataService.setResults((ArrayList<Integer>) results[2]);
-      System.out.println("Results set");
-
-      if (stopButtonClicked) {
-        continueTraining = false;
-      }
-    }
   }
 
   public void handleStopButtonClick(ActionEvent actionEvent) {
