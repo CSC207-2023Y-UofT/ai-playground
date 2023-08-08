@@ -87,16 +87,16 @@ public class ModelTrainingServices {
     //      );
     //    }
 
-    File statsFile = new File(statsFileName);
-    StatsStorage statsStorage = new FileStatsStorage(statsFile);
+//    File statsFile = new File(statsFileName);
+//    StatsStorage statsStorage = new FileStatsStorage(statsFile);
     ArrayList<Integer> predictions = new ArrayList<Integer>();
 
     if (verbose) {
       log.info(model.summary());
       log.info("Training model...");
     }
-
-    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
+//
+//    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
 
     model.fit(data);
 

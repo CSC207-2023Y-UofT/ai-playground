@@ -76,11 +76,15 @@ public class GraphSystemController implements Initializable {
    *     dataset.
    */
   public void updateGraph(List<Pair<INDArray, INDArray>> dataset, ArrayList<Integer> colors) {
-    // Clear the current data
+// Clear the current data
     neuralNetwork.getData().clear();
-    XYChart.Series<Number, Number> series = new XYChart.Series<>();
+    System.out.println("Updating graph...");
+// Create series for each unique color
+    XYChart.Series<Number, Number> seriesBlue = new XYChart.Series<>();
+    XYChart.Series<Number, Number> seriesGreen = new XYChart.Series<>();
 
-    // Add the new data
+
+// Add the new data
     for (int i = 0; i < dataset.size(); i++) {
       Pair<INDArray, INDArray> cluster = dataset.get(i);
       INDArray point = cluster.getKey();
@@ -88,26 +92,29 @@ public class GraphSystemController implements Initializable {
       double x = coords[0];
       double y = coords[1];
 
+
       XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
-      series.getData().add(data);
-      System.out.println(x);
-      System.out.println(y);
-      System.out.println(colors.get(i));
-      System.out.println(series);
-      // Change the color of the data point based on the color value
-      int finalI = i;
-      data.nodeProperty()
-          .addListener(
-              (ov, oldNode, newNode) -> {
-                if (newNode != null) {
-                  if (colors.get(finalI) == 1) {
-                    newNode.setStyle("-fx-background-color: blue;");
-                  } else {
-                    newNode.setStyle("-fx-background-color: green;");
-                  }
-                }
-              });
-      neuralNetwork.getData().add(series);
+// Change the color of the data point based on the color value
+      if (colors.get(i) == 1) {
+        data.nodeProperty().addListener((ov, oldNode, newNode) -> {
+          if (newNode != null) {
+            newNode.setStyle("-fx-background-color: blue;");
+          }
+        });
+        seriesBlue.getData().add(data);
+      } else {
+        data.nodeProperty().addListener((ov, oldNode, newNode) -> {
+          if (newNode != null) {
+            newNode.setStyle("-fx-background-color: green;");
+          }
+        });
+        seriesGreen.getData().add(data);
+      }
     }
+
+// Add the series to the chart
+    neuralNetwork.getData().addAll(seriesBlue, seriesGreen);
+    System.out.println("Updated graph");
   }
+
 }

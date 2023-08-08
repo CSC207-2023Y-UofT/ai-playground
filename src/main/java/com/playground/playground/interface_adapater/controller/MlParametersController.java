@@ -72,6 +72,8 @@ public class MlParametersController implements Initializable {
   @FXML private MenuItem classify;
   @FXML private MenuItem regress;
   private DataService dataService;
+
+  public static boolean stopButtonClick = false;
   private GraphSystemController graphSystemController;
 
   public MlParametersController() {
@@ -290,13 +292,23 @@ public class MlParametersController implements Initializable {
         new ModelTrainingServices(
             trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
-    Object[] results = trainingController.trainModel(true);
+//    Object[] results = trainingController.trainModel(true);
+    while (!stopButtonClick) {
+      Object[] results = trainingController.trainModel(true);
+      System.out.println("Setting dataset...");
+      dataService.setDataset(rawData);
+      dataService.setResults((ArrayList<Integer>) results[2]);
+      System.out.println("Dataset set to: " + dataService.getDataset());
+    }
 
-    System.out.println("Setting dataset...");
-    dataService.setDataset(rawData);
-    dataService.setResults((ArrayList<Integer>) results[2]);
-    System.out.println("Dataset set to: " + dataService.getDataset());
+//    System.out.println("Setting dataset...");
+//    dataService.setDataset(rawData);
+//    dataService.setResults((ArrayList<Integer>) results[2]);
+//    System.out.println("Dataset set to: " + dataService.getDataset());
+
   }
 
-  public void handleStopButtonClick(ActionEvent actionEvent) {}
+  public void handleStopButtonClick(ActionEvent actionEvent) {
+    stopButtonClick = true;
+  }
 }
