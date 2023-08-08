@@ -21,6 +21,8 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
+import javafx.concurrent.Task;
+import javafx.application.Platform;
 
 /**
  * The MlParametersController class handles the user interface for specifying machine learning
@@ -291,27 +293,36 @@ public class MlParametersController implements Initializable {
         ModelTrainingServices trainingController =
             new ModelTrainingServices(
                     trainDataset, model, "statsLog", testDataset);
-//    ModelTrainingServices trainingController =
-//            new ModelTrainingServices(
-//                    trainDataset, dataGen.getDataset(), model, "statsLog", testDataset);
 
-//    Object[] results = trainingController.trainModel(true);
-    while (!stopButtonClick) {
-      Object[] results = trainingController.trainModel(true);
-      System.out.println("Setting dataset...");
-      dataService.setDataset(rawData);
-      dataService.setResults((ArrayList<Integer>) results[2]);
-      System.out.println("Dataset set to: " + dataService.getDataset());
+    Task<Void> task = new Task<Void>() {
+      @Override
+      protected Void call() throws Exception {
+        int i = 0;
+        while (!stopButtonClick) {
+          Object[] results = trainingController.trainModel(true);
+          System.out.println("Setting dataset...");
+          dataService.setDataset(rawData);
+          dataService.setResults((ArrayList<Integer>) results[2]);
+          System.out.println("Dataset set to: " + dataService.getDataset());
+          System.out.println("Results set to: " + dataService.getResults());
+
+          final int iteration = i;
+          Platform.runLater(() -> {
+            epochNumber.setText(Integer.toString(iteration));
+          });
+          i++;
+        }
+        return null;
+      }
+    };
+    // Start the task on a new thread
+    new Thread(task).start();
+
     }
 
-//    System.out.println("Setting dataset...");
-//    dataService.setDataset(rawData);
-//    dataService.setResults((ArrayList<Integer>) results[2]);
-//    System.out.println("Dataset set to: " + dataService.getDataset());
-
-  }
 
   public void handleStopButtonClick(ActionEvent actionEvent) {
     stopButtonClick = true;
   }
+
 }
