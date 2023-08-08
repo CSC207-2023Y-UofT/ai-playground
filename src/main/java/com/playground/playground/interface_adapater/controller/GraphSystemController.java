@@ -55,19 +55,51 @@ public class GraphSystemController implements Initializable {
                 updateGraph(dataService.getDataset(), newValue);
               }
             });
-    setTestLoss(0);
-    setTrainingLoss(0);
+    // Add a listener to the trainScore property in the data service
+    dataService
+            .trainScoreProperty()
+            .addListener(
+                    new ChangeListener<Number>() {
+                      @Override
+                      public void changed(
+                              ObservableValue<? extends Number> observable,
+                              Number oldValue,
+                              Number newValue) {
+                        setTrainingLoss(newValue.doubleValue());
+                      }
+                    });
+
+    // Add a listener to the testScore property in the data service
+    dataService
+            .testScoreProperty()
+            .addListener(
+                    new ChangeListener<Number>() {
+                      @Override
+                      public void changed(
+                              ObservableValue<? extends Number> observable,
+                              Number oldValue,
+                              Number newValue) {
+                        setTestLoss(newValue.doubleValue());
+                      }
+                    });
   }
 
-  public void setTestLoss(double testL) {
-    testLoss.setText(String.valueOf(testL));
-  }
+    public void setTestLoss(double testL) {
+        Platform.runLater(() -> {
+            String roundedValue = String.format("%.3f", testL);
+            testLoss.setText(roundedValue);
+        });
+    }
 
-  public void setTrainingLoss(double trainL) {
-    trainingLoss.setText(String.valueOf(trainL));
-  }
+    public void setTrainingLoss(double trainL) {
+        Platform.runLater(() -> {
+            String roundedValue = String.format("%.3f", trainL);
+            trainingLoss.setText(roundedValue);
+        });
+    }
 
-  /**
+
+    /**
    * Updates the graph with a new dataset.
    *
    * <p>The method first clears the current data in the graph, and then adds the new data. Each

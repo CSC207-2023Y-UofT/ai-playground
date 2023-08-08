@@ -2,6 +2,8 @@ package com.playground.playground.interface_adapater.modelling;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import com.playground.playground.DataService;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -110,6 +112,9 @@ public class ModelTrainingServices {
       log.info(String.format("Train Score is %s", trainScore));
       log.info(String.format("Test Score is %s", testScore));
     }
+    DataService dataService = DataService.getInstance();
+    dataService.setTrainScore(trainScore);
+    dataService.setTestScore(testScore);
 
     System.out.println("Start While");
     //    Evaluation eval = new Evaluation(2);
