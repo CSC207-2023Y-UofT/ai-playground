@@ -310,6 +310,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/usecase/modelling/PrepareData.html#getTestDataset()">getTestDataset()</a></span> - Method in class com.playground.playground.usecase.modelling.<a href="com/playground/playground/usecase/modelling/PrepareData.html" title="class in com.playground.playground.usecase.modelling">PrepareData</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#getTestScore()">getTestScore()</a></span> - Method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#getTrainScore()">getTrainScore()</a></span> - Method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/controller/MainController.html#graphSystemController">graphSystemController</a></span> - Static variable in class com.playground.playground.interface_adapater.controller.<a href="com/playground/playground/interface_adapater/controller/MainController.html" title="class in com.playground.playground.interface_adapater.controller">MainController</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/playground/playground/interface_adapater/controller/GraphSystemController.html" title="class in com.playground.playground.interface_adapater.controller"><span class="typeNameLink">GraphSystemController</span></a> - Class in <a href="com/playground/playground/interface_adapater/controller/package-summary.html">com.playground.playground.interface_adapater.controller</a></dt>
@@ -475,7 +479,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">This is the class that facilitates training the model and logging.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html#%3Cinit%3E(org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator,org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator,org.deeplearning4j.nn.multilayer.MultiLayerNetwork,java.lang.String,org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator)">ModelTrainingServices(INDArrayDataSetIterator, INDArrayDataSetIterator, MultiLayerNetwork, String, INDArrayDataSetIterator)</a></span> - Constructor for class com.playground.playground.interface_adapater.modelling.<a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html" title="class in com.playground.playground.interface_adapater.modelling">ModelTrainingServices</a></dt>
+<dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html#%3Cinit%3E(org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator,org.deeplearning4j.nn.multilayer.MultiLayerNetwork,java.lang.String,org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator)">ModelTrainingServices(INDArrayDataSetIterator, MultiLayerNetwork, String, INDArrayDataSetIterator)</a></span> - Constructor for class com.playground.playground.interface_adapater.modelling.<a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html" title="class in com.playground.playground.interface_adapater.modelling">ModelTrainingServices</a></dt>
 <dd>
 <div class="block">Constructor for the ModelTrainingServices class which initializers the data and model.</div>
 </dd>
@@ -614,8 +618,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html#setStatsFileName(java.lang.String)">setStatsFileName(String)</a></span> - Method in class com.playground.playground.interface_adapater.modelling.<a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html" title="class in com.playground.playground.interface_adapater.modelling">ModelTrainingServices</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/controller/GraphSystemController.html#setTestLoss(double)">setTestLoss(double)</a></span> - Method in class com.playground.playground.interface_adapater.controller.<a href="com/playground/playground/interface_adapater/controller/GraphSystemController.html" title="class in com.playground.playground.interface_adapater.controller">GraphSystemController</a></dt>
+<dd>
+<div class="block">Sets the test loss value on the UI, rounded to three decimal places.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#setTestScore(double)">setTestScore(double)</a></span> - Method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/controller/GraphSystemController.html#setTrainingLoss(double)">setTrainingLoss(double)</a></span> - Method in class com.playground.playground.interface_adapater.controller.<a href="com/playground/playground/interface_adapater/controller/GraphSystemController.html" title="class in com.playground.playground.interface_adapater.controller">GraphSystemController</a></dt>
+<dd>
+<div class="block">Sets the training loss value on the UI, rounded to three decimal places.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#setTrainScore(double)">setTrainScore(double)</a></span> - Method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/playground/playground/usecase/features/SinFeatureApplier.html" title="class in com.playground.playground.usecase.features"><span class="typeNameLink">SinFeatureApplier</span></a> - Class in <a href="com/playground/playground/usecase/features/package-summary.html">com.playground.playground.usecase.features</a></dt>
 <dd>
@@ -635,6 +647,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/usecase/features/SquareFeatureApplier.html#%3Cinit%3E(int)">SquareFeatureApplier(int)</a></span> - Constructor for class com.playground.playground.usecase.features.<a href="com/playground/playground/usecase/features/SquareFeatureApplier.html" title="class in com.playground.playground.usecase.features">SquareFeatureApplier</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/controller/MlParametersController.html#stopButtonClick">stopButtonClick</a></span> - Static variable in class com.playground.playground.interface_adapater.controller.<a href="com/playground/playground/interface_adapater/controller/MlParametersController.html" title="class in com.playground.playground.interface_adapater.controller">MlParametersController</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:T">
 <!--   -->
@@ -643,10 +657,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/controller/DataAttributesController.html#testRatio">testRatio</a></span> - Static variable in class com.playground.playground.interface_adapater.controller.<a href="com/playground/playground/interface_adapater/controller/DataAttributesController.html" title="class in com.playground.playground.interface_adapater.controller">DataAttributesController</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#testScoreProperty()">testScoreProperty()</a></span> - Method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html#trainModel(boolean)">trainModel(boolean)</a></span> - Method in class com.playground.playground.interface_adapater.modelling.<a href="com/playground/playground/interface_adapater/modelling/ModelTrainingServices.html" title="class in com.playground.playground.interface_adapater.modelling">ModelTrainingServices</a></dt>
 <dd>
 <div class="block">Train the model set through the constructor and created using the NeuralNet class.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/playground/playground/DataService.html#trainScoreProperty()">trainScoreProperty()</a></span> - Method in class com.playground.playground.<a href="com/playground/playground/DataService.html" title="class in com.playground.playground">DataService</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/playground/playground/usecase/datasets/TransformDatasets.html#transform(java.util.ArrayList)">transform(ArrayList&lt;ArrayList&lt;ArrayList&lt;Double&gt;&gt;&gt;)</a></span> - Static method in class com.playground.playground.usecase.datasets.<a href="com/playground/playground/usecase/datasets/TransformDatasets.html" title="class in com.playground.playground.usecase.datasets">TransformDatasets</a></dt>
 <dd>
 <div class="block">Transforms a dataset from ArrayList of ArrayLists to ArrayList of Lists with weights.</div>

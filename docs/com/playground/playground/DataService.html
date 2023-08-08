@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -176,18 +176,48 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTestScore()">getTestScore</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTrainScore()">getTrainScore</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>javafx.beans.property.ObjectProperty&lt;java.util.ArrayList&lt;java.lang.Integer&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resultsProperty()">resultsProperty</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDataset(java.util.List)">setDataset</a></span>&#8203;(java.util.List&lt;org.nd4j.linalg.primitives.Pair&lt;org.nd4j.linalg.api.ndarray.INDArray,&#8203;org.nd4j.linalg.api.ndarray.INDArray&gt;&gt;&nbsp;dataset)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setResults(java.util.ArrayList)">setResults</a></span>&#8203;(java.util.ArrayList&lt;java.lang.Integer&gt;&nbsp;results)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTestScore(double)">setTestScore</a></span>&#8203;(double&nbsp;testScore)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTrainScore(double)">setTrainScore</a></span>&#8203;(double&nbsp;trainScore)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>javafx.beans.property.DoubleProperty</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#testScoreProperty()">testScoreProperty</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>javafx.beans.property.DoubleProperty</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#trainScoreProperty()">trainScoreProperty</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -271,10 +301,64 @@ extends java.lang.Object</pre>
 <a id="resultsProperty()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>resultsProperty</h4>
 <pre class="methodSignature">public&nbsp;javafx.beans.property.ObjectProperty&lt;java.util.ArrayList&lt;java.lang.Integer&gt;&gt;&nbsp;resultsProperty()</pre>
+</li>
+</ul>
+<a id="getTrainScore()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrainScore</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getTrainScore()</pre>
+</li>
+</ul>
+<a id="setTrainScore(double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTrainScore</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTrainScore&#8203;(double&nbsp;trainScore)</pre>
+</li>
+</ul>
+<a id="trainScoreProperty()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>trainScoreProperty</h4>
+<pre class="methodSignature">public&nbsp;javafx.beans.property.DoubleProperty&nbsp;trainScoreProperty()</pre>
+</li>
+</ul>
+<a id="getTestScore()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTestScore</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getTestScore()</pre>
+</li>
+</ul>
+<a id="setTestScore(double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTestScore</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTestScore&#8203;(double&nbsp;testScore)</pre>
+</li>
+</ul>
+<a id="testScoreProperty()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>testScoreProperty</h4>
+<pre class="methodSignature">public&nbsp;javafx.beans.property.DoubleProperty&nbsp;testScoreProperty()</pre>
 </li>
 </ul>
 </li>
