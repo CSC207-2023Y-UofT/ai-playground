@@ -101,6 +101,10 @@ public class ModelTrainingServices {
     model.fit(data);
 
     double trainScore = model.score();
+
+    if (!testData.hasNext()) {
+      testData.reset();
+    }
     double testScore = model.score(testData.next());
 
     if (verbose) {
