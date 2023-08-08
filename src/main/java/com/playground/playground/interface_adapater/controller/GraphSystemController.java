@@ -84,6 +84,11 @@ public class GraphSystemController implements Initializable {
                     });
   }
 
+    /**
+     * Sets the test loss value on the UI, rounded to three decimal places.
+     *
+     * @param testL The test loss value to be displayed.
+     */
     public void setTestLoss(double testL) {
         Platform.runLater(() -> {
             String roundedValue = String.format("%.3f", testL);
@@ -91,12 +96,18 @@ public class GraphSystemController implements Initializable {
         });
     }
 
+    /**
+     * Sets the training loss value on the UI, rounded to three decimal places.
+     *
+     * @param trainL The training loss value to be displayed.
+     */
     public void setTrainingLoss(double trainL) {
         Platform.runLater(() -> {
             String roundedValue = String.format("%.3f", trainL);
             trainingLoss.setText(roundedValue);
         });
     }
+
 
 
     /**
