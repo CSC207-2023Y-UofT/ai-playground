@@ -248,6 +248,10 @@ public class MlParametersController implements Initializable {
 
     // Get dataset and selected buttons
     String dataset = DataAttributesController.dataset;
+    System.out.println(DataAttributesController.dataset);
+    if(DataAttributesController.dataset == null){
+      dataset = "cluster";
+    }
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
     if (selectedButtons == null) {

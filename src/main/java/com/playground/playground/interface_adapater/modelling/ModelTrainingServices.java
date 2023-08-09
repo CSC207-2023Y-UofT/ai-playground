@@ -124,8 +124,8 @@ public class ModelTrainingServices {
       DataSet t = data.next();
       INDArray features = t.getFeatureMatrix();
       INDArray predicted = model.output(features, false);
-      System.out.println("Predicted Now:");
-      System.out.println(predicted);
+      //System.out.println("Predicted Now:");
+      //System.out.println(predicted);
 
       double[] batchPredictions = predicted.data().asDouble();
       for (int i = 0; i < batchPredictions.length; i++) {
@@ -133,8 +133,8 @@ public class ModelTrainingServices {
       }
 
     }
-    System.out.println("Predictions Now:");
-    System.out.println(predictions);
+    //System.out.println("Predictions Now:");
+    //System.out.println(predictions);
     //    while (testData.hasNext()) {
     //      DataSet t = testData.next();
     //      INDArray features = t.getFeatureMatrix();

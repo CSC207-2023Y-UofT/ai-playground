@@ -41,7 +41,8 @@ public class DataAttributesController implements Initializable {
   public static int testRatio = 80;
   public static int batchSize = 20;
   public static int noise = 1;
-  public static String dataset = "cluster";
+  public static String dataset;
+
 
   /**
    * Initializer for DataAttributesController.java
@@ -94,8 +95,8 @@ public class DataAttributesController implements Initializable {
     toggleButtonSelection(radialButton);
     toggleButtonSelection(spiralButton);
     toggleButtonSelection(rectangularButton);
-    //Show cluster dataset as default
-    clusterButton.setStyle("-fx-background-color: lightblue;");
+
+    toggleButtonSelection(rectangularButton);
   }
 
   private void toggleButtonSelection(Button button) {
@@ -105,6 +106,18 @@ public class DataAttributesController implements Initializable {
                 btn.setStyle("");
               }
               button.setStyle("-fx-background-color: lightblue;");
+              if(button==clusterButton){
+                handleCLusterButton(new ActionEvent(null, null));
+              }
+              else if(button==rectangularButton){
+                handleRectangularButton(new ActionEvent(null, null));
+              }
+              else if(button==radialButton){
+                handleRadialButton(new ActionEvent(null, null));
+              }
+              else if(button==spiralButton){
+                handleSpiralButton(new ActionEvent(null, null));
+              }
             });
   }
 
@@ -204,7 +217,7 @@ public class DataAttributesController implements Initializable {
    * @param actionEvent the action event triggered by the button
    */
   public void handleCLusterButton(ActionEvent actionEvent) {
-    dataset = "cluster";
+    DataAttributesController.dataset = "cluster";
 
   }
 
@@ -215,7 +228,7 @@ public class DataAttributesController implements Initializable {
    * @param actionEvent the action event triggered by the button
    */
   public void handleRadialButton(ActionEvent actionEvent) {
-    dataset = "circular";
+    DataAttributesController.dataset = "circular";
   }
 
   /**
@@ -224,7 +237,7 @@ public class DataAttributesController implements Initializable {
    * @param actionEvent the action event triggered by the button
    */
   public void handleSpiralButton(ActionEvent actionEvent) {
-    dataset = "spiral";
+    DataAttributesController.dataset = "spiral";
   }
 
   /**
@@ -234,6 +247,6 @@ public class DataAttributesController implements Initializable {
    * @param actionEvent the action event triggered by the button
    */
   public void handleRectangularButton(ActionEvent actionEvent) {
-    dataset = "quadrant";
+    DataAttributesController.dataset = "quadrant";
   }
 }
