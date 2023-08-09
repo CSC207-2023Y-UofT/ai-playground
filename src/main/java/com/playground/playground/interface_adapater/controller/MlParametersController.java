@@ -302,7 +302,7 @@ public class MlParametersController implements Initializable {
           Object[] results = trainingController.trainModel(true);
           System.out.println("Setting dataset...");
           dataService.setDataset(rawData);
-          dataService.setResults((ArrayList<Integer>) results[2]);
+          dataService.setResults((ArrayList<Double>) results[2]);
           System.out.println("Dataset set to: " + dataService.getDataset());
           System.out.println("Results set to: " + dataService.getResults());
 

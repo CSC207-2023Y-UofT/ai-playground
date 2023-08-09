@@ -145,8 +145,8 @@ public class ModelTrainingServices {
       log.info("Training completed");
     }
 
-    ArrayList<Integer> intList = new ArrayList<Integer>(predictions.size());
-    for (int i : predictions) {
+    ArrayList<Double> intList = new ArrayList<Double>(predictions.size());
+    for (double i : predictions) {
       intList.add(i);
     }
 

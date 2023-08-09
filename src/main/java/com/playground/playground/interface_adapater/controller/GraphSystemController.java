@@ -46,12 +46,12 @@ public class GraphSystemController implements Initializable {
     dataService
         .resultsProperty()
         .addListener(
-            new ChangeListener<ArrayList<Integer>>() {
+            new ChangeListener<ArrayList<Double>>() {
               @Override
               public void changed(
-                  ObservableValue<? extends ArrayList<Integer>> observable,
-                  ArrayList<Integer> oldValue,
-                  ArrayList<Integer> newValue) {
+                  ObservableValue<? extends ArrayList<Double>> observable,
+                  ArrayList<Double> oldValue,
+                  ArrayList<Double> newValue) {
                 updateGraph(dataService.getDataset(), newValue);
               }
             });
@@ -120,7 +120,7 @@ public class GraphSystemController implements Initializable {
    * @param colors An ArrayList of 0's or 1's corresponding to the colour of the points on the
    *     dataset.
    */
-  public void updateGraph(List<Pair<INDArray, INDArray>> dataset, ArrayList<Integer> colors) {
+  public void updateGraph(List<Pair<INDArray, INDArray>> dataset, ArrayList<Double> colors) {
     Platform.runLater(() -> {
       // Clear the current data
       neuralNetwork.getData().clear();
@@ -141,7 +141,7 @@ public class GraphSystemController implements Initializable {
 
         XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
 // Change the color of the data point based on the color value
-        if (colors.get(i) == 1) {
+        if (colors.get(i) < 0.5) {
           data.nodeProperty().addListener((ov, oldNode, newNode) -> {
             if (newNode != null) {
               newNode.setStyle("-fx-background-color: blue;");
