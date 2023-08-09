@@ -2,6 +2,8 @@ package com.playground.playground.interface_adapater.modelling;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import com.playground.playground.DataService;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -19,7 +21,7 @@ public class ModelTrainingServices {
   private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
   private final INDArrayDataSetIterator data;
   private final INDArrayDataSetIterator testData;
-  private final INDArrayDataSetIterator copyData;
+//  private final INDArrayDataSetIterator copyData;
   private MultiLayerNetwork model;
   private String statsFileName;
 
@@ -27,19 +29,18 @@ public class ModelTrainingServices {
    * Constructor for the ModelTrainingServices class which initializers the data and model.
    *
    * @param data The training dataset.
-   * @param copyData The training dataset for reporting training scores.
    * @param model The model DAG.
    * @param statsFileName The name of the logging file which will be saved to the disk.
    * @param testData The testing dataset.
    */
   public ModelTrainingServices(
       INDArrayDataSetIterator data,
-      INDArrayDataSetIterator copyData,
+//      INDArrayDataSetIterator copyData,
       MultiLayerNetwork model,
       String statsFileName,
       INDArrayDataSetIterator testData) {
     this.data = data;
-    this.copyData = copyData;
+//    this.copyData = copyData;
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
@@ -87,32 +88,40 @@ public class ModelTrainingServices {
     //      );
     //    }
 
-    File statsFile = new File(statsFileName);
-    StatsStorage statsStorage = new FileStatsStorage(statsFile);
+//    File statsFile = new File(statsFileName);
+//    StatsStorage statsStorage = new FileStatsStorage(statsFile);
     ArrayList<Integer> predictions = new ArrayList<Integer>();
 
     if (verbose) {
       log.info(model.summary());
       log.info("Training model...");
     }
-
-    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
+//
+//    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
 
     model.fit(data);
 
     double trainScore = model.score();
+
+    if (!testData.hasNext()) {
+      testData.reset();
+    }
     double testScore = model.score(testData.next());
 
     if (verbose) {
       log.info(String.format("Train Score is %s", trainScore));
       log.info(String.format("Test Score is %s", testScore));
     }
+    DataService dataService = DataService.getInstance();
+    dataService.setTrainScore(trainScore);
+    dataService.setTestScore(testScore);
 
     System.out.println("Start While");
     //    Evaluation eval = new Evaluation(2);
     System.out.println(data);
-    while (copyData.hasNext()) {
-      DataSet t = copyData.next();
+    data.reset();
+    while (data.hasNext()) {
+      DataSet t = data.next();
       INDArray features = t.getFeatureMatrix();
       INDArray predicted = model.output(features, false);
       System.out.println("Predicted Now:");

@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -53,19 +55,62 @@ public class GraphSystemController implements Initializable {
                 updateGraph(dataService.getDataset(), newValue);
               }
             });
-    setTestLoss(0);
-    setTrainingLoss(0);
+    // Add a listener to the trainScore property in the data service
+    dataService
+            .trainScoreProperty()
+            .addListener(
+                    new ChangeListener<Number>() {
+                      @Override
+                      public void changed(
+                              ObservableValue<? extends Number> observable,
+                              Number oldValue,
+                              Number newValue) {
+                        setTrainingLoss(newValue.doubleValue());
+                      }
+                    });
+
+    // Add a listener to the testScore property in the data service
+    dataService
+            .testScoreProperty()
+            .addListener(
+                    new ChangeListener<Number>() {
+                      @Override
+                      public void changed(
+                              ObservableValue<? extends Number> observable,
+                              Number oldValue,
+                              Number newValue) {
+                        setTestLoss(newValue.doubleValue());
+                      }
+                    });
   }
 
-  public void setTestLoss(double testL) {
-    testLoss.setText(String.valueOf(testL));
-  }
+    /**
+     * Sets the test loss value on the UI, rounded to three decimal places.
+     *
+     * @param testL The test loss value to be displayed.
+     */
+    public void setTestLoss(double testL) {
+        Platform.runLater(() -> {
+            String roundedValue = String.format("%.3f", testL);
+            testLoss.setText(roundedValue);
+        });
+    }
 
-  public void setTrainingLoss(double trainL) {
-    trainingLoss.setText(String.valueOf(trainL));
-  }
+    /**
+     * Sets the training loss value on the UI, rounded to three decimal places.
+     *
+     * @param trainL The training loss value to be displayed.
+     */
+    public void setTrainingLoss(double trainL) {
+        Platform.runLater(() -> {
+            String roundedValue = String.format("%.3f", trainL);
+            trainingLoss.setText(roundedValue);
+        });
+    }
 
-  /**
+
+
+    /**
    * Updates the graph with a new dataset.
    *
    * <p>The method first clears the current data in the graph, and then adds the new data. Each
@@ -76,38 +121,47 @@ public class GraphSystemController implements Initializable {
    *     dataset.
    */
   public void updateGraph(List<Pair<INDArray, INDArray>> dataset, ArrayList<Integer> colors) {
-    // Clear the current data
-    neuralNetwork.getData().clear();
-    XYChart.Series<Number, Number> series = new XYChart.Series<>();
+    Platform.runLater(() -> {
+      // Clear the current data
+      neuralNetwork.getData().clear();
+      System.out.println("Updating graph...");
+// Create series for each unique color
+      XYChart.Series<Number, Number> seriesBlue = new XYChart.Series<>();
+      XYChart.Series<Number, Number> seriesGreen = new XYChart.Series<>();
 
-    // Add the new data
-    for (int i = 0; i < dataset.size(); i++) {
-      Pair<INDArray, INDArray> cluster = dataset.get(i);
-      INDArray point = cluster.getKey();
-      double[] coords = point.data().asDouble();
-      double x = coords[0];
-      double y = coords[1];
 
-      XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
-      series.getData().add(data);
-      System.out.println(x);
-      System.out.println(y);
-      System.out.println(colors.get(i));
-      System.out.println(series);
-      // Change the color of the data point based on the color value
-      int finalI = i;
-      data.nodeProperty()
-          .addListener(
-              (ov, oldNode, newNode) -> {
-                if (newNode != null) {
-                  if (colors.get(finalI) == 1) {
-                    newNode.setStyle("-fx-background-color: blue;");
-                  } else {
-                    newNode.setStyle("-fx-background-color: green;");
-                  }
-                }
-              });
-      neuralNetwork.getData().add(series);
-    }
+// Add the new data
+      for (int i = 0; i < dataset.size(); i++) {
+        Pair<INDArray, INDArray> cluster = dataset.get(i);
+        INDArray point = cluster.getKey();
+        double[] coords = point.data().asDouble();
+        double x = coords[0];
+        double y = coords[1];
+
+
+        XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
+// Change the color of the data point based on the color value
+        if (colors.get(i) == 1) {
+          data.nodeProperty().addListener((ov, oldNode, newNode) -> {
+            if (newNode != null) {
+              newNode.setStyle("-fx-background-color: blue;");
+            }
+          });
+          seriesBlue.getData().add(data);
+        } else {
+          data.nodeProperty().addListener((ov, oldNode, newNode) -> {
+            if (newNode != null) {
+              newNode.setStyle("-fx-background-color: green;");
+            }
+          });
+          seriesGreen.getData().add(data);
+        }
+      }
+
+// Add the series to the chart
+      neuralNetwork.getData().addAll(seriesBlue, seriesGreen);
+      System.out.println("Updated graph");
+    });
   }
+
 }
