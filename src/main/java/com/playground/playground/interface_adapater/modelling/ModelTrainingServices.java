@@ -90,7 +90,7 @@ public class ModelTrainingServices {
 
 //    File statsFile = new File(statsFileName);
 //    StatsStorage statsStorage = new FileStatsStorage(statsFile);
-    ArrayList<Integer> predictions = new ArrayList<Integer>();
+    ArrayList<Double> predictions = new ArrayList<Double>();
 
     if (verbose) {
       log.info(model.summary());
@@ -127,10 +127,11 @@ public class ModelTrainingServices {
       System.out.println("Predicted Now:");
       System.out.println(predicted);
 
-      int[] batchPredictions = NDArrayUtil.toInts(predicted);
+      double[] batchPredictions = predicted.data().asDouble();
       for (int i = 0; i < batchPredictions.length; i++) {
         predictions.add(batchPredictions[i]);
       }
+
     }
     System.out.println("Predictions Now:");
     System.out.println(predictions);
