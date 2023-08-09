@@ -65,9 +65,4 @@
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
-   <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Regenerate" translateY="-50.0">
-      <VBox.margin>
-         <Insets left="15.0" />
-      </VBox.margin>
-   </Button>
 </VBox>
