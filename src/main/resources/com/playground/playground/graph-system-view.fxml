@@ -3,12 +3,11 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.ScatterChart?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="457.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapater.controller.GraphSystemController">
+<VBox prefHeight="457.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapter.controller.GraphSystemController">
    <VBox prefHeight="462.0" prefWidth="485.0">
       <children>
           <ScatterChart fx:id="neuralNetwork" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="389.0" prefWidth="400.0" styleClass="neural-network-text">
@@ -23,7 +22,6 @@
             <children>
                <VBox prefHeight="58.0" prefWidth="144.0">
                   <children>
-                     <CheckBox fx:id="showTestData" mnemonicParsing="false" prefHeight="18.0" prefWidth="111.0" text="Show test data" />
                      <Label fx:id="trainingLoss" translateX="100.0" translateY="10.0" />
                      <Label prefHeight="17.0" prefWidth="83.0" text="Training Loss:" translateY="-15.0">
                         <VBox.margin>
@@ -37,7 +35,6 @@
                </VBox>
                <VBox prefHeight="58.0" prefWidth="192.0">
                   <children>
-                     <CheckBox fx:id="discreteOutput" mnemonicParsing="false" prefHeight="18.0" prefWidth="123.0" text="Discretize output" />
                      <Label fx:id="testLoss" translateX="75.0" translateY="10.0" />
                      <Label prefHeight="17.0" prefWidth="67.0" text="Test Loss:" translateY="-15.0">
                         <VBox.margin>

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
-import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
+import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

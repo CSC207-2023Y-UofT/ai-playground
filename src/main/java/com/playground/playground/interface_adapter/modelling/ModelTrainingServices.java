@@ -1,4 +1,4 @@
-package com.playground.playground.interface_adapater.modelling;
+package com.playground.playground.interface_adapter.modelling;
 
 import java.io.File;
 import java.util.ArrayList;

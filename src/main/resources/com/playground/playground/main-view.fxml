@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="565.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapater.controller.MainController">
+<VBox prefHeight="565.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapter.controller.MainController">
 
     <HBox fx:id="mlParametersBox" alignment="TOP_LEFT" prefWidth="881.0" spacing="10.0">
         <fx:include source="ml-parameters-view.fxml" />

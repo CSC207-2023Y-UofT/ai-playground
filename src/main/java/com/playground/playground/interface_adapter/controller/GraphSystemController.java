@@ -1,4 +1,4 @@
-package com.playground.playground.interface_adapater.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import com.playground.playground.DataService;
 import java.net.URL;

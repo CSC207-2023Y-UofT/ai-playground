@@ -1,8 +1,8 @@
-package com.playground.playground.interface_adapater.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
-import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
+import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import com.playground.playground.usecase.modelling.PrepareData;
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -38,11 +39,9 @@ public class MlParametersController implements Initializable {
   private static double handleLearningRate = 1;
 
   // JavaFX Components
-  @FXML private Button stepButton;
   @FXML private Button playButton;
   @FXML private Button rewindButton;
   @FXML private Text epochNumber;
-  @FXML private MenuItem learn1;
   @FXML private MenuItem learn2;
   @FXML private MenuItem learn3;
   @FXML private MenuItem learn4;
@@ -73,6 +72,12 @@ public class MlParametersController implements Initializable {
   @FXML private MenuItem reg10;
   @FXML private MenuItem classify;
   @FXML private MenuItem regress;
+  @FXML private Label learn;
+  @FXML private Label active;
+  @FXML private Label reg;
+  @FXML private Label regR;
+  @FXML private Label prob;
+
   private DataService dataService;
 
   public static boolean stopButtonClick = false;
@@ -94,13 +99,11 @@ public class MlParametersController implements Initializable {
   public void initialize(URL location, ResourceBundle resources) {
     // setting buttons
     setButtonWithImage(
-        rewindButton, "/com/playground/playground/playground-images/rewind-button.png");
+        rewindButton, "/com/playground/playground/playground-images/stop-button.png");
     setButtonWithImage(playButton, "/com/playground/playground/playground-images/play-button.png");
-    setButtonWithImage(
-        stepButton, "/com/playground/playground/playground-images/fast-forward-button.png");
 
     // Set event handlers for menu items
-    learn1.setOnAction(this::handleLearningRate);
+   // learn1.setOnAction(this::handleLearningRate);
     learn2.setOnAction(this::handleLearningRate);
     learn3.setOnAction(this::handleLearningRate);
     learn4.setOnAction(this::handleLearningRate);
@@ -144,6 +147,7 @@ public class MlParametersController implements Initializable {
   public String handleProblem(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String problem = selection.getText();
+    prob.setText(selection.getText());
     MlParametersController.handleProblem = problem;
     return problem;
   }
@@ -157,6 +161,7 @@ public class MlParametersController implements Initializable {
   public double handleRegularizationRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     double regularizationRate = Double.parseDouble(selection.getText());
+    regR.setText(selection.getText());
     MlParametersController.handleRegularizationRate = regularizationRate;
     return regularizationRate;
   }
@@ -164,6 +169,7 @@ public class MlParametersController implements Initializable {
   public String handleRegularization(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String regularization = selection.getText().toLowerCase();
+    reg.setText(selection.getText());
     MlParametersController.handleRegularization = regularization;
     return regularization;
   }
@@ -177,6 +183,7 @@ public class MlParametersController implements Initializable {
   public String handleActivation(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     String activation = selection.getText();
+    active.setText(selection.getText());
     MlParametersController.handleActivation = activation;
     return activation;
   }
@@ -190,6 +197,7 @@ public class MlParametersController implements Initializable {
   public double handleLearningRate(ActionEvent actionEvent) {
     MenuItem selection = (MenuItem) actionEvent.getSource();
     double learningRate = Double.parseDouble(selection.getText());
+    learn.setText(selection.getText());
     MlParametersController.handleLearningRate = learningRate;
     return learningRate;
   }
@@ -331,3 +339,4 @@ public class MlParametersController implements Initializable {
   }
 
 }
+
