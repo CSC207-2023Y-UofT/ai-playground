@@ -16,6 +16,9 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
+import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
+
 
 public class GraphSystemController implements Initializable {
   @FXML private ScatterChart neuralNetwork;
@@ -25,7 +28,9 @@ public class GraphSystemController implements Initializable {
 
   /** Construct the graph using the neural network. */
   public void initialize(URL location, ResourceBundle resources) {
-    // Get the DataService instance
+      // Setting the legend as not visible
+      neuralNetwork.setLegendVisible(false);
+      // Get the DataService instance
     dataService = DataService.getInstance();
 
     // Add a listener to the dataset property in the data service
@@ -140,23 +145,19 @@ public class GraphSystemController implements Initializable {
         double y = coords[1];
 
 
-        XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
-// Change the color of the data point based on the color value
-        if (colors.get(i) >= 0.5) {
-          data.nodeProperty().addListener((ov, oldNode, newNode) -> {
-            if (newNode != null) {
-              newNode.setStyle("-fx-background-color: blue;");
-            }
-          });
-          seriesBlue.getData().add(data);
-        } else {
-          data.nodeProperty().addListener((ov, oldNode, newNode) -> {
-            if (newNode != null) {
-              newNode.setStyle("-fx-background-color: green;");
-            }
-          });
-          seriesGreen.getData().add(data);
-        }
+          Circle dot = new Circle(2);
+
+          XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
+          data.setNode(dot); // Set the node
+
+          // Change the color of the data point based on the color value
+          if (colors.get(i) >= 0.5) {
+              dot.setFill(Color.BLUE);
+              seriesBlue.getData().add(data);
+          } else {
+              dot.setFill(Color.GREEN);
+              seriesGreen.getData().add(data);
+          }
       }
 
 // Add the series to the chart
