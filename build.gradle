@@ -6,10 +6,6 @@ plugins {
     id 'org.beryx.jlink' version '2.25.0'
     id 'jacoco'
 }
-javafx {
-    version = '11'
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
-}
 
 group 'com.playground'
 version '1.0-SNAPSHOT'
@@ -17,7 +13,6 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-
 
 ext {
     junitVersion = '5.9.2'
@@ -52,13 +47,14 @@ dependencies {
         exclude(group: 'org.openjfx')
     }
     implementation("io.github.kostaskougios:cloning:1.10.3")
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    implementation 'org.openjfx:javafx-controls:11'
+    implementation 'org.openjfx:javafx-fxml:11'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testImplementation("org.mockito:mockito-core:3.+")
-    testCompile("org.testfx:testfx-core:4.0.16-alpha")
+    testImplementation 'org.testfx:testfx-core:4.0.16-alpha'
+    testImplementation 'org.testfx:testfx-junit5:4.0.16-alpha'
 }
-
 
 test {
     useJUnitPlatform()
