@@ -1,7 +1,7 @@
 com.playground.playground
 com.playground.playground.entity
-com.playground.playground.interface_adapater.controller
-com.playground.playground.interface_adapater.modelling
+com.playground.playground.interface_adapter.controller
+com.playground.playground.interface_adapter.modelling
 com.playground.playground.usecase.datasets
 com.playground.playground.usecase.features
 com.playground.playground.usecase.modelling
