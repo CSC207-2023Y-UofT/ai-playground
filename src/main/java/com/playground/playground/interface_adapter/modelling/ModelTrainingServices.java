@@ -10,6 +10,7 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.stats.StatsListener;
 import org.deeplearning4j.ui.storage.FileStatsStorage;
+import org.deeplearning4j.util.ModelSerializer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.util.NDArrayUtil;
@@ -90,7 +91,7 @@ public class ModelTrainingServices {
 
 //    File statsFile = new File(statsFileName);
 //    StatsStorage statsStorage = new FileStatsStorage(statsFile);
-    ArrayList<Integer> predictions = new ArrayList<Integer>();
+    ArrayList<Double> predictions = new ArrayList<Double>();
 
     if (verbose) {
       log.info(model.summary());
@@ -98,7 +99,7 @@ public class ModelTrainingServices {
     }
 //
 //    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
-
+    data.reset();
     model.fit(data);
 
     double trainScore = model.score();
@@ -123,17 +124,19 @@ public class ModelTrainingServices {
     while (data.hasNext()) {
       DataSet t = data.next();
       INDArray features = t.getFeatureMatrix();
-      INDArray predicted = model.output(features, false);
+      INDArray predicted = model.output(features);
       System.out.println("Predicted Now:");
+      System.out.println(features);
       System.out.println(predicted);
 
-      int[] batchPredictions = NDArrayUtil.toInts(predicted);
+      double[] batchPredictions = predicted.data().asDouble();
       for (int i = 0; i < batchPredictions.length; i++) {
         predictions.add(batchPredictions[i]);
       }
+
     }
-    System.out.println("Predictions Now:");
-    System.out.println(predictions);
+    //System.out.println("Predictions Now:");
+    //System.out.println(predictions);
     //    while (testData.hasNext()) {
     //      DataSet t = testData.next();
     //      INDArray features = t.getFeatureMatrix();
@@ -145,12 +148,12 @@ public class ModelTrainingServices {
       log.info("Training completed");
     }
 
-    ArrayList<Integer> intList = new ArrayList<Integer>(predictions.size());
-    for (int i : predictions) {
+    ArrayList<Double> intList = new ArrayList<Double>(predictions.size());
+    for (double i : predictions) {
       intList.add(i);
     }
 
-    Object[] outputs = new Object[3];
+    Object[] outputs = new Object[4];
     outputs[0] = trainScore;
     outputs[1] = testScore;
     outputs[2] = intList;
