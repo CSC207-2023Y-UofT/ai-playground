@@ -1,18 +1,13 @@
 package com.playground.playground.data;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import com.playground.playground.entity.DatasetGenerator;
-import com.playground.playground.usecase.datasets.CircularDatasetGenerator;
-import com.playground.playground.usecase.datasets.QuadrantDatasetGenerator;
-import com.playground.playground.usecase.datasets.SpiralDatasetGenerator;
-import com.playground.playground.usecase.datasets.TransformDatasets;
+import com.playground.playground.usecase.datasets.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /** Test class to validate the functionality of various components in the data package. */
 public class DataTest {
@@ -106,5 +101,142 @@ public class DataTest {
     assertNotNull(transformedData);
     assertFalse(transformedData.isEmpty());
     assertTrue(transformedData.size() <= 6);
+  }
+
+  @Test
+  public void testDataGeneratorFactoryWithInvalidDataName() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      DataGeneratorFactory.createDataGenerator("invalid_data_name");
+    });
+  }
+
+  @Test
+  public void testDataProcessorWithCircularDataset() {
+    DatasetGenerator circularDatasetGenerator = new CircularDatasetGenerator();
+    DataProcessor dataProcessor = new DataProcessor(circularDatasetGenerator);
+    ArrayList<ArrayList<Object>> processedData = dataProcessor.process(10);
+
+    assertNotNull(processedData);
+    assertFalse(processedData.isEmpty());
+  }
+
+  @Test
+  public void testDataProcessorWithQuadrantDataset() {
+    DatasetGenerator quadrantDatasetGenerator = new QuadrantDatasetGenerator();
+    DataProcessor dataProcessor = new DataProcessor(quadrantDatasetGenerator);
+    ArrayList<ArrayList<Object>> processedData = dataProcessor.process(10);
+
+    assertNotNull(processedData);
+    assertFalse(processedData.isEmpty());
+  }
+
+  @Test
+  public void testDataProcessorWithSpiralDataset() {
+    DatasetGenerator spiralDatasetGenerator = new SpiralDatasetGenerator();
+    DataProcessor dataProcessor = new DataProcessor(spiralDatasetGenerator);
+    ArrayList<ArrayList<Object>> processedData = dataProcessor.process(10);
+
+    assertNotNull(processedData);
+    assertFalse(processedData.isEmpty());
+  }
+
+  @Test
+  public void testDataGeneratorFactoryWithCircularDataset() {
+    DatasetGenerator circularDatasetGenerator = DataGeneratorFactory.createDataGenerator("circular");
+    assertNotNull(circularDatasetGenerator);
+    assertTrue(circularDatasetGenerator instanceof CircularDatasetGenerator);
+  }
+
+  @Test
+  public void testDataGeneratorFactoryWithClusterDataset() {
+    DatasetGenerator clusterDatasetGenerator = DataGeneratorFactory.createDataGenerator("cluster");
+    assertNotNull(clusterDatasetGenerator);
+    assertTrue(clusterDatasetGenerator instanceof ClusterDatasetGenerator);
+  }
+
+  @Test
+  public void testDataGeneratorFactoryWithQuadrantDataset() {
+    DatasetGenerator quadrantDatasetGenerator = DataGeneratorFactory.createDataGenerator("quadrant");
+    assertNotNull(quadrantDatasetGenerator);
+    assertTrue(quadrantDatasetGenerator instanceof QuadrantDatasetGenerator);
+  }
+
+  @Test
+  public void testDataGeneratorFactoryWithSpiralDataset() {
+    DatasetGenerator spiralDatasetGenerator = DataGeneratorFactory.createDataGenerator("spiral");
+    assertNotNull(spiralDatasetGenerator);
+    assertTrue(spiralDatasetGenerator instanceof SpiralDatasetGenerator);
+  }
+
+  @Test
+  public void testSpiralDatasetGeneratorWithNoiseZero() {
+    DatasetGenerator spiralDatasetGenerator = new SpiralDatasetGenerator();
+    ArrayList<ArrayList<ArrayList<Double>>> spiralDataset = spiralDatasetGenerator.generate(0);
+
+    assertNotNull(spiralDataset);
+    assertEquals(2, spiralDataset.size());
+
+    ArrayList<ArrayList<Double>> cluster1 = spiralDataset.get(0);
+    ArrayList<ArrayList<Double>> cluster2 = spiralDataset.get(1);
+
+    assertFalse(cluster1.isEmpty());
+    assertFalse(cluster2.isEmpty());
+
+    assertTrue(cluster1.get(0).size() > 400);
+    assertTrue(cluster1.get(1).size() > 400);
+    assertTrue(cluster2.get(0).size() > 400);
+    assertTrue(cluster2.get(1).size() > 400);
+  }
+
+  @Test
+  public void testClusterDatasetGenerator() {
+    DatasetGenerator clusterDatasetGenerator = new ClusterDatasetGenerator();
+    ArrayList<ArrayList<ArrayList<Double>>> clusterDataset = clusterDatasetGenerator.generate(10);
+
+    assertNotNull(clusterDataset);
+    assertEquals(2, clusterDataset.size());
+
+    ArrayList<ArrayList<Double>> cluster1 = clusterDataset.get(0);
+    ArrayList<ArrayList<Double>> cluster2 = clusterDataset.get(1);
+
+    assertFalse(cluster1.isEmpty());
+    assertFalse(cluster2.isEmpty());
+
+    assertTrue(cluster1.get(0).size() > 400);
+    assertTrue(cluster1.get(1).size() > 400);
+    assertTrue(cluster2.get(0).size() > 400);
+    assertTrue(cluster2.get(1).size() > 400);
+  }
+
+  @Test
+  public void testClusterDatasetGeneratorWithNoiseZero() {
+    DatasetGenerator clusterDatasetGenerator = new ClusterDatasetGenerator();
+    ArrayList<ArrayList<ArrayList<Double>>> clusterDataset = clusterDatasetGenerator.generate(0);
+
+    assertNotNull(clusterDataset);
+    assertEquals(2, clusterDataset.size());
+
+    ArrayList<ArrayList<Double>> cluster1 = clusterDataset.get(0);
+    ArrayList<ArrayList<Double>> cluster2 = clusterDataset.get(1);
+
+    assertFalse(cluster1.isEmpty());
+    assertFalse(cluster2.isEmpty());
+
+    assertTrue(cluster1.get(0).size() > 400);
+    assertTrue(cluster1.get(1).size() > 400);
+    assertTrue(cluster2.get(0).size() > 400);
+    assertTrue(cluster2.get(1).size() > 400);
+  }
+
+  @Test
+  public void testClusterDatasetGeneratorClustersNotEmpty() {
+    DatasetGenerator clusterDatasetGenerator = new ClusterDatasetGenerator();
+    ArrayList<ArrayList<ArrayList<Double>>> clusterDataset = clusterDatasetGenerator.generate(10);
+
+    assertFalse(clusterDataset.isEmpty());
+
+    for (ArrayList<ArrayList<Double>> cluster : clusterDataset) {
+      assertFalse(cluster.isEmpty());
+    }
   }
 }
