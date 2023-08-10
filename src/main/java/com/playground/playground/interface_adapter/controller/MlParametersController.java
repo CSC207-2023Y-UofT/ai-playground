@@ -1,8 +1,8 @@
-package com.playground.playground.interface_adapater.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
-import com.playground.playground.interface_adapater.modelling.ModelTrainingServices;
+import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import com.playground.playground.usecase.modelling.PrepareData;
 import java.net.URL;
 import java.util.ArrayList;

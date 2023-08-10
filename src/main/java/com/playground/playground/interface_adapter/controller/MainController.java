@@ -1,4 +1,4 @@
-package com.playground.playground.interface_adapater.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import java.io.IOException;
 import java.net.URL;
