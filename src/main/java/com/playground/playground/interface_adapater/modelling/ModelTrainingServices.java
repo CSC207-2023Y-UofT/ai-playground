@@ -10,6 +10,7 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.stats.StatsListener;
 import org.deeplearning4j.ui.storage.FileStatsStorage;
+import org.deeplearning4j.util.ModelSerializer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.util.NDArrayUtil;
@@ -98,7 +99,7 @@ public class ModelTrainingServices {
     }
 //
 //    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
-
+    data.reset();
     model.fit(data);
 
     double trainScore = model.score();
@@ -123,9 +124,10 @@ public class ModelTrainingServices {
     while (data.hasNext()) {
       DataSet t = data.next();
       INDArray features = t.getFeatureMatrix();
-      INDArray predicted = model.output(features, false);
-      //System.out.println("Predicted Now:");
-      //System.out.println(predicted);
+      INDArray predicted = model.output(features);
+      System.out.println("Predicted Now:");
+      System.out.println(features);
+      System.out.println(predicted);
 
       double[] batchPredictions = predicted.data().asDouble();
       for (int i = 0; i < batchPredictions.length; i++) {
@@ -151,7 +153,7 @@ public class ModelTrainingServices {
       intList.add(i);
     }
 
-    Object[] outputs = new Object[3];
+    Object[] outputs = new Object[4];
     outputs[0] = trainScore;
     outputs[1] = testScore;
     outputs[2] = intList;

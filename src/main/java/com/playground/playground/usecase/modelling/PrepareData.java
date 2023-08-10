@@ -1,5 +1,6 @@
 package com.playground.playground.usecase.modelling;
 
+import java.util.Collections;
 import java.util.List;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.nd4j.linalg.api.ndarray.INDArray;
@@ -29,6 +30,7 @@ public class PrepareData {
    * @return The transformed training dataset
    */
   public INDArrayDataSetIterator getDataset() {
+    Collections.shuffle(data);
     INDArrayDataSetIterator dataset = new INDArrayDataSetIterator(data, batchSize);
     return dataset;
   }
@@ -37,6 +39,7 @@ public class PrepareData {
    * @return The transformed testing dataset.
    */
   public INDArrayDataSetIterator getTestDataset() {
+    Collections.shuffle(testData);
     INDArrayDataSetIterator testDataset = new INDArrayDataSetIterator(testData, 1);
     return testDataset;
   }

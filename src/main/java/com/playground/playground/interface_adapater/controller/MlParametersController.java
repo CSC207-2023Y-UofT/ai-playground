@@ -303,6 +303,7 @@ public class MlParametersController implements Initializable {
       protected Void call() throws Exception {
         int i = 0;
         while (!stopButtonClick) {
+          System.out.println(trainingController);
           Object[] results = trainingController.trainModel(true);
           System.out.println("Setting dataset...");
           dataService.setDataset(rawData);
