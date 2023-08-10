@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.playground.playground.entity.FeatureApplier;
-import com.playground.playground.interface_adapater.controller.FeatureController;
+import com.playground.playground.interface_adapter.controller.FeatureController;
 import com.playground.playground.usecase.features.FeatureApplierFactory;
 import com.playground.playground.usecase.features.MultiplyFeatureApplier;
 import com.playground.playground.usecase.features.SinFeatureApplier;
