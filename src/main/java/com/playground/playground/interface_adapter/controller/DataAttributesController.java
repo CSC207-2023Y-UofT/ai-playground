@@ -1,19 +1,20 @@
 package com.playground.playground.interface_adapter.controller;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 /** This controller handles all the dataset related options on the UI. */
-public class DataAttributesController implements Initializable {
+public class DataAttributesController extends Parent implements Initializable {
   public static int initializeTestRatio;
   public static int initializeNoise;
   public static int initializeBatchSize;
@@ -136,6 +137,7 @@ public class DataAttributesController implements Initializable {
     percentLabel.setText("Ratio of training to test data: " + roundedPercentage + "%");
   }
 
+
   /**
    * Slider for users to adjust the noise.
    *
@@ -249,4 +251,6 @@ public class DataAttributesController implements Initializable {
   public void handleRectangularButton(ActionEvent actionEvent) {
     DataAttributesController.dataset = "quadrant";
   }
+
+
 }
