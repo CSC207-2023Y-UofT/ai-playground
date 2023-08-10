@@ -12,7 +12,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 public class NeuralNetBuilder {
   private ArrayList<Integer> layers = new ArrayList<>(Arrays.asList(2, 4, 2));
   private double learningRate = 0.001;
-  private int seed = 123;
+  private int seed = 3047;
   private int inputs = 2;
   private OptimizationAlgorithm optimizationAlgorithm =
       OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT;
@@ -21,7 +21,7 @@ public class NeuralNetBuilder {
   private WeightInit weightInit = WeightInit.XAVIER;
   private int nOut = 2;
   private LossFunctions.LossFunction lossFunction =
-      LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD;
+      LossFunctions.LossFunction.MSE;
   private boolean regularization = true;
   private String regularizationType = "l2";
   private double regularizationFactor = 0.0005;

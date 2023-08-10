@@ -248,6 +248,10 @@ public class MlParametersController implements Initializable {
 
     // Get dataset and selected buttons
     String dataset = DataAttributesController.dataset;
+    System.out.println(DataAttributesController.dataset);
+    if(DataAttributesController.dataset == null){
+      dataset = "cluster";
+    }
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
 
     if (selectedButtons == null) {
@@ -299,10 +303,11 @@ public class MlParametersController implements Initializable {
       protected Void call() throws Exception {
         int i = 0;
         while (!stopButtonClick) {
+          System.out.println(trainingController);
           Object[] results = trainingController.trainModel(true);
           System.out.println("Setting dataset...");
           dataService.setDataset(rawData);
-          dataService.setResults((ArrayList<Integer>) results[2]);
+          dataService.setResults((ArrayList<Double>) results[2]);
           System.out.println("Dataset set to: " + dataService.getDataset());
           System.out.println("Results set to: " + dataService.getResults());
 

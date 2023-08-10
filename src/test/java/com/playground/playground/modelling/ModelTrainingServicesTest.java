@@ -99,7 +99,7 @@ public class ModelTrainingServicesTest {
     // Given
     int epochs = 10;
     int batchSize = 32;
-    boolean verbose = false;
+    boolean verbose = true;
 
     // Create a mock DataSetIterator for training and testing
     INDArrayDataSetIterator mockTrainingDataset = buildIterator(batchSize);

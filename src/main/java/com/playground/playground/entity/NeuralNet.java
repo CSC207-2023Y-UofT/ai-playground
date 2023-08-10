@@ -5,6 +5,7 @@ import java.util.Objects;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
+import org.deeplearning4j.nn.conf.distribution.UniformDistribution;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -137,7 +138,7 @@ public class NeuralNet {
     conf =
         conf.layer(
             layers.size(),
-            new OutputLayer.Builder(lossFunction).weightInit(weightInit).nOut(nOut).build());
+            new OutputLayer.Builder(lossFunction).weightInit(weightInit).nOut(1).activation(Activation.SIGMOID).build());
 
     MultiLayerNetwork model = new MultiLayerNetwork(conf.pretrain(false).backprop(true).build());
     model.init();
