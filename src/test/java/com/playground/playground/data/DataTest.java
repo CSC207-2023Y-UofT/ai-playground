@@ -1,13 +1,12 @@
 package com.playground.playground.data;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.playground.playground.entity.DatasetGenerator;
 import com.playground.playground.usecase.datasets.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /** Test class to validate the functionality of various components in the data package. */
 public class DataTest {
@@ -105,9 +104,11 @@ public class DataTest {
 
   @Test
   public void testDataGeneratorFactoryWithInvalidDataName() {
-    assertThrows(IllegalArgumentException.class, () -> {
-      DataGeneratorFactory.createDataGenerator("invalid_data_name");
-    });
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          DataGeneratorFactory.createDataGenerator("invalid_data_name");
+        });
   }
 
   @Test
@@ -142,7 +143,8 @@ public class DataTest {
 
   @Test
   public void testDataGeneratorFactoryWithCircularDataset() {
-    DatasetGenerator circularDatasetGenerator = DataGeneratorFactory.createDataGenerator("circular");
+    DatasetGenerator circularDatasetGenerator =
+        DataGeneratorFactory.createDataGenerator("circular");
     assertNotNull(circularDatasetGenerator);
     assertTrue(circularDatasetGenerator instanceof CircularDatasetGenerator);
   }
@@ -156,7 +158,8 @@ public class DataTest {
 
   @Test
   public void testDataGeneratorFactoryWithQuadrantDataset() {
-    DatasetGenerator quadrantDatasetGenerator = DataGeneratorFactory.createDataGenerator("quadrant");
+    DatasetGenerator quadrantDatasetGenerator =
+        DataGeneratorFactory.createDataGenerator("quadrant");
     assertNotNull(quadrantDatasetGenerator);
     assertTrue(quadrantDatasetGenerator instanceof QuadrantDatasetGenerator);
   }

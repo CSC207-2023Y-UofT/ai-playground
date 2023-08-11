@@ -62,8 +62,7 @@ public class ModelTrainingServicesTest {
 
     // When
     ModelTrainingServices service =
-        new ModelTrainingServices(
-            mockTrainingDataset, model, statsFileName, mockTestDataset);
+        new ModelTrainingServices(mockTrainingDataset, model, statsFileName, mockTestDataset);
     // Then
     assertEquals(mockTrainingDataset, service.getData());
     assertEquals(mockTestDataset, service.getTestData());
@@ -106,8 +105,7 @@ public class ModelTrainingServicesTest {
     INDArrayDataSetIterator mockTestDataset = buildIterator(1);
 
     ModelTrainingServices service =
-        new ModelTrainingServices(
-            mockTrainingDataset, model, "test_stats_file", mockTestDataset);
+        new ModelTrainingServices(mockTrainingDataset, model, "test_stats_file", mockTestDataset);
 
     // When
     service.trainModel(verbose);

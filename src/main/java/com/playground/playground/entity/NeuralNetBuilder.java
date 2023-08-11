@@ -20,8 +20,7 @@ public class NeuralNetBuilder {
   private Activation activation = Activation.SOFTMAX;
   private WeightInit weightInit = WeightInit.XAVIER;
   private int nOut = 2;
-  private LossFunctions.LossFunction lossFunction =
-      LossFunctions.LossFunction.MSE;
+  private LossFunctions.LossFunction lossFunction = LossFunctions.LossFunction.MSE;
   private boolean regularization = true;
   private String regularizationType = "l2";
   private double regularizationFactor = 0.0005;

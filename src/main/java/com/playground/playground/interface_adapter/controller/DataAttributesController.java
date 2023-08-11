@@ -2,7 +2,6 @@ package com.playground.playground.interface_adapter.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,12 +36,10 @@ public class DataAttributesController implements Initializable {
   @FXML private Button rectangularButton;
   private ArrayList<Button> listButtons = new ArrayList<>();
 
-
   public static int testRatio = 80;
   public static int batchSize = 20;
   public static int noise = 1;
   public static String dataset;
-
 
   /**
    * Initializer for DataAttributesController.java
@@ -53,7 +50,7 @@ public class DataAttributesController implements Initializable {
    *     object was not localized.
    */
   public void initialize(URL location, ResourceBundle resources) {
-    //Set testRatio slider to default value
+    // Set testRatio slider to default value
     slider1.setValue(testRatio);
     updateSlider1Percent(slider1, slider1label);
     slider1
@@ -62,7 +59,7 @@ public class DataAttributesController implements Initializable {
             (observable, oldValue, newValue) -> {
               updateSlider1Percent(slider1, slider1label);
             });
-    //Set noise slider to default value
+    // Set noise slider to default value
     slider2.setValue(noise);
     updateSlider2Percent(slider2, slider2label);
     slider2
@@ -71,7 +68,7 @@ public class DataAttributesController implements Initializable {
             (observable, oldValue, newValue) -> {
               updateSlider2Percent(slider2, slider2label);
             });
-    //Set batchsize slider to default value
+    // Set batchsize slider to default value
     slider3.setValue(batchSize);
     updateSlider3Percent(slider3, slider3label);
     slider3
@@ -101,24 +98,21 @@ public class DataAttributesController implements Initializable {
 
   private void toggleButtonSelection(Button button) {
     button.setOnAction(
-            event -> {
-              for(Button btn : listButtons) {
-                btn.setStyle("");
-              }
-              button.setStyle("-fx-background-color: lightblue;");
-              if(button==clusterButton){
-                handleCLusterButton(new ActionEvent(null, null));
-              }
-              else if(button==rectangularButton){
-                handleRectangularButton(new ActionEvent(null, null));
-              }
-              else if(button==radialButton){
-                handleRadialButton(new ActionEvent(null, null));
-              }
-              else if(button==spiralButton){
-                handleSpiralButton(new ActionEvent(null, null));
-              }
-            });
+        event -> {
+          for (Button btn : listButtons) {
+            btn.setStyle("");
+          }
+          button.setStyle("-fx-background-color: lightblue;");
+          if (button == clusterButton) {
+            handleCLusterButton(new ActionEvent(null, null));
+          } else if (button == rectangularButton) {
+            handleRectangularButton(new ActionEvent(null, null));
+          } else if (button == radialButton) {
+            handleRadialButton(new ActionEvent(null, null));
+          } else if (button == spiralButton) {
+            handleSpiralButton(new ActionEvent(null, null));
+          }
+        });
   }
 
   /**
@@ -218,7 +212,6 @@ public class DataAttributesController implements Initializable {
    */
   public void handleCLusterButton(ActionEvent actionEvent) {
     DataAttributesController.dataset = "cluster";
-
   }
 
   /**

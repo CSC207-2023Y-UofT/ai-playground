@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,8 +24,6 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
-import javafx.concurrent.Task;
-import javafx.application.Platform;
 
 /**
  * The MlParametersController class handles the user interface for specifying machine learning
@@ -103,7 +103,7 @@ public class MlParametersController implements Initializable {
     setButtonWithImage(playButton, "/com/playground/playground/playground-images/play-button.png");
 
     // Set event handlers for menu items
-   // learn1.setOnAction(this::handleLearningRate);
+    // learn1.setOnAction(this::handleLearningRate);
     learn2.setOnAction(this::handleLearningRate);
     learn3.setOnAction(this::handleLearningRate);
     learn4.setOnAction(this::handleLearningRate);
@@ -257,7 +257,7 @@ public class MlParametersController implements Initializable {
     // Get dataset and selected buttons
     String dataset = DataAttributesController.dataset;
     System.out.println(DataAttributesController.dataset);
-    if(DataAttributesController.dataset == null){
+    if (DataAttributesController.dataset == null) {
       dataset = "cluster";
     }
     ArrayList<String> selectedButtons = FeaturesHiddenLayersController.selectedButtons;
@@ -302,41 +302,38 @@ public class MlParametersController implements Initializable {
     hiddenLayers.add(0, numFeatures);
 
     // Train the model and get the results
-        ModelTrainingServices trainingController =
-            new ModelTrainingServices(
-                    trainDataset, model, "statsLog", testDataset);
+    ModelTrainingServices trainingController =
+        new ModelTrainingServices(trainDataset, model, "statsLog", testDataset);
 
-    Task<Void> task = new Task<Void>() {
-      @Override
-      protected Void call() throws Exception {
-        int i = 0;
-        while (!stopButtonClick) {
-          System.out.println(trainingController);
-          Object[] results = trainingController.trainModel(true);
-          System.out.println("Setting dataset...");
-          dataService.setDataset(rawData);
-          dataService.setResults((ArrayList<Double>) results[2]);
-          System.out.println("Dataset set to: " + dataService.getDataset());
-          System.out.println("Results set to: " + dataService.getResults());
+    Task<Void> task =
+        new Task<Void>() {
+          @Override
+          protected Void call() throws Exception {
+            int i = 0;
+            while (!stopButtonClick) {
+              System.out.println(trainingController);
+              Object[] results = trainingController.trainModel(true);
+              System.out.println("Setting dataset...");
+              dataService.setDataset(rawData);
+              dataService.setResults((ArrayList<Double>) results[2]);
+              System.out.println("Dataset set to: " + dataService.getDataset());
+              System.out.println("Results set to: " + dataService.getResults());
 
-          final int iteration = i;
-          Platform.runLater(() -> {
-            epochNumber.setText(Integer.toString(iteration));
-          });
-          i++;
-        }
-        return null;
-      }
-    };
+              final int iteration = i;
+              Platform.runLater(
+                  () -> {
+                    epochNumber.setText(Integer.toString(iteration));
+                  });
+              i++;
+            }
+            return null;
+          }
+        };
     // Start the task on a new thread
     new Thread(task).start();
-
-    }
-
+  }
 
   public void handleStopButtonClick(ActionEvent actionEvent) {
     stopButtonClick = true;
   }
-
 }
-
