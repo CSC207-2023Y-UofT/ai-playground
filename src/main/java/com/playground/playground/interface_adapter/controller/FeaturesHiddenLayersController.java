@@ -1,9 +1,5 @@
 package com.playground.playground.interface_adapter.controller;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,21 +9,29 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-import javax.swing.*;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
 /** This controller is responsible for handling data related to the hidden layers and features. */
 public class FeaturesHiddenLayersController implements Initializable {
 
   @FXML private Text numHiddenLayers;
-  @FXML private Button addLayer;
-  @FXML private Button removeLayer;
-  @FXML private Button x1pow2button;
+  @FXML
+  public Button addLayer;
+  @FXML
+  public Button removeLayer;
+  @FXML
+  public Button x1pow2button;
   @FXML private Button x2pow2button;
   @FXML private Button x1x2button;
   @FXML private Button sinx1button;
   @FXML private Button sinx2button;
-  @FXML private Button add1;
-  @FXML private Button remove1;
+  @FXML
+  public Button add1;
+  @FXML
+  public Button remove1;
   @FXML private Button add2;
   @FXML private Button remove2;
   @FXML private Button add3;
@@ -116,7 +120,7 @@ public class FeaturesHiddenLayersController implements Initializable {
    * @param button The button to set the behavior for.
    * @param buttonName The string representation of the button that will be stored in the arraylist
    */
-  private void toggleButtonSelection(Button button, String buttonName) {
+  public void toggleButtonSelection(Button button, String buttonName) {
     button.setOnAction(
         event -> {
           String currentStyle = button.getStyle();

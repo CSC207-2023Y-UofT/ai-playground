@@ -4,11 +4,8 @@ import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
 import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import com.playground.playground.usecase.modelling.PrepareData;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,8 +19,12 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
-import javafx.concurrent.Task;
-import javafx.application.Platform;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 /**
  * The MlParametersController class handles the user interface for specifying machine learning
@@ -32,11 +33,11 @@ import javafx.application.Platform;
  */
 public class MlParametersController implements Initializable {
   // Fields for storing user selections
-  private static String handleProblem = "Classification";
-  private static double handleRegularizationRate = 1;
-  private static String handleActivation = "Sigmoid";
-  private static String handleRegularization = "L1";
-  private static double handleLearningRate = 1;
+  public static String handleProblem = "Classification";
+  public static double handleRegularizationRate = 1;
+  public static String handleActivation = "Sigmoid";
+  public static String handleRegularization = "L1";
+  public static double handleLearningRate = 1;
 
   // JavaFX Components
   @FXML private Button playButton;
