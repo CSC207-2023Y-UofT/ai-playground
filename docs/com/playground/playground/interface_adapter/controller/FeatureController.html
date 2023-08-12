@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9};
+var data = {"i0":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -186,14 +186,6 @@ extends java.lang.Object</pre>
 <div class="block">Creates a dataset for the training data.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>static java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Object&gt;&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getData(java.lang.String,int)">getData</a></span>&#8203;(java.lang.String&nbsp;dataName,
-       int&nbsp;noise)</code></th>
-<td class="colLast">
-<div class="block">Generates the required dataset.</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -240,7 +232,7 @@ extends java.lang.Object</pre>
 <a id="createTrainingData(java.lang.String,java.util.ArrayList,int)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>createTrainingData</h4>
 <pre class="methodSignature">public static&nbsp;java.util.List&lt;org.nd4j.linalg.primitives.Pair&lt;org.nd4j.linalg.api.ndarray.INDArray,&#8203;org.nd4j.linalg.api.ndarray.INDArray&gt;&gt;&nbsp;createTrainingData&#8203;(java.lang.String&nbsp;dataName,
@@ -250,33 +242,12 @@ extends java.lang.Object</pre>
  create a single dataset in the INDArray which is the correct format for training.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dataName</code> - Represents which dataset has been chosen by the user. PRECONDITION data name
-     must be one of the following: "circular", "cluster", "quadrant", "spiral"</dd>
-<dd><code>featureNames</code> - List of features that have been selected by the user. PRECONDITION feature
-     name either empty list or a list containing one or more of the following: "squareX",
-     "squareY", "XtimesY", "sinX", "sinY"</dd>
+<dd><code>dataName</code> - Represents which dataset has been chosen by the user.</dd>
+<dd><code>featureNames</code> - List of features that have been selected by the user.</dd>
 <dd><code>noise</code> - Int represent the noise of data</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>dataset in Neural Net configuration containing original x and y values, and all
      applicable features</dd>
-</dl>
-</li>
-</ul>
-<a id="getData(java.lang.String,int)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>getData</h4>
-<pre class="methodSignature">public static&nbsp;java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.Object&gt;&gt;&nbsp;getData&#8203;(java.lang.String&nbsp;dataName,
-                                                                                 int&nbsp;noise)</pre>
-<div class="block">Generates the required dataset.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dataName</code> - Name of the required dataset</dd>
-<dd><code>noise</code> - amount of noise in the dataset</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>A dataset in the data format</dd>
 </dl>
 </li>
 </ul>

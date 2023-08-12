@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":2,"i6":1,"i7":1,"i8":2,"i9":2,"i10":2,"i11":2,"i12":2,"i13":2,"i14":2,"i15":2,"i16":2,"i17":2,"i18":2,"i19":2,"i20":2,"i21":2,"i22":2,"i23":2,"i24":2};
-var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"]};
+var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":2,"i6":1,"i7":4,"i8":1,"i9":2,"i10":2,"i11":2,"i12":2,"i13":2,"i14":2,"i15":2,"i16":2,"i17":2,"i18":2,"i19":2,"i20":2,"i21":2,"i22":2,"i23":2,"i24":2,"i25":2};
+var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"],4:["t3","Enum Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -105,7 +105,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <table class="typeSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Classes</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Interface Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Class Summary</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Classes</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Interface Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Class Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Enum Summary</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Class</th>
 <th class="colLast" scope="col">Description</th>
@@ -131,8 +131,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i3" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/datasets/DataGeneratorFactory.html" title="class in com.playground.playground.usecase.datasets">DataGeneratorFactory</a></td>
 <th class="colLast" scope="row">
-<div class="block">The DataGeneratorFactory class is responsible for creating instances of various DatasetGenerator
- implementations based on the given data name.</div>
+<div class="block">The <code>DataGeneratorFactory</code> class is responsible for creating instances of various
+ <a href="com/playground/playground/entity/DatasetGenerator.html" title="interface in com.playground.playground.entity"><code>DatasetGenerator</code></a> implementations based on the given <a href="com/playground/playground/entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a>.</div>
 </th>
 </tr>
 <tr id="i4" class="altColor">
@@ -155,111 +155,117 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </th>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><a href="com/playground/playground/entity/DatasetType.html" title="enum in com.playground.playground.entity">DatasetType</a></td>
+<th class="colLast" scope="row">
+<div class="block">The <code>DatasetType</code> enum represents different types of datasets that can be generated.</div>
+</th>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/entity/FeatureApplier.html" title="interface in com.playground.playground.entity">FeatureApplier</a></td>
 <th class="colLast" scope="row">
 <div class="block">Interface for applying specific features to a dataset in a neural network format.</div>
 </th>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/features/FeatureApplierFactory.html" title="class in com.playground.playground.usecase.features">FeatureApplierFactory</a></td>
 <th class="colLast" scope="row">
 <div class="block">A factory class responsible for creating and providing instances of FeatureApplier.</div>
 </th>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/interface_adapter/controller/FeatureController.html" title="class in com.playground.playground.interface_adapter.controller">FeatureController</a></td>
 <th class="colLast" scope="row">
 <div class="block">FeatureController is responsible for managing the creation and manipulation of datasets for
  training purposes.</div>
 </th>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/interface_adapter/controller/FeaturesHiddenLayersController.html" title="class in com.playground.playground.interface_adapter.controller">FeaturesHiddenLayersController</a></td>
 <th class="colLast" scope="row">
 <div class="block">This controller is responsible for handling data related to the hidden layers and features.</div>
 </th>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/interface_adapter/controller/GraphSystemController.html" title="class in com.playground.playground.interface_adapter.controller">GraphSystemController</a></td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/interface_adapter/controller/MainController.html" title="class in com.playground.playground.interface_adapter.controller">MainController</a></td>
 <th class="colLast" scope="row">
 <div class="block">The MainController class is responsible for assimilating values from other controllers.</div>
 </th>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/MainLauncher.html" title="class in com.playground.playground">MainLauncher</a></td>
 <th class="colLast" scope="row">
 <div class="block">The MainLauncher class is responsible for launching the AI Playground application.</div>
 </th>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/interface_adapter/controller/MlParametersController.html" title="class in com.playground.playground.interface_adapter.controller">MlParametersController</a></td>
 <th class="colLast" scope="row">
 <div class="block">The MlParametersController class handles the user interface for specifying machine learning
  parameters.</div>
 </th>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/interface_adapter/modelling/ModelTrainingServices.html" title="class in com.playground.playground.interface_adapter.modelling">ModelTrainingServices</a></td>
 <th class="colLast" scope="row">
 <div class="block">This is the class that facilitates training the model and logging.</div>
 </th>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/features/MultiplyFeatureApplier.html" title="class in com.playground.playground.usecase.features">MultiplyFeatureApplier</a></td>
 <th class="colLast" scope="row">
 <div class="block">Applies a multiplication feature to the dataset by multiplying the x and y values of each data
  point.</div>
 </th>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/entity/NeuralNet.html" title="class in com.playground.playground.entity">NeuralNet</a></td>
 <th class="colLast" scope="row">
 <div class="block">The NeuralNet class is responsible for creating the DAGs in memory and creating an overall model
  structure and initializing the model DAG and its weights making it ready for training.</div>
 </th>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/entity/NeuralNetBuilder.html" title="class in com.playground.playground.entity">NeuralNetBuilder</a></td>
 <th class="colLast" scope="row">
 <div class="block">The NeuralNetBuilder class helps create the NeuralNet class in the builder design.</div>
 </th>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/modelling/PrepareData.html" title="class in com.playground.playground.usecase.modelling">PrepareData</a></td>
 <th class="colLast" scope="row">
 <div class="block">This class helps make data ready for the model training.</div>
 </th>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/datasets/QuadrantDatasetGenerator.html" title="class in com.playground.playground.usecase.datasets">QuadrantDatasetGenerator</a></td>
 <th class="colLast" scope="row">
 <div class="block">A data generator for creating datasets representing points in the four quadrants of the Cartesian
  plane.</div>
 </th>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/features/SinFeatureApplier.html" title="class in com.playground.playground.usecase.features">SinFeatureApplier</a></td>
 <th class="colLast" scope="row">
 <div class="block">Applies the sine function to a specific axis (x or y) of the data points in the dataset.</div>
 </th>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/datasets/SpiralDatasetGenerator.html" title="class in com.playground.playground.usecase.datasets">SpiralDatasetGenerator</a></td>
 <th class="colLast" scope="row">
 <div class="block">A data generator for creating spiral datasets in both clockwise and counterclockwise directions.</div>
 </th>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/features/SquareFeatureApplier.html" title="class in com.playground.playground.usecase.features">SquareFeatureApplier</a></td>
 <th class="colLast" scope="row">
 <div class="block">Applies the square feature to a specific axis (x or y) of the data points in the dataset.</div>
 </th>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><a href="com/playground/playground/usecase/datasets/TransformDatasets.html" title="class in com.playground.playground.usecase.datasets">TransformDatasets</a></td>
 <th class="colLast" scope="row">
 <div class="block">A utility class for transforming datasets generated by DataGenerator to a format more appropriate

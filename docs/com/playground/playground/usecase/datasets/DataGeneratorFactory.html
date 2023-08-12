@@ -133,8 +133,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">DataGeneratorFactory</span>
 extends java.lang.Object</pre>
-<div class="block">The DataGeneratorFactory class is responsible for creating instances of various DatasetGenerator
- implementations based on the given data name.</div>
+<div class="block">The <code>DataGeneratorFactory</code> class is responsible for creating instances of various
+ <a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity"><code>DatasetGenerator</code></a> implementations based on the given <a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -178,9 +178,10 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static <a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity">DatasetGenerator</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createDataGenerator(java.lang.String)">createDataGenerator</a></span>&#8203;(java.lang.String&nbsp;dataName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createDataGenerator(com.playground.playground.entity.DatasetType)">createDataGenerator</a></span>&#8203;(<a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity">DatasetType</a>&nbsp;datasetType)</code></th>
 <td class="colLast">
-<div class="block">Creates and returns the appropriate DatasetGenerator based on the provided data name.</div>
+<div class="block">Creates and returns the appropriate <a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity"><code>DatasetGenerator</code></a> based on the provided
+ <a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a>.</div>
 </td>
 </tr>
 </table>
@@ -226,22 +227,23 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="createDataGenerator(java.lang.String)">
+<a id="createDataGenerator(com.playground.playground.entity.DatasetType)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createDataGenerator</h4>
-<pre class="methodSignature">public static&nbsp;<a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity">DatasetGenerator</a>&nbsp;createDataGenerator&#8203;(java.lang.String&nbsp;dataName)</pre>
-<div class="block">Creates and returns the appropriate DatasetGenerator based on the provided data name.</div>
+<pre class="methodSignature">public static&nbsp;<a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity">DatasetGenerator</a>&nbsp;createDataGenerator&#8203;(<a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity">DatasetType</a>&nbsp;datasetType)</pre>
+<div class="block">Creates and returns the appropriate <a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity"><code>DatasetGenerator</code></a> based on the provided
+ <a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dataName</code> - The name of the required dataset, which can be one of the following values:
-     "circular", "cluster", "quadrant", or "spiral".</dd>
+<dd><code>datasetType</code> - The <a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a> representing the type of dataset to be generated.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A new instance of the DatasetGenerator that matches the given data name.</dd>
+<dd>A new instance of the <a href="../../entity/DatasetGenerator.html" title="interface in com.playground.playground.entity"><code>DatasetGenerator</code></a> that matches the given <a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a>.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided data name is not one of the valid options.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If the provided <a href="../../entity/DatasetType.html" title="enum in com.playground.playground.entity"><code>DatasetType</code></a> is not one of the valid options
+                                  or if it's null.</dd>
 </dl>
 </li>
 </ul>
