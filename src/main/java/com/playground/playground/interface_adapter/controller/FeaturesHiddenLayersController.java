@@ -24,7 +24,8 @@ public class FeaturesHiddenLayersController implements Initializable {
   public Button removeLayer;
   @FXML
   public Button x1pow2button;
-  @FXML private Button x2pow2button;
+  @FXML
+  public Button x2pow2button;
   @FXML private Button x1x2button;
   @FXML private Button sinx1button;
   @FXML private Button sinx2button;
