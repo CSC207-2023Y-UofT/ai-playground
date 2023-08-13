@@ -1,9 +1,5 @@
 package com.playground.playground.feature;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import com.playground.playground.entity.FeatureApplier;
 import com.playground.playground.entity.FeatureConstants;
 import com.playground.playground.interface_adapter.controller.FeatureController;
@@ -17,6 +13,8 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FeatureApplierFactoryTest {
 
@@ -55,6 +53,13 @@ public class FeatureApplierFactoryTest {
         FeatureApplier feature = FeatureApplierFactory.getFeature(FeatureConstants.SIN_Y);
         assertNotNull(feature);
         assertTrue(feature instanceof SinFeatureApplier);
+    }
+
+    @Test
+    public void testGetInvalidFeature() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            FeatureApplierFactory.getFeature("invalidFeature");
+        });
     }
 
 }
