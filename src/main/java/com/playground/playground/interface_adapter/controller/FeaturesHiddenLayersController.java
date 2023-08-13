@@ -18,10 +18,8 @@ import java.util.ResourceBundle;
 public class FeaturesHiddenLayersController implements Initializable {
 
   @FXML private Text numHiddenLayers;
-  @FXML
-  public Button addLayer;
-  @FXML
-  public Button removeLayer;
+  @FXML public Button addLayer;
+  @FXML public Button removeLayer;
   @FXML
   public Button x1pow2button;
   @FXML

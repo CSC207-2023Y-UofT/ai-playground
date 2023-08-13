@@ -22,6 +22,7 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
 
     private FeaturesHiddenLayersController controller;
 
+
     @Override
     @Order(1)
     public void start(Stage stage) throws Exception {
@@ -59,32 +60,31 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
     @Test
     @Order(4)
     public void testToggleButtonAll(){
-        //Click on squareX button
+        // Click on squareX button
         Button x1pow2button = lookup("#x1pow2button").queryButton();
         clickOn(x1pow2button);
-        //Click on squareY button
+        // Click on squareY button
         Button x2pow2button = lookup("#x2pow2button").queryButton();
         clickOn(x2pow2button);
-        //Click on x1x2 button
+        // Click on x1x2 button
         Button x1x2button = lookup("#x1x2button").queryButton();
         clickOn(x1x2button);
-        //Click on sinx1 button
+        // Click on sinx1 button
         Button sinx1button = lookup("#sinx1button").queryButton();
         clickOn(sinx1button);
-        //Click on sinx2 button
+        // Click on sinx2 button
         Button sinx2button = lookup("#sinx2button").queryButton();
         clickOn(sinx2button);
 
-        //Check UI components for all buttons
+        // Check UI components for all buttons
         assertEquals("-fx-background-color: blue;", x1pow2button.getStyle());
         assertEquals("-fx-background-color: blue;", x2pow2button.getStyle());
         assertEquals("-fx-background-color: blue;", x1x2button.getStyle());
         assertEquals("-fx-background-color: blue;", sinx1button.getStyle());
         assertEquals("-fx-background-color: blue;", sinx2button.getStyle());
 
-        //Check selectedButtons contains all buttons
-        assertEquals(new ArrayList<>(Arrays.asList("squareY", "XtimesY", "sinX", "sinY")), FeaturesHiddenLayersController.getSelectedButtons());
-
+        // Check selectedButtons contains all buttons
+        assertEquals(new ArrayList<>(Arrays.asList("squareX", "squareY", "XtimesY", "sinX", "sinY")), FeaturesHiddenLayersController.getSelectedButtons());
     }
 
 
