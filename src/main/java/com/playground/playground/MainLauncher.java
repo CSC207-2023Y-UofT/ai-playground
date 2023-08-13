@@ -1,9 +1,14 @@
 package com.playground.playground;
 
+import com.playground.playground.interface_adapter.controller.MainController;
+import com.playground.playground.interface_adapter.controller.MainViewController;
+import com.playground.playground.interface_adapter.controller.views.ViewFactory;
+import com.playground.playground.interface_adapter.controller.views.ViewFactoryImpl;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /** The MainLauncher class is responsible for launching the AI Playground application. */
@@ -33,11 +38,20 @@ public class MainLauncher {
    * @throws Exception If an exception occurs during application launch.
    */
   private static void launchApplication(String[] args) throws Exception {
-    FXMLLoader fxmlLoader = new FXMLLoader(MainLauncher.class.getResource("main-view.fxml"));
-    Parent root = fxmlLoader.load();
+    // Create the ViewFactory
+    ViewFactory viewFactory = new ViewFactoryImpl();
 
-    // Create a new JavaFX Scene with the loaded FXML content
-    Scene scene = new Scene(root, 1366, 768);
+    // Load the MainViewController
+    FXMLLoader loader = new FXMLLoader(MainLauncher.class.getResource("main-view.fxml"));
+    VBox mainView = loader.load(); // Load the main view
+    MainViewController mainViewController = loader.getController(); // Get the MainViewController
+
+    // Create the MainController and initialize it
+    MainController mainController = new MainController(mainViewController, viewFactory);
+    mainController.initialize();
+
+    // Create a new JavaFX Scene with the loaded main view
+    Scene scene = new Scene(mainView, 1366, 768);
 
     // Add the stylesheet to the scene
     scene.getStylesheets().add(MainLauncher.class.getResource("style.css").toExternalForm());
@@ -50,4 +64,5 @@ public class MainLauncher {
     // Show the stage to display the application
     stage.show();
   }
+
 }
