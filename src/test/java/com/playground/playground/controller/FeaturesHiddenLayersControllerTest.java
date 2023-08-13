@@ -13,7 +13,9 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-
+/** 
+This class tests FeaturesHiddenLayersController using the TestFx framework. 
+*/
 public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
 
     private FeaturesHiddenLayersController controller;
