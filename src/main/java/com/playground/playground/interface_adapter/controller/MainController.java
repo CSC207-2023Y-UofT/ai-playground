@@ -3,6 +3,8 @@ package com.playground.playground.interface_adapter.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.playground.playground.interface_adapter.views.DataAttributesView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,7 +13,7 @@ import javafx.scene.layout.VBox;
 
 /** The MainController class is responsible for assimilating values from other controllers. */
 public class MainController implements Initializable {
-  private DataAttributesController dataAttributesController;
+  private DataAttributesView dataAttributesView;
   @FXML private VBox dataAttributesBox;
   private MlParametersController mlParametersController;
   @FXML private HBox mlParametersBox;
@@ -39,8 +41,8 @@ public class MainController implements Initializable {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    dataAttributesController = dataattloader.getController();
-    dataAttributesController.initialize(location, resources);
+    dataAttributesView = dataattloader.getController();
+    dataAttributesView.initialize(location, resources);
 
     FXMLLoader mlparamloader =
         new FXMLLoader(
