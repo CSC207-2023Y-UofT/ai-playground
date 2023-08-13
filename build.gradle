@@ -27,7 +27,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.playground.playground'
-    mainClass = 'com.playground.playground.HelloApplication'
+    mainClass = 'com.playground.playground.MainLauncher'
 }
 
 javafx {
