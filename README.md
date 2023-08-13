@@ -6,6 +6,9 @@
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CSC207-2023Y-UofT/ai-playground/.github%2Fworkflows%2Fpublish-javadoc.yml?label=Deploy%20Documentation)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CSC207-2023Y-UofT/ai-playground/.github%2Fworkflows%2Flint.yml?label=Java%20Style%20Guide)
 
+![Test Coverage](badges/jacoco.svg)
+![Branch Coverage](badges/branches.svg)
+
 ## 📄 Project Documentation
 
 [_**Visit the documentation of this project**_](https://csc207-2023y-uoft.github.io/ai-playground/) to get more information in detail.
