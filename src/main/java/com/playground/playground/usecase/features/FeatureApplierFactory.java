@@ -1,6 +1,8 @@
 package com.playground.playground.usecase.features;
 
 import com.playground.playground.entity.FeatureApplier;
+import com.playground.playground.entity.FeatureConstants;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,11 +15,11 @@ public class FeatureApplierFactory {
   private static final Map<String, FeatureApplier> applierMap = new HashMap<>();
 
   static {
-    applierMap.put("squareX", new SquareFeatureApplier(0));
-    applierMap.put("squareY", new SquareFeatureApplier(1));
-    applierMap.put("XtimesY", new MultiplyFeatureApplier());
-    applierMap.put("sinX", new SinFeatureApplier(0));
-    applierMap.put("sinY", new SinFeatureApplier(1));
+    applierMap.put(FeatureConstants.SQUARE_X, new SquareFeatureApplier(0));
+    applierMap.put(FeatureConstants.SQUARE_Y, new SquareFeatureApplier(1));
+    applierMap.put(FeatureConstants.X_TIMES_Y, new MultiplyFeatureApplier());
+    applierMap.put(FeatureConstants.SIN_X, new SinFeatureApplier(0));
+    applierMap.put(FeatureConstants.SIN_Y, new SinFeatureApplier(1));
   }
 
   /**
