@@ -13,6 +13,9 @@ import org.testfx.framework.junit5.ApplicationTest;
 
 import static org.junit.Assert.assertEquals;
 
+/** 
+This class tests DataAttributesController using the TestFx framework. 
+*/
 class DataAttributesControllerTest extends ApplicationTest {
     private DataAttributesController controller;
     private Slider slider1;
