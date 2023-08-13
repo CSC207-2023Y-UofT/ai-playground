@@ -9,6 +9,9 @@ import org.testfx.framework.junit5.ApplicationTest;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+This tests MlParametersController using teh TestFx framework. 
+*/
 class MlParametersControllerTest extends ApplicationTest {
     private MlParametersController controller;
 
