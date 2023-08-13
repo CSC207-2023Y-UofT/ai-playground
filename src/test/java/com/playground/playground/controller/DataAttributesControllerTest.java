@@ -98,5 +98,3 @@ class DataAttributesControllerTest extends ApplicationTest {
         assertEquals("quadrant", DataAttributesController.dataset);
     }
 }
-
-
