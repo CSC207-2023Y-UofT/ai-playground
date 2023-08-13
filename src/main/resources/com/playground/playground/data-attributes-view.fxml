@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="426.0" prefWidth="198.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapter.controller.DataAttributesController">
+<VBox prefHeight="426.0" prefWidth="198.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapter.views.DataAttributesView">
     <VBox spacing="10">
         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="data-text" text="Data" textAlignment="LEFT" translateX="75.0" wrappingWidth="45.79052734375">
          <VBox.margin>
@@ -43,7 +43,7 @@
       <padding>
          <Insets bottom="5.0" />
       </padding></Label>
-    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" onDragDetected="#initializeTestRatio" prefWidth="180.0" translateX="5.0" translateY="-5.0">
+    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" onDragDetected="#sendTestRatio" prefWidth="180.0" translateX="5.0" translateY="-5.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
@@ -52,7 +52,7 @@
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
-    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" onDragDetected="#initializeNoise" prefWidth="180.0" translateX="5.0" translateY="-25.0">
+    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" onDragDetected="#sendNoise" prefWidth="180.0" translateX="5.0" translateY="-25.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
@@ -61,7 +61,7 @@
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
-    <Slider fx:id="slider3" max="30.0" onDragDetected="#initializeBatchSize" translateX="5.0" translateY="-40.0">
+    <Slider fx:id="slider3" max="30.0" onDragDetected="#sendBatchSize" translateX="5.0" translateY="-40.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>

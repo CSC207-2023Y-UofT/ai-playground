@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="86.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapter.controller.MlParametersController">
+<HBox prefHeight="86.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.playground.playground.interface_adapter.views.MlParametersView">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -38,44 +38,44 @@
 
     <MenuBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="700.0" translateX="-10.0">
         <Menu text="Learning Rate">
-            <MenuItem fx:id="learn2" onAction="#handleLearningRate" text="0.00001" />
-            <MenuItem fx:id="learn3" onAction="#handleLearningRate" text="0.0001" />
-            <MenuItem fx:id="learn4" onAction="#handleLearningRate" text="0.001" />
-            <MenuItem fx:id="learn5" onAction="#handleLearningRate" text="0.003" />
-            <MenuItem fx:id="learn6" onAction="#handleLearningRate" text="0.01" />
-            <MenuItem fx:id="learn7" onAction="#handleLearningRate" text="0.03" />
-            <MenuItem fx:id="learn8" onAction="#handleLearningRate" text="0.1" />
-            <MenuItem fx:id="learn9" onAction="#handleLearningRate" text="0.3" />
-            <MenuItem fx:id="learn10" onAction="#handleLearningRate" text="1" />
-            <MenuItem fx:id="learn11" onAction="#handleLearningRate" text="3" />
-            <MenuItem fx:id="learn12" onAction="#handleLearningRate" text="10" />
+            <MenuItem fx:id="learn2" onAction="#sendLearningRate" text="0.00001" />
+            <MenuItem fx:id="learn3" onAction="#sendLearningRate" text="0.0001" />
+            <MenuItem fx:id="learn4" onAction="#sendLearningRate" text="0.001" />
+            <MenuItem fx:id="learn5" onAction="#sendLearningRate" text="0.003" />
+            <MenuItem fx:id="learn6" onAction="#sendLearningRate" text="0.01" />
+            <MenuItem fx:id="learn7" onAction="#sendLearningRate" text="0.03" />
+            <MenuItem fx:id="learn8" onAction="#sendLearningRate" text="0.1" />
+            <MenuItem fx:id="learn9" onAction="#sendLearningRate" text="0.3" />
+            <MenuItem fx:id="learn10" onAction="#sendLearningRate" text="1" />
+            <MenuItem fx:id="learn11" onAction="#sendLearningRate" text="3" />
+            <MenuItem fx:id="learn12" onAction="#sendLearningRate" text="10" />
         </Menu>
         <Menu text="Activation">
-            <MenuItem fx:id="reLu" onAction="#handleActivation" text="ReLU" />
-            <MenuItem fx:id="tanH" onAction="#handleActivation" text="Tanh" />
-            <MenuItem fx:id="sigmoid" onAction="#handleActivation" text="Sigmoid" />
-            <MenuItem fx:id="softMax" onAction="#handleActivation" text="SoftMax" />
+            <MenuItem fx:id="reLu" onAction="#sendActivation" text="ReLU" />
+            <MenuItem fx:id="tanH" onAction="#sendActivation" text="Tanh" />
+            <MenuItem fx:id="sigmoid" onAction="#sendActivation" text="Sigmoid" />
+            <MenuItem fx:id="softMax" onAction="#sendActivation" text="SoftMax" />
         </Menu>
         <Menu text="Regularization">
-            <MenuItem fx:id="none" onAction="#handleRegularization" text="None" />
-            <MenuItem fx:id="l1" onAction="#handleRegularization" text="L1" />
-            <MenuItem fx:id="l2" onAction="#handleRegularization" text="L2" />
+            <MenuItem fx:id="none" onAction="#sendRegularization" text="None" />
+            <MenuItem fx:id="l1" onAction="#sendRegularization" text="L1" />
+            <MenuItem fx:id="l2" onAction="#sendRegularization" text="L2" />
         </Menu>
         <Menu text="Regularization Rate">
-            <MenuItem fx:id="reg1" onAction="#handleRegularizationRate" text="0" />
-            <MenuItem fx:id="reg2" onAction="#handleRegularizationRate" text="0.001" />
-            <MenuItem fx:id="reg3" onAction="#handleRegularizationRate" text="0.003" />
-            <MenuItem fx:id="reg4" onAction="#handleRegularizationRate" text="0.01" />
-            <MenuItem fx:id="reg5" onAction="#handleRegularizationRate" text="0.03" />
-            <MenuItem fx:id="reg6" onAction="#handleRegularizationRate" text="0.1" />
-            <MenuItem fx:id="reg7" onAction="#handleRegularizationRate" text="0.3" />
-            <MenuItem fx:id="reg8" onAction="#handleRegularizationRate" text="1" />
-            <MenuItem fx:id="reg9" onAction="#handleRegularizationRate" text="3" />
-            <MenuItem fx:id="reg10" onAction="#handleRegularizationRate" text="10" />
+            <MenuItem fx:id="reg1" onAction="#sendRegularizationRate" text="0" />
+            <MenuItem fx:id="reg2" onAction="#sendRegularizationRate" text="0.001" />
+            <MenuItem fx:id="reg3" onAction="#sendRegularizationRate" text="0.003" />
+            <MenuItem fx:id="reg4" onAction="#sendRegularizationRate" text="0.01" />
+            <MenuItem fx:id="reg5" onAction="#sendRegularizationRate" text="0.03" />
+            <MenuItem fx:id="reg6" onAction="#sendRegularizationRate" text="0.1" />
+            <MenuItem fx:id="reg7" onAction="#sendRegularizationRate" text="0.3" />
+            <MenuItem fx:id="reg8" onAction="#sendRegularizationRate" text="1" />
+            <MenuItem fx:id="reg9" onAction="#sendRegularizationRate" text="3" />
+            <MenuItem fx:id="reg10" onAction="#sendRegularizationRate" text="10" />
         </Menu>
         <Menu text="Problem Type">
-            <MenuItem fx:id="classify" onAction="#handleProblem" text="Classification" />
-            <MenuItem fx:id="regress" onAction="#handleProblem" text="Regression" />
+            <MenuItem fx:id="classify" onAction="#sendProblem" text="Classification" />
+            <MenuItem fx:id="regress" onAction="#sendProblem" text="Regression" />
         </Menu>
         <HBox.margin>
             <Insets left="80.0" />
