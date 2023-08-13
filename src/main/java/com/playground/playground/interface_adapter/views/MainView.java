@@ -1,31 +1,34 @@
-package com.playground.playground.interface_adapter.controller;
+package com.playground.playground.interface_adapter.views;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.playground.playground.interface_adapter.controller.FeaturesHiddenLayersController;
+import com.playground.playground.interface_adapter.controller.GraphSystemController;
 import com.playground.playground.interface_adapter.views.DataAttributesView;
+import com.playground.playground.interface_adapter.views.MlParametersView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/** The MainController class is responsible for assimilating values from other controllers. */
-public class MainController implements Initializable {
+/** The MainView class is responsible for assimilating values from other controllers. */
+public class MainView implements Initializable {
   private DataAttributesView dataAttributesView;
   @FXML private VBox dataAttributesBox;
-  private MlParametersController mlParametersController;
+  private MlParametersView mlParametersView;
   @FXML private HBox mlParametersBox;
 
   public static GraphSystemController graphSystemController;
   @FXML private VBox graphSystemBox;
 
-  private FeaturesHiddenLayersController featuresHiddenLayersController;
+  private FeaturesHiddenLayersView featuresHiddenLayersView;
   @FXML private VBox featuresHiddenLayersBox;
 
   /**
-   * Initializer for MainController.java
+   * Initializer for MainView.java
    *
    * @param location The location used to resolve relative paths for the root object, or {@code
    *     null} if the location is not known.
@@ -53,8 +56,8 @@ public class MainController implements Initializable {
       e.printStackTrace();
     }
 
-    mlParametersController = mlparamloader.getController();
-    mlParametersController.initialize(location, resources);
+    mlParametersView = mlparamloader.getController();
+    mlParametersView.initialize(location, resources);
 
     FXMLLoader graphSystemLoader =
         new FXMLLoader(getClass().getResource("/com/playground/playground/graph-system-view.fxml"));
@@ -74,7 +77,7 @@ public class MainController implements Initializable {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    featuresHiddenLayersController = featuresHiddenLayersLoader.getController();
-    featuresHiddenLayersController.initialize(location, resources);
+    featuresHiddenLayersView = featuresHiddenLayersLoader.getController();
+    featuresHiddenLayersView.initialize(location, resources);
   }
 }
