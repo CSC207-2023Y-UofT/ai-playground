@@ -47,9 +47,9 @@ dependencies {
         exclude(group: 'org.openjfx')
     }
     implementation("io.github.kostaskougios:cloning:1.10.3")
-    implementation 'org.openjfx:javafx-controls:11'
-    implementation 'org.openjfx:javafx-fxml:11'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    implementation("org.openjfx:javafx-controls:11")
+    implementation("org.openjfx:javafx-fxml:11")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testImplementation("org.mockito:mockito-core:3.+")
     testImplementation 'org.testfx:testfx-core:4.0.16-alpha'
