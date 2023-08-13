@@ -1,18 +1,9 @@
 package com.playground.playground.interface_adapter.controller;
 
-import com.playground.playground.DataService;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.nd4j.linalg.api.ndarray.INDArray;
