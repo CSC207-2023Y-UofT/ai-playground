@@ -22,10 +22,10 @@
          </font></Text>
         <Label styleClass="gray-text" text="Choose a dataset" translateX="50.0" translateY="-10.0" />
         <GridPane alignment="CENTER_LEFT" hgap="10" translateX="5.0" translateY="-10.0" vgap="10">
-            <Button fx:id="clusterButton" onAction="#handleCLusterButton" prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Button fx:id="radialButton" onAction="#handleRadialButton" prefHeight="26.0" prefWidth="83.0" text="Radial" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Button fx:id="spiralButton" onAction="#handleSpiralButton" prefHeight="26.0" prefWidth="83.0" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Button fx:id="rectangularButton" onAction="#handleRectangularButton" prefHeight="26.0" prefWidth="84.0" text="Rectangular" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="clusterButton"  prefHeight="26.0" prefWidth="83.0" text="Cluster" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button fx:id="radialButton" prefHeight="26.0" prefWidth="83.0" text="Circular" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button fx:id="spiralButton" prefHeight="26.0" prefWidth="83.0" text="Spiral" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button fx:id="rectangularButton" prefHeight="26.0" prefWidth="84.0" text="Quadrant" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <columnConstraints>
                 <ColumnConstraints />
                 <ColumnConstraints />
@@ -43,7 +43,7 @@
       <padding>
          <Insets bottom="5.0" />
       </padding></Label>
-    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" onDragDetected="#initializeTestRatio" prefWidth="180.0" translateX="5.0" translateY="-5.0">
+    <Slider fx:id="slider1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" translateX="5.0" translateY="-5.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
@@ -52,7 +52,7 @@
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
-    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" onDragDetected="#initializeNoise" prefWidth="180.0" translateX="5.0" translateY="-25.0">
+    <Slider fx:id="slider2" max="50.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" translateX="5.0" translateY="-25.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>
@@ -61,7 +61,7 @@
       <padding>
          <Insets bottom="15.0" />
       </padding></Label>
-    <Slider fx:id="slider3" max="30.0" onDragDetected="#initializeBatchSize" translateX="5.0" translateY="-40.0">
+    <Slider fx:id="slider3" min="1" max="30.0"  translateX="5.0" translateY="-40.0">
       <padding>
          <Insets bottom="20.0" />
       </padding></Slider>

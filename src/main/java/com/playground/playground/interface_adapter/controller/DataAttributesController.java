@@ -3,6 +3,8 @@ package com.playground.playground.interface_adapter.controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.playground.playground.interface_adapter.viewmodel.DataAttributesViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
-
+import javafx.beans.binding.Bindings;
 /** This controller handles all the dataset related options on the UI. */
 public class DataAttributesController implements Initializable {
   public static int initializeTestRatio;
@@ -40,7 +42,7 @@ public class DataAttributesController implements Initializable {
   public static int batchSize = 20;
   public static int noise = 1;
   public static String dataset;
-
+  private DataAttributesViewModel viewModel = new DataAttributesViewModel();
   /**
    * Initializer for DataAttributesController.java
    *
@@ -50,33 +52,30 @@ public class DataAttributesController implements Initializable {
    *     object was not localized.
    */
   public void initialize(URL location, ResourceBundle resources) {
-    // Set testRatio slider to default value
-    slider1.setValue(testRatio);
-    updateSlider1Percent(slider1, slider1label);
-    slider1
-        .valueProperty()
-        .addListener(
-            (observable, oldValue, newValue) -> {
-              updateSlider1Percent(slider1, slider1label);
-            });
-    // Set noise slider to default value
-    slider2.setValue(noise);
-    updateSlider2Percent(slider2, slider2label);
-    slider2
-        .valueProperty()
-        .addListener(
-            (observable, oldValue, newValue) -> {
-              updateSlider2Percent(slider2, slider2label);
-            });
-    // Set batchsize slider to default value
-    slider3.setValue(batchSize);
-    updateSlider3Percent(slider3, slider3label);
-    slider3
-        .valueProperty()
-        .addListener(
-            (observable, oldValue, newValue) -> {
-              updateSlider3Percent(slider3, slider3label);
-            });
+    testRatio = 80;
+    batchSize = 20;
+    noise = 1;
+    dataset = "cluster";
+    viewModel.setDataset("cluster");
+    initializeTestRatio = testRatio; // Initialize static variable
+    initializeBatchSize = batchSize; // Initialize static variable
+    initializeNoise = noise;         // Initialize static variable
+
+    slider1.valueProperty().bindBidirectional(viewModel.testRatio);
+    slider2.valueProperty().bindBidirectional(viewModel.noise);
+    slider3.setMin(1);
+    slider3.valueProperty().bindBidirectional(viewModel.batchSize);
+
+    // Explicitly set the values to trigger the listeners
+    viewModel.setTestRatio(testRatio);
+    viewModel.setNoise(noise);
+    viewModel.setBatchSize(batchSize);
+    viewModel.setDataset(dataset);
+
+    // Bind the labels to the ViewModel properties
+    slider1label.textProperty().bind(viewModel.testRatioLabel);
+    slider2label.textProperty().bind(viewModel.noiseLabel);
+    slider3label.textProperty().bind(viewModel.batchSizeLabel);
 
     setButtonFixedSize(clusterButton);
     setButtonFixedSize(radialButton);
@@ -86,74 +85,17 @@ public class DataAttributesController implements Initializable {
     listButtons.add(radialButton);
     listButtons.add(spiralButton);
     listButtons.add(rectangularButton);
-
-    // Adding the behavior for buttons
-    toggleButtonSelection(clusterButton);
-    toggleButtonSelection(radialButton);
-    toggleButtonSelection(spiralButton);
-    toggleButtonSelection(rectangularButton);
-
-    toggleButtonSelection(rectangularButton);
+    bindButtonStyleToSelectedDataset(clusterButton, "cluster");
+    bindButtonStyleToSelectedDataset(radialButton, "circular");
+    bindButtonStyleToSelectedDataset(spiralButton, "spiral");
+    bindButtonStyleToSelectedDataset(rectangularButton, "quadrant");
   }
 
-  private void toggleButtonSelection(Button button) {
-    button.setOnAction(
-        event -> {
-          for (Button btn : listButtons) {
-            btn.setStyle("");
-          }
-          button.setStyle("-fx-background-color: lightblue;");
-          if (button == clusterButton) {
-            handleCLusterButton(new ActionEvent(null, null));
-          } else if (button == rectangularButton) {
-            handleRectangularButton(new ActionEvent(null, null));
-          } else if (button == radialButton) {
-            handleRadialButton(new ActionEvent(null, null));
-          } else if (button == spiralButton) {
-            handleSpiralButton(new ActionEvent(null, null));
-          }
-        });
-  }
-
-  /**
-   * Slider for users to adjust the ratio of training to test data percentage.
-   *
-   * @param slider allows user to adjust the ratio of training to test data percentage.
-   * @param percentLabel displays the percent selected by the user using slider.
-   */
-  private void updateSlider1Percent(Slider slider, Label percentLabel) {
-    double value = slider.getValue();
-    double max = slider.getMax();
-    double percentage = (value / max) * 100;
-    long roundedPercentage = Math.round(percentage);
-    DataAttributesController.initializeTestRatio = (int) roundedPercentage;
-    percentLabel.setText("Ratio of training to test data: " + roundedPercentage + "%");
-  }
-
-  /**
-   * Slider for users to adjust the noise.
-   *
-   * @param slider allows user to adjust the noise.
-   * @param numberLabel displays the noise value selected by the using the slider.
-   */
-  private void updateSlider2Percent(Slider slider, Label numberLabel) {
-    int value = (int) slider.getValue();
-    DataAttributesController.initializeNoise = value;
-    String stringVal = String.format("%d", value);
-    numberLabel.setText("Noise: " + stringVal);
-  }
-
-  /**
-   * Slider for users to adjust the batch size.
-   *
-   * @param slider allows user to adjust the batch size.
-   * @param numberLabel displays the batch size value selected by the using the slider.
-   */
-  private void updateSlider3Percent(Slider slider, Label numberLabel) {
-    int value = (int) slider.getValue();
-    DataAttributesController.initializeBatchSize = value;
-    String stringVal = String.format("%d", value);
-    numberLabel.setText("Batch size: " + stringVal);
+  private void bindButtonStyleToSelectedDataset(Button button, String datasetName) {
+    button.styleProperty().bind(Bindings.when(viewModel.selectedDataset.isEqualTo(datasetName))
+            .then("-fx-background-color: lightblue;")
+            .otherwise(""));
+    button.setOnAction(event -> viewModel.selectDataset(datasetName));
   }
 
   /**
@@ -165,81 +107,4 @@ public class DataAttributesController implements Initializable {
     button.setPrefSize(70, 50);
   }
 
-  /**
-   * Initializes the test ratio value from the slider and updates the corresponding attribute in
-   * DataAttributesController.
-   *
-   * @param mouseEvent the event triggered by the mouse
-   * @return the initialized test ratio
-   */
-  public int initializeTestRatio(MouseEvent mouseEvent) {
-    testRatio = (int) slider1.getValue();
-    DataAttributesController.initializeTestRatio = testRatio;
-    return testRatio;
-  }
-
-  /**
-   * Initializes the noise value from the slider and updates the corresponding attribute in
-   * DataAttributesController.
-   *
-   * @param mouseEvent the event triggered by the mouse
-   * @return the initialized noise value
-   */
-  public int initializeNoise(MouseEvent mouseEvent) {
-    noise = (int) slider2.getValue();
-    DataAttributesController.initializeNoise = noise;
-    return noise;
-  }
-
-  /**
-   * Initializes the batch size value from the slider and updates the corresponding attribute in
-   * DataAttributesController.
-   *
-   * @param mouseEvent the event triggered by the mouse
-   * @return the initialized batch size
-   */
-  public int initializeBatchSize(MouseEvent mouseEvent) {
-    batchSize = (int) slider3.getValue();
-    DataAttributesController.initializeBatchSize = batchSize;
-    return batchSize;
-  }
-
-  /**
-   * Handles the action event when the "cluster" button is clicked, setting the dataset to
-   * "cluster".
-   *
-   * @param actionEvent the action event triggered by the button
-   */
-  public void handleCLusterButton(ActionEvent actionEvent) {
-    DataAttributesController.dataset = "cluster";
-  }
-
-  /**
-   * Handles the action event when the "circular" button is clicked, setting the dataset to
-   * "circular".
-   *
-   * @param actionEvent the action event triggered by the button
-   */
-  public void handleRadialButton(ActionEvent actionEvent) {
-    DataAttributesController.dataset = "circular";
-  }
-
-  /**
-   * Handles the action event when the "spiral" button is clicked, setting the dataset to "spiral".
-   *
-   * @param actionEvent the action event triggered by the button
-   */
-  public void handleSpiralButton(ActionEvent actionEvent) {
-    DataAttributesController.dataset = "spiral";
-  }
-
-  /**
-   * Handles the action event when the "quadrant" button is clicked, setting the dataset to
-   * "quadrant".
-   *
-   * @param actionEvent the action event triggered by the button
-   */
-  public void handleRectangularButton(ActionEvent actionEvent) {
-    DataAttributesController.dataset = "quadrant";
-  }
 }
