@@ -38,6 +38,10 @@ class DataAttributesControllerTest extends ApplicationTest {
     public void setUp(){
         controller = new DataAttributesController();
     }
+    /**
+     * This tests initializeTestRatio method to ensure the user selected value from the slider is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testInitializeTestRatio(){
         min = 0;
@@ -50,6 +54,10 @@ class DataAttributesControllerTest extends ApplicationTest {
         assertEquals((int) newValue, DataAttributesController.initializeTestRatio);
     }
 
+    /**
+     * This tests initializeNoise method to ensure the user selected value from the slider is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testInitializeNoise(){
         min = 0;
@@ -61,7 +69,10 @@ class DataAttributesControllerTest extends ApplicationTest {
         });
         assertEquals((int) newValue, DataAttributesController.initializeNoise);
     }
-
+    /**
+     * This tests initializeBatchSize method to ensure the user selected value from the slider is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testInitializeBatchSize(){
         min = 0;
@@ -73,25 +84,40 @@ class DataAttributesControllerTest extends ApplicationTest {
         });
         assertEquals((int) newValue, DataAttributesController.initializeBatchSize);
     }
-
+    /**
+     * This tests handleClusterButton method to ensure the user selected value from the button menu is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testHandleClusterButton(){
         controller.handleCLusterButton(new ActionEvent());
         assertEquals("cluster", DataAttributesController.dataset);
     }
 
+    /**
+     * This tests handleRadialButton method to ensure the user selected value from the button menu is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testHandleRadialButton(){
         controller.handleRadialButton(new ActionEvent());
         assertEquals("circular", DataAttributesController.dataset);
     }
 
+    /**
+     * This tests handleSpiralButton method to ensure the user selected value from the button menu is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testHandleSpiralButton(){
         controller.handleSpiralButton(new ActionEvent());
         assertEquals("spiral", DataAttributesController.dataset);
     }
 
+    /**
+     * This tests handleRectangularButton method to ensure the user selected value from the button menu is registered
+     * correctly for subsequent use in training.
+     */
     @Test
     public void testHandleRectangularButton(){
         controller.handleRectangularButton(new ActionEvent());

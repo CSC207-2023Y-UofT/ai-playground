@@ -21,6 +21,10 @@ class MlParametersControllerTest extends ApplicationTest {
         stage.show();
     }
 
+    /**
+     * This tests handleLearningRate method to ensure the user selected value is registered
+     * correctly.
+     */
     @Test
     public void testHandleLearningRate(){
         clickOn("Learning Rate");
@@ -28,20 +32,30 @@ class MlParametersControllerTest extends ApplicationTest {
         assertEquals(0.003, MlParametersController.handleLearningRate, 0.0001);
     }
 
+    /**
+     * This tests handleActivation method to ensure the user selected value is registered
+     * correctly.
+     */
     @Test
-    public void testActivation(){
+    public void testHandleActivation(){
         clickOn("Activation");
         clickOn("Tanh");
         assertEquals("Tanh", MlParametersController.handleActivation);
     }
-
+    /**
+     * This tests handleRegularization method to ensure the user selected value is registered
+     * correctly.
+     */
     @Test
-    public void testRegularization(){
+    public void testHandleRegularization(){
         clickOn("Regularization");
         clickOn("L2");
         assertEquals("l2", MlParametersController.handleRegularization);
     }
-
+    /**
+     * This tests handleRegularizationRate method to ensure the user selected value is registered
+     * correctly.
+     */
     @Test
     public void testHandleRegularizationRate() {
         // Click on the "Regularization Rate" menu to open it
@@ -53,7 +67,10 @@ class MlParametersControllerTest extends ApplicationTest {
         // Assert the expected behavior
         assertEquals(0.001, MlParametersController.handleRegularizationRate, 0.0001);
     }
-
+    /**
+     * This tests handleProblem method to ensure the user selected value is registered
+     * correctly.
+     */
     @Test
     public void testHandleProblem(){
         clickOn("Problem Type");
