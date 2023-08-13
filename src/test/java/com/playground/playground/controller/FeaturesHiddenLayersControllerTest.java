@@ -64,42 +64,33 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
 
     @Test
     public void testOnAddLayerClicked() {
-        Text numHiddenLayers = lookup("#numHiddenLayers").queryText();
-        assertEquals("1", numHiddenLayers.getText());
+        assertEquals(1, FeaturesHiddenLayersController.numHiddenLayersAccess);
         clickOn("#addLayer");
-        assertEquals("2", numHiddenLayers.getText());
+        assertEquals(2, FeaturesHiddenLayersController.numHiddenLayersAccess);
     }
-
 
     @Test
     public void testOnRemoveLayerClicked() {
-        Text numHiddenLayers = lookup("#numHiddenLayers").queryText();
-        assertEquals("1", numHiddenLayers.getText());
+        assertEquals(1, FeaturesHiddenLayersController.numHiddenLayersAccess);
         clickOn("#removeLayer");
-        assertEquals("0", numHiddenLayers.getText());
+        assertEquals(0, FeaturesHiddenLayersController.numHiddenLayersAccess);
     }
 
     @Test
     public void testOnAddButtonClicked() {
-        FxAssert.verifyThat("#neurons1", NodeMatchers.hasChild("1 Neurons"));
-
+        assertEquals(1, FeaturesHiddenLayersController.aButtonsCountsAccess[0]);
         clickOn("#addLayer");
         clickOn("#add1");
-
-        FxAssert.verifyThat("#neurons1", NodeMatchers.hasChild("2 Neurons"));
+        assertEquals(2, FeaturesHiddenLayersController.aButtonsCountsAccess[0]);
     }
-
-
 
     @Test
     public void testOnRemoveButtonClicked() {
         clickOn("#addLayer");
         clickOn("#add1");
-        FxAssert.verifyThat("#neurons1", NodeMatchers.hasChild("2 Neurons"));
-
+        assertEquals(2, FeaturesHiddenLayersController.aButtonsCountsAccess[0]);
         clickOn("#remove1");
-
-        FxAssert.verifyThat("#neurons1", NodeMatchers.hasChild("1 Neurons"));
+        assertEquals(1, FeaturesHiddenLayersController.aButtonsCountsAccess[0]);
     }
 
 }
