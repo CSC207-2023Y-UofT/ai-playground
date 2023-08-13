@@ -50,10 +50,10 @@ dependencies {
     implementation("org.openjfx:javafx-controls:11")
     implementation("org.openjfx:javafx-fxml:11")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testImplementation("org.mockito:mockito-core:3.+")
-    testImplementation 'org.testfx:testfx-core:4.0.16-alpha'
-    testImplementation 'org.testfx:testfx-junit5:4.0.16-alpha'
+    testImplementation("org.testfx:testfx-core:4.0.16-alpha")
+    testImplementation("org.testfx:testfx-junit5:4.0.16-alpha")
 }
 
 test {
