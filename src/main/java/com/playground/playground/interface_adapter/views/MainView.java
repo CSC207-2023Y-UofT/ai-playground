@@ -21,7 +21,7 @@ public class MainView implements Initializable {
   private MlParametersView mlParametersView;
   @FXML private HBox mlParametersBox;
 
-  public static GraphSystemController graphSystemController;
+  public static GraphSystemView graphSystemView;
   @FXML private VBox graphSystemBox;
 
   private FeaturesHiddenLayersView featuresHiddenLayersView;
@@ -66,8 +66,8 @@ public class MainView implements Initializable {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    graphSystemController = graphSystemLoader.getController();
-    graphSystemController.initialize(location, resources);
+    graphSystemView = graphSystemLoader.getController();
+    graphSystemView.initialize(location, resources);
 
     FXMLLoader featuresHiddenLayersLoader =
         new FXMLLoader(
