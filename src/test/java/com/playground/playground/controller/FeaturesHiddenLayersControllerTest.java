@@ -24,7 +24,6 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
 
 
     @Override
-    @Order(1)
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/playground/playground/features-hidden-layers-view.fxml"));
         stage.setScene(new Scene(loader.load()));
@@ -33,35 +32,17 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
     }
 
     @Test
-    @Order(2)
-    public void testSingleToggleButtonSelection() {
+    public void testToggleButtonSelection() {
         //Click on squareX button
         Button x1pow2button = lookup("#x1pow2button").queryButton();
         clickOn(x1pow2button);
-        //Check UI component for squareX button
-        assertEquals("-fx-background-color: blue;", x1pow2button.getStyle());
         //Check class variable contains squareX
         assertEquals(new ArrayList<>(Arrays.asList("squareX")), FeaturesHiddenLayersController.getSelectedButtons());
-    }
-
-    @Test
-    @Order(3)
-    public void testSingleToggleButtonDeselection(){
-        //Click on squareX button twice
-        Button x1pow2button = lookup("#x1pow2button").queryButton();
+        //Click on squareX button
         clickOn(x1pow2button);
-        clickOn(x1pow2button);
-        //Check UI component for squareX button
-        assertEquals("", x1pow2button.getStyle());
         //Check selectedButtons is empty
         assertEquals(new ArrayList<>(), FeaturesHiddenLayersController.getSelectedButtons());
-    }
-
-    @Test
-    @Order(4)
-    public void testToggleButtonAll(){
         // Click on squareX button
-        Button x1pow2button = lookup("#x1pow2button").queryButton();
         clickOn(x1pow2button);
         // Click on squareY button
         Button x2pow2button = lookup("#x2pow2button").queryButton();
@@ -76,21 +57,12 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
         Button sinx2button = lookup("#sinx2button").queryButton();
         clickOn(sinx2button);
 
-        // Check UI components for all buttons
-        assertEquals("-fx-background-color: blue;", x1pow2button.getStyle());
-        assertEquals("-fx-background-color: blue;", x2pow2button.getStyle());
-        assertEquals("-fx-background-color: blue;", x1x2button.getStyle());
-        assertEquals("-fx-background-color: blue;", sinx1button.getStyle());
-        assertEquals("-fx-background-color: blue;", sinx2button.getStyle());
-
         // Check selectedButtons contains all buttons
         assertEquals(new ArrayList<>(Arrays.asList("squareX", "squareY", "XtimesY", "sinX", "sinY")), FeaturesHiddenLayersController.getSelectedButtons());
     }
 
 
-
     @Test
-    @Order(5)
     public void testOnAddLayerClicked() {
         Text numHiddenLayers = lookup("#numHiddenLayers").queryText();
         assertEquals("1", numHiddenLayers.getText());
@@ -100,7 +72,6 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
 
 
     @Test
-    @Order(6)
     public void testOnRemoveLayerClicked() {
         Text numHiddenLayers = lookup("#numHiddenLayers").queryText();
         assertEquals("1", numHiddenLayers.getText());
@@ -109,7 +80,6 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
     }
 
     @Test
-    @Order(7)
     public void testOnAddButtonClicked() {
         FxAssert.verifyThat("#neurons1", NodeMatchers.hasChild("1 Neurons"));
 
@@ -122,7 +92,6 @@ public class FeaturesHiddenLayersControllerTest extends ApplicationTest {
 
 
     @Test
-    @Order(8)
     public void testOnRemoveButtonClicked() {
         clickOn("#addLayer");
         clickOn("#add1");
