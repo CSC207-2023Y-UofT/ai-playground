@@ -69,9 +69,13 @@ public class FeaturesHiddenLayersView implements Initializable {
         toggleButtonSelection(sinx1button, "sinX");
         toggleButtonSelection(sinx2button, "sinY");
 
-        // Set default configuration to 1 hidden layer 1 node
+        // Set default configuration to 1 hidden layer 1 node in the UI
         onAddButtonClicked(new ActionEvent(add1, null));
         onAddLayerClicked(new ActionEvent(addLayer, null));
+        // Fix internal variables
+        FeaturesHiddenLayersController.numHiddenLayersAccess = 1;
+        FeaturesHiddenLayersController.aButtonsCountsAccess = new int[6];
+        FeaturesHiddenLayersController.aButtonsCountsAccess[0] = 1;
     }
 
     /**

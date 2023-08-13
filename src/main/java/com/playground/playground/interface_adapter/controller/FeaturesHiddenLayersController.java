@@ -35,9 +35,6 @@ public class FeaturesHiddenLayersController {
     aButtonsCountsAccess = new int[6];
     neuronLabels = new Label[newNeuronLabels.length];
     System.arraycopy(newNeuronLabels, 0, neuronLabels, 0, newNeuronLabels.length);
-    numHiddenLayersAccess = 1;
-    aButtonsCountsAccess = new int[6];
-    aButtonsCountsAccess[0] = 1;
   }
 
 
