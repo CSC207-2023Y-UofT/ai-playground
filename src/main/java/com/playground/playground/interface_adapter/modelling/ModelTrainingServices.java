@@ -1,19 +1,11 @@
 package com.playground.playground.interface_adapter.modelling;
 
-import java.io.File;
-import java.util.ArrayList;
-
 import com.playground.playground.DataService;
-import org.deeplearning4j.api.storage.StatsStorage;
+import java.util.ArrayList;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
-import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
-import org.deeplearning4j.ui.stats.StatsListener;
-import org.deeplearning4j.ui.storage.FileStatsStorage;
-import org.deeplearning4j.util.ModelSerializer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
-import org.nd4j.linalg.util.NDArrayUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +14,7 @@ public class ModelTrainingServices {
   private final Logger log = LoggerFactory.getLogger(ModelTrainingServices.class);
   private final INDArrayDataSetIterator data;
   private final INDArrayDataSetIterator testData;
-//  private final INDArrayDataSetIterator copyData;
+  //  private final INDArrayDataSetIterator copyData;
   private MultiLayerNetwork model;
   private String statsFileName;
 
@@ -36,12 +28,12 @@ public class ModelTrainingServices {
    */
   public ModelTrainingServices(
       INDArrayDataSetIterator data,
-//      INDArrayDataSetIterator copyData,
+      //      INDArrayDataSetIterator copyData,
       MultiLayerNetwork model,
       String statsFileName,
       INDArrayDataSetIterator testData) {
     this.data = data;
-//    this.copyData = copyData;
+    //    this.copyData = copyData;
     this.testData = testData;
     this.model = model;
     this.statsFileName = statsFileName;
@@ -89,16 +81,16 @@ public class ModelTrainingServices {
     //      );
     //    }
 
-//    File statsFile = new File(statsFileName);
-//    StatsStorage statsStorage = new FileStatsStorage(statsFile);
+    //    File statsFile = new File(statsFileName);
+    //    StatsStorage statsStorage = new FileStatsStorage(statsFile);
     ArrayList<Double> predictions = new ArrayList<Double>();
 
     if (verbose) {
       log.info(model.summary());
       log.info("Training model...");
     }
-//
-//    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
+    //
+    //    model.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1));
     data.reset();
     model.fit(data);
 
@@ -133,10 +125,9 @@ public class ModelTrainingServices {
       for (int i = 0; i < batchPredictions.length; i++) {
         predictions.add(batchPredictions[i]);
       }
-
     }
-    //System.out.println("Predictions Now:");
-    //System.out.println(predictions);
+    // System.out.println("Predictions Now:");
+    // System.out.println(predictions);
     //    while (testData.hasNext()) {
     //      DataSet t = testData.next();
     //      INDArray features = t.getFeatureMatrix();
