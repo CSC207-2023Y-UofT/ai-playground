@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import com.playground.playground.entity.FeatureConstants;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -81,11 +83,11 @@ public class FeaturesHiddenLayersController implements Initializable {
     neuronLabels = new Label[] {neurons1, neurons2, neurons3, neurons4, neurons5, neurons6};
 
     // Adding the behavior for buttons
-    toggleButtonSelection(x1pow2button, "squareX");
-    toggleButtonSelection(x2pow2button, "squareY");
-    toggleButtonSelection(x1x2button, "XtimesY");
-    toggleButtonSelection(sinx1button, "sinX");
-    toggleButtonSelection(sinx2button, "sinY");
+    toggleButtonSelection(x1pow2button, FeatureConstants.SQUARE_X);
+    toggleButtonSelection(x2pow2button, FeatureConstants.SQUARE_Y);
+    toggleButtonSelection(x1x2button, FeatureConstants.X_TIMES_Y);
+    toggleButtonSelection(sinx1button, FeatureConstants.SIN_X);
+    toggleButtonSelection(sinx2button, FeatureConstants.SIN_Y);
 
     // Set default configuration to 1 hidden layer 1 node
     onAddLayerClicked(new ActionEvent(addLayer, null));
