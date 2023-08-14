@@ -1,6 +1,6 @@
 package com.playground.playground.interface_adapter.views;
 
-import com.playground.playground.interface_adapter.controller.DataAttributesController;
+import com.playground.playground.controller.DataAttributesController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

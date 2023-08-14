@@ -1,19 +1,18 @@
-package com.playground.playground.interface_adapter.controller;
+package com.playground.playground.controller;
 
 import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
 import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import com.playground.playground.usecase.modelling.PrepareData;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * This class handles user-selected parameters for the machine learning model.
@@ -101,12 +100,12 @@ public class MlParametersController{
     int batch = DataAttributesController.initializeBatchSize;
     int test = DataAttributesController.initializeTestRatio;
 
-    String problemType = com.playground.playground.interface_adapter.controller.MlParametersController.handleProblem;
-    double regularRate = com.playground.playground.interface_adapter.controller.MlParametersController.handleRegularizationRate;
-    String regular = com.playground.playground.interface_adapter.controller.MlParametersController.handleRegularization;
-    String activate = com.playground.playground.interface_adapter.controller.MlParametersController.handleActivation;
-    double learnRate = com.playground.playground.interface_adapter.controller.MlParametersController.handleLearningRate;
-    double regularizeRate = com.playground.playground.interface_adapter.controller.MlParametersController.handleRegularizationRate;
+    String problemType = MlParametersController.handleProblem;
+    double regularRate = MlParametersController.handleRegularizationRate;
+    String regular = MlParametersController.handleRegularization;
+    String activate = MlParametersController.handleActivation;
+    double learnRate = MlParametersController.handleLearningRate;
+    double regularizeRate = MlParametersController.handleRegularizationRate;
 
     // Fetch hidden layers from other components
     FeaturesHiddenLayersController.setLayersNeurons();

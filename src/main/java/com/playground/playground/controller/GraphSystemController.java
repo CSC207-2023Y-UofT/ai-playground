@@ -1,13 +1,14 @@
-package com.playground.playground.interface_adapter.controller;
+package com.playground.playground.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is responsible for updating the ScatterChart with new data points and colors.

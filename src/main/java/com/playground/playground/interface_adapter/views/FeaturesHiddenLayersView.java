@@ -1,6 +1,6 @@
 package com.playground.playground.interface_adapter.views;
 
-import com.playground.playground.interface_adapter.controller.FeaturesHiddenLayersController;
+import com.playground.playground.controller.FeaturesHiddenLayersController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,8 +11,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class FeaturesHiddenLayersView implements Initializable {
