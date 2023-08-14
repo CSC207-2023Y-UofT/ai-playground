@@ -128,5 +128,6 @@ public class FeaturesHiddenLayersController {
    */
   public static List<Integer> getLayersNeurons() {
     return layersNeurons;
+
   }
 }
