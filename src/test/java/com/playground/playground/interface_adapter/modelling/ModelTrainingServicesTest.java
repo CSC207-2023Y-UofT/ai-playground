@@ -1,10 +1,9 @@
-package com.playground.playground.modelling;
+package com.playground.playground.interface_adapter.modelling;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
-import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,13 +38,13 @@ public class ModelTrainingServicesTest {
 
   @BeforeEach
   public void setUp() {
-    // Initialize the data, model, and testData before each test
+    // Initialize the datasets, model, and testData before each test
     trainingData = buildData();
     testData = buildData();
     model = mock(MultiLayerNetwork.class);
   }
 
-  // Example on the kind of data we need, example for a simple "and" operation dataset, we want
+  // Example on the kind of datasets we need, example for a simple "and" operation dataset, we want
   // the same, two or more numbers for the features and 1 number (1 or 0) for label.
 
   @Test
@@ -85,7 +84,7 @@ public class ModelTrainingServicesTest {
   public INDArrayDataSetIterator buildIterator(int batchSize) {
     if (trainingData == null) {
       trainingData = buildData();
-      // shuffle the data, so we get a different order between resumed trainings - helps a bit
+      // shuffle the datasets, so we get a different order between resumed trainings - helps a bit
       // escaping
       // when the network is "stuck"
       Collections.shuffle(trainingData);

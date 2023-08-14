@@ -4,20 +4,17 @@ import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
 import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import com.playground.playground.usecase.modelling.PrepareData;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-/**
- * This class handles user-selected parameters for the machine learning model.
- */
-public class MlParametersController{
+/** This class handles user-selected parameters for the machine learning model. */
+public class MlParametersController {
   // Fields for storing user selections
   private static String handleProblem = "Classification";
   private static double handleRegularizationRate = 1;
@@ -27,10 +24,8 @@ public class MlParametersController{
 
   private DataService dataService;
 
-  /**
-   * Constructs an instance of MlParametersController and initializes the DataService.
-   */
-  public MlParametersController(){
+  /** Constructs an instance of MlParametersController and initializes the DataService. */
+  public MlParametersController() {
     this.dataService = DataService.getInstance();
   }
 
@@ -135,7 +130,7 @@ public class MlParametersController{
       selectedButtons = new ArrayList<>();
     }
 
-    // Prepare training and test data
+    // Prepare training and test datasets
     List<Pair<INDArray, INDArray>> rawData =
         FeatureController.createTrainingData(dataset, selectedButtons, noise);
     List<Pair<INDArray, INDArray>> rawTestData =
@@ -176,5 +171,4 @@ public class MlParametersController{
         new ModelTrainingServices(trainDataset, model, "statsLog", testDataset);
     return trainingController;
   }
-
 }
