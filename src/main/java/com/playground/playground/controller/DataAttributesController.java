@@ -1,6 +1,5 @@
 package com.playground.playground.controller;
 
-
 /** This controller handles all the dataset related options on the UI. */
 public class DataAttributesController {
   // ... (fields and constants)
@@ -17,7 +16,7 @@ public class DataAttributesController {
    * Calculates the percentage value based on the provided slider value and maximum.
    *
    * @param value The current value of the slider.
-   * @param max   The maximum value of the slider.
+   * @param max The maximum value of the slider.
    * @return The rounded percentage value.
    */
   public long setSlider1Percent(double value, double max) {
@@ -86,5 +85,4 @@ public class DataAttributesController {
     DataAttributesController.initializeBatchSize = newBatchSize;
     return batchSize;
   }
-
 }

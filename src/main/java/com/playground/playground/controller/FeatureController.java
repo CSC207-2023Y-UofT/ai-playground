@@ -6,12 +6,11 @@ import com.playground.playground.entity.FeatureApplier;
 import com.playground.playground.usecase.datasets.DataGeneratorFactory;
 import com.playground.playground.usecase.datasets.DataProcessor;
 import com.playground.playground.usecase.features.FeatureApplierFactory;
+import java.util.ArrayList;
+import java.util.List;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.primitives.Pair;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * FeatureController is responsible for managing the creation and manipulation of datasets for
@@ -31,7 +30,7 @@ public class FeatureController {
    *     applicable features
    */
   public static List<Pair<INDArray, INDArray>> createTrainingData(
-          String dataName, ArrayList<String> featureNames, int noise) {
+      String dataName, ArrayList<String> featureNames, int noise) {
     // Get the raw data with noise based on the dataName
     ArrayList<ArrayList<Object>> data = getData(dataName, noise);
 

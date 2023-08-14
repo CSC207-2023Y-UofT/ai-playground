@@ -4,19 +4,20 @@ import com.playground.playground.entity.DatasetGenerator;
 import com.playground.playground.entity.DatasetType;
 
 /**
- * The {@code DataGeneratorFactory} class is responsible for creating instances of various
- * {@link DatasetGenerator} implementations based on the given {@link DatasetType}.
+ * The {@code DataGeneratorFactory} class is responsible for creating instances of various {@link
+ * DatasetGenerator} implementations based on the given {@link DatasetType}.
  */
 public class DataGeneratorFactory {
 
   /**
-   * Creates and returns the appropriate {@link DatasetGenerator} based on the provided
-   * {@link DatasetType}.
+   * Creates and returns the appropriate {@link DatasetGenerator} based on the provided {@link
+   * DatasetType}.
    *
    * @param datasetType The {@link DatasetType} representing the type of dataset to be generated.
-   * @return A new instance of the {@link DatasetGenerator} that matches the given {@link DatasetType}.
-   * @throws IllegalArgumentException If the provided {@link DatasetType} is not one of the valid options
-   *                                  or if it's null.
+   * @return A new instance of the {@link DatasetGenerator} that matches the given {@link
+   *     DatasetType}.
+   * @throws IllegalArgumentException If the provided {@link DatasetType} is not one of the valid
+   *     options or if it's null.
    */
   public static DatasetGenerator createDataGenerator(DatasetType datasetType) {
     if (datasetType == null) {

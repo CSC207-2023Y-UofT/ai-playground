@@ -15,7 +15,7 @@ public class TransformDatasets {
    * @return An ArrayList containing points with coordinates and associated weights.
    */
   public static ArrayList<ArrayList<Object>> transform(
-          ArrayList<ArrayList<ArrayList<Double>>> data) {
+      ArrayList<ArrayList<ArrayList<Double>>> data) {
     // Initialize the output dataset
     ArrayList<ArrayList<Object>> dataset = new ArrayList<ArrayList<Object>>();
 

@@ -1,11 +1,10 @@
 package com.playground.playground.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /** This controller is responsible for handling data related to the hidden layers and features. */
 public class FeaturesHiddenLayersController {
@@ -24,7 +23,8 @@ public class FeaturesHiddenLayersController {
   public static int[] aButtonsCountsAccess;
   public static int numHiddenLayersAccess;
 
-  public void setButtons(Button[] newAddButtons, Button[] newRemoveButtons, Label[] newNeuronLabels) {
+  public void setButtons(
+      Button[] newAddButtons, Button[] newRemoveButtons, Label[] newNeuronLabels) {
     addButtons = newAddButtons;
     removeButtons = newRemoveButtons;
     aButtons = new Button[6][8];
@@ -35,14 +35,12 @@ public class FeaturesHiddenLayersController {
     System.arraycopy(newNeuronLabels, 0, neuronLabels, 0, newNeuronLabels.length);
   }
 
-
   /**
    * @return A list of the selected buttons.
    */
   public static ArrayList<String> getSelectedButtons() {
     return FeaturesHiddenLayersController.selectedButtons;
   }
-
 
   public void onRemoveLayerClickedHelper(int i) {
     neuronLabels[i].setVisible(false);
@@ -61,7 +59,6 @@ public class FeaturesHiddenLayersController {
     addButtons[index].setVisible(isVisible);
     removeButtons[index].setVisible(isVisible);
   }
-
 
   /**
    * Helper function for removing a column of buttons representing neurons in a hidden layer.
@@ -133,6 +130,5 @@ public class FeaturesHiddenLayersController {
    */
   public static List<Integer> getLayersNeurons() {
     return layersNeurons;
-
   }
 }
