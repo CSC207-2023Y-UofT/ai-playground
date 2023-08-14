@@ -1,6 +1,7 @@
 package com.playground.playground.interface_adapter.views;
 
 import com.playground.playground.controller.FeaturesHiddenLayersController;
+import com.playground.playground.entity.FeatureConstants;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -61,11 +62,11 @@ public class FeaturesHiddenLayersView implements Initializable {
         setButtonWithImage(sinx2button, "/com/playground/playground/playground-images/sinx2button.jpg");
 
         // Adding the behavior for buttons
-        toggleButtonSelection(x1pow2button, "squareX");
-        toggleButtonSelection(x2pow2button, "squareY");
-        toggleButtonSelection(x1x2button, "XtimesY");
-        toggleButtonSelection(sinx1button, "sinX");
-        toggleButtonSelection(sinx2button, "sinY");
+        toggleButtonSelection(x1pow2button, FeatureConstants.SQUARE_X);
+        toggleButtonSelection(x2pow2button, FeatureConstants.SQUARE_Y);
+        toggleButtonSelection(x1x2button, FeatureConstants.X_TIMES_Y);
+        toggleButtonSelection(sinx1button, FeatureConstants.SIN_X);
+        toggleButtonSelection(sinx2button, FeatureConstants.SIN_Y);
 
         // Set default configuration to 1 hidden layer 1 node in the UI
         onAddButtonClicked(new ActionEvent(add1, null));
