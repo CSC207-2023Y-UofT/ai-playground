@@ -1,7 +1,7 @@
 package com.playground.playground.interface_adapter.views;
 
 import com.playground.playground.DataService;
-import com.playground.playground.controller.MlParametersController;
+import com.playground.playground.interface_adapter.controller.MlParametersController;
 import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import javafx.application.Platform;
 import javafx.concurrent.Task;

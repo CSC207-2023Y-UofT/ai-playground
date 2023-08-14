@@ -1,5 +1,6 @@
 package com.playground.playground.controller;
 
+import com.playground.playground.interface_adapter.controller.DataAttributesController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
