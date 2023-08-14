@@ -1,4 +1,4 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;

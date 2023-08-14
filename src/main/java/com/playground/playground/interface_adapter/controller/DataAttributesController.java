@@ -1,4 +1,4 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 
 /** This controller handles all the dataset related options on the UI. */

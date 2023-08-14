@@ -1,4 +1,4 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
