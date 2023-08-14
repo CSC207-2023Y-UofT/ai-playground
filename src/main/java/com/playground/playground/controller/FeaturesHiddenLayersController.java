@@ -64,9 +64,10 @@ public class FeaturesHiddenLayersController {
 
 
   /**
-   * Helper function for onRemovedLayerClicked used to remove a column as decided by the user.
+   * Helper function for removing a column of buttons representing neurons in a hidden layer.
    *
-   * @param index of the column to be removed.
+   * @param index The index of the column to be removed.
+   * @param neuralConnections The GridPane containing the neural connections.
    */
   public void removeColumn(int index, GridPane neuralConnections) {
     for (int j = 0; j < aButtonCounts[index]; j++) {
@@ -109,7 +110,11 @@ public class FeaturesHiddenLayersController {
     }
   }
 
-  /** Parse and set the number of hidden layers. */
+  /**
+   * Sets the number of hidden layers for the neural network.
+   *
+   * @param num The number of hidden layers to be set.
+   */
   public void setNumHiddenLayers(int num) {
     numHiddenLayersAccess = num;
   }
