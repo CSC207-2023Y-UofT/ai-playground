@@ -7,7 +7,10 @@ import javafx.scene.layout.GridPane;
 import java.util.ArrayList;
 import java.util.List;
 
-/** This controller is responsible for handling data related to the hidden layers and features. */
+/**
+ * This controller is responsible for handling data related to the hidden layers and features.
+ * It provides methods to manipulate the buttons representing neurons and layers in a neural network.
+ */
 public class FeaturesHiddenLayersController {
   private Button[] addButtons;
   private Button[] removeButtons;
@@ -24,6 +27,13 @@ public class FeaturesHiddenLayersController {
   public static int[] aButtonsCountsAccess;
   public static int numHiddenLayersAccess;
 
+  /**
+   * Initializes the buttons and labels for the hidden layers.
+   *
+   * @param newAddButtons The array of buttons used to add neurons.
+   * @param newRemoveButtons The array of buttons used to remove neurons.
+   * @param newNeuronLabels The array of labels displaying the number of neurons.
+   */
   public void setButtons(Button[] newAddButtons, Button[] newRemoveButtons, Label[] newNeuronLabels) {
     addButtons = newAddButtons;
     removeButtons = newRemoveButtons;
@@ -43,7 +53,11 @@ public class FeaturesHiddenLayersController {
     return FeaturesHiddenLayersController.selectedButtons;
   }
 
-
+  /**
+   * Helper function to handle the removal of a layer.
+   *
+   * @param i The index of the layer to be removed.
+   */
   public void onRemoveLayerClickedHelper(int i) {
     neuronLabels[i].setVisible(false);
     aButtonCounts[i] = 0;
@@ -79,6 +93,12 @@ public class FeaturesHiddenLayersController {
     aButtonsCountsAccess[index] = 0;
   }
 
+  /**
+   * Helper function to handle the addition of a neuron button in a hidden layer.
+   *
+   * @param index The index of the hidden layer.
+   * @param neuralConnections The GridPane containing the neural connections.
+   */
   public void onAddButtonClickedHelper(int index, GridPane neuralConnections) {
     if (aButtonCounts[index] < 8) {
       Button newButton = new Button("Node");
@@ -92,6 +112,13 @@ public class FeaturesHiddenLayersController {
     neuronLabels[index].setText(aButtonCounts[index] + " Neurons");
     neuronLabels[index].setVisible(true);
   }
+
+  /**
+   * Helper function to handle the removal of a neuron button in a hidden layer.
+   *
+   * @param index The index of the hidden layer.
+   * @param neuralConnections The GridPane containing the neural connections.
+   */
 
   public void onRemoveButtonClickedHelper(int index, GridPane neuralConnections) {
     if (aButtonCounts[index] > 0) {

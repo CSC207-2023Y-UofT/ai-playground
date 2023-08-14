@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 /** The MainLauncher class is responsible for launching the AI Playground application. */
 public class MainLauncher {
-
   /**
    * The main entry point of the application.
    *
