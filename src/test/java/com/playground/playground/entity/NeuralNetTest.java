@@ -15,6 +15,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 class NeuralNetTest {
   private NeuralNet neuralNet;
   private NeuralNet neuralNet1Layer;
+
   /** Sets up the NeuralNet instance with required configurations before each test. */
   @BeforeEach
   void setUp() {

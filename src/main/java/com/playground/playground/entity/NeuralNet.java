@@ -158,9 +158,9 @@ public class NeuralNet {
     return model.summary();
   }
 
-    public String getRegularizationType() {
-        return this.regularizationType;
-    }
+  public String getRegularizationType() {
+    return this.regularizationType;
+  }
 
   public double getRegularizationFactor() {
     return this.regularizationFactor;
