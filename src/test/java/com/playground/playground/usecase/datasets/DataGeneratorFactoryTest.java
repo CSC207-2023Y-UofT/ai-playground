@@ -42,4 +42,23 @@ public class DataGeneratorFactoryTest {
         },
         "Expected IllegalArgumentException for invalid dataset type");
   }
+  @Test
+  public void testCreateDataGeneratorInvalidType() {
+    assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              DataGeneratorFactory.createDataGenerator(null);
+            },
+            "Expected IllegalArgumentException for null dataset type");
+  }
+
+  @Test
+  public void testCreateDataGeneratorUnknownType() {
+    assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              DataGeneratorFactory.createDataGenerator(DatasetType.UNKNOWN);
+            },
+            "Expected IllegalArgumentException for unknown dataset type");
+  }
 }
