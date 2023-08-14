@@ -7,8 +7,14 @@ import com.playground.playground.usecase.features.SinFeatureApplier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
-
+/**
+ * Test class for SinFeatureApplier, responsible for verifying the sine feature application.
+ */
 public class SinFeatureTest {
+  /**
+   * Tests the application of the sine feature on a dataset, applying to the first axis.
+   * Verifies that the result contains the correct sine values for the given coordinates.
+   */
   @Test
   public void testSinFeatureApplier() {
     ArrayList<Object> dataPoint1 =
@@ -29,7 +35,10 @@ public class SinFeatureTest {
     ArrayList<Double> data2 = (ArrayList<Double>) result.get(1).get(0);
     assertEquals(0.0, data2.get(2), 0.0001);
   }
-
+  /**
+   * Tests the application of the sine feature on a dataset, applying to the second axis.
+   * Verifies that the result contains the correct sine values for the given coordinates.
+   */
   @Test
   public void testSinFeatureApplierAxisOne() {
     ArrayList<Object> dataPoint1 =
