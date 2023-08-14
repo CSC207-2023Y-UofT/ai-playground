@@ -18,5 +18,7 @@ public enum DatasetType {
   QUADRANT,
 
   /** Represents a spiral dataset where datasets points are distributed in a spiral pattern. */
-  SPIRAL
+  SPIRAL,
+
+  UNKNOWN
 }
