@@ -8,13 +8,13 @@ import javafx.scene.layout.GridPane;
 
 /** This controller is responsible for handling datasets related to the hidden layers and features. */
 public class FeaturesHiddenLayersController {
-  private Button[] addButtons;
-  private Button[] removeButtons;
+  Button[] addButtons;
+  Button[] removeButtons;
   private Button[][] aButtons;
-  private int[] aButtonCounts;
+  int[] aButtonCounts;
   private int i = 0;
 
-  private Label[] neuronLabels;
+  Label[] neuronLabels;
 
   public static ArrayList<String> selectedButtons = new ArrayList<>();
   public static List<Integer> layersNeurons = new ArrayList<>();
