@@ -9,8 +9,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
-
+/**
+ * Test class for SquareFeatureApplier, responsible for verifying the squaring feature application.
+ */
 public class SquareFeatureTest {
+    /**
+     * Tests the application of the square feature on a dataset, applying to the first axis.
+     * Verifies that the result contains the correct squared values for the given coordinates.
+     */
     @Test
     public void testSquareFeatureApplier() {
         ArrayList<Object> dataPoint1 =
@@ -32,6 +38,10 @@ public class SquareFeatureTest {
         assertEquals(16.0, data2.get(2));
     }
 
+    /**
+     * Tests the application of the square feature on a dataset, applying to the second axis.
+     * Verifies that the result contains the correct squared values for the given coordinates.
+     */
     @Test
     public void testSquareFeatureApplierAxisOne() {
         ArrayList<Object> dataPoint1 =
