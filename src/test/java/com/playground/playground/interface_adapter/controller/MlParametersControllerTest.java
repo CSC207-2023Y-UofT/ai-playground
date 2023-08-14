@@ -1,7 +1,8 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.playground.playground.interface_adapter.controller.MlParametersController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

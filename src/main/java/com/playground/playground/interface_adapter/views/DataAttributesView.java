@@ -1,6 +1,6 @@
 package com.playground.playground.interface_adapter.views;
 
-import com.playground.playground.controller.DataAttributesController;
+import com.playground.playground.interface_adapter.controller.DataAttributesController;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
-/** This class represents the UI view for handling data attributes. */
+/** This class represents the UI view for handling datasets attributes. */
 public class DataAttributesView implements Initializable {
   @FXML private Slider slider1;
 
@@ -124,7 +124,7 @@ public class DataAttributesView implements Initializable {
     double value = slider.getValue();
     double max = slider.getMax();
     percentLabel.setText(
-        "Ratio of training to test data: "
+        "Ratio of training to test datasets: "
             + dataAttributesController.setSlider1Percent(value, max)
             + "%");
   }
@@ -161,7 +161,7 @@ public class DataAttributesView implements Initializable {
   }
 
   /**
-   * Sends the test ratio value to the data attributes controller upon a mouse event.
+   * Sends the test ratio value to the datasets attributes controller upon a mouse event.
    *
    * @param mouseEvent The mouse event triggering this action.
    */
@@ -171,7 +171,7 @@ public class DataAttributesView implements Initializable {
   }
 
   /**
-   * Sends the noise value to the data attributes controller upon a mouse event.
+   * Sends the noise value to the datasets attributes controller upon a mouse event.
    *
    * @param mouseEvent The mouse event triggering this action.
    */
@@ -180,7 +180,7 @@ public class DataAttributesView implements Initializable {
   }
 
   /**
-   * Sends the batch size value to the data attributes controller upon a mouse event.
+   * Sends the batch size value to the datasets attributes controller upon a mouse event.
    *
    * @param mouseEvent The mouse event triggering this action.
    */

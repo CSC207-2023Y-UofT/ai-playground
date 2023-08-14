@@ -1,4 +1,4 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-/** This controller is responsible for handling data related to the hidden layers and features. */
+/** This controller is responsible for handling datasets related to the hidden layers and features. */
 public class FeaturesHiddenLayersController {
   private Button[] addButtons;
   private Button[] removeButtons;

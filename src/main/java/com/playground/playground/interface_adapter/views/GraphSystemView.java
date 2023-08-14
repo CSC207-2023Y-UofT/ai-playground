@@ -1,7 +1,7 @@
 package com.playground.playground.interface_adapter.views;
 
 import com.playground.playground.DataService;
-import com.playground.playground.controller.GraphSystemController;
+import com.playground.playground.interface_adapter.controller.GraphSystemController;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class GraphSystemView implements Initializable {
     // Get the DataService instance
     dataService = DataService.getInstance();
 
-    // Add a listener to the dataset property in the data service
+    // Add a listener to the dataset property in the datasets service
     dataService
         .datasetProperty()
         .addListener(
@@ -50,7 +50,7 @@ public class GraphSystemView implements Initializable {
               }
             });
 
-    // Add a listener to the results property in the data service
+    // Add a listener to the results property in the datasets service
     dataService
         .resultsProperty()
         .addListener(
@@ -63,7 +63,7 @@ public class GraphSystemView implements Initializable {
                 updateGraph(dataService.getDataset(), newValue);
               }
             });
-    // Add a listener to the trainScore property in the data service
+    // Add a listener to the trainScore property in the datasets service
     dataService
         .trainScoreProperty()
         .addListener(
@@ -75,7 +75,7 @@ public class GraphSystemView implements Initializable {
               }
             });
 
-    // Add a listener to the testScore property in the data service
+    // Add a listener to the testScore property in the datasets service
     dataService
         .testScoreProperty()
         .addListener(
@@ -117,7 +117,7 @@ public class GraphSystemView implements Initializable {
   /**
    * Updates the graph with a new dataset.
    *
-   * <p>The method first clears the current data in the graph, and then adds the new data. Each
+   * <p>The method first clears the current datasets in the graph, and then adds the new datasets. Each
    * cluster is added as a new series in the graph. Then, it sets the colours of the points
    *
    * @param dataset The new dataset to display in the graph.
@@ -128,7 +128,7 @@ public class GraphSystemView implements Initializable {
     Platform.runLater(
         () -> {
           System.out.println("Colors: " + colors);
-          // Clear the current data
+          // Clear the current datasets
           neuralNetwork.getData().clear();
           System.out.println("Updating graph...");
           // Create series for each unique color

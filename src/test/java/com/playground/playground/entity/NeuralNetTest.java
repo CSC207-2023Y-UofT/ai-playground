@@ -1,4 +1,4 @@
-package com.playground.playground.modelling;
+package com.playground.playground.entity;
 
 import com.playground.playground.entity.NeuralNet;
 import java.util.ArrayList;

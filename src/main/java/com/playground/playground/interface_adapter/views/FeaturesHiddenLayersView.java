@@ -1,6 +1,6 @@
 package com.playground.playground.interface_adapter.views;
 
-import com.playground.playground.controller.FeaturesHiddenLayersController;
+import com.playground.playground.interface_adapter.controller.FeaturesHiddenLayersController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

@@ -3,7 +3,7 @@ package com.playground.playground.usecase.features;
 import com.playground.playground.entity.FeatureApplier;
 import java.util.ArrayList;
 
-/** Applies the square feature to a specific axis (x or y) of the data points in the dataset. */
+/** Applies the square feature to a specific axis (x or y) of the datasets points in the dataset. */
 public class SquareFeatureApplier implements FeatureApplier {
   private final int axis;
 

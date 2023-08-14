@@ -19,7 +19,7 @@ public class ModelTrainingServices {
   private String statsFileName;
 
   /**
-   * Constructor for the ModelTrainingServices class which initializers the data and model.
+   * Constructor for the ModelTrainingServices class which initializers the datasets and model.
    *
    * @param data The training dataset.
    * @param model The model DAG.
@@ -39,16 +39,16 @@ public class ModelTrainingServices {
     this.statsFileName = statsFileName;
     //
     //    List<List<Double>> points = new ArrayList<List<Double>>();
-    //    for (int i = 0; i < data.size(); i++) {
+    //    for (int i = 0; i < datasets.size(); i++) {
     //      List<Double> point = new ArrayList<Double>();
-    //      point.add(data.get(i).getKey().data().getDouble(0));
-    //      point.add(data.get(i).getKey().data().getDouble(1));
+    //      point.add(datasets.get(i).getKey().datasets().getDouble(0));
+    //      point.add(datasets.get(i).getKey().datasets().getDouble(1));
     //      points.add(point);
     //    }
     //    for (int i = 0; i < testData.size(); i++) {
     //      List<Double> point = new ArrayList<Double>();
-    //      point.add(testData.get(i).getKey().data().getDouble(0));
-    //      point.add(testData.get(i).getKey().data().getDouble(1));
+    //      point.add(testData.get(i).getKey().datasets().getDouble(0));
+    //      point.add(testData.get(i).getKey().datasets().getDouble(1));
     //      points.add(point);
     //    }
     //    //   Here is where we initialize the graph in the UI
@@ -62,7 +62,7 @@ public class ModelTrainingServices {
    */
   public Object[] trainModel(boolean verbose) {
 
-    //    Example on the kind of data we need, example for a simple "and" operation dataset, we want
+    //    Example on the kind of datasets we need, example for a simple "and" operation dataset, we want
     // the same, two or more numbers for the features and 1 number (1 or 0) for label.
 
     //    public static Pair<INDArray, INDArray> buildInstance(final boolean bitA, final boolean

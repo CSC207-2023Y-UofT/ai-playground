@@ -4,7 +4,7 @@ import com.playground.playground.entity.DatasetGenerator;
 import java.util.ArrayList;
 import java.util.Random;
 
-/** A data generator for creating datasets containing two clusters with different patterns. */
+/** A datasets generator for creating datasets containing two clusters with different patterns. */
 public class ClusterDatasetGenerator implements DatasetGenerator {
 
   /**

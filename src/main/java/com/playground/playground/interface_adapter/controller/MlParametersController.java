@@ -1,4 +1,4 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import com.playground.playground.DataService;
 import com.playground.playground.entity.NeuralNetBuilder;
@@ -130,7 +130,7 @@ public class MlParametersController {
       selectedButtons = new ArrayList<>();
     }
 
-    // Prepare training and test data
+    // Prepare training and test datasets
     List<Pair<INDArray, INDArray>> rawData =
         FeatureController.createTrainingData(dataset, selectedButtons, noise);
     List<Pair<INDArray, INDArray>> rawTestData =

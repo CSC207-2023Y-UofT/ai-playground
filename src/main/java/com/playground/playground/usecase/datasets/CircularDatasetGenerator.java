@@ -3,7 +3,7 @@ package com.playground.playground.usecase.datasets;
 import com.playground.playground.entity.DatasetGenerator;
 import java.util.ArrayList;
 
-/** A data generator for creating datasets containing two circular clusters. */
+/** A datasets generator for creating datasets containing two circular clusters. */
 public class CircularDatasetGenerator implements DatasetGenerator {
 
   /**
