@@ -1,7 +1,7 @@
 package com.playground.playground.interface_adapter.views;
 
 import com.playground.playground.DataService;
-import com.playground.playground.controller.MlParametersController;
+import com.playground.playground.interface_adapter.controller.MlParametersController;
 import com.playground.playground.interface_adapter.modelling.ModelTrainingServices;
 import java.net.URL;
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class MlParametersView implements Initializable {
   private DataService dataService;
 
   /**
-   * Constructs a new instance of the MlParametersView class. Initializes the data service and the
+   * Constructs a new instance of the MlParametersView class. Initializes the datasets service and the
    * ML parameters controller used in the view.
    */
   public MlParametersView() {

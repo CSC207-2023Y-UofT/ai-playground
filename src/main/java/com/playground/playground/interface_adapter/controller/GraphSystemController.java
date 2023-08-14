@@ -1,4 +1,4 @@
-package com.playground.playground.controller;
+package com.playground.playground.interface_adapter.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,18 +9,18 @@ import javafx.scene.shape.Circle;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
 
-/** This class is responsible for updating the ScatterChart with new data points and colors. */
+/** This class is responsible for updating the ScatterChart with new datasets points and colors. */
 public class GraphSystemController {
 
   /**
-   * Updates the ScatterChart with new data points and colors.
+   * Updates the ScatterChart with new datasets points and colors.
    *
-   * @param dataset The list of data clusters (pairs of INDArray points and labels).
-   * @param colors An ArrayList of color values corresponding to each data point.
+   * @param dataset The list of datasets clusters (pairs of INDArray points and labels).
+   * @param colors An ArrayList of color values corresponding to each datasets point.
    * @param neuralNetwork The ScatterChart component to be updated.
-   * @param seriesBlue The series for data points with color value greater than or equal to 0.5.
-   * @param seriesGreen The series for data points with color value less than 0.5.
-   * @return An array containing the updated series for blue and green data points.
+   * @param seriesBlue The series for datasets points with color value greater than or equal to 0.5.
+   * @param seriesGreen The series for datasets points with color value less than 0.5.
+   * @return An array containing the updated series for blue and green datasets points.
    */
   public XYChart.Series<Number, Number>[] updateGraphHelper(
       List<Pair<INDArray, INDArray>> dataset,
@@ -29,7 +29,7 @@ public class GraphSystemController {
       XYChart.Series<Number, Number> seriesBlue,
       XYChart.Series<Number, Number> seriesGreen) {
 
-    // Add the new data
+    // Add the new datasets
     for (int i = 0; i < dataset.size(); i++) {
       Pair<INDArray, INDArray> cluster = dataset.get(i);
       INDArray point = cluster.getKey();
@@ -42,7 +42,7 @@ public class GraphSystemController {
       XYChart.Data<Number, Number> data = new XYChart.Data<>(x, y);
       data.setNode(dot); // Set the node
 
-      // Change the color of the data point based on the color value
+      // Change the color of the datasets point based on the color value
       if (colors.get(i) >= 0.5) {
         dot.setFill(Color.BLUE);
         seriesBlue.getData().add(data);

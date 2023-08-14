@@ -4,8 +4,8 @@ import com.playground.playground.entity.DatasetGenerator;
 import java.util.ArrayList;
 
 /**
- * A data processor that takes a dataset generator as input and processes the generated datasets.
- * The DataProcessor applies a transformation on the generated data using the TransformDatasets
+ * A datasets processor that takes a dataset generator as input and processes the generated datasets.
+ * The DataProcessor applies a transformation on the generated datasets using the TransformDatasets
  * class.
  */
 public class DataProcessor {
@@ -26,7 +26,7 @@ public class DataProcessor {
    *
    * @param noise The number of random points to add as noise to the datasets.
    * @return An ArrayList containing ArrayLists representing the transformed datasets. Each inner
-   *     ArrayList contains two objects: a List containing x and y coordinates of the data points,
+   *     ArrayList contains two objects: a List containing x and y coordinates of the datasets points,
    *     and an Integer representing a weight or label for the dataset.
    */
   public ArrayList<ArrayList<Object>> process(int noise) {

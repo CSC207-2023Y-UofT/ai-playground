@@ -1,4 +1,4 @@
-package com.playground.playground.data;
+package com.playground.playground.usecase.datasets;
 
 import static org.junit.jupiter.api.Assertions.*;
 

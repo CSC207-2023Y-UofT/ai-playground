@@ -1,10 +1,10 @@
-package com.playground.playground.feature;
+package com.playground.playground.interface_adapter.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.playground.playground.controller.FeatureController;
+import com.playground.playground.interface_adapter.controller.FeatureController;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

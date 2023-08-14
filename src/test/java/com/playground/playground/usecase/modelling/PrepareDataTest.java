@@ -1,4 +1,4 @@
-package com.playground.playground.modelling;
+package com.playground.playground.usecase.modelling;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -22,7 +22,7 @@ class PrepareDataTest {
 
   @BeforeEach
   void setUp() {
-    // Initialize test data before each test
+    // Initialize test datasets before each test
     batchSize = 32;
     trainingData = new ArrayList<>();
     testingData = new ArrayList<>();
@@ -31,7 +31,7 @@ class PrepareDataTest {
 
   @Test
   void testGetDataset() {
-    // Add some dummy data to the training dataset
+    // Add some dummy datasets to the training dataset
     INDArray features1 = Nd4j.create(new double[] {1.0, 2.0, 3.0});
     INDArray labels1 = Nd4j.create(new double[] {0.0, 1.0});
     Pair<INDArray, INDArray> dataPair1 = new Pair<>(features1, labels1);
@@ -54,7 +54,7 @@ class PrepareDataTest {
 
   @Test
   void testGetTestDataset() {
-    // Add some dummy data to the testing dataset
+    // Add some dummy datasets to the testing dataset
     INDArray features1 = Nd4j.create(new double[] {1.0, 2.0, 3.0});
     INDArray labels1 = Nd4j.create(new double[] {0.0, 1.0});
     Pair<INDArray, INDArray> dataPair1 = new Pair<>(features1, labels1);
