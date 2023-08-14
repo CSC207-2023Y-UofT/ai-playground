@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -200,6 +200,71 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>org.nd4j.linalg.activations.Activation</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getActivation()">getActivation</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getInputs()">getInputs</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.util.ArrayList&lt;java.lang.Integer&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLayers()">getLayers</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLearningRate()">getLearningRate</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>org.nd4j.linalg.lossfunctions.LossFunctions.LossFunction</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLossFunction()">getLossFunction</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNOut()">getNOut</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>org.deeplearning4j.nn.api.OptimizationAlgorithm</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOptimizationAlgorithm()">getOptimizationAlgorithm</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>org.deeplearning4j.nn.conf.Updater</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOptimizer()">getOptimizer</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegularizationFactor()">getRegularizationFactor</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegularizationType()">getRegularizationType</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSeed()">getSeed</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>org.deeplearning4j.nn.weights.WeightInit</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWeightInit()">getWeightInit</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRegularization()">isRegularization</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#modelSummary()">modelSummary</a></span>()</code></th>
 <td class="colLast">
@@ -296,7 +361,7 @@ extends java.lang.Object</pre>
 <a id="modelSummary()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>modelSummary</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;modelSummary()</pre>
@@ -305,6 +370,123 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The model summary string.</dd>
 </dl>
+</li>
+</ul>
+<a id="getRegularizationType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRegularizationType</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getRegularizationType()</pre>
+</li>
+</ul>
+<a id="getRegularizationFactor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRegularizationFactor</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getRegularizationFactor()</pre>
+</li>
+</ul>
+<a id="getOptimizationAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOptimizationAlgorithm</h4>
+<pre class="methodSignature">public&nbsp;org.deeplearning4j.nn.api.OptimizationAlgorithm&nbsp;getOptimizationAlgorithm()</pre>
+</li>
+</ul>
+<a id="isRegularization()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRegularization</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isRegularization()</pre>
+</li>
+</ul>
+<a id="getOptimizer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOptimizer</h4>
+<pre class="methodSignature">public&nbsp;org.deeplearning4j.nn.conf.Updater&nbsp;getOptimizer()</pre>
+</li>
+</ul>
+<a id="getActivation()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getActivation</h4>
+<pre class="methodSignature">public&nbsp;org.nd4j.linalg.activations.Activation&nbsp;getActivation()</pre>
+</li>
+</ul>
+<a id="getWeightInit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightInit</h4>
+<pre class="methodSignature">public&nbsp;org.deeplearning4j.nn.weights.WeightInit&nbsp;getWeightInit()</pre>
+</li>
+</ul>
+<a id="getNOut()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNOut</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getNOut()</pre>
+</li>
+</ul>
+<a id="getLossFunction()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLossFunction</h4>
+<pre class="methodSignature">public&nbsp;org.nd4j.linalg.lossfunctions.LossFunctions.LossFunction&nbsp;getLossFunction()</pre>
+</li>
+</ul>
+<a id="getInputs()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInputs</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getInputs()</pre>
+</li>
+</ul>
+<a id="getLayers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLayers</h4>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;java.lang.Integer&gt;&nbsp;getLayers()</pre>
+</li>
+</ul>
+<a id="getLearningRate()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLearningRate</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getLearningRate()</pre>
+</li>
+</ul>
+<a id="getSeed()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getSeed</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getSeed()</pre>
 </li>
 </ul>
 </li>
