@@ -2,7 +2,7 @@ package com.playground.playground.feature;
 
 import com.playground.playground.entity.FeatureApplier;
 import com.playground.playground.entity.FeatureConstants;
-import com.playground.playground.interface_adapter.controller.FeatureController;
+import com.playground.playground.controller.FeatureController;
 import com.playground.playground.usecase.features.FeatureApplierFactory;
 import com.playground.playground.usecase.features.MultiplyFeatureApplier;
 import com.playground.playground.usecase.features.SinFeatureApplier;
