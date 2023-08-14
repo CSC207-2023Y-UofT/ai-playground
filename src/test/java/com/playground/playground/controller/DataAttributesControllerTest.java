@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests class to validate the functionality of DataAttributesController.
+ */
 public class DataAttributesControllerTest {
+    int min;
+    int max;
+
 
     private DataAttributesController controller;
 
@@ -13,53 +19,82 @@ public class DataAttributesControllerTest {
     public void setUp(){
         controller = new DataAttributesController();
     }
+
+    /**
+     * Tests setSlider1Percent in DataAttributesController to check test ratio values.
+     */
     @Test
     public void testSetSlider1Percent(){
-        double value = 30;
-        double max = 100;
-        long expected = 30;
+        min = 0;
+        max = 100;
+        double value = min + (int)(Math.random() * (max - min) + 1);
+        long expected = (long) value;
         long actual = controller.setSlider1Percent(value, max);
         assertEquals(expected, actual);
         assertEquals(expected, DataAttributesController.initializeTestRatio);
     }
+    /**
+     * Tests setSlider2Percent in DataAttributesController to check test noise values.
+     */
 
     @Test
     public void testSetSlider2Percent(){
-        int value = 11;
-        String expected = "11";
+        min = 0;
+        max = 50;
+        int value = min + (int)(Math.random() * (max - min) + 1);
+        String expected = String.valueOf(value);
         String actual = controller.setSlider2Percent(value);
         assertEquals(expected, actual);
         assertEquals(value, DataAttributesController.initializeNoise);
     }
-
+    /**
+     * Tests setSlider1Percent in DataAttributesController to check batch size values.
+     */
     @Test
     public void testSetSlider3Percent() {
-        int value = 17;
-        String expected = "17";
+        min = 0;
+        max = 30;
+        int value = min + (int)(Math.random() * (max - min) + 1);
+        String expected = String.valueOf(value);
         String actual = controller.setSlider3Percent(value);
         assertEquals(expected, actual);
         assertEquals(value, DataAttributesController.initializeBatchSize);
     }
 
+    /**
+     * Tests initializeTestRatio in DataAttributesController to check test ratio values.
+     */
     @Test
     public void testInitializeTestRatio() {
-        int newRatio = 63;
+        min = 0;
+        max = 100;
+        int newRatio = min + (int)(Math.random() * (max - min) + 1);
         int actual = controller.initializeTestRatio(newRatio);
         assertEquals(newRatio, actual);
         assertEquals(newRatio, DataAttributesController.initializeTestRatio);
     }
 
+    /**
+     * Tests initializeNoise in DataAttributesController to check noise values.
+     */
     @Test
     public void testInitializeNoise() {
-        int newNoise = 7;
+        min = 0;
+        max = 50;
+        int newNoise = min + (int)(Math.random() * (max - min) + 1);
         int actual = controller.initializeNoise(newNoise);
         assertEquals(newNoise, actual);
         assertEquals(newNoise, DataAttributesController.initializeNoise);
     }
 
+    /**
+     * Tests initializeBatchSize in DataAttributesController to check batch size values.
+     */
     @Test
     public void testInitializeBatchSize() {
-        int newBatchSize = 27;
+        min = 0;
+        max = 30;
+        int newBatchSize = min + (int)(Math.random() * (max - min) + 1);
         int actual = controller.initializeBatchSize(newBatchSize);
         assertEquals(newBatchSize, actual);
         assertEquals(newBatchSize, DataAttributesController.initializeBatchSize);
