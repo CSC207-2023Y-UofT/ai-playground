@@ -1,7 +1,7 @@
 package com.playground.playground.interface_adapter.views;
 
 import com.playground.playground.DataService;
-import com.playground.playground.interface_adapter.controller.GraphSystemController;
+import com.playground.playground.controller.GraphSystemController;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
