@@ -62,7 +62,8 @@ public class ModelTrainingServices {
    */
   public Object[] trainModel(boolean verbose) {
 
-    //    Example on the kind of datasets we need, example for a simple "and" operation dataset, we want
+    //    Example on the kind of datasets we need, example for a simple "and" operation dataset, we
+    // want
     // the same, two or more numbers for the features and 1 number (1 or 0) for label.
 
     //    public static Pair<INDArray, INDArray> buildInstance(final boolean bitA, final boolean

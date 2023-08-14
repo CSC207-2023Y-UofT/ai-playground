@@ -68,8 +68,8 @@ public class MlParametersView implements Initializable {
   private DataService dataService;
 
   /**
-   * Constructs a new instance of the MlParametersView class. Initializes the datasets service and the
-   * ML parameters controller used in the view.
+   * Constructs a new instance of the MlParametersView class. Initializes the datasets service and
+   * the ML parameters controller used in the view.
    */
   public MlParametersView() {
     this.dataService = DataService.getInstance();

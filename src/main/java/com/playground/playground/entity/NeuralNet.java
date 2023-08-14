@@ -157,4 +157,56 @@ public class NeuralNet {
   public String modelSummary() {
     return model.summary();
   }
+
+    public String getRegularizationType() {
+        return this.regularizationType;
+    }
+
+  public double getRegularizationFactor() {
+    return this.regularizationFactor;
+  }
+
+  public OptimizationAlgorithm getOptimizationAlgorithm() {
+    return this.optimizationAlgorithm;
+  }
+
+  public boolean isRegularization() {
+    return this.regularization;
+  }
+
+  public Updater getOptimizer() {
+    return this.optimizer;
+  }
+
+  public Activation getActivation() {
+    return this.activation;
+  }
+
+  public WeightInit getWeightInit() {
+    return this.weightInit;
+  }
+
+  public int getNOut() {
+    return this.nOut;
+  }
+
+  public LossFunctions.LossFunction getLossFunction() {
+    return this.lossFunction;
+  }
+
+  public int getInputs() {
+    return this.inputs;
+  }
+
+  public ArrayList<Integer> getLayers() {
+    return this.layers;
+  }
+
+  public double getLearningRate() {
+    return this.learningRate;
+  }
+
+  public int getSeed() {
+    return this.seed;
+  }
 }

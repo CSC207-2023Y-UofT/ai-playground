@@ -89,8 +89,13 @@ tasks.create(name: "testCoverage", type: JacocoReport, dependsOn: "test") {
         csv.required.set(true)
     }
 
+//    We exclude the following sets of files:
+//      - We were advised not to test UI which was testable using QA.
+//      - The MainLauncher class is responsible for launching JavaFX.
     def excludes = [
-            '**/*Test*.*',
+            'com/playground/playground/interface_adapter/views/*.*',
+            'com/playground/playground/*MainLauncher*.*',
+            '**/*View.*',
             '**/actions/*.*',
             '**/core/*.*',
             '**/markers/*.*',

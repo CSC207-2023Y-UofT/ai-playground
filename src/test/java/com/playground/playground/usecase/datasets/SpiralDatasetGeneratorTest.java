@@ -2,7 +2,6 @@ package com.playground.playground.usecase.datasets;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.playground.playground.usecase.datasets.SpiralDatasetGenerator;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
@@ -103,5 +102,33 @@ public class SpiralDatasetGeneratorTest {
 
     assertEquals(20, xCoordinates.size());
     assertEquals(20, yCoordinates.size());
+  }
+
+  @Test
+  public void testGenerate() {
+    SpiralDatasetGenerator generator = new SpiralDatasetGenerator();
+    ArrayList<ArrayList<ArrayList<Double>>> datasets = generator.generate(2);
+
+    assertNotNull(datasets);
+    assertEquals(2, datasets.size());
+
+    ArrayList<ArrayList<Double>> dataset1 = datasets.get(0);
+    ArrayList<ArrayList<Double>> dataset2 = datasets.get(1);
+
+    assertNotNull(dataset1);
+    assertNotNull(dataset2);
+
+    assertEquals(2, dataset1.size());
+    assertEquals(2, dataset2.size());
+
+    ArrayList<Double> xCoordinates1 = dataset1.get(0);
+    ArrayList<Double> yCoordinates1 = dataset1.get(1);
+    ArrayList<Double> xCoordinates2 = dataset2.get(0);
+    ArrayList<Double> yCoordinates2 = dataset2.get(1);
+
+    assertEquals(520, xCoordinates1.size());
+    assertEquals(520, yCoordinates1.size());
+    assertEquals(520, xCoordinates2.size());
+    assertEquals(520, yCoordinates2.size());
   }
 }

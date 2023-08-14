@@ -4,8 +4,8 @@ import com.playground.playground.entity.FeatureApplier;
 import java.util.ArrayList;
 
 /**
- * Applies a multiplication feature to the dataset by multiplying the x and y values of each datasets
- * point.
+ * Applies a multiplication feature to the dataset by multiplying the x and y values of each
+ * datasets point.
  */
 public class MultiplyFeatureApplier implements FeatureApplier {
   /**

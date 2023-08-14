@@ -7,8 +7,14 @@ import com.playground.playground.usecase.features.SquareFeatureApplier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
-
+/**
+ * Test class for SquareFeatureApplier, responsible for verifying the squaring feature application.
+ */
 public class SquareFeatureTest {
+  /**
+   * Tests the application of the square feature on a dataset, applying to the first axis.
+   * Verifies that the result contains the correct squared values for the given coordinates.
+   */
   @Test
   public void testSquareFeatureApplier() {
     ArrayList<Object> dataPoint1 =
@@ -29,7 +35,10 @@ public class SquareFeatureTest {
     ArrayList<Double> data2 = (ArrayList<Double>) result.get(1).get(0);
     assertEquals(16.0, data2.get(2));
   }
-
+  /**
+   * Tests the application of the square feature on a dataset, applying to the second axis.
+   * Verifies that the result contains the correct squared values for the given coordinates.
+   */
   @Test
   public void testSquareFeatureApplierAxisOne() {
     ArrayList<Object> dataPoint1 =
@@ -45,9 +54,11 @@ public class SquareFeatureTest {
     assertEquals(2, result.size());
 
     ArrayList<Double> data1 = (ArrayList<Double>) result.get(0).get(0);
-    assertEquals(9.0, data1.get(2)); // Squaring the second element (3.0) in the first datasets point
+    assertEquals(
+        9.0, data1.get(2)); // Squaring the second element (3.0) in the first datasets point
 
     ArrayList<Double> data2 = (ArrayList<Double>) result.get(1).get(0);
-    assertEquals(25.0, data2.get(2)); // Squaring the second element (5.0) in the second datasets point
+    assertEquals(
+        25.0, data2.get(2)); // Squaring the second element (5.0) in the second datasets point
   }
 }

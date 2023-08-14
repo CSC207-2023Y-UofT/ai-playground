@@ -6,7 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-/** This controller is responsible for handling datasets related to the hidden layers and features. */
+/**
+ * This controller is responsible for handling datasets related to the hidden layers and features.
+ */
 public class FeaturesHiddenLayersController {
   Button[] addButtons;
   Button[] removeButtons;

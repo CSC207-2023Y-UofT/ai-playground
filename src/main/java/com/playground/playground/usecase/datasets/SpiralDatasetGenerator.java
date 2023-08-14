@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * A datasets generator for creating spiral datasets in both clockwise and counterclockwise directions.
- * The dataset contains two spiral patterns with increasing and decreasing radii, respectively.
+ * A datasets generator for creating spiral datasets in both clockwise and counterclockwise
+ * directions. The dataset contains two spiral patterns with increasing and decreasing radii,
+ * respectively.
  */
 public class SpiralDatasetGenerator implements DatasetGenerator {
 

@@ -117,8 +117,8 @@ public class GraphSystemView implements Initializable {
   /**
    * Updates the graph with a new dataset.
    *
-   * <p>The method first clears the current datasets in the graph, and then adds the new datasets. Each
-   * cluster is added as a new series in the graph. Then, it sets the colours of the points
+   * <p>The method first clears the current datasets in the graph, and then adds the new datasets.
+   * Each cluster is added as a new series in the graph. Then, it sets the colours of the points
    *
    * @param dataset The new dataset to display in the graph.
    * @param colors An ArrayList of 0's or 1's corresponding to the colour of the points on the

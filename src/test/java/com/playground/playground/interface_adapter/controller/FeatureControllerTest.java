@@ -4,15 +4,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.playground.playground.interface_adapter.controller.FeatureController;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.primitives.Pair;
-
+/**
+ * Test class for FeatureController, responsible for verifying the creation of training data.
+ */
 public class FeatureControllerTest {
+  /**
+   * Tests the creation of training data with given features and noise.
+   * Verifies the correctness of feature transformations such as squareX and sinY.
+   */
   @Test
   public void testFeatureController() {
     String dataName = "circular";
@@ -39,7 +44,10 @@ public class FeatureControllerTest {
       assertEquals(Math.sin(y), sinY, 0.0001);
     }
   }
-
+  /**
+   * Tests the creation of training data without any additional features.
+   * Verifies that the result contains only original coordinates.
+   */
   @Test
   public void testFeatureControllerNoFeatures() {
     int data_size = 1000;

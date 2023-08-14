@@ -1,6 +1,5 @@
 package com.playground.playground.entity;
 
-import com.playground.playground.entity.NeuralNet;
 import java.util.ArrayList;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.Updater;
@@ -15,7 +14,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 /** Test class to validate the functionality of the NeuralNet class. */
 class NeuralNetTest {
   private NeuralNet neuralNet;
-
+  private NeuralNet neuralNet1Layer;
   /** Sets up the NeuralNet instance with required configurations before each test. */
   @BeforeEach
   void setUp() {
@@ -34,7 +33,7 @@ class NeuralNetTest {
     int nOut = 2;
     LossFunctions.LossFunction lossFunction = LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD;
     boolean regularization = true;
-    String regularizationType = "L2";
+    String regularizationType = "l2";
     double regularizationFactor = 0.001;
 
     // Create the NeuralNet instance
@@ -53,6 +52,25 @@ class NeuralNetTest {
             regularization,
             regularizationType,
             regularizationFactor);
+
+    ArrayList<Integer> layers1layered = new ArrayList<>();
+    layers1layered.add(2);
+    String regularizationType1layer = "l1";
+    neuralNet1Layer =
+        new NeuralNet(
+            layers1layered,
+            seed,
+            inputs,
+            learningRate,
+            optimizer,
+            optimizationAlgorithm,
+            activation,
+            weightInit,
+            nOut,
+            lossFunction,
+            regularization,
+            regularizationType1layer,
+            regularizationFactor);
   }
 
   /**
@@ -62,6 +80,15 @@ class NeuralNetTest {
   void testGenerateModel() {
     // When
     MultiLayerNetwork model = neuralNet.generateModel();
+    // Then
+    Assertions.assertNotNull(model);
+  }
+
+  @Test
+  void testGenerate1LayerModel() {
+    // When
+
+    MultiLayerNetwork model = neuralNet1Layer.generateModel();
     // Then
     Assertions.assertNotNull(model);
   }

@@ -3,7 +3,6 @@ package com.playground.playground.usecase.modelling;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.playground.playground.usecase.modelling.PrepareData;
 import java.util.ArrayList;
 import java.util.List;
 import org.deeplearning4j.datasets.iterator.INDArrayDataSetIterator;
