@@ -8,8 +8,14 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/**
+ * Test class for SinFeatureApplier, responsible for verifying the sine feature application.
+ */
 public class SinFeatureTest {
+    /**
+     * Tests the application of the sine feature on a dataset, applying to the first axis.
+     * Verifies that the result contains the correct sine values for the given coordinates.
+     */
     @Test
     public void testSinFeatureApplier() {
         ArrayList<Object> dataPoint1 =
@@ -31,6 +37,10 @@ public class SinFeatureTest {
         assertEquals(0.0, data2.get(2), 0.0001);
     }
 
+    /**
+     * Tests the application of the sine feature on a dataset, applying to the second axis.
+     * Verifies that the result contains the correct sine values for the given coordinates.
+     */
     @Test
     public void testSinFeatureApplierAxisOne() {
         ArrayList<Object> dataPoint1 =

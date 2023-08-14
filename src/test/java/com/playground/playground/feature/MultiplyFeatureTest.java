@@ -8,8 +8,14 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/**
+ * Test class for MultiplyFeatureApplier, responsible for verifying the multiplication feature application.
+ */
 public class MultiplyFeatureTest {
+    /**
+     * Tests the application of the multiplication feature on a dataset.
+     * Verifies that the result contains the correct multiplication of the given coordinates.
+     */
     @Test
     public void testMultiplyFeatureApplier() {
         ArrayList<Object> dataPoint1 =
