@@ -48,13 +48,15 @@ public class SinFeatureTest {
     assertEquals(
         1.0,
         data1.get(2),
-        0.0001); // Applying the sine function to the second element (Math.PI / 2) in the first datasets
-                 // point
+        0.0001); // Applying the sine function to the second element (Math.PI / 2) in the first
+                 // datasets
+    // point
 
     ArrayList<Double> data2 = (ArrayList<Double>) result.get(1).get(0);
     assertEquals(
         0.0,
         data2.get(2),
-        0.0001); // Applying the sine function to the second element (0.0) in the second datasets point
+        0.0001); // Applying the sine function to the second element (0.0) in the second datasets
+                 // point
   }
 }

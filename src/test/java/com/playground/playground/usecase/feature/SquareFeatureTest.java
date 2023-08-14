@@ -45,9 +45,11 @@ public class SquareFeatureTest {
     assertEquals(2, result.size());
 
     ArrayList<Double> data1 = (ArrayList<Double>) result.get(0).get(0);
-    assertEquals(9.0, data1.get(2)); // Squaring the second element (3.0) in the first datasets point
+    assertEquals(
+        9.0, data1.get(2)); // Squaring the second element (3.0) in the first datasets point
 
     ArrayList<Double> data2 = (ArrayList<Double>) result.get(1).get(0);
-    assertEquals(25.0, data2.get(2)); // Squaring the second element (5.0) in the second datasets point
+    assertEquals(
+        25.0, data2.get(2)); // Squaring the second element (5.0) in the second datasets point
   }
 }

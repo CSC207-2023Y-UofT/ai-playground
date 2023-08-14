@@ -2,7 +2,6 @@ package com.playground.playground.usecase.datasets;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.playground.playground.usecase.datasets.SpiralDatasetGenerator;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 

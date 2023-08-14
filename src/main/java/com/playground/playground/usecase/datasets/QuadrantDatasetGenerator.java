@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * A datasets generator for creating datasets representing points in the four quadrants of the Cartesian
- * plane.
+ * A datasets generator for creating datasets representing points in the four quadrants of the
+ * Cartesian plane.
  */
 public class QuadrantDatasetGenerator implements DatasetGenerator {
 

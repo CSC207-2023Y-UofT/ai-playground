@@ -1,6 +1,5 @@
 package com.playground.playground.entity;
 
-import com.playground.playground.entity.NeuralNet;
 import java.util.ArrayList;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.Updater;
