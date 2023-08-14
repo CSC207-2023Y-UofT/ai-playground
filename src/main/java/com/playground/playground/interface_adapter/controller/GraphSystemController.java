@@ -26,11 +26,11 @@ public class GraphSystemController {
     /**
      * Updates the ScatterChart with new data points and colors.
      *
-     * @param dataset The list of data clusters (pairs of INDArray points and labels).
-     * @param colors  An ArrayList of color values corresponding to each data point.
-     * @param neuralNetwork The ScatterChart component to be updated.
-     * @param seriesBlue The series for data points with color value >= 0.5.
-     * @param seriesGreen The series for data points with color value < 0.5.
+     * @param dataset        The list of data clusters (pairs of INDArray points and labels).
+     * @param colors         An ArrayList of color values corresponding to each data point.
+     * @param neuralNetwork  The ScatterChart component to be updated.
+     * @param seriesBlue     The series for data points with color value greater than or equal to 0.5.
+     * @param seriesGreen    The series for data points with color value less than 0.5.
      * @return An array containing the updated series for blue and green data points.
      */
     public XYChart.Series<Number, Number>[] updateGraphHelper(List<Pair<INDArray, INDArray>> dataset, ArrayList<Double> colors, ScatterChart neuralNetwork, XYChart.Series<Number, Number> seriesBlue, XYChart.Series<Number, Number> seriesGreen) {
